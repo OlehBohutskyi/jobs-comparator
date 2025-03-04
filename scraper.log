@@ -1,0 +1,136 @@
+2025-03-02 18:37:26,062 - __main__ - INFO - Application initialized
+2025-03-02 18:37:26,063 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-02 18:37:26,117 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-02 18:37:26,117 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-02 18:37:26,123 - werkzeug - INFO -  * Restarting with stat
+2025-03-02 18:37:26,986 - __main__ - INFO - Application initialized
+2025-03-02 18:37:26,986 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-02 18:37:27,006 - werkzeug - WARNING -  * Debugger is active!
+2025-03-02 18:37:27,009 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-02 18:37:46,284 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:37:46] "GET / HTTP/1.1" 200 -
+2025-03-02 18:37:46,362 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:37:46] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-03-02 18:37:46,520 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:37:46] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-03-02 18:37:46,971 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:37:46] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-02 18:38:11,428 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:11] "[35m[1mPOST / HTTP/1.1[0m" 500 -
+2025-03-02 18:38:11,720 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:11] "GET /?__debugger__=yes&cmd=resource&f=style.css HTTP/1.1" 200 -
+2025-03-02 18:38:11,775 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:11] "GET /?__debugger__=yes&cmd=resource&f=debugger.js HTTP/1.1" 200 -
+2025-03-02 18:38:12,116 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:12] "GET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1" 200 -
+2025-03-02 18:38:12,116 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:12] "GET /?__debugger__=yes&cmd=resource&f=console.png&s=ArugaUk2pMEksWsoNDPN HTTP/1.1" 200 -
+2025-03-02 18:38:12,356 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:38:12] "[36mGET /?__debugger__=yes&cmd=resource&f=console.png HTTP/1.1[0m" 304 -
+2025-03-02 18:39:45,147 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\djinni_scraper\\app.py', reloading
+2025-03-02 18:39:45,206 - werkzeug - INFO -  * Restarting with stat
+2025-03-02 18:39:46,085 - __main__ - INFO - Application initialized
+2025-03-02 18:39:46,086 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-02 18:39:46,097 - werkzeug - WARNING -  * Debugger is active!
+2025-03-02 18:39:46,099 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-02 18:39:53,608 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\djinni_scraper\\web\\routes.py', reloading
+2025-03-02 18:39:53,659 - werkzeug - INFO -  * Restarting with stat
+2025-03-02 18:39:54,486 - __main__ - INFO - Application initialized
+2025-03-02 18:39:54,487 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-02 18:39:54,498 - werkzeug - WARNING -  * Debugger is active!
+2025-03-02 18:39:54,500 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-02 18:39:59,392 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:39:59] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-02 18:39:59,393 - scraper.scraper - INFO - Starting job search with query: Python Developer, pages: 1
+2025-03-02 18:39:59,428 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:39:59] "GET /jobs?query=Python+Developer HTTP/1.1" 200 -
+2025-03-02 18:39:59,689 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:39:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:39:59,762 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:39:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:40:03,198 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:03] "GET / HTTP/1.1" 200 -
+2025-03-02 18:40:03,232 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:40:03,458 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:40:06,671 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:06] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-02 18:40:06,672 - scraper.scraper - INFO - Starting job search with query: Python Developer, pages: 1
+2025-03-02 18:40:06,684 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:06] "GET /jobs?query=Python+Developer HTTP/1.1" 200 -
+2025-03-02 18:40:06,932 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:40:07,025 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:40:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:40:07,130 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,130 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,130 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,131 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,132 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,132 - scraper.scraper - ERROR - Error getting job details: <asyncio.locks.Semaphore object at 0x0000025194B43250 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,163 - scraper.scraper - ERROR - Error processing job 227893: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,163 - scraper.scraper - ERROR - Error processing job 710505: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,171 - scraper.scraper - ERROR - Error processing job 718549: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,171 - scraper.scraper - ERROR - Error processing job 718513: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,171 - scraper.scraper - ERROR - Error processing job 718504: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,562 - scraper.scraper - ERROR - Error processing job 718837: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,580 - scraper.scraper - ERROR - Error processing job 718833: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,591 - scraper.scraper - ERROR - Error processing job 718811: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:40:07,623 - scraper.scraper - ERROR - Error processing job 718807: <asyncio.locks.Semaphore object at 0x0000025194B9ECF0 [locked]> is bound to a different event loop
+2025-03-02 18:41:32,819 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:41:32] "GET /jobs HTTP/1.1" 200 -
+2025-03-02 18:41:32,852 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:41:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:41:33,074 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:41:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:42:15,662 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:15] "GET / HTTP/1.1" 200 -
+2025-03-02 18:42:15,700 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:42:15,917 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:42:27,688 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:27] "GET /jobs HTTP/1.1" 200 -
+2025-03-02 18:42:27,721 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 18:42:27,927 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 18:42:50,964 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:50] "GET /api/jobs/710598 HTTP/1.1" 200 -
+2025-03-02 18:42:54,274 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:42:54] "GET /api/jobs/718837 HTTP/1.1" 200 -
+2025-03-02 18:43:04,660 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 18:43:04] "GET /api/jobs/718724 HTTP/1.1" 200 -
+2025-03-02 19:04:11,543 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 19:04:11] "GET /jobs?query=Python+Developer HTTP/1.1" 200 -
+2025-03-02 19:04:11,595 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 19:04:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-02 19:04:11,810 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 19:04:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-02 19:05:26,528 - werkzeug - INFO - 127.0.0.1 - - [02/Mar/2025 19:05:26] "GET /api/jobs/710598 HTTP/1.1" 200 -
+2025-03-03 20:55:31,668 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:31] "GET / HTTP/1.1" 200 -
+2025-03-03 20:55:31,713 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 20:55:31,916 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 20:55:43,108 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:43] "GET /jobs HTTP/1.1" 200 -
+2025-03-03 20:55:43,144 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 20:55:43,367 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 20:55:44,230 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:44] "GET / HTTP/1.1" 200 -
+2025-03-03 20:55:44,266 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 20:55:44,498 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:55:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 20:56:00,817 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:56:00] "GET /jobs HTTP/1.1" 200 -
+2025-03-03 20:56:00,853 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:56:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 20:56:01,066 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:56:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 20:56:03,834 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:56:03] "GET /api/jobs/710598 HTTP/1.1" 200 -
+2025-03-03 20:57:21,134 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:57:21] "GET /jobs HTTP/1.1" 200 -
+2025-03-03 20:57:21,161 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:57:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 20:57:21,380 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 20:57:21] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:02:37,165 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:02:37] "GET /api/jobs/718833 HTTP/1.1" 200 -
+2025-03-03 21:03:05,667 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:05] "GET / HTTP/1.1" 200 -
+2025-03-03 21:03:05,993 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:03:06,030 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:03:06,734 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:06] "GET /jobs HTTP/1.1" 200 -
+2025-03-03 21:03:06,771 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:03:06,997 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:03:09,222 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:09] "GET /jobs?query=Python+Developer HTTP/1.1" 200 -
+2025-03-03 21:03:09,254 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:03:09,493 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:03:13,890 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:13] "GET /jobs?query= HTTP/1.1" 200 -
+2025-03-03 21:03:13,927 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:13] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:03:14,163 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:03:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:05:29,882 - __main__ - INFO - Application initialized
+2025-03-03 21:05:29,882 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-03 21:05:29,944 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-03 21:05:29,944 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-03 21:05:29,951 - werkzeug - INFO -  * Restarting with stat
+2025-03-03 21:05:30,743 - __main__ - INFO - Application initialized
+2025-03-03 21:05:30,743 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-03 21:05:30,754 - werkzeug - WARNING -  * Debugger is active!
+2025-03-03 21:05:30,756 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-03 21:05:34,542 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:05:34] "GET /jobs?query= HTTP/1.1" 200 -
+2025-03-03 21:05:34,613 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:05:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:05:34,761 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:05:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:11:25,215 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:11:25] "GET / HTTP/1.1" 200 -
+2025-03-03 21:11:25,279 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:11:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:11:25,475 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:11:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:12:16,091 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:12:16] "GET /jobs HTTP/1.1" 200 -
+2025-03-03 21:12:16,146 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:12:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-03 21:12:16,344 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:12:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-03 21:13:06,748 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:13:06] "GET /api/jobs/718833 HTTP/1.1" 200 -
+2025-03-03 21:20:33,300 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:20:33] "GET /api/jobs/718714 HTTP/1.1" 200 -
+2025-03-03 21:20:48,513 - werkzeug - INFO - 127.0.0.1 - - [03/Mar/2025 21:20:48] "GET /api/jobs/710505 HTTP/1.1" 200 -

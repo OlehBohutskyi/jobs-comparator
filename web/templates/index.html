@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+
+{% block title %}Djinni Job Scraper - Search{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h4 mb-0">Search and Scrape Djinni Jobs</h2>
+            </div>
+            <div class="card-body">
+                <form method="POST" action="{{ url_for('web.index') }}">
+                    <div class="mb-3">
+                        <label for="query" class="form-label">Search Query</label>
+                        <input type="text" class="form-control" id="query" name="query" 
+                               placeholder="Enter job title, skills or technologies (e.g., Python, React, Data Engineer)">
+                        <div class="form-text">Leave empty to scrape all jobs</div>
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="pages" class="form-label">Number of Pages to Scrape</label>
+                        <select class="form-select" id="pages" name="pages">
+                            <option value="1">1 page</option>
+                            <option value="2">2 pages</option>
+                            <option value="3">3 pages</option>
+                            <option value="5">5 pages</option>
+                            <option value="10">10 pages</option>
+                        </select>
+                    </div>
+                    
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="bi bi-search me-2"></i>Search and Scrape
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-secondary text-white">
+                <h3 class="h5 mb-0">About This Tool</h3>
+            </div>
+            <div class="card-body">
+                <p>This tool allows you to scrape job listings from Djinni.co, a Ukrainian job board for IT professionals. The scraper:</p>
+                <ul>
+                    <li>Extracts job details including title, company, salary, and requirements</li>
+                    <li>Translates job information from Ukrainian to English</li>
+                    <li>Stores data in a searchable database</li>
+                    <li>Operates asynchronously to keep the web interface responsive</li>
+                </ul>
+                <p>Enter a search query above to find specific jobs, or leave it empty to scrape all available jobs.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

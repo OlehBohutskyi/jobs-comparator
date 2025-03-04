@@ -1,0 +1,98 @@
+/* Main Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.page-content {
+    flex: 1;
+}
+
+/* Table Styles */
+.table-responsive {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+}
+
+.table thead {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.job-row {
+    cursor: pointer;
+}
+
+.job-row:hover {
+    background-color: rgba(0, 123, 255, 0.05);
+}
+
+/* Card Styles */
+.card {
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.card-header {
+    border-radius: 0 !important;
+}
+
+/* Badge Styles */
+.badge {
+    padding: 0.4em 0.8em;
+    border-radius: 0.25rem;
+}
+
+.badge-remote {
+    background-color: #6610f2;
+    color: white;
+}
+
+.badge-office {
+    background-color: #fd7e14;
+    color: white;
+}
+
+.badge-hybrid {
+    background-color: #20c997;
+    color: white;
+}
+
+/* Job Description */
+.job-description {
+    white-space: pre-line;
+    line-height: 1.6;
+}
+
+/* Modal Styles */
+.modal-lg {
+    max-width: 800px;
+}
+
+/* Form Styles */
+.form-control:focus {
+    border-color: #4C6EF5;
+    box-shadow: 0 0 0 0.25rem rgba(76, 110, 245, 0.25);
+}
+
+/* Loading Spinner */
+.spinner-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Navbar */
+.navbar-dark .navbar-brand {
+    font-weight: 600;
+}
+
+/* Footer */
+footer {
+    margin-top: auto;
+}

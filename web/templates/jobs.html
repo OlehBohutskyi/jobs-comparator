@@ -1,0 +1,228 @@
+{% extends 'base.html' %}
+
+{% block title %}Djinni Jobs {% if query %}- {{ query }}{% endif %}{% endblock %}
+
+{% block extra_css %}
+<style>
+    .job-card {
+        transition: transform 0.3s ease;
+    }
+    .job-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .salary {
+        font-weight: bold;
+        color: #28a745;
+    }
+    .badge-remote {
+        background-color: #6610f2;
+        color: white;
+    }
+    .badge-office {
+        background-color: #fd7e14;
+        color: white;
+    }
+    .badge-hybrid {
+        background-color: #20c997;
+        color: white;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>{% if query %}Search Results for "{{ query }}"{% else %}All Jobs{% endif %}</h1>
+    
+    <form method="GET" action="{{ url_for('web.jobs') }}" class="d-flex">
+        <input type="text" name="query" class="form-control me-2" placeholder="Search jobs..." value="{{ query }}">
+        <button type="submit" class="btn btn-primary">Search</button>
+    </form>
+</div>
+
+{% if jobs %}
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Title</th>
+                    <th>Company</th>
+                    <th>Salary</th>
+                    <th>Location</th>
+                    <th>Experience</th>
+                    <th>English</th>
+                    <th>Type</th>
+                    <th>Domain</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for job in jobs %}
+                <tr class="job-row" data-job-id="{{ job.job_id }}">
+                    <td>
+                        <a href="{{ job.url }}" target="_blank" class="fw-bold text-decoration-none">
+                            {{ job.title }}
+                        </a>
+                    </td>
+                    <td>{{ job.company_name }}</td>
+                    <td class="salary">
+                        {% if job.salary_min or job.salary_max %}
+                            {% if job.salary_min and job.salary_max %}
+                                {{ job.salary_min|int }}-{{ job.salary_max|int }} {{ job.currency }}
+                            {% elif job.salary_min %}
+                                from {{ job.salary_min|int }} {{ job.currency }}
+                            {% elif job.salary_max %}
+                                up to {{ job.salary_max|int }} {{ job.currency }}
+                            {% endif %}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td>{{ job.location }}</td>
+                    <td>
+                        {% if job.experience_years %}
+                            {{ job.experience_years }} year{% if job.experience_years != 1 %}s{% endif %}
+                        {% else %}
+                            -
+                        {% endif %}
+                    </td>
+                    <td>{{ job.english_level or '-' }}</td>
+                    <td>
+                        {% if job.job_type == 'Remote' %}
+                            <span class="badge badge-remote">Remote</span>
+                        {% elif job.job_type == 'Office' %}
+                            <span class="badge badge-office">Office</span>
+                        {% else %}
+                            <span class="badge badge-hybrid">Hybrid</span>
+                        {% endif %}
+                    </td>
+                    <td>{{ job.domain }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="alert alert-info">
+        <p class="mb-0">Found {{ jobs|length }} job{% if jobs|length != 1 %}s{% endif %}.</p>
+    </div>
+{% else %}
+    <div class="alert alert-warning">
+        <h4 class="alert-heading">No jobs found!</h4>
+        <p>
+            {% if query %}
+                No jobs matching "{{ query }}" were found in the database.
+            {% else %}
+                The database is empty. Try scraping some jobs first.
+            {% endif %}
+        </p>
+        <hr>
+        <p class="mb-0">
+            <a href="{{ url_for('web.index') }}" class="alert-link">Go to the scraper page</a> to search and scrape Djinni jobs.
+        </p>
+    </div>
+{% endif %}
+
+<!-- Job Detail Modal -->
+<div class="modal fade" id="jobDetailModal" tabindex="-1">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="jobDetailTitle">Job Details</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="jobDetailBody">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" class="btn btn-primary" id="viewOriginalBtn" target="_blank">View Original</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+    $(document).ready(function() {
+        // Job row click handler
+        $('.job-row').click(function() {
+            const jobId = $(this).data('job-id');
+            const url = $(this).find('a').attr('href');
+            
+            // Update modal
+            $('#jobDetailTitle').text('Loading...');
+            $('#jobDetailBody').html('<div class="d-flex justify-content-center"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>');
+            $('#viewOriginalBtn').attr('href', url);
+            
+            // Show modal
+            $('#jobDetailModal').modal('show');
+            
+            // Fetch job details
+            $.get('/api/jobs/' + jobId, function(data) {
+                const job = data.job;
+                
+                // Update modal title
+                $('#jobDetailTitle').text(job.title);
+                
+                // Build modal content
+                let content = `
+                    <div class="job-detail">
+                        <div class="card mb-3">
+                            <div class="card-body">
+                                <h6 class="card-subtitle mb-2 text-muted">${job.company_name}</h6>
+                                
+                                <div class="d-flex flex-wrap gap-2 mb-3">
+                                    ${job.job_type ? `<span class="badge ${job.job_type === 'Remote' ? 'badge-remote' : job.job_type === 'Office' ? 'badge-office' : 'badge-hybrid'}">${job.job_type}</span>` : ''}
+                                    ${job.employment_type ? `<span class="badge bg-secondary">${job.employment_type}</span>` : ''}
+                                    ${job.category ? `<span class="badge bg-info">${job.category}</span>` : ''}
+                                    ${job.domain ? `<span class="badge bg-dark">${job.domain}</span>` : ''}
+                                </div>
+                                
+                                <div class="row mb-3">
+                                    <div class="col-md-4">
+                                        <small class="text-muted">Location:</small>
+                                        <div>${job.location || '-'}</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-muted">Experience:</small>
+                                        <div>${job.experience_years ? `${job.experience_years} year(s)` : '-'}</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <small class="text-muted">English Level:</small>
+                                        <div>${job.english_level || '-'}</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="mb-3">
+                                    <small class="text-muted">Salary:</small>
+                                    <div class="salary">
+                                        ${job.salary_min || job.salary_max ? 
+                                            `${job.salary_min && job.salary_max ? 
+                                                `${job.salary_min}-${job.salary_max} ${job.currency}` : 
+                                                job.salary_min ? 
+                                                    `from ${job.salary_min} ${job.currency}` : 
+                                                    `up to ${job.salary_max} ${job.currency}`
+                                            }` : 
+                                            'Not specified'
+                                        }
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <h5 class="mt-4 mb-3">Job Description</h5>
+                        <div class="job-description">
+                            ${job.description ? job.description.replace(/\n/g, '<br>') : 'No description available'}
+                        </div>
+                    </div>
+                `;
+                
+                $('#jobDetailBody').html(content);
+            });
+        });
+    });
+</script>
+{% endblock %}

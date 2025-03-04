@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ job.title }} - Djinni Job Detail{% endblock %}
+
+{% block content %}
+<div class="mb-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="{{ url_for('web.index') }}">Home</a></li>
+            <li class="breadcrumb-item"><a href="{{ url_for('web.jobs') }}">Jobs</a></li>
+            <li class="breadcrumb-item active" aria-current="page">{{ job.title }}</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="card shadow mb-4">
+    <div class="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+        <h1 class="h3 mb-0">{{ job.title }}</h1>
+        <a href="{{ job.url }}" target="_blank" class="btn btn-light btn-sm">
+            <i class="bi bi-box-arrow-up-right me-1"></i>View Original
+        </a>
+    </div>
+    <div class="card-body">
+        <div class="mb-4">
+            <h2 class="h5 mb-3">Company Information</h2>
+            <div class="d-flex align-items-center mb-3">
+                <div class="bg-light rounded-circle p-2 me-3">
+                    <i class="bi bi-building fs-4"></i>
+                </div>
+                <div>
+                    <h3 class="h5 mb-0">{{ job.company_name }}</h3>
+                    {% if job.domain %}
+                        <span class="badge bg-secondary">{{ job.domain }}</span>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-4">
+            <h2 class="h5 mb-3">Job Details</h2>
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Location</h5>
+                            <p class="card-text">
+                                <i class="bi bi-geo-alt me-1"></i>
+                                {{ job.location or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Experience</h5>
+                            <p class="card-text">
+                                <i class="bi bi-briefcase me-1"></i>
+                                {% if job.experience_years %}
+                                    {{ job.experience_years }} year{% if job.experience_years != 1 %}s{% endif %}
+                                {% else %}
+                                    Not specified
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Work Type</h5>
+                            <p class="card-text">
+                                <i class="bi bi-laptop me-1"></i>
+                                {{ job.job_type or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Employment</h5>
+                            <p class="card-text">
+                                <i class="bi bi-clock me-1"></i>
+                                {{ job.employment_type or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Category</h5>
+                            <p class="card-text">
+                                <i class="bi bi-folder me-1"></i>
+                                {{ job.category or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">English Level</h5>
+                            <p class="card-text">
+                                <i class="bi bi-translate me-1"></i>
+                                {{ job.english_level or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Posted Date</h5>
+                            <p class="card-text">
+                                <i class="bi bi-calendar-event me-1"></i>
+                                {{ job.posted_date or 'Not specified' }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="card h-100 border-success">
+                        <div class="card-body">
+                            <h5 class="card-title h6 text-muted">Salary</h5>
+                            <p class="card-text text-success fw-bold">
+                                <i class="bi bi-currency-dollar me-1"></i>
+                                {% if job.salary_min or job.salary_max %}
+                                    {% if job.salary_min and job.salary_max %}
+                                        {{ job.salary_min|int }}-{{ job.salary_max|int }} {{ job.currency }}
+                                    {% elif job.salary_min %}
+                                        from {{ job.salary_min|int }} {{ job.currency }}
+                                    {% elif job.salary_max %}
+                                        up to {{ job.salary_max|int }} {{ job.currency }}
+                                    {% endif %}
+                                {% else %}
+                                    Not specified
+                                {% endif %}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <h2 class="h5 mb-3">Job Description</h2>
+            <div class="job-description p-3 bg-light rounded">
+                {{ job.description|replace('\n', '<br>')|safe }}
+            </div>
+        </div>
+    </div>
+    
+    <div class="card-footer text-muted">
+        <div class="row">
+            <div class="col-md-6">
+                Job ID: {{ job.job_id }}
+            </div>
+            <div class="col-md-6 text-end">
+                Last updated: {{ job.updated_at }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
