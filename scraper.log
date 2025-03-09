@@ -532,3 +532,1363 @@
 2025-03-09 14:21:02,858 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:21:02] "GET /jobs HTTP/1.1" 200 -
 2025-03-09 14:21:02,882 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:21:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 2025-03-09 14:21:03,122 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:21:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:39,640 - __main__ - INFO - Application initialized
+2025-03-09 14:29:39,640 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:29:39,660 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 14:29:39,661 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 14:29:39,662 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:29:40,461 - __main__ - INFO - Application initialized
+2025-03-09 14:29:40,462 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:29:40,474 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:29:40,476 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:29:43,373 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:43] "GET / HTTP/1.1" 200 -
+2025-03-09 14:29:43,452 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:43,617 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:44,637 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:44] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:29:44,638 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:29:44,672 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:44] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:29:44,814 - scraper.scraper - ERROR - Failed to get job at ID 1: 404
+2025-03-09 14:29:44,864 - scraper.scraper - ERROR - Failed to get job at ID 2: 404
+2025-03-09 14:29:44,899 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:44,914 - scraper.scraper - ERROR - Failed to get job at ID 3: 404
+2025-03-09 14:29:44,963 - scraper.scraper - ERROR - Failed to get job at ID 4: 404
+2025-03-09 14:29:45,014 - scraper.scraper - ERROR - Failed to get job at ID 5: 404
+2025-03-09 14:29:45,019 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:45,064 - scraper.scraper - ERROR - Failed to get job at ID 6: 404
+2025-03-09 14:29:45,114 - scraper.scraper - ERROR - Failed to get job at ID 7: 404
+2025-03-09 14:29:45,170 - scraper.scraper - ERROR - Failed to get job at ID 8: 404
+2025-03-09 14:29:45,224 - scraper.scraper - ERROR - Failed to get job at ID 9: 404
+2025-03-09 14:29:45,274 - scraper.scraper - ERROR - Failed to get job at ID 10: 404
+2025-03-09 14:29:45,335 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:45] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:29:48,514 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:48] "GET / HTTP/1.1" 200 -
+2025-03-09 14:29:48,818 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:48,851 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:50,735 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:50] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:29:50,765 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:50,985 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:51,300 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:51] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:29:56,528 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:56] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:29:56,834 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:56,859 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:57,167 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:29:58,906 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:58] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:29:59,216 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:29:59,235 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:29:59,546 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:29:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:01,871 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:01] "GET / HTTP/1.1" 200 -
+2025-03-09 14:30:02,184 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:02,216 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:03,052 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:03] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:30:03,052 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:30:03,064 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:03] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:30:03,194 - scraper.scraper - ERROR - Failed to get job at ID 1: 404
+2025-03-09 14:30:03,244 - scraper.scraper - ERROR - Failed to get job at ID 2: 404
+2025-03-09 14:30:03,294 - scraper.scraper - ERROR - Failed to get job at ID 3: 404
+2025-03-09 14:30:03,315 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:03,344 - scraper.scraper - ERROR - Failed to get job at ID 4: 404
+2025-03-09 14:30:03,394 - scraper.scraper - ERROR - Failed to get job at ID 5: 404
+2025-03-09 14:30:03,417 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:03,444 - scraper.scraper - ERROR - Failed to get job at ID 6: 404
+2025-03-09 14:30:03,494 - scraper.scraper - ERROR - Failed to get job at ID 7: 404
+2025-03-09 14:30:03,544 - scraper.scraper - ERROR - Failed to get job at ID 8: 404
+2025-03-09 14:30:03,594 - scraper.scraper - ERROR - Failed to get job at ID 9: 404
+2025-03-09 14:30:03,654 - scraper.scraper - ERROR - Failed to get job at ID 10: 404
+2025-03-09 14:30:03,732 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:32,259 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\scraper\\scraper.py', reloading
+2025-03-09 14:30:32,315 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:30:33,147 - __main__ - INFO - Application initialized
+2025-03-09 14:30:33,147 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:30:33,159 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:30:33,162 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:30:35,013 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:35] "GET / HTTP/1.1" 200 -
+2025-03-09 14:30:35,093 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:35,267 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:36,354 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:36] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:30:36,354 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:30:36,367 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:36] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:30:36,601 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:36,712 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:36,937 - scraper.scraper - ERROR - Error processing job at ID 1: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:37,018 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:37] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:37,452 - scraper.scraper - ERROR - Error processing job at ID 2: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:37,921 - scraper.scraper - ERROR - Error processing job at ID 3: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:38,431 - scraper.scraper - ERROR - Error processing job at ID 4: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:38,902 - scraper.scraper - ERROR - Error processing job at ID 5: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:39,035 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:39] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:39,253 - scraper.scraper - ERROR - Error processing job at ID 6: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:39,581 - scraper.scraper - ERROR - Error processing job at ID 7: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:40,073 - scraper.scraper - ERROR - Error processing job at ID 8: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:40,413 - scraper.scraper - ERROR - Error processing job at ID 9: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:40,742 - scraper.scraper - ERROR - Error processing job at ID 10: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:41,368 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:41] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:44,476 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:44] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:30:44,783 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:44,818 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:45,123 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:45] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:47,585 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:47] "GET / HTTP/1.1" 200 -
+2025-03-09 14:30:47,899 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:47,918 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:58,451 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:58] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:30:58,451 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:30:58,467 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:58] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:30:58,700 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:30:58,815 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:30:58,975 - scraper.scraper - ERROR - Error processing job at ID 1: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:59,133 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:30:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:30:59,436 - scraper.scraper - ERROR - Error processing job at ID 2: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:30:59,936 - scraper.scraper - ERROR - Error processing job at ID 3: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:00,406 - scraper.scraper - ERROR - Error processing job at ID 4: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:00,915 - scraper.scraper - ERROR - Error processing job at ID 5: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:01,152 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:01] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:01,265 - scraper.scraper - ERROR - Error processing job at ID 6: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:01,596 - scraper.scraper - ERROR - Error processing job at ID 7: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:02,066 - scraper.scraper - ERROR - Error processing job at ID 8: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:02,376 - scraper.scraper - ERROR - Error processing job at ID 9: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:02,705 - scraper.scraper - ERROR - Error processing job at ID 10: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:03,484 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:05,939 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:05] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:31:06,250 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:31:06,271 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:31:06,584 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:08,793 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:08] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:31:09,100 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:31:09,133 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:31:09,450 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:17,495 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:17] "GET / HTTP/1.1" 200 -
+2025-03-09 14:31:17,799 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:31:17,831 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:31:18,801 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:18] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:31:18,802 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:31:18,812 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:18] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:31:19,051 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:31:19,167 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:31:19,328 - scraper.scraper - ERROR - Error processing job at ID 1: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:19,483 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:19] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:19,786 - scraper.scraper - ERROR - Error processing job at ID 2: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:20,245 - scraper.scraper - ERROR - Error processing job at ID 3: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:20,715 - scraper.scraper - ERROR - Error processing job at ID 4: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:21,491 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:21] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:23,015 - scraper.scraper - ERROR - Error processing job at ID 5: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:23,346 - scraper.scraper - ERROR - Error processing job at ID 6: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:23,706 - scraper.scraper - ERROR - Error processing job at ID 7: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:23,815 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:23] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:31:24,177 - scraper.scraper - ERROR - Error processing job at ID 8: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:24,506 - scraper.scraper - ERROR - Error processing job at ID 9: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:24,845 - scraper.scraper - ERROR - Error processing job at ID 10: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:31:25,884 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:31:25] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:34:05,015 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:05] "GET /api/jobs/2 HTTP/1.1" 200 -
+2025-03-09 14:34:16,303 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:16] "GET /api/jobs/1 HTTP/1.1" 200 -
+2025-03-09 14:34:21,733 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:21] "GET /api/jobs/3 HTTP/1.1" 200 -
+2025-03-09 14:34:22,976 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:22] "GET /api/jobs/2 HTTP/1.1" 200 -
+2025-03-09 14:34:25,365 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:25] "GET /api/jobs/7 HTTP/1.1" 200 -
+2025-03-09 14:34:33,246 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:33] "GET /api/jobs/1 HTTP/1.1" 200 -
+2025-03-09 14:34:42,249 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:42] "GET /api/jobs/7 HTTP/1.1" 200 -
+2025-03-09 14:34:45,799 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:34:45] "GET /api/jobs/10 HTTP/1.1" 200 -
+2025-03-09 14:35:02,721 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\database\\db.py', reloading
+2025-03-09 14:35:02,786 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:35:03,658 - __main__ - INFO - Application initialized
+2025-03-09 14:35:03,658 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:35:03,678 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:35:03,682 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:35:05,180 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:05] "GET / HTTP/1.1" 200 -
+2025-03-09 14:35:05,264 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:35:05,447 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:35:06,121 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:06] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:35:06,122 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:35:06,153 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:06] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:35:06,350 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:35:06,516 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:35:06,830 - scraper.scraper - ERROR - Error processing job at ID 1: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:06,841 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:35:07,437 - scraper.scraper - ERROR - Error processing job at ID 2: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:07,896 - scraper.scraper - ERROR - Error processing job at ID 3: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:08,436 - scraper.scraper - ERROR - Error processing job at ID 4: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:08,887 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:08] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:35:10,646 - scraper.scraper - ERROR - Error processing job at ID 5: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:10,976 - scraper.scraper - ERROR - Error processing job at ID 6: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:11,317 - scraper.scraper - ERROR - Error processing job at ID 7: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:11,533 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:11] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:35:11,827 - scraper.scraper - ERROR - Error processing job at ID 8: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:12,169 - scraper.scraper - ERROR - Error processing job at ID 9: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:12,507 - scraper.scraper - ERROR - Error processing job at ID 10: Database.update_scraping_progress() takes from 1 to 2 positional arguments but 3 were given
+2025-03-09 14:35:13,549 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:35:13] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:38:09,422 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\database\\db.py', reloading
+2025-03-09 14:38:09,480 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:38:10,357 - __main__ - INFO - Application initialized
+2025-03-09 14:38:10,357 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:38:10,369 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:38:10,371 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:40:44,492 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\database\\db.py', reloading
+2025-03-09 14:40:44,541 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:40:45,399 - __main__ - INFO - Application initialized
+2025-03-09 14:40:45,400 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:40:45,414 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:40:45,416 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:41:05,001 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\scraper\\scraper.py', reloading
+2025-03-09 14:41:05,051 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:41:05,921 - __main__ - INFO - Application initialized
+2025-03-09 14:41:05,922 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:41:05,935 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:41:05,937 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:41:25,478 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-03-09 14:41:25,531 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:41:26,345 - __main__ - INFO - Application initialized
+2025-03-09 14:41:26,345 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:41:26,358 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:41:26,360 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:42:21,767 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-03-09 14:42:21,820 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:42:22,643 - __main__ - INFO - Application initialized
+2025-03-09 14:42:22,643 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:42:22,655 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:42:22,658 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:42:27,625 - __main__ - INFO - Application initialized
+2025-03-09 14:42:27,626 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:42:27,645 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 14:42:27,646 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 14:42:27,647 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:42:28,440 - __main__ - INFO - Application initialized
+2025-03-09 14:42:28,440 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:42:28,452 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:42:28,454 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:42:30,520 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:30] "GET / HTTP/1.1" 200 -
+2025-03-09 14:42:30,597 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:42:30,759 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:42:33,435 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:33] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:42:33,435 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:42:33,459 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:33] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:42:33,606 - scraper.scraper - ERROR - Failed to get job at ID 1: 404
+2025-03-09 14:42:33,666 - scraper.scraper - ERROR - Failed to get job at ID 2: 404
+2025-03-09 14:42:33,692 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:42:33,716 - scraper.scraper - ERROR - Failed to get job at ID 3: 404
+2025-03-09 14:42:33,766 - scraper.scraper - ERROR - Failed to get job at ID 4: 404
+2025-03-09 14:42:33,810 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:42:33,816 - scraper.scraper - ERROR - Failed to get job at ID 5: 404
+2025-03-09 14:42:33,906 - scraper.scraper - ERROR - Failed to get job at ID 6: 404
+2025-03-09 14:42:33,986 - scraper.scraper - ERROR - Failed to get job at ID 7: 404
+2025-03-09 14:42:34,046 - scraper.scraper - ERROR - Failed to get job at ID 8: 404
+2025-03-09 14:42:34,106 - scraper.scraper - ERROR - Failed to get job at ID 9: 404
+2025-03-09 14:42:34,125 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:34] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:42:34,156 - scraper.scraper - ERROR - Failed to get job at ID 10: 404
+2025-03-09 14:42:36,146 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:36] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:42:38,228 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:38] "GET / HTTP/1.1" 200 -
+2025-03-09 14:42:38,258 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:42:38,477 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:42:39,944 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:39] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:42:39,945 - scraper.scraper - INFO - Starting sequential job scraping from ID 2, count: 10
+2025-03-09 14:42:39,956 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:39] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:42:40,076 - scraper.scraper - ERROR - Failed to get job at ID 2: 404
+2025-03-09 14:42:40,126 - scraper.scraper - ERROR - Failed to get job at ID 3: 404
+2025-03-09 14:42:40,196 - scraper.scraper - ERROR - Failed to get job at ID 4: 404
+2025-03-09 14:42:40,211 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:42:40,256 - scraper.scraper - ERROR - Failed to get job at ID 5: 404
+2025-03-09 14:42:40,293 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:42:40,326 - scraper.scraper - ERROR - Failed to get job at ID 6: 404
+2025-03-09 14:42:40,376 - scraper.scraper - ERROR - Failed to get job at ID 7: 404
+2025-03-09 14:42:40,466 - scraper.scraper - ERROR - Failed to get job at ID 8: 404
+2025-03-09 14:42:40,516 - scraper.scraper - ERROR - Failed to get job at ID 9: 404
+2025-03-09 14:42:40,566 - scraper.scraper - ERROR - Failed to get job at ID 10: 404
+2025-03-09 14:42:40,613 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:40] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:42:40,616 - scraper.scraper - ERROR - Failed to get job at ID 11: 404
+2025-03-09 14:42:42,629 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:42] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:42:43,412 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:43] "GET / HTTP/1.1" 200 -
+2025-03-09 14:42:43,442 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:42:43,661 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:42:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:16,924 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\scraper\\scraper.py', reloading
+2025-03-09 14:45:17,019 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:45:17,881 - __main__ - INFO - Application initialized
+2025-03-09 14:45:17,881 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:45:17,894 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:45:17,896 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:45:31,851 - __main__ - INFO - Application initialized
+2025-03-09 14:45:31,851 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:45:31,871 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 14:45:31,872 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 14:45:31,873 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:45:32,690 - __main__ - INFO - Application initialized
+2025-03-09 14:45:32,690 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:45:32,703 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:45:32,705 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:45:34,955 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:34] "GET / HTTP/1.1" 200 -
+2025-03-09 14:45:35,019 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:35,210 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:36,862 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:36] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:45:36,862 - scraper.scraper - INFO - Starting sequential job scraping from ID 1, count: 10
+2025-03-09 14:45:36,900 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:36] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:45:37,110 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:37,242 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:37,560 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:37] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:39,577 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:39] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:41,910 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:41] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:43,203 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:43] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:45:43,509 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:43,543 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:43,859 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:43] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:44,701 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:44] "GET / HTTP/1.1" 200 -
+2025-03-09 14:45:45,008 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:45,040 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:46,541 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:46] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:45:46,542 - scraper.scraper - INFO - Starting sequential job scraping from ID 11, count: 10
+2025-03-09 14:45:46,554 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:46] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:45:46,793 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:46,893 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:47,210 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:47] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:48,367 - scraper.scraper - ERROR - Failed to get job at ID 16: 404
+2025-03-09 14:45:48,432 - scraper.scraper - ERROR - Failed to get job at ID 17: 404
+2025-03-09 14:45:49,229 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:51,560 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:51] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:45:53,299 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:53] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:45:53,609 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:45:53,632 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:45:53,943 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:45:53] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:46:23,795 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:23] "GET / HTTP/1.1" 200 -
+2025-03-09 14:46:24,108 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:46:24,142 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:46:54,468 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:54] "GET / HTTP/1.1" 200 -
+2025-03-09 14:46:54,496 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:46:54,709 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:46:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:47:00,325 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:00] "[32mPOST / HTTP/1.1[0m" 302 -
+2025-03-09 14:47:00,325 - scraper.scraper - INFO - Starting sequential job scraping from ID 21, count: 700000
+2025-03-09 14:47:00,338 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:00] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:47:00,575 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:47:00,689 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:47:00,996 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:00] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:03,010 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:05,342 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:05] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:07,360 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:07] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:08,537 - scraper.scraper - ERROR - Failed to get job at ID 38: 404
+2025-03-09 14:47:08,597 - scraper.scraper - ERROR - Failed to get job at ID 39: 404
+2025-03-09 14:47:09,692 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:10,977 - scraper.scraper - ERROR - Failed to get job at ID 45: 404
+2025-03-09 14:47:11,037 - scraper.scraper - ERROR - Failed to get job at ID 46: 404
+2025-03-09 14:47:11,097 - scraper.scraper - ERROR - Failed to get job at ID 47: 404
+2025-03-09 14:47:11,710 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:11] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:14,042 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:14] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:16,060 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:16] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:18,392 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:18] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:20,387 - scraper.scraper - ERROR - Failed to get job at ID 67: 404
+2025-03-09 14:47:20,886 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:20] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:24,209 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:24] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:26,885 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:26] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:30,210 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:30] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:31,457 - scraper.scraper - ERROR - Failed to get job at ID 97: 404
+2025-03-09 14:47:32,875 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:35,917 - scraper.scraper - ERROR - Failed to get job at ID 103: 403
+2025-03-09 14:47:35,977 - scraper.scraper - ERROR - Error processing job at ID 104: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,027 - scraper.scraper - ERROR - Error processing job at ID 105: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,077 - scraper.scraper - ERROR - Error processing job at ID 106: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,127 - scraper.scraper - ERROR - Error processing job at ID 107: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,177 - scraper.scraper - ERROR - Error processing job at ID 108: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,190 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:36] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:36,227 - scraper.scraper - ERROR - Error processing job at ID 109: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,277 - scraper.scraper - ERROR - Error processing job at ID 110: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,327 - scraper.scraper - ERROR - Error processing job at ID 111: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,387 - scraper.scraper - ERROR - Error processing job at ID 112: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,437 - scraper.scraper - ERROR - Error processing job at ID 113: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,487 - scraper.scraper - ERROR - Error processing job at ID 114: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,537 - scraper.scraper - ERROR - Error processing job at ID 115: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,589 - scraper.scraper - ERROR - Error processing job at ID 116: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,647 - scraper.scraper - ERROR - Error processing job at ID 117: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,697 - scraper.scraper - ERROR - Error processing job at ID 118: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,747 - scraper.scraper - ERROR - Error processing job at ID 119: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,797 - scraper.scraper - ERROR - Error processing job at ID 120: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,848 - scraper.scraper - ERROR - Error processing job at ID 121: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,897 - scraper.scraper - ERROR - Error processing job at ID 122: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,947 - scraper.scraper - ERROR - Error processing job at ID 123: 'NoneType' object is not subscriptable
+2025-03-09 14:47:36,997 - scraper.scraper - ERROR - Error processing job at ID 124: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,047 - scraper.scraper - ERROR - Error processing job at ID 125: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,097 - scraper.scraper - ERROR - Error processing job at ID 126: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,147 - scraper.scraper - ERROR - Error processing job at ID 127: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,197 - scraper.scraper - ERROR - Error processing job at ID 128: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,247 - scraper.scraper - ERROR - Error processing job at ID 129: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,297 - scraper.scraper - ERROR - Error processing job at ID 130: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,347 - scraper.scraper - ERROR - Error processing job at ID 131: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,397 - scraper.scraper - ERROR - Error processing job at ID 132: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,447 - scraper.scraper - ERROR - Error processing job at ID 133: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,497 - scraper.scraper - ERROR - Error processing job at ID 134: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,547 - scraper.scraper - ERROR - Error processing job at ID 135: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,597 - scraper.scraper - ERROR - Error processing job at ID 136: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,647 - scraper.scraper - ERROR - Error processing job at ID 137: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,697 - scraper.scraper - ERROR - Error processing job at ID 138: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,747 - scraper.scraper - ERROR - Error processing job at ID 139: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,797 - scraper.scraper - ERROR - Error processing job at ID 140: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,847 - scraper.scraper - ERROR - Error processing job at ID 141: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,897 - scraper.scraper - ERROR - Error processing job at ID 142: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,947 - scraper.scraper - ERROR - Error processing job at ID 143: 'NoneType' object is not subscriptable
+2025-03-09 14:47:37,997 - scraper.scraper - ERROR - Error processing job at ID 144: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,047 - scraper.scraper - ERROR - Error processing job at ID 145: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,097 - scraper.scraper - ERROR - Error processing job at ID 146: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,147 - scraper.scraper - ERROR - Error processing job at ID 147: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,197 - scraper.scraper - ERROR - Error processing job at ID 148: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,247 - scraper.scraper - ERROR - Error processing job at ID 149: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,297 - scraper.scraper - ERROR - Error processing job at ID 150: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,347 - scraper.scraper - ERROR - Error processing job at ID 151: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,397 - scraper.scraper - ERROR - Error processing job at ID 152: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,447 - scraper.scraper - ERROR - Error processing job at ID 153: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,497 - scraper.scraper - ERROR - Error processing job at ID 154: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,547 - scraper.scraper - ERROR - Error processing job at ID 155: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,597 - scraper.scraper - ERROR - Error processing job at ID 156: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,647 - scraper.scraper - ERROR - Error processing job at ID 157: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,707 - scraper.scraper - ERROR - Error processing job at ID 158: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,760 - scraper.scraper - ERROR - Error processing job at ID 159: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,827 - scraper.scraper - ERROR - Error processing job at ID 160: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,877 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:38] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:38,877 - scraper.scraper - ERROR - Error processing job at ID 161: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,927 - scraper.scraper - ERROR - Error processing job at ID 162: 'NoneType' object is not subscriptable
+2025-03-09 14:47:38,977 - scraper.scraper - ERROR - Error processing job at ID 163: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,027 - scraper.scraper - ERROR - Error processing job at ID 164: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,077 - scraper.scraper - ERROR - Error processing job at ID 165: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,127 - scraper.scraper - ERROR - Error processing job at ID 166: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,177 - scraper.scraper - ERROR - Error processing job at ID 167: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,227 - scraper.scraper - ERROR - Error processing job at ID 168: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,277 - scraper.scraper - ERROR - Error processing job at ID 169: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,327 - scraper.scraper - ERROR - Error processing job at ID 170: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,377 - scraper.scraper - ERROR - Error processing job at ID 171: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,427 - scraper.scraper - ERROR - Error processing job at ID 172: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,477 - scraper.scraper - ERROR - Error processing job at ID 173: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,527 - scraper.scraper - ERROR - Error processing job at ID 174: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,577 - scraper.scraper - ERROR - Error processing job at ID 175: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,627 - scraper.scraper - ERROR - Error processing job at ID 176: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,677 - scraper.scraper - ERROR - Error processing job at ID 177: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,737 - scraper.scraper - ERROR - Error processing job at ID 178: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,797 - scraper.scraper - ERROR - Error processing job at ID 179: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,857 - scraper.scraper - ERROR - Error processing job at ID 180: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,937 - scraper.scraper - ERROR - Error processing job at ID 181: 'NoneType' object is not subscriptable
+2025-03-09 14:47:39,987 - scraper.scraper - ERROR - Error processing job at ID 182: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,037 - scraper.scraper - ERROR - Error processing job at ID 183: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,087 - scraper.scraper - ERROR - Error processing job at ID 184: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,137 - scraper.scraper - ERROR - Error processing job at ID 185: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,187 - scraper.scraper - ERROR - Error processing job at ID 186: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,237 - scraper.scraper - ERROR - Error processing job at ID 187: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,287 - scraper.scraper - ERROR - Error processing job at ID 188: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,417 - scraper.scraper - ERROR - Error processing job at ID 189: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,467 - scraper.scraper - ERROR - Error processing job at ID 190: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,517 - scraper.scraper - ERROR - Error processing job at ID 191: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,567 - scraper.scraper - ERROR - Error processing job at ID 192: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,617 - scraper.scraper - ERROR - Error processing job at ID 193: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,667 - scraper.scraper - ERROR - Error processing job at ID 194: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,717 - scraper.scraper - ERROR - Error processing job at ID 195: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,767 - scraper.scraper - ERROR - Error processing job at ID 196: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,817 - scraper.scraper - ERROR - Error processing job at ID 197: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,867 - scraper.scraper - ERROR - Error processing job at ID 198: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,917 - scraper.scraper - ERROR - Error processing job at ID 199: 'NoneType' object is not subscriptable
+2025-03-09 14:47:40,967 - scraper.scraper - ERROR - Error processing job at ID 200: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,017 - scraper.scraper - ERROR - Error processing job at ID 201: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,067 - scraper.scraper - ERROR - Error processing job at ID 202: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,117 - scraper.scraper - ERROR - Error processing job at ID 203: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,167 - scraper.scraper - ERROR - Error processing job at ID 204: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,217 - scraper.scraper - ERROR - Error processing job at ID 205: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,267 - scraper.scraper - ERROR - Error processing job at ID 206: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,317 - scraper.scraper - ERROR - Error processing job at ID 207: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,367 - scraper.scraper - ERROR - Error processing job at ID 208: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,427 - scraper.scraper - ERROR - Error processing job at ID 209: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,480 - scraper.scraper - ERROR - Error processing job at ID 210: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,527 - scraper.scraper - ERROR - Error processing job at ID 211: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,577 - scraper.scraper - ERROR - Error processing job at ID 212: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,637 - scraper.scraper - ERROR - Error processing job at ID 213: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,687 - scraper.scraper - ERROR - Error processing job at ID 214: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,737 - scraper.scraper - ERROR - Error processing job at ID 215: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,787 - scraper.scraper - ERROR - Error processing job at ID 216: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,837 - scraper.scraper - ERROR - Error processing job at ID 217: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,887 - scraper.scraper - ERROR - Error processing job at ID 218: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,937 - scraper.scraper - ERROR - Error processing job at ID 219: 'NoneType' object is not subscriptable
+2025-03-09 14:47:41,987 - scraper.scraper - ERROR - Error processing job at ID 220: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,037 - scraper.scraper - ERROR - Error processing job at ID 221: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,087 - scraper.scraper - ERROR - Error processing job at ID 222: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,137 - scraper.scraper - ERROR - Error processing job at ID 223: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,187 - scraper.scraper - ERROR - Error processing job at ID 224: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,207 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:42] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:42,237 - scraper.scraper - ERROR - Error processing job at ID 225: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,287 - scraper.scraper - ERROR - Error processing job at ID 226: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,337 - scraper.scraper - ERROR - Error processing job at ID 227: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,387 - scraper.scraper - ERROR - Error processing job at ID 228: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,437 - scraper.scraper - ERROR - Error processing job at ID 229: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,487 - scraper.scraper - ERROR - Error processing job at ID 230: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,537 - scraper.scraper - ERROR - Error processing job at ID 231: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,587 - scraper.scraper - ERROR - Error processing job at ID 232: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,637 - scraper.scraper - ERROR - Error processing job at ID 233: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,687 - scraper.scraper - ERROR - Error processing job at ID 234: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,737 - scraper.scraper - ERROR - Error processing job at ID 235: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,787 - scraper.scraper - ERROR - Error processing job at ID 236: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,837 - scraper.scraper - ERROR - Error processing job at ID 237: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,887 - scraper.scraper - ERROR - Error processing job at ID 238: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,937 - scraper.scraper - ERROR - Error processing job at ID 239: 'NoneType' object is not subscriptable
+2025-03-09 14:47:42,987 - scraper.scraper - ERROR - Error processing job at ID 240: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,037 - scraper.scraper - ERROR - Error processing job at ID 241: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,087 - scraper.scraper - ERROR - Error processing job at ID 242: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,137 - scraper.scraper - ERROR - Error processing job at ID 243: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,187 - scraper.scraper - ERROR - Error processing job at ID 244: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,238 - scraper.scraper - ERROR - Error processing job at ID 245: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,287 - scraper.scraper - ERROR - Error processing job at ID 246: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,337 - scraper.scraper - ERROR - Error processing job at ID 247: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,397 - scraper.scraper - ERROR - Error processing job at ID 248: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,447 - scraper.scraper - ERROR - Error processing job at ID 249: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,507 - scraper.scraper - ERROR - Error processing job at ID 250: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,557 - scraper.scraper - ERROR - Error processing job at ID 251: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,607 - scraper.scraper - ERROR - Error processing job at ID 252: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,657 - scraper.scraper - ERROR - Error processing job at ID 253: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,707 - scraper.scraper - ERROR - Error processing job at ID 254: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,757 - scraper.scraper - ERROR - Error processing job at ID 255: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,807 - scraper.scraper - ERROR - Error processing job at ID 256: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,857 - scraper.scraper - ERROR - Error processing job at ID 257: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,907 - scraper.scraper - ERROR - Error processing job at ID 258: 'NoneType' object is not subscriptable
+2025-03-09 14:47:43,957 - scraper.scraper - ERROR - Error processing job at ID 259: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,007 - scraper.scraper - ERROR - Error processing job at ID 260: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,057 - scraper.scraper - ERROR - Error processing job at ID 261: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,107 - scraper.scraper - ERROR - Error processing job at ID 262: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,157 - scraper.scraper - ERROR - Error processing job at ID 263: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,207 - scraper.scraper - ERROR - Error processing job at ID 264: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,257 - scraper.scraper - ERROR - Error processing job at ID 265: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,307 - scraper.scraper - ERROR - Error processing job at ID 266: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,357 - scraper.scraper - ERROR - Error processing job at ID 267: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,407 - scraper.scraper - ERROR - Error processing job at ID 268: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,457 - scraper.scraper - ERROR - Error processing job at ID 269: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,507 - scraper.scraper - ERROR - Error processing job at ID 270: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,557 - scraper.scraper - ERROR - Error processing job at ID 271: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,607 - scraper.scraper - ERROR - Error processing job at ID 272: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,657 - scraper.scraper - ERROR - Error processing job at ID 273: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,707 - scraper.scraper - ERROR - Error processing job at ID 274: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,757 - scraper.scraper - ERROR - Error processing job at ID 275: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,807 - scraper.scraper - ERROR - Error processing job at ID 276: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,857 - scraper.scraper - ERROR - Error processing job at ID 277: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,875 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:44] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:44,917 - scraper.scraper - ERROR - Error processing job at ID 278: 'NoneType' object is not subscriptable
+2025-03-09 14:47:44,967 - scraper.scraper - ERROR - Error processing job at ID 279: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,017 - scraper.scraper - ERROR - Error processing job at ID 280: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,067 - scraper.scraper - ERROR - Error processing job at ID 281: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,117 - scraper.scraper - ERROR - Error processing job at ID 282: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,168 - scraper.scraper - ERROR - Error processing job at ID 283: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,217 - scraper.scraper - ERROR - Error processing job at ID 284: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,267 - scraper.scraper - ERROR - Error processing job at ID 285: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,317 - scraper.scraper - ERROR - Error processing job at ID 286: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,637 - scraper.scraper - ERROR - Error processing job at ID 287: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,687 - scraper.scraper - ERROR - Error processing job at ID 288: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,737 - scraper.scraper - ERROR - Error processing job at ID 289: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,787 - scraper.scraper - ERROR - Error processing job at ID 290: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,837 - scraper.scraper - ERROR - Error processing job at ID 291: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,887 - scraper.scraper - ERROR - Error processing job at ID 292: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,937 - scraper.scraper - ERROR - Error processing job at ID 293: 'NoneType' object is not subscriptable
+2025-03-09 14:47:45,987 - scraper.scraper - ERROR - Error processing job at ID 294: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,037 - scraper.scraper - ERROR - Error processing job at ID 295: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,087 - scraper.scraper - ERROR - Error processing job at ID 296: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,137 - scraper.scraper - ERROR - Error processing job at ID 297: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,187 - scraper.scraper - ERROR - Error processing job at ID 298: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,237 - scraper.scraper - ERROR - Error processing job at ID 299: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,287 - scraper.scraper - ERROR - Error processing job at ID 300: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,337 - scraper.scraper - ERROR - Error processing job at ID 301: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,387 - scraper.scraper - ERROR - Error processing job at ID 302: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,437 - scraper.scraper - ERROR - Error processing job at ID 303: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,487 - scraper.scraper - ERROR - Error processing job at ID 304: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,537 - scraper.scraper - ERROR - Error processing job at ID 305: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,587 - scraper.scraper - ERROR - Error processing job at ID 306: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,637 - scraper.scraper - ERROR - Error processing job at ID 307: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,687 - scraper.scraper - ERROR - Error processing job at ID 308: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,737 - scraper.scraper - ERROR - Error processing job at ID 309: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,787 - scraper.scraper - ERROR - Error processing job at ID 310: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,837 - scraper.scraper - ERROR - Error processing job at ID 311: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,887 - scraper.scraper - ERROR - Error processing job at ID 312: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,937 - scraper.scraper - ERROR - Error processing job at ID 313: 'NoneType' object is not subscriptable
+2025-03-09 14:47:46,987 - scraper.scraper - ERROR - Error processing job at ID 314: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,037 - scraper.scraper - ERROR - Error processing job at ID 315: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,088 - scraper.scraper - ERROR - Error processing job at ID 316: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,137 - scraper.scraper - ERROR - Error processing job at ID 317: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,187 - scraper.scraper - ERROR - Error processing job at ID 318: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,237 - scraper.scraper - ERROR - Error processing job at ID 319: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,287 - scraper.scraper - ERROR - Error processing job at ID 320: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,337 - scraper.scraper - ERROR - Error processing job at ID 321: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,387 - scraper.scraper - ERROR - Error processing job at ID 322: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,437 - scraper.scraper - ERROR - Error processing job at ID 323: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,487 - scraper.scraper - ERROR - Error processing job at ID 324: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,537 - scraper.scraper - ERROR - Error processing job at ID 325: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,587 - scraper.scraper - ERROR - Error processing job at ID 326: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,637 - scraper.scraper - ERROR - Error processing job at ID 327: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,687 - scraper.scraper - ERROR - Error processing job at ID 328: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,737 - scraper.scraper - ERROR - Error processing job at ID 329: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,787 - scraper.scraper - ERROR - Error processing job at ID 330: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,837 - scraper.scraper - ERROR - Error processing job at ID 331: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,887 - scraper.scraper - ERROR - Error processing job at ID 332: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,937 - scraper.scraper - ERROR - Error processing job at ID 333: 'NoneType' object is not subscriptable
+2025-03-09 14:47:47,987 - scraper.scraper - ERROR - Error processing job at ID 334: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,037 - scraper.scraper - ERROR - Error processing job at ID 335: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,087 - scraper.scraper - ERROR - Error processing job at ID 336: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,137 - scraper.scraper - ERROR - Error processing job at ID 337: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,187 - scraper.scraper - ERROR - Error processing job at ID 338: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,207 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:48] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:48,237 - scraper.scraper - ERROR - Error processing job at ID 339: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,287 - scraper.scraper - ERROR - Error processing job at ID 340: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,337 - scraper.scraper - ERROR - Error processing job at ID 341: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,387 - scraper.scraper - ERROR - Error processing job at ID 342: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,437 - scraper.scraper - ERROR - Error processing job at ID 343: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,487 - scraper.scraper - ERROR - Error processing job at ID 344: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,537 - scraper.scraper - ERROR - Error processing job at ID 345: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,587 - scraper.scraper - ERROR - Error processing job at ID 346: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,637 - scraper.scraper - ERROR - Error processing job at ID 347: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,697 - scraper.scraper - ERROR - Error processing job at ID 348: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,747 - scraper.scraper - ERROR - Error processing job at ID 349: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,807 - scraper.scraper - ERROR - Error processing job at ID 350: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,867 - scraper.scraper - ERROR - Error processing job at ID 351: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,917 - scraper.scraper - ERROR - Error processing job at ID 352: 'NoneType' object is not subscriptable
+2025-03-09 14:47:48,967 - scraper.scraper - ERROR - Error processing job at ID 353: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,017 - scraper.scraper - ERROR - Error processing job at ID 354: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,067 - scraper.scraper - ERROR - Error processing job at ID 355: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,117 - scraper.scraper - ERROR - Error processing job at ID 356: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,167 - scraper.scraper - ERROR - Error processing job at ID 357: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,217 - scraper.scraper - ERROR - Error processing job at ID 358: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,267 - scraper.scraper - ERROR - Error processing job at ID 359: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,317 - scraper.scraper - ERROR - Error processing job at ID 360: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,367 - scraper.scraper - ERROR - Error processing job at ID 361: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,417 - scraper.scraper - ERROR - Error processing job at ID 362: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,468 - scraper.scraper - ERROR - Error processing job at ID 363: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,517 - scraper.scraper - ERROR - Error processing job at ID 364: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,567 - scraper.scraper - ERROR - Error processing job at ID 365: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,617 - scraper.scraper - ERROR - Error processing job at ID 366: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,667 - scraper.scraper - ERROR - Error processing job at ID 367: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,717 - scraper.scraper - ERROR - Error processing job at ID 368: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,767 - scraper.scraper - ERROR - Error processing job at ID 369: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,817 - scraper.scraper - ERROR - Error processing job at ID 370: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,867 - scraper.scraper - ERROR - Error processing job at ID 371: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,917 - scraper.scraper - ERROR - Error processing job at ID 372: 'NoneType' object is not subscriptable
+2025-03-09 14:47:49,967 - scraper.scraper - ERROR - Error processing job at ID 373: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,017 - scraper.scraper - ERROR - Error processing job at ID 374: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,067 - scraper.scraper - ERROR - Error processing job at ID 375: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,117 - scraper.scraper - ERROR - Error processing job at ID 376: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,167 - scraper.scraper - ERROR - Error processing job at ID 377: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,217 - scraper.scraper - ERROR - Error processing job at ID 378: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,267 - scraper.scraper - ERROR - Error processing job at ID 379: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,317 - scraper.scraper - ERROR - Error processing job at ID 380: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,587 - scraper.scraper - ERROR - Error processing job at ID 381: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,637 - scraper.scraper - ERROR - Error processing job at ID 382: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,687 - scraper.scraper - ERROR - Error processing job at ID 383: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,737 - scraper.scraper - ERROR - Error processing job at ID 384: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,787 - scraper.scraper - ERROR - Error processing job at ID 385: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,837 - scraper.scraper - ERROR - Error processing job at ID 386: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,875 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:47:50] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:47:50,887 - scraper.scraper - ERROR - Error processing job at ID 387: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,937 - scraper.scraper - ERROR - Error processing job at ID 388: 'NoneType' object is not subscriptable
+2025-03-09 14:47:50,987 - scraper.scraper - ERROR - Error processing job at ID 389: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,037 - scraper.scraper - ERROR - Error processing job at ID 390: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,087 - scraper.scraper - ERROR - Error processing job at ID 391: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,137 - scraper.scraper - ERROR - Error processing job at ID 392: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,187 - scraper.scraper - ERROR - Error processing job at ID 393: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,237 - scraper.scraper - ERROR - Error processing job at ID 394: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,287 - scraper.scraper - ERROR - Error processing job at ID 395: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,337 - scraper.scraper - ERROR - Error processing job at ID 396: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,387 - scraper.scraper - ERROR - Error processing job at ID 397: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,437 - scraper.scraper - ERROR - Error processing job at ID 398: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,487 - scraper.scraper - ERROR - Error processing job at ID 399: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,537 - scraper.scraper - ERROR - Error processing job at ID 400: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,587 - scraper.scraper - ERROR - Error processing job at ID 401: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,637 - scraper.scraper - ERROR - Error processing job at ID 402: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,687 - scraper.scraper - ERROR - Error processing job at ID 403: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,737 - scraper.scraper - ERROR - Error processing job at ID 404: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,787 - scraper.scraper - ERROR - Error processing job at ID 405: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,837 - scraper.scraper - ERROR - Error processing job at ID 406: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,887 - scraper.scraper - ERROR - Error processing job at ID 407: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,937 - scraper.scraper - ERROR - Error processing job at ID 408: 'NoneType' object is not subscriptable
+2025-03-09 14:47:51,987 - scraper.scraper - ERROR - Error processing job at ID 409: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,038 - scraper.scraper - ERROR - Error processing job at ID 410: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,087 - scraper.scraper - ERROR - Error processing job at ID 411: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,137 - scraper.scraper - ERROR - Error processing job at ID 412: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,187 - scraper.scraper - ERROR - Error processing job at ID 413: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,237 - scraper.scraper - ERROR - Error processing job at ID 414: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,287 - scraper.scraper - ERROR - Error processing job at ID 415: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,337 - scraper.scraper - ERROR - Error processing job at ID 416: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,387 - scraper.scraper - ERROR - Error processing job at ID 417: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,437 - scraper.scraper - ERROR - Error processing job at ID 418: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,487 - scraper.scraper - ERROR - Error processing job at ID 419: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,537 - scraper.scraper - ERROR - Error processing job at ID 420: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,587 - scraper.scraper - ERROR - Error processing job at ID 421: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,637 - scraper.scraper - ERROR - Error processing job at ID 422: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,707 - scraper.scraper - ERROR - Error processing job at ID 423: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,757 - scraper.scraper - ERROR - Error processing job at ID 424: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,807 - scraper.scraper - ERROR - Error processing job at ID 425: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,857 - scraper.scraper - ERROR - Error processing job at ID 426: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,907 - scraper.scraper - ERROR - Error processing job at ID 427: 'NoneType' object is not subscriptable
+2025-03-09 14:47:52,957 - scraper.scraper - ERROR - Error processing job at ID 428: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,007 - scraper.scraper - ERROR - Error processing job at ID 429: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,057 - scraper.scraper - ERROR - Error processing job at ID 430: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,107 - scraper.scraper - ERROR - Error processing job at ID 431: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,157 - scraper.scraper - ERROR - Error processing job at ID 432: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,207 - scraper.scraper - ERROR - Error processing job at ID 433: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,257 - scraper.scraper - ERROR - Error processing job at ID 434: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,307 - scraper.scraper - ERROR - Error processing job at ID 435: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,357 - scraper.scraper - ERROR - Error processing job at ID 436: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,407 - scraper.scraper - ERROR - Error processing job at ID 437: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,457 - scraper.scraper - ERROR - Error processing job at ID 438: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,507 - scraper.scraper - ERROR - Error processing job at ID 439: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,557 - scraper.scraper - ERROR - Error processing job at ID 440: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,617 - scraper.scraper - ERROR - Error processing job at ID 441: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,667 - scraper.scraper - ERROR - Error processing job at ID 442: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,717 - scraper.scraper - ERROR - Error processing job at ID 443: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,767 - scraper.scraper - ERROR - Error processing job at ID 444: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,817 - scraper.scraper - ERROR - Error processing job at ID 445: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,867 - scraper.scraper - ERROR - Error processing job at ID 446: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,917 - scraper.scraper - ERROR - Error processing job at ID 447: 'NoneType' object is not subscriptable
+2025-03-09 14:47:53,967 - scraper.scraper - ERROR - Error processing job at ID 448: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,017 - scraper.scraper - ERROR - Error processing job at ID 449: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,067 - scraper.scraper - ERROR - Error processing job at ID 450: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,117 - scraper.scraper - ERROR - Error processing job at ID 451: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,167 - scraper.scraper - ERROR - Error processing job at ID 452: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,217 - scraper.scraper - ERROR - Error processing job at ID 453: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,267 - scraper.scraper - ERROR - Error processing job at ID 454: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,317 - scraper.scraper - ERROR - Error processing job at ID 455: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,367 - scraper.scraper - ERROR - Error processing job at ID 456: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,417 - scraper.scraper - ERROR - Error processing job at ID 457: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,467 - scraper.scraper - ERROR - Error processing job at ID 458: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,517 - scraper.scraper - ERROR - Error processing job at ID 459: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,567 - scraper.scraper - ERROR - Error processing job at ID 460: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,617 - scraper.scraper - ERROR - Error processing job at ID 461: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,667 - scraper.scraper - ERROR - Error processing job at ID 462: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,717 - scraper.scraper - ERROR - Error processing job at ID 463: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,768 - scraper.scraper - ERROR - Error processing job at ID 464: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,827 - scraper.scraper - ERROR - Error processing job at ID 465: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,877 - scraper.scraper - ERROR - Error processing job at ID 466: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,927 - scraper.scraper - ERROR - Error processing job at ID 467: 'NoneType' object is not subscriptable
+2025-03-09 14:47:54,977 - scraper.scraper - ERROR - Error processing job at ID 468: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,027 - scraper.scraper - ERROR - Error processing job at ID 469: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,077 - scraper.scraper - ERROR - Error processing job at ID 470: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,127 - scraper.scraper - ERROR - Error processing job at ID 471: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,177 - scraper.scraper - ERROR - Error processing job at ID 472: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,227 - scraper.scraper - ERROR - Error processing job at ID 473: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,277 - scraper.scraper - ERROR - Error processing job at ID 474: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,327 - scraper.scraper - ERROR - Error processing job at ID 475: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,727 - scraper.scraper - ERROR - Error processing job at ID 476: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,777 - scraper.scraper - ERROR - Error processing job at ID 477: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,827 - scraper.scraper - ERROR - Error processing job at ID 478: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,877 - scraper.scraper - ERROR - Error processing job at ID 479: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,927 - scraper.scraper - ERROR - Error processing job at ID 480: 'NoneType' object is not subscriptable
+2025-03-09 14:47:55,977 - scraper.scraper - ERROR - Error processing job at ID 481: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,027 - scraper.scraper - ERROR - Error processing job at ID 482: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,077 - scraper.scraper - ERROR - Error processing job at ID 483: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,127 - scraper.scraper - ERROR - Error processing job at ID 484: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,177 - scraper.scraper - ERROR - Error processing job at ID 485: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,227 - scraper.scraper - ERROR - Error processing job at ID 486: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,277 - scraper.scraper - ERROR - Error processing job at ID 487: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,327 - scraper.scraper - ERROR - Error processing job at ID 488: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,377 - scraper.scraper - ERROR - Error processing job at ID 489: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,427 - scraper.scraper - ERROR - Error processing job at ID 490: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,477 - scraper.scraper - ERROR - Error processing job at ID 491: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,527 - scraper.scraper - ERROR - Error processing job at ID 492: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,577 - scraper.scraper - ERROR - Error processing job at ID 493: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,627 - scraper.scraper - ERROR - Error processing job at ID 494: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,677 - scraper.scraper - ERROR - Error processing job at ID 495: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,727 - scraper.scraper - ERROR - Error processing job at ID 496: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,787 - scraper.scraper - ERROR - Error processing job at ID 497: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,837 - scraper.scraper - ERROR - Error processing job at ID 498: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,897 - scraper.scraper - ERROR - Error processing job at ID 499: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,947 - scraper.scraper - ERROR - Error processing job at ID 500: 'NoneType' object is not subscriptable
+2025-03-09 14:47:56,997 - scraper.scraper - ERROR - Error processing job at ID 501: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,047 - scraper.scraper - ERROR - Error processing job at ID 502: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,097 - scraper.scraper - ERROR - Error processing job at ID 503: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,147 - scraper.scraper - ERROR - Error processing job at ID 504: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,197 - scraper.scraper - ERROR - Error processing job at ID 505: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,247 - scraper.scraper - ERROR - Error processing job at ID 506: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,297 - scraper.scraper - ERROR - Error processing job at ID 507: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,347 - scraper.scraper - ERROR - Error processing job at ID 508: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,397 - scraper.scraper - ERROR - Error processing job at ID 509: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,447 - scraper.scraper - ERROR - Error processing job at ID 510: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,497 - scraper.scraper - ERROR - Error processing job at ID 511: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,547 - scraper.scraper - ERROR - Error processing job at ID 512: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,597 - scraper.scraper - ERROR - Error processing job at ID 513: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,647 - scraper.scraper - ERROR - Error processing job at ID 514: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,697 - scraper.scraper - ERROR - Error processing job at ID 515: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,747 - scraper.scraper - ERROR - Error processing job at ID 516: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,797 - scraper.scraper - ERROR - Error processing job at ID 517: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,847 - scraper.scraper - ERROR - Error processing job at ID 518: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,897 - scraper.scraper - ERROR - Error processing job at ID 519: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,947 - scraper.scraper - ERROR - Error processing job at ID 520: 'NoneType' object is not subscriptable
+2025-03-09 14:47:57,997 - scraper.scraper - ERROR - Error processing job at ID 521: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,047 - scraper.scraper - ERROR - Error processing job at ID 522: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,097 - scraper.scraper - ERROR - Error processing job at ID 523: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,147 - scraper.scraper - ERROR - Error processing job at ID 524: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,197 - scraper.scraper - ERROR - Error processing job at ID 525: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,247 - scraper.scraper - ERROR - Error processing job at ID 526: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,297 - scraper.scraper - ERROR - Error processing job at ID 527: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,347 - scraper.scraper - ERROR - Error processing job at ID 528: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,397 - scraper.scraper - ERROR - Error processing job at ID 529: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,447 - scraper.scraper - ERROR - Error processing job at ID 530: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,497 - scraper.scraper - ERROR - Error processing job at ID 531: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,547 - scraper.scraper - ERROR - Error processing job at ID 532: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,598 - scraper.scraper - ERROR - Error processing job at ID 533: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,647 - scraper.scraper - ERROR - Error processing job at ID 534: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,697 - scraper.scraper - ERROR - Error processing job at ID 535: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,747 - scraper.scraper - ERROR - Error processing job at ID 536: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,797 - scraper.scraper - ERROR - Error processing job at ID 537: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,847 - scraper.scraper - ERROR - Error processing job at ID 538: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,907 - scraper.scraper - ERROR - Error processing job at ID 539: 'NoneType' object is not subscriptable
+2025-03-09 14:47:58,957 - scraper.scraper - ERROR - Error processing job at ID 540: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,007 - scraper.scraper - ERROR - Error processing job at ID 541: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,057 - scraper.scraper - ERROR - Error processing job at ID 542: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,107 - scraper.scraper - ERROR - Error processing job at ID 543: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,157 - scraper.scraper - ERROR - Error processing job at ID 544: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,207 - scraper.scraper - ERROR - Error processing job at ID 545: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,257 - scraper.scraper - ERROR - Error processing job at ID 546: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,307 - scraper.scraper - ERROR - Error processing job at ID 547: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,357 - scraper.scraper - ERROR - Error processing job at ID 548: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,407 - scraper.scraper - ERROR - Error processing job at ID 549: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,457 - scraper.scraper - ERROR - Error processing job at ID 550: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,507 - scraper.scraper - ERROR - Error processing job at ID 551: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,557 - scraper.scraper - ERROR - Error processing job at ID 552: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,607 - scraper.scraper - ERROR - Error processing job at ID 553: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,657 - scraper.scraper - ERROR - Error processing job at ID 554: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,707 - scraper.scraper - ERROR - Error processing job at ID 555: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,757 - scraper.scraper - ERROR - Error processing job at ID 556: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,807 - scraper.scraper - ERROR - Error processing job at ID 557: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,877 - scraper.scraper - ERROR - Error processing job at ID 558: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,927 - scraper.scraper - ERROR - Error processing job at ID 559: 'NoneType' object is not subscriptable
+2025-03-09 14:47:59,977 - scraper.scraper - ERROR - Error processing job at ID 560: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,027 - scraper.scraper - ERROR - Error processing job at ID 561: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,077 - scraper.scraper - ERROR - Error processing job at ID 562: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,127 - scraper.scraper - ERROR - Error processing job at ID 563: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,177 - scraper.scraper - ERROR - Error processing job at ID 564: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,367 - scraper.scraper - ERROR - Error processing job at ID 565: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,857 - scraper.scraper - ERROR - Error processing job at ID 566: 'NoneType' object is not subscriptable
+2025-03-09 14:48:00,937 - scraper.scraper - ERROR - Error processing job at ID 567: 'NoneType' object is not subscriptable
+2025-03-09 14:48:01,264 - scraper.scraper - ERROR - Error processing job at ID 568: 'NoneType' object is not subscriptable
+2025-03-09 14:48:01,465 - scraper.scraper - ERROR - Error processing job at ID 569: 'NoneType' object is not subscriptable
+2025-03-09 14:48:01,657 - scraper.scraper - ERROR - Error processing job at ID 570: 'NoneType' object is not subscriptable
+2025-03-09 14:48:01,837 - scraper.scraper - ERROR - Error processing job at ID 571: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,017 - scraper.scraper - ERROR - Error processing job at ID 572: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,187 - scraper.scraper - ERROR - Error processing job at ID 573: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,357 - scraper.scraper - ERROR - Error processing job at ID 574: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,547 - scraper.scraper - ERROR - Error processing job at ID 575: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,737 - scraper.scraper - ERROR - Error processing job at ID 576: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,917 - scraper.scraper - ERROR - Error processing job at ID 577: 'NoneType' object is not subscriptable
+2025-03-09 14:48:02,967 - scraper.scraper - ERROR - Error processing job at ID 578: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,137 - scraper.scraper - ERROR - Error processing job at ID 579: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,187 - scraper.scraper - ERROR - Error processing job at ID 580: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,237 - scraper.scraper - ERROR - Error processing job at ID 581: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,287 - scraper.scraper - ERROR - Error processing job at ID 582: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,337 - scraper.scraper - ERROR - Error processing job at ID 583: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,387 - scraper.scraper - ERROR - Error processing job at ID 584: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,437 - scraper.scraper - ERROR - Error processing job at ID 585: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,487 - scraper.scraper - ERROR - Error processing job at ID 586: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,537 - scraper.scraper - ERROR - Error processing job at ID 587: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,587 - scraper.scraper - ERROR - Error processing job at ID 588: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,637 - scraper.scraper - ERROR - Error processing job at ID 589: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,687 - scraper.scraper - ERROR - Error processing job at ID 590: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,737 - scraper.scraper - ERROR - Error processing job at ID 591: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,787 - scraper.scraper - ERROR - Error processing job at ID 592: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,837 - scraper.scraper - ERROR - Error processing job at ID 593: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,887 - scraper.scraper - ERROR - Error processing job at ID 594: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,937 - scraper.scraper - ERROR - Error processing job at ID 595: 'NoneType' object is not subscriptable
+2025-03-09 14:48:03,987 - scraper.scraper - ERROR - Error processing job at ID 596: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,037 - scraper.scraper - ERROR - Error processing job at ID 597: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,087 - scraper.scraper - ERROR - Error processing job at ID 598: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,137 - scraper.scraper - ERROR - Error processing job at ID 599: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,187 - scraper.scraper - ERROR - Error processing job at ID 600: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,237 - scraper.scraper - ERROR - Error processing job at ID 601: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,287 - scraper.scraper - ERROR - Error processing job at ID 602: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,337 - scraper.scraper - ERROR - Error processing job at ID 603: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,387 - scraper.scraper - ERROR - Error processing job at ID 604: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,437 - scraper.scraper - ERROR - Error processing job at ID 605: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,487 - scraper.scraper - ERROR - Error processing job at ID 606: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,537 - scraper.scraper - ERROR - Error processing job at ID 607: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,587 - scraper.scraper - ERROR - Error processing job at ID 608: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,637 - scraper.scraper - ERROR - Error processing job at ID 609: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,687 - scraper.scraper - ERROR - Error processing job at ID 610: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,737 - scraper.scraper - ERROR - Error processing job at ID 611: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,787 - scraper.scraper - ERROR - Error processing job at ID 612: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,837 - scraper.scraper - ERROR - Error processing job at ID 613: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,887 - scraper.scraper - ERROR - Error processing job at ID 614: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,937 - scraper.scraper - ERROR - Error processing job at ID 615: 'NoneType' object is not subscriptable
+2025-03-09 14:48:04,987 - scraper.scraper - ERROR - Error processing job at ID 616: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,037 - scraper.scraper - ERROR - Error processing job at ID 617: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,087 - scraper.scraper - ERROR - Error processing job at ID 618: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,137 - scraper.scraper - ERROR - Error processing job at ID 619: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,187 - scraper.scraper - ERROR - Error processing job at ID 620: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,237 - scraper.scraper - ERROR - Error processing job at ID 621: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,287 - scraper.scraper - ERROR - Error processing job at ID 622: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,337 - scraper.scraper - ERROR - Error processing job at ID 623: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,387 - scraper.scraper - ERROR - Error processing job at ID 624: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,857 - scraper.scraper - ERROR - Error processing job at ID 625: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,907 - scraper.scraper - ERROR - Error processing job at ID 626: 'NoneType' object is not subscriptable
+2025-03-09 14:48:05,957 - scraper.scraper - ERROR - Error processing job at ID 627: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,007 - scraper.scraper - ERROR - Error processing job at ID 628: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,057 - scraper.scraper - ERROR - Error processing job at ID 629: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,107 - scraper.scraper - ERROR - Error processing job at ID 630: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,157 - scraper.scraper - ERROR - Error processing job at ID 631: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,207 - scraper.scraper - ERROR - Error processing job at ID 632: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,257 - scraper.scraper - ERROR - Error processing job at ID 633: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,307 - scraper.scraper - ERROR - Error processing job at ID 634: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,357 - scraper.scraper - ERROR - Error processing job at ID 635: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,407 - scraper.scraper - ERROR - Error processing job at ID 636: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,457 - scraper.scraper - ERROR - Error processing job at ID 637: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,507 - scraper.scraper - ERROR - Error processing job at ID 638: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,557 - scraper.scraper - ERROR - Error processing job at ID 639: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,607 - scraper.scraper - ERROR - Error processing job at ID 640: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,657 - scraper.scraper - ERROR - Error processing job at ID 641: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,707 - scraper.scraper - ERROR - Error processing job at ID 642: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,757 - scraper.scraper - ERROR - Error processing job at ID 643: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,807 - scraper.scraper - ERROR - Error processing job at ID 644: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,857 - scraper.scraper - ERROR - Error processing job at ID 645: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,907 - scraper.scraper - ERROR - Error processing job at ID 646: 'NoneType' object is not subscriptable
+2025-03-09 14:48:06,957 - scraper.scraper - ERROR - Error processing job at ID 647: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,007 - scraper.scraper - ERROR - Error processing job at ID 648: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,057 - scraper.scraper - ERROR - Error processing job at ID 649: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,107 - scraper.scraper - ERROR - Error processing job at ID 650: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,157 - scraper.scraper - ERROR - Error processing job at ID 651: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,207 - scraper.scraper - ERROR - Error processing job at ID 652: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,257 - scraper.scraper - ERROR - Error processing job at ID 653: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,307 - scraper.scraper - ERROR - Error processing job at ID 654: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,357 - scraper.scraper - ERROR - Error processing job at ID 655: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,407 - scraper.scraper - ERROR - Error processing job at ID 656: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,457 - scraper.scraper - ERROR - Error processing job at ID 657: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,507 - scraper.scraper - ERROR - Error processing job at ID 658: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,557 - scraper.scraper - ERROR - Error processing job at ID 659: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,607 - scraper.scraper - ERROR - Error processing job at ID 660: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,657 - scraper.scraper - ERROR - Error processing job at ID 661: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,707 - scraper.scraper - ERROR - Error processing job at ID 662: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,757 - scraper.scraper - ERROR - Error processing job at ID 663: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,807 - scraper.scraper - ERROR - Error processing job at ID 664: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,857 - scraper.scraper - ERROR - Error processing job at ID 665: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,907 - scraper.scraper - ERROR - Error processing job at ID 666: 'NoneType' object is not subscriptable
+2025-03-09 14:48:07,957 - scraper.scraper - ERROR - Error processing job at ID 667: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,007 - scraper.scraper - ERROR - Error processing job at ID 668: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,057 - scraper.scraper - ERROR - Error processing job at ID 669: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,107 - scraper.scraper - ERROR - Error processing job at ID 670: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,157 - scraper.scraper - ERROR - Error processing job at ID 671: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,208 - scraper.scraper - ERROR - Error processing job at ID 672: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,257 - scraper.scraper - ERROR - Error processing job at ID 673: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,307 - scraper.scraper - ERROR - Error processing job at ID 674: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,357 - scraper.scraper - ERROR - Error processing job at ID 675: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,407 - scraper.scraper - ERROR - Error processing job at ID 676: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,457 - scraper.scraper - ERROR - Error processing job at ID 677: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,507 - scraper.scraper - ERROR - Error processing job at ID 678: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,557 - scraper.scraper - ERROR - Error processing job at ID 679: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,607 - scraper.scraper - ERROR - Error processing job at ID 680: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,657 - scraper.scraper - ERROR - Error processing job at ID 681: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,707 - scraper.scraper - ERROR - Error processing job at ID 682: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,757 - scraper.scraper - ERROR - Error processing job at ID 683: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,807 - scraper.scraper - ERROR - Error processing job at ID 684: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,857 - scraper.scraper - ERROR - Error processing job at ID 685: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,907 - scraper.scraper - ERROR - Error processing job at ID 686: 'NoneType' object is not subscriptable
+2025-03-09 14:48:08,957 - scraper.scraper - ERROR - Error processing job at ID 687: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,007 - scraper.scraper - ERROR - Error processing job at ID 688: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,057 - scraper.scraper - ERROR - Error processing job at ID 689: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,107 - scraper.scraper - ERROR - Error processing job at ID 690: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,166 - scraper.scraper - ERROR - Error processing job at ID 691: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,217 - scraper.scraper - ERROR - Error processing job at ID 692: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,267 - scraper.scraper - ERROR - Error processing job at ID 693: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,317 - scraper.scraper - ERROR - Error processing job at ID 694: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,367 - scraper.scraper - ERROR - Error processing job at ID 695: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,417 - scraper.scraper - ERROR - Error processing job at ID 696: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,468 - scraper.scraper - ERROR - Error processing job at ID 697: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,517 - scraper.scraper - ERROR - Error processing job at ID 698: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,567 - scraper.scraper - ERROR - Error processing job at ID 699: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,617 - scraper.scraper - ERROR - Error processing job at ID 700: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,667 - scraper.scraper - ERROR - Error processing job at ID 701: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,717 - scraper.scraper - ERROR - Error processing job at ID 702: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,767 - scraper.scraper - ERROR - Error processing job at ID 703: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,817 - scraper.scraper - ERROR - Error processing job at ID 704: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,867 - scraper.scraper - ERROR - Error processing job at ID 705: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,917 - scraper.scraper - ERROR - Error processing job at ID 706: 'NoneType' object is not subscriptable
+2025-03-09 14:48:09,967 - scraper.scraper - ERROR - Error processing job at ID 707: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,017 - scraper.scraper - ERROR - Error processing job at ID 708: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,067 - scraper.scraper - ERROR - Error processing job at ID 709: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,117 - scraper.scraper - ERROR - Error processing job at ID 710: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,167 - scraper.scraper - ERROR - Error processing job at ID 711: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,217 - scraper.scraper - ERROR - Error processing job at ID 712: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,287 - scraper.scraper - ERROR - Error processing job at ID 713: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,367 - scraper.scraper - ERROR - Error processing job at ID 714: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,717 - scraper.scraper - ERROR - Error processing job at ID 715: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,768 - scraper.scraper - ERROR - Error processing job at ID 716: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,817 - scraper.scraper - ERROR - Error processing job at ID 717: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,867 - scraper.scraper - ERROR - Error processing job at ID 718: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,917 - scraper.scraper - ERROR - Error processing job at ID 719: 'NoneType' object is not subscriptable
+2025-03-09 14:48:10,967 - scraper.scraper - ERROR - Error processing job at ID 720: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,017 - scraper.scraper - ERROR - Error processing job at ID 721: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,067 - scraper.scraper - ERROR - Error processing job at ID 722: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,117 - scraper.scraper - ERROR - Error processing job at ID 723: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,167 - scraper.scraper - ERROR - Error processing job at ID 724: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,217 - scraper.scraper - ERROR - Error processing job at ID 725: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,267 - scraper.scraper - ERROR - Error processing job at ID 726: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,317 - scraper.scraper - ERROR - Error processing job at ID 727: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,367 - scraper.scraper - ERROR - Error processing job at ID 728: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,417 - scraper.scraper - ERROR - Error processing job at ID 729: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,468 - scraper.scraper - ERROR - Error processing job at ID 730: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,517 - scraper.scraper - ERROR - Error processing job at ID 731: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,567 - scraper.scraper - ERROR - Error processing job at ID 732: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,617 - scraper.scraper - ERROR - Error processing job at ID 733: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,667 - scraper.scraper - ERROR - Error processing job at ID 734: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,717 - scraper.scraper - ERROR - Error processing job at ID 735: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,767 - scraper.scraper - ERROR - Error processing job at ID 736: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,817 - scraper.scraper - ERROR - Error processing job at ID 737: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,867 - scraper.scraper - ERROR - Error processing job at ID 738: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,917 - scraper.scraper - ERROR - Error processing job at ID 739: 'NoneType' object is not subscriptable
+2025-03-09 14:48:11,967 - scraper.scraper - ERROR - Error processing job at ID 740: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,017 - scraper.scraper - ERROR - Error processing job at ID 741: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,067 - scraper.scraper - ERROR - Error processing job at ID 742: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,117 - scraper.scraper - ERROR - Error processing job at ID 743: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,167 - scraper.scraper - ERROR - Error processing job at ID 744: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,217 - scraper.scraper - ERROR - Error processing job at ID 745: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,267 - scraper.scraper - ERROR - Error processing job at ID 746: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,317 - scraper.scraper - ERROR - Error processing job at ID 747: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,367 - scraper.scraper - ERROR - Error processing job at ID 748: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,417 - scraper.scraper - ERROR - Error processing job at ID 749: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,467 - scraper.scraper - ERROR - Error processing job at ID 750: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,517 - scraper.scraper - ERROR - Error processing job at ID 751: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,567 - scraper.scraper - ERROR - Error processing job at ID 752: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,617 - scraper.scraper - ERROR - Error processing job at ID 753: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,667 - scraper.scraper - ERROR - Error processing job at ID 754: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,717 - scraper.scraper - ERROR - Error processing job at ID 755: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,767 - scraper.scraper - ERROR - Error processing job at ID 756: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,817 - scraper.scraper - ERROR - Error processing job at ID 757: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,867 - scraper.scraper - ERROR - Error processing job at ID 758: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,917 - scraper.scraper - ERROR - Error processing job at ID 759: 'NoneType' object is not subscriptable
+2025-03-09 14:48:12,967 - scraper.scraper - ERROR - Error processing job at ID 760: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,017 - scraper.scraper - ERROR - Error processing job at ID 761: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,067 - scraper.scraper - ERROR - Error processing job at ID 762: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,117 - scraper.scraper - ERROR - Error processing job at ID 763: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,167 - scraper.scraper - ERROR - Error processing job at ID 764: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,217 - scraper.scraper - ERROR - Error processing job at ID 765: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,267 - scraper.scraper - ERROR - Error processing job at ID 766: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,317 - scraper.scraper - ERROR - Error processing job at ID 767: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,367 - scraper.scraper - ERROR - Error processing job at ID 768: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,417 - scraper.scraper - ERROR - Error processing job at ID 769: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,468 - scraper.scraper - ERROR - Error processing job at ID 770: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,517 - scraper.scraper - ERROR - Error processing job at ID 771: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,567 - scraper.scraper - ERROR - Error processing job at ID 772: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,617 - scraper.scraper - ERROR - Error processing job at ID 773: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,677 - scraper.scraper - ERROR - Error processing job at ID 774: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,727 - scraper.scraper - ERROR - Error processing job at ID 775: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,778 - scraper.scraper - ERROR - Error processing job at ID 776: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,857 - scraper.scraper - ERROR - Error processing job at ID 777: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,907 - scraper.scraper - ERROR - Error processing job at ID 778: 'NoneType' object is not subscriptable
+2025-03-09 14:48:13,958 - scraper.scraper - ERROR - Error processing job at ID 779: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,007 - scraper.scraper - ERROR - Error processing job at ID 780: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,057 - scraper.scraper - ERROR - Error processing job at ID 781: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,107 - scraper.scraper - ERROR - Error processing job at ID 782: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,157 - scraper.scraper - ERROR - Error processing job at ID 783: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,207 - scraper.scraper - ERROR - Error processing job at ID 784: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,257 - scraper.scraper - ERROR - Error processing job at ID 785: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,307 - scraper.scraper - ERROR - Error processing job at ID 786: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,437 - scraper.scraper - ERROR - Error processing job at ID 787: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,487 - scraper.scraper - ERROR - Error processing job at ID 788: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,537 - scraper.scraper - ERROR - Error processing job at ID 789: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,587 - scraper.scraper - ERROR - Error processing job at ID 790: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,677 - scraper.scraper - ERROR - Error processing job at ID 791: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,727 - scraper.scraper - ERROR - Error processing job at ID 792: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,777 - scraper.scraper - ERROR - Error processing job at ID 793: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,827 - scraper.scraper - ERROR - Error processing job at ID 794: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,877 - scraper.scraper - ERROR - Error processing job at ID 795: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,927 - scraper.scraper - ERROR - Error processing job at ID 796: 'NoneType' object is not subscriptable
+2025-03-09 14:48:14,977 - scraper.scraper - ERROR - Error processing job at ID 797: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,027 - scraper.scraper - ERROR - Error processing job at ID 798: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,077 - scraper.scraper - ERROR - Error processing job at ID 799: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,127 - scraper.scraper - ERROR - Error processing job at ID 800: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,177 - scraper.scraper - ERROR - Error processing job at ID 801: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,227 - scraper.scraper - ERROR - Error processing job at ID 802: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,277 - scraper.scraper - ERROR - Error processing job at ID 803: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,327 - scraper.scraper - ERROR - Error processing job at ID 804: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,387 - scraper.scraper - ERROR - Error processing job at ID 805: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,917 - scraper.scraper - ERROR - Error processing job at ID 806: 'NoneType' object is not subscriptable
+2025-03-09 14:48:15,977 - scraper.scraper - ERROR - Error processing job at ID 807: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,027 - scraper.scraper - ERROR - Error processing job at ID 808: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,077 - scraper.scraper - ERROR - Error processing job at ID 809: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,127 - scraper.scraper - ERROR - Error processing job at ID 810: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,177 - scraper.scraper - ERROR - Error processing job at ID 811: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,227 - scraper.scraper - ERROR - Error processing job at ID 812: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,277 - scraper.scraper - ERROR - Error processing job at ID 813: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,327 - scraper.scraper - ERROR - Error processing job at ID 814: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,377 - scraper.scraper - ERROR - Error processing job at ID 815: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,427 - scraper.scraper - ERROR - Error processing job at ID 816: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,477 - scraper.scraper - ERROR - Error processing job at ID 817: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,527 - scraper.scraper - ERROR - Error processing job at ID 818: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,577 - scraper.scraper - ERROR - Error processing job at ID 819: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,627 - scraper.scraper - ERROR - Error processing job at ID 820: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,677 - scraper.scraper - ERROR - Error processing job at ID 821: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,727 - scraper.scraper - ERROR - Error processing job at ID 822: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,777 - scraper.scraper - ERROR - Error processing job at ID 823: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,827 - scraper.scraper - ERROR - Error processing job at ID 824: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,877 - scraper.scraper - ERROR - Error processing job at ID 825: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,927 - scraper.scraper - ERROR - Error processing job at ID 826: 'NoneType' object is not subscriptable
+2025-03-09 14:48:16,977 - scraper.scraper - ERROR - Error processing job at ID 827: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,027 - scraper.scraper - ERROR - Error processing job at ID 828: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,077 - scraper.scraper - ERROR - Error processing job at ID 829: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,127 - scraper.scraper - ERROR - Error processing job at ID 830: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,197 - scraper.scraper - ERROR - Error processing job at ID 831: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,257 - scraper.scraper - ERROR - Error processing job at ID 832: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,317 - scraper.scraper - ERROR - Error processing job at ID 833: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,367 - scraper.scraper - ERROR - Error processing job at ID 834: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,417 - scraper.scraper - ERROR - Error processing job at ID 835: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,468 - scraper.scraper - ERROR - Error processing job at ID 836: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,517 - scraper.scraper - ERROR - Error processing job at ID 837: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,567 - scraper.scraper - ERROR - Error processing job at ID 838: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,617 - scraper.scraper - ERROR - Error processing job at ID 839: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,667 - scraper.scraper - ERROR - Error processing job at ID 840: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,717 - scraper.scraper - ERROR - Error processing job at ID 841: 'NoneType' object is not subscriptable
+2025-03-09 14:48:17,767 - scraper.scraper - ERROR - Error processing job at ID 842: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,327 - scraper.scraper - ERROR - Error processing job at ID 843: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,387 - scraper.scraper - ERROR - Error processing job at ID 844: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,437 - scraper.scraper - ERROR - Error processing job at ID 845: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,487 - scraper.scraper - ERROR - Error processing job at ID 846: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,537 - scraper.scraper - ERROR - Error processing job at ID 847: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,587 - scraper.scraper - ERROR - Error processing job at ID 848: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,637 - scraper.scraper - ERROR - Error processing job at ID 849: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,687 - scraper.scraper - ERROR - Error processing job at ID 850: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,737 - scraper.scraper - ERROR - Error processing job at ID 851: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,787 - scraper.scraper - ERROR - Error processing job at ID 852: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,837 - scraper.scraper - ERROR - Error processing job at ID 853: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,887 - scraper.scraper - ERROR - Error processing job at ID 854: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,937 - scraper.scraper - ERROR - Error processing job at ID 855: 'NoneType' object is not subscriptable
+2025-03-09 14:48:19,987 - scraper.scraper - ERROR - Error processing job at ID 856: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,047 - scraper.scraper - ERROR - Error processing job at ID 857: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,117 - scraper.scraper - ERROR - Error processing job at ID 858: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,177 - scraper.scraper - ERROR - Error processing job at ID 859: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,227 - scraper.scraper - ERROR - Error processing job at ID 860: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,277 - scraper.scraper - ERROR - Error processing job at ID 861: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,327 - scraper.scraper - ERROR - Error processing job at ID 862: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,377 - scraper.scraper - ERROR - Error processing job at ID 863: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,427 - scraper.scraper - ERROR - Error processing job at ID 864: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,927 - scraper.scraper - ERROR - Error processing job at ID 865: 'NoneType' object is not subscriptable
+2025-03-09 14:48:20,977 - scraper.scraper - ERROR - Error processing job at ID 866: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,027 - scraper.scraper - ERROR - Error processing job at ID 867: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,077 - scraper.scraper - ERROR - Error processing job at ID 868: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,127 - scraper.scraper - ERROR - Error processing job at ID 869: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,177 - scraper.scraper - ERROR - Error processing job at ID 870: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,227 - scraper.scraper - ERROR - Error processing job at ID 871: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,277 - scraper.scraper - ERROR - Error processing job at ID 872: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,327 - scraper.scraper - ERROR - Error processing job at ID 873: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,377 - scraper.scraper - ERROR - Error processing job at ID 874: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,427 - scraper.scraper - ERROR - Error processing job at ID 875: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,477 - scraper.scraper - ERROR - Error processing job at ID 876: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,527 - scraper.scraper - ERROR - Error processing job at ID 877: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,577 - scraper.scraper - ERROR - Error processing job at ID 878: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,627 - scraper.scraper - ERROR - Error processing job at ID 879: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,677 - scraper.scraper - ERROR - Error processing job at ID 880: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,727 - scraper.scraper - ERROR - Error processing job at ID 881: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,777 - scraper.scraper - ERROR - Error processing job at ID 882: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,827 - scraper.scraper - ERROR - Error processing job at ID 883: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,877 - scraper.scraper - ERROR - Error processing job at ID 884: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,927 - scraper.scraper - ERROR - Error processing job at ID 885: 'NoneType' object is not subscriptable
+2025-03-09 14:48:21,977 - scraper.scraper - ERROR - Error processing job at ID 886: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,027 - scraper.scraper - ERROR - Error processing job at ID 887: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,077 - scraper.scraper - ERROR - Error processing job at ID 888: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,127 - scraper.scraper - ERROR - Error processing job at ID 889: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,177 - scraper.scraper - ERROR - Error processing job at ID 890: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,227 - scraper.scraper - ERROR - Error processing job at ID 891: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,278 - scraper.scraper - ERROR - Error processing job at ID 892: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,327 - scraper.scraper - ERROR - Error processing job at ID 893: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,377 - scraper.scraper - ERROR - Error processing job at ID 894: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,427 - scraper.scraper - ERROR - Error processing job at ID 895: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,477 - scraper.scraper - ERROR - Error processing job at ID 896: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,527 - scraper.scraper - ERROR - Error processing job at ID 897: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,577 - scraper.scraper - ERROR - Error processing job at ID 898: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,627 - scraper.scraper - ERROR - Error processing job at ID 899: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,677 - scraper.scraper - ERROR - Error processing job at ID 900: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,727 - scraper.scraper - ERROR - Error processing job at ID 901: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,777 - scraper.scraper - ERROR - Error processing job at ID 902: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,827 - scraper.scraper - ERROR - Error processing job at ID 903: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,907 - scraper.scraper - ERROR - Error processing job at ID 904: 'NoneType' object is not subscriptable
+2025-03-09 14:48:22,957 - scraper.scraper - ERROR - Error processing job at ID 905: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,027 - scraper.scraper - ERROR - Error processing job at ID 906: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,097 - scraper.scraper - ERROR - Error processing job at ID 907: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,147 - scraper.scraper - ERROR - Error processing job at ID 908: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,197 - scraper.scraper - ERROR - Error processing job at ID 909: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,247 - scraper.scraper - ERROR - Error processing job at ID 910: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,297 - scraper.scraper - ERROR - Error processing job at ID 911: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,347 - scraper.scraper - ERROR - Error processing job at ID 912: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,397 - scraper.scraper - ERROR - Error processing job at ID 913: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,447 - scraper.scraper - ERROR - Error processing job at ID 914: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,497 - scraper.scraper - ERROR - Error processing job at ID 915: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,547 - scraper.scraper - ERROR - Error processing job at ID 916: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,597 - scraper.scraper - ERROR - Error processing job at ID 917: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,647 - scraper.scraper - ERROR - Error processing job at ID 918: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,697 - scraper.scraper - ERROR - Error processing job at ID 919: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,747 - scraper.scraper - ERROR - Error processing job at ID 920: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,798 - scraper.scraper - ERROR - Error processing job at ID 921: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,847 - scraper.scraper - ERROR - Error processing job at ID 922: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,897 - scraper.scraper - ERROR - Error processing job at ID 923: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,947 - scraper.scraper - ERROR - Error processing job at ID 924: 'NoneType' object is not subscriptable
+2025-03-09 14:48:23,997 - scraper.scraper - ERROR - Error processing job at ID 925: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,047 - scraper.scraper - ERROR - Error processing job at ID 926: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,097 - scraper.scraper - ERROR - Error processing job at ID 927: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,147 - scraper.scraper - ERROR - Error processing job at ID 928: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,198 - scraper.scraper - ERROR - Error processing job at ID 929: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,247 - scraper.scraper - ERROR - Error processing job at ID 930: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,297 - scraper.scraper - ERROR - Error processing job at ID 931: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,347 - scraper.scraper - ERROR - Error processing job at ID 932: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,397 - scraper.scraper - ERROR - Error processing job at ID 933: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,447 - scraper.scraper - ERROR - Error processing job at ID 934: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,497 - scraper.scraper - ERROR - Error processing job at ID 935: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,547 - scraper.scraper - ERROR - Error processing job at ID 936: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,597 - scraper.scraper - ERROR - Error processing job at ID 937: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,647 - scraper.scraper - ERROR - Error processing job at ID 938: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,697 - scraper.scraper - ERROR - Error processing job at ID 939: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,747 - scraper.scraper - ERROR - Error processing job at ID 940: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,797 - scraper.scraper - ERROR - Error processing job at ID 941: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,847 - scraper.scraper - ERROR - Error processing job at ID 942: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,897 - scraper.scraper - ERROR - Error processing job at ID 943: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,947 - scraper.scraper - ERROR - Error processing job at ID 944: 'NoneType' object is not subscriptable
+2025-03-09 14:48:24,997 - scraper.scraper - ERROR - Error processing job at ID 945: 'NoneType' object is not subscriptable
+2025-03-09 14:48:25,047 - scraper.scraper - ERROR - Error processing job at ID 946: 'NoneType' object is not subscriptable
+2025-03-09 14:48:25,097 - scraper.scraper - ERROR - Error processing job at ID 947: 'NoneType' object is not subscriptable
+2025-03-09 14:48:25,147 - scraper.scraper - ERROR - Error processing job at ID 948: 'NoneType' object is not subscriptable
+2025-03-09 14:53:21,185 - __main__ - INFO - Application initialized
+2025-03-09 14:53:21,185 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:53:21,208 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 14:53:21,208 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 14:53:21,209 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 14:53:22,025 - __main__ - INFO - Application initialized
+2025-03-09 14:53:22,025 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 14:53:22,037 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 14:53:22,040 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 14:53:25,966 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:25] "GET / HTTP/1.1" 200 -
+2025-03-09 14:53:26,045 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:53:26,216 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:53:27,916 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:27] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:53:27,949 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:53:28,156 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:53:28,472 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:28] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:30,491 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:30] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:32,823 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:33,389 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:33] "GET / HTTP/1.1" 200 -
+2025-03-09 14:53:33,688 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:53:33,737 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:53:34,435 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:34] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:53:34,468 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:53:34,688 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:53:35,004 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:35] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:37,670 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:37] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:39,989 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:39] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:42,007 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:42] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:44,340 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:44] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:46,344 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:46] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:48,658 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:48] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:50,670 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:50] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:52,974 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:52] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:54,991 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:54] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:57,313 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:53:59,327 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:53:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:01,641 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:01] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:03,657 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:05,990 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:05] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:08,007 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:08] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:10,326 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:10] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:12,337 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:12] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:14,654 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:14] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:16,657 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:16] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:19,187 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:19] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:21,289 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:21] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:23,605 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:23] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:25,617 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:25] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:27,931 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:27] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:29,941 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:29] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:32,259 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:34,264 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:34] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:36,588 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:36] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:38,599 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:38] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:40,910 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:40] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:42,922 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:42] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:43,691 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:43] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:43,719 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:43,938 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:44,252 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:44] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:45,265 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:45] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:45,571 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:45,595 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:45,921 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:45] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:46,935 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:46] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:47,236 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:47,268 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:47,588 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:47] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:48,614 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:48] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:48,921 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:48,939 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:49,271 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:50,297 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:50] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:50,604 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:50,622 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:50,955 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:50] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:51,979 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:51] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:52,288 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:52,306 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:52,637 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:52] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:53,664 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:53] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:53,971 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:53,989 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:54,321 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:54] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:55,347 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:55] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:55,655 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:55,672 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:56,004 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:56] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:57,030 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:57] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:57,338 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:57,355 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:57,688 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:54:58,712 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:58] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:54:59,021 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:54:59,037 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:54:59,371 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:54:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:55:00,382 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:55:00] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:55:00,688 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:55:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:55:00,721 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:55:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:55:01,043 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:55:01] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:55:02,064 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:55:02] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:58:57,454 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:57] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:58:57,487 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:57] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-03-09 14:58:57,718 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:57] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-03-09 14:58:58,034 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:58] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:58:59,062 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:59] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:58:59,369 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:58:59,386 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:58:59,711 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:58:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:00,728 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:00] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:01,036 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:01,053 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:01] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:01,385 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:01] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:02,412 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:02] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:02,719 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:02,737 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:03,063 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:04,078 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:04] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:04,386 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:04,403 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:04,730 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:04] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:05,745 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:05] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:06,052 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:06,070 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:06,402 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:07,413 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:07] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:07,719 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:07] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:07,752 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:07] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:08,069 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:08] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 14:59:09,095 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:09] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 14:59:09,402 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 14:59:09,435 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 14:59:09,754 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 14:59:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 15:00:27,685 - __main__ - INFO - Application initialized
+2025-03-09 15:00:27,686 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:00:27,706 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 15:00:27,706 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 15:00:27,708 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:00:28,524 - __main__ - INFO - Application initialized
+2025-03-09 15:00:28,525 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:00:28,537 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:00:28,539 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:00:31,629 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:31] "GET / HTTP/1.1" 200 -
+2025-03-09 15:00:31,705 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:00:31,869 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:00:34,114 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:34] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 15:00:34,147 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:00:34,352 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:00:34,669 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:34] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 15:00:41,014 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:41] "GET /api/jobs/1 HTTP/1.1" 200 -
+2025-03-09 15:00:48,102 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:48] "GET /api/jobs/7 HTTP/1.1" 200 -
+2025-03-09 15:01:07,696 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:01:07] "GET /api/jobs/1 HTTP/1.1" 200 -

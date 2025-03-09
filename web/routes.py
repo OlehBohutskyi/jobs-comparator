@@ -6,6 +6,11 @@ web_bp = Blueprint('web', __name__)
 executor = ThreadPoolExecutor(max_workers=5)
 
 def init_routes(app, db, scraper):
+
+    @app.context_processor
+    def inject_db():
+        return {'db': db}
+
     @web_bp.route('/', methods=['GET', 'POST'])
     def index():
         if request.method == 'POST':
@@ -89,5 +94,12 @@ def init_routes(app, db, scraper):
             return jsonify({'error': 'Job not found'}), 404
         
         return jsonify({'job': job})
+    
+    
+
+    @web_bp.route('/api/scraping/status', methods=['GET'])
+    def api_scraping_status():
+        status = db.get_scraping_status()
+        return jsonify(status)
     
     app.register_blueprint(web_bp)

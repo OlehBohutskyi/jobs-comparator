@@ -65,3 +65,13 @@ class ScrapingProgress(Base):
     site = Column(String(50), unique=True)
     last_job_id = Column(Integer, default=0)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
+
+
+class ScrapingStatus(Base):
+    __tablename__ = 'scraping_status'
+    
+    id = Column(Integer, primary_key=True)
+    is_scraping = Column(Boolean, default=False)
+    total_jobs = Column(Integer, default=0)
+    completed_jobs = Column(Integer, default=0)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())

@@ -112,7 +112,12 @@ class DjinniScraper:
         await self.init_session()
         self.logger.info(f"Starting sequential job scraping from ID {start_id}, count: {count}")
         
+        # Initialize scraping status
+        self.db.start_scraping(count)
+        
         job_ids = []
+        completed = 0
+        max_job_id = start_id
         
         try:
             for job_id in range(start_id, start_id + count):
@@ -122,6 +127,8 @@ class DjinniScraper:
                     async with self.semaphore, self.session.get(job_url) as response:
                         if response.status != 200:
                             self.logger.error(f"Failed to get job at ID {job_id}: {response.status}")
+                            completed += 1
+                            self.db.update_scraping_progress(completed)
                             continue
                         
                         html_content = await response.text()
@@ -131,17 +138,27 @@ class DjinniScraper:
                             # Ensure job_id is set
                             job_data['job_id'] = str(job_id)
                             
-                            # Skip translation
+                            # Save to database
                             self.db.add_job(job_data)
                             job_ids.append(str(job_id))
                             
-                            # Update progress
-                            self.db.update_scraping_progress('djinni', job_id)
+                            # Keep track of max job ID processed
+                            if job_id > max_job_id:
+                                max_job_id = job_id
+                        
+                        completed += 1
+                        self.db.update_scraping_progress(completed)
                 except Exception as e:
                     self.logger.error(f"Error processing job at ID {job_id}: {e}")
+                    completed += 1
+                    self.db.update_scraping_progress(completed)
         except Exception as e:
             self.logger.error(f"Error during sequential job scraping: {e}")
         finally:
+            # Update the last processed job ID
+            self.db.update_last_job_id('djinni', max_job_id)
+            self.db.end_scraping()
             await self.close_session()
             
         return job_ids
+
