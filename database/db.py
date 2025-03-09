@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
-from .models import Base, Job
+from .models import Base, Job, ScrapingProgress
 
 class Database:
     def __init__(self, db_url='sqlite:///djinni_jobs.db'):
@@ -65,5 +65,29 @@ class Database:
                 (Job.title_en.ilike(f'%{title}%'))
             ).all()
             return [job.to_dict() for job in jobs]
+        finally:
+            session.close()
+
+    def get_last_scraped_job_id(self, site='djinni'):
+        session = self.get_session()
+        try:
+            progress = session.query(ScrapingProgress).filter_by(site=site).first()
+            return progress.last_job_id if progress else 0
+        finally:
+            session.close()
+
+    def update_scraping_progress(self, site, job_id):
+        session = self.get_session()
+        try:
+            progress = session.query(ScrapingProgress).filter_by(site=site).first()
+            if progress:
+                progress.last_job_id = job_id
+            else:
+                progress = ScrapingProgress(site=site, last_job_id=job_id)
+                session.add(progress)
+            session.commit()
+        except Exception as e:
+            session.rollback()
+            raise e
         finally:
             session.close()

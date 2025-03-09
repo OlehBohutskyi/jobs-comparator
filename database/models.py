@@ -32,6 +32,7 @@ class Job(Base):
     posted_date = Column(DateTime, nullable=True)
     created_at = Column(DateTime, server_default=func.now())
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
+    is_active = Column(Boolean, default=True)
     
     def to_dict(self):
         return {
@@ -53,5 +54,14 @@ class Job(Base):
             'url': self.url,
             'posted_date': self.posted_date.isoformat() if self.posted_date else None,
             'created_at': self.created_at.isoformat() if self.created_at else None,
-            'updated_at': self.updated_at.isoformat() if self.updated_at else None
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None,
+            'is_active': self.is_active
         }
+    
+class ScrapingProgress(Base):
+    __tablename__ = 'scraping_progress'
+
+    id = Column(Integer, primary_key=True)
+    site = Column(String(50), unique=True)
+    last_job_id = Column(Integer, default=0)
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())

@@ -9,22 +9,26 @@ def init_routes(app, db, scraper):
     @web_bp.route('/', methods=['GET', 'POST'])
     def index():
         if request.method == 'POST':
-            query = request.form.get('query', '')
-            pages = int(request.form.get('pages', 1))
+            site = request.form.get('site', 'djinni')
+            count = int(request.form.get('count', 10))
+            
+            # Get the last scraped job ID for this site
+            last_job_id = db.get_last_scraped_job_id(site)
+            start_id = last_job_id + 1
             
             # Start scraping in background using the executor
             def run_scraper():
                 async_loop = asyncio.new_event_loop()
                 asyncio.set_event_loop(async_loop)
                 try:
-                    async_loop.run_until_complete(scraper.search_jobs(query, pages))
+                    async_loop.run_until_complete(scraper.scrape_sequential_jobs(start_id, count))
                 finally:
                     async_loop.close()
             
             executor.submit(run_scraper)
             
-            flash('Job scraping started in the background. Results will appear soon.')
-            return redirect(url_for('web.jobs', query=query))
+            flash(f'Started scraping {count} jobs starting from ID {start_id}.')
+            return redirect(url_for('web.jobs'))
         
         return render_template('index.html')
     

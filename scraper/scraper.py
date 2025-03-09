@@ -106,3 +106,42 @@ class DjinniScraper:
         except Exception as e:
             self.logger.error(f"Error getting job details: {e}")
             return None
+    
+    async def scrape_sequential_jobs(self, start_id, count):
+        """Scrape jobs sequentially by ID"""
+        await self.init_session()
+        self.logger.info(f"Starting sequential job scraping from ID {start_id}, count: {count}")
+        
+        job_ids = []
+        
+        try:
+            for job_id in range(start_id, start_id + count):
+                job_url = f"{self.BASE_URL}/jobs/{job_id}"
+                
+                try:
+                    async with self.semaphore, self.session.get(job_url) as response:
+                        if response.status != 200:
+                            self.logger.error(f"Failed to get job at ID {job_id}: {response.status}")
+                            continue
+                        
+                        html_content = await response.text()
+                        job_data = self.parser.parse_job_detail(html_content)
+                        
+                        if job_data:
+                            # Ensure job_id is set
+                            job_data['job_id'] = str(job_id)
+                            
+                            # Skip translation
+                            self.db.add_job(job_data)
+                            job_ids.append(str(job_id))
+                            
+                            # Update progress
+                            self.db.update_scraping_progress('djinni', job_id)
+                except Exception as e:
+                    self.logger.error(f"Error processing job at ID {job_id}: {e}")
+        except Exception as e:
+            self.logger.error(f"Error during sequential job scraping: {e}")
+        finally:
+            await self.close_session()
+            
+        return job_ids

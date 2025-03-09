@@ -53,6 +53,7 @@
                     <th>English</th>
                     <th>Type</th>
                     <th>Domain</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
@@ -96,6 +97,15 @@
                         {% endif %}
                     </td>
                     <td>{{ job.domain }}</td>
+
+                    <td>
+                        {% if job.is_active %}
+                            <span class="badge bg-success">Active</span>
+                        {% else %}
+                            <span class="badge bg-secondary">Inactive</span>
+                        {% endif %}
+                    </td>
+
                 </tr>
                 {% endfor %}
             </tbody>

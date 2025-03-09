@@ -34,7 +34,7 @@ class DjinniParser:
         # Get job title and URL
         job_link = job_element.select_one('h2.fs-3 a')
         if job_link:
-            job_data['title'] = job_link.text.strip()
+            job_data['title'] = job_link.text.strip() 
             job_data['url'] = urljoin(self.BASE_URL, job_link.get('href', ''))
             job_data['job_id'] = self._extract_job_id(job_data['url'])
         else:
@@ -71,11 +71,22 @@ class DjinniParser:
         """Parse the job detail page and extract comprehensive job information"""
         soup = BeautifulSoup(html_content, 'html.parser')
         job_data = {}
+
+        inactive_badges = soup.select('span.badge.fs-5.rounded-1.text-light-emphasis.bg-light-subtle.border-0.fw-medium')
+        is_active = True
+        for badge in inactive_badges:
+            if "Неактивна" in badge.text:
+                is_active = False
+                break
+        job_data['is_active'] = is_active
         
         # Get job title
         job_title = soup.select_one('h1')
         if job_title:
-            job_data['title'] = job_title.text.strip()
+            job_title = job_title.text.strip()
+            if "Неактивна" in job_title:
+                job_title = job_title.replace("Неактивна", "").strip()
+            job_data['title'] = job_title
         
         # Get job URL and ID
         job_data['url'] = soup.select_one('link[rel="canonical"]')['href']

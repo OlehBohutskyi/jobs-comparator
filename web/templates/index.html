@@ -12,26 +12,21 @@
             <div class="card-body">
                 <form method="POST" action="{{ url_for('web.index') }}">
                     <div class="mb-3">
-                        <label for="query" class="form-label">Search Query</label>
-                        <input type="text" class="form-control" id="query" name="query" 
-                               placeholder="Enter job title, skills or technologies (e.g., Python, React, Data Engineer)">
-                        <div class="form-text">Leave empty to scrape all jobs</div>
+                        <label for="site" class="form-label">Job Site</label>
+                        <select class="form-select" id="site" name="site">
+                            <option value="djinni" selected>Djinni.co</option>
+                        </select>
                     </div>
                     
                     <div class="mb-3">
-                        <label for="pages" class="form-label">Number of Pages to Scrape</label>
-                        <select class="form-select" id="pages" name="pages">
-                            <option value="1">1 page</option>
-                            <option value="2">2 pages</option>
-                            <option value="3">3 pages</option>
-                            <option value="5">5 pages</option>
-                            <option value="10">10 pages</option>
-                        </select>
+                        <label for="count" class="form-label">Number of Jobs to Scrape</label>
+                        <input type="number" class="form-control" id="count" name="count" value="10" min="1" max="100">
+                        <div class="form-text">How many sequential job IDs to scrape</div>
                     </div>
                     
                     <div class="d-grid">
                         <button type="submit" class="btn btn-primary">
-                            <i class="bi bi-search me-2"></i>Search and Scrape
+                            <i class="bi bi-search me-2"></i>Start Scraping
                         </button>
                     </div>
                 </form>
