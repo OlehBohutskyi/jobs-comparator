@@ -8,6 +8,7 @@ import json
 from collections import defaultdict
 import datetime
 from scraper.sitemap_processor import SitemapProcessor
+from scraper.dou_scraper import DouScraper
 import re
 
 web_bp = Blueprint('web', __name__)
@@ -183,14 +184,11 @@ def init_routes(app, db, scraper):
         
         return jsonify({'job': job})
     
-    
-
     @web_bp.route('/api/scraping/status', methods=['GET'])
     def api_scraping_status():
         status = db.get_scraping_status()
         return jsonify(status)
     
-
     @web_bp.route('/api/scrape/refresh', methods=['POST'])
     def api_refresh_job_urls():
         """Эндпоинт для принудительного обновления списка вакансий из карт сайтов"""
@@ -321,15 +319,73 @@ def init_routes(app, db, scraper):
                         })
                 
                 elif source == 'dou':
-                    # Для DOU пока только отмечаем URL как обработанный
-                    # В будущем здесь будет логика скрапинга DOU
-                    db.mark_job_url_processed(url, True)
-                    results.append({
-                        'source': 'dou',
-                        'url': url,
-                        'status': 'skipped',
-                        'message': 'DOU scraper not implemented yet'
-                    })
+                    # Для DOU используем наш новый скрапер
+                    try:
+                        # Извлекаем ID вакансии из URL
+                        job_id_match = re.search(r'/vacancies/(\d+)/', url)
+                        if job_id_match:
+                            job_id = job_id_match.group(1)
+                            
+                            # Создаём функцию для асинхронного скрапинга
+                            async def process_dou_job():
+                                try:
+                                    # Создаем экземпляр скрапера DOU
+                                    dou_scraper = DouScraper(db)
+                                    
+                                    # Обрабатываем вакансию
+                                    result = await dou_scraper.process_job(url)
+                                    
+                                    if result:
+                                        return {
+                                            'source': 'dou',
+                                            'url': url,
+                                            'status': 'success',
+                                            'job_id': job_id
+                                        }
+                                    else:
+                                        return {
+                                            'source': 'dou',
+                                            'url': url,
+                                            'status': 'error',
+                                            'message': 'Failed to process DOU job'
+                                        }
+                                except Exception as e:
+                                    logging.error(f"Error processing DOU job {job_id}: {e}")
+                                    db.mark_job_url_processed(url, False)
+                                    return {
+                                        'source': 'dou',
+                                        'url': url,
+                                        'status': 'error',
+                                        'message': str(e)
+                                    }
+                            
+                            # Запускаем асинхронную задачу
+                            try:
+                                result = app.loop.run_until_complete(process_dou_job())
+                            except RuntimeError:
+                                loop = asyncio.new_event_loop()
+                                asyncio.set_event_loop(loop)
+                                result = loop.run_until_complete(process_dou_job())
+                                loop.close()
+                            
+                            results.append(result)
+                        else:
+                            db.mark_job_url_processed(url, False)
+                            results.append({
+                                'source': 'dou',
+                                'url': url,
+                                'status': 'error',
+                                'message': 'Failed to extract job ID from URL'
+                            })
+                    except Exception as e:
+                        logging.error(f"General error processing DOU URL {url}: {e}")
+                        db.mark_job_url_processed(url, False)
+                        results.append({
+                            'source': 'dou',
+                            'url': url,
+                            'status': 'error',
+                            'message': str(e)
+                        })
             
             # Возвращаем результаты
             return jsonify({
