@@ -75,3 +75,29 @@ class ScrapingStatus(Base):
     total_jobs = Column(Integer, default=0)
     completed_jobs = Column(Integer, default=0)
     updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
+
+
+class JobUrl(Base):
+    __tablename__ = 'job_urls'
+    
+    id = Column(Integer, primary_key=True)
+    url = Column(String(255), unique=True, nullable=False)
+    source = Column(String(50), nullable=False)  # 'djinni' или 'dou'
+    job_id = Column(String(50), nullable=True)
+    is_processed = Column(Boolean, default=False)
+    status = Column(String(50), default='pending')  # 'pending', 'success', 'error'
+    created_at = Column(DateTime, server_default=func.now())
+    processed_at = Column(DateTime, nullable=True)
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'url': self.url,
+            'source': self.source,
+            'job_id': self.job_id,
+            'is_processed': self.is_processed,
+            'status': self.status,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'processed_at': self.processed_at.isoformat() if self.processed_at else None
+        }
+

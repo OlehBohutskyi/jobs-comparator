@@ -51,6 +51,9 @@ class Translator:
             
     async def translate_job_data(self, job_data):
         """Translate relevant fields in job data"""
+        # Создаем копию данных, чтобы избежать изменений во время перевода
+        result = job_data.copy()
+        
         # Fields to translate
         translate_fields = {
             'title': 'title_en',
@@ -61,15 +64,23 @@ class Translator:
             'domain': 'domain_en'
         }
         
-        # Create translation tasks
-        tasks = []
+        # Переводим каждое поле последовательно, чтобы избежать путаницы
         for src_field, dest_field in translate_fields.items():
-            if src_field in job_data and job_data[src_field]:
-                tasks.append(self._translate_field(job_data, src_field, dest_field))
-                
-        # Run translations concurrently
-        await asyncio.gather(*tasks)
-        return job_data
+            if src_field in result and result[src_field]:
+                try:
+                    # Переводим значение напрямую, без промежуточных переменных
+                    translated_text = await self.translate_text_async(result[src_field])
+                    # Сохраняем переведенное значение в соответствующее поле
+                    result[dest_field] = translated_text
+                    
+                    # Логирование для отладки
+                    print(f"Translated {src_field}: '{result[src_field]}' -> '{result[dest_field]}'")
+                except Exception as e:
+                    print(f"Translation error for field {src_field}: {e}")
+                    # В случае ошибки копируем оригинальное значение
+                    result[dest_field] = result[src_field]
+        
+        return result
         
     async def _translate_field(self, job_data, src_field, dest_field):
         """Translate a single field and store in destination field"""

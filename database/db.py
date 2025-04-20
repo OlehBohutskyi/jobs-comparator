@@ -1,7 +1,8 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
-from .models import Base, Job, ScrapingProgress, ScrapingStatus
+from .models import Base, Job, ScrapingProgress, ScrapingStatus, JobUrl
+import datetime, re
 
 class Database:
     def __init__(self, db_url='sqlite:///djinni_jobs.db'):
@@ -161,6 +162,95 @@ class Database:
                 'is_scraping': False,
                 'total_jobs': 0,
                 'completed_jobs': 0
+            }
+        finally:
+            session.close()
+
+    def add_job_url(self, url, source):
+        """Добавляет URL вакансии в очередь на скрапинг"""
+        session = self.get_session()
+        try:
+            existing_url = session.query(JobUrl).filter_by(url=url).first()
+            if not existing_url:
+                # Извлекаем job_id из URL
+                job_id = None
+                if source == 'djinni':
+                    match = re.search(r'/jobs/(\d+)-', url)
+                    if match:
+                        job_id = match.group(1)
+                elif source == 'dou':
+                    match = re.search(r'/vacancies/(\d+)/', url)
+                    if match:
+                        job_id = match.group(1)
+                    
+                job_url = JobUrl(url=url, source=source, job_id=job_id)
+                session.add(job_url)
+                session.commit()
+                return True
+            return False
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+    def mark_job_url_processed(self, url, success=True):
+        """Отмечает URL вакансии как обработанный"""
+        session = self.get_session()
+        try:
+            job_url = session.query(JobUrl).filter_by(url=url).first()
+            if job_url:
+                job_url.is_processed = True
+                job_url.processed_at = datetime.datetime.now()
+                job_url.status = 'success' if success else 'error'
+                session.commit()
+                return True
+            return False
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+    def get_next_job_urls(self):
+        """Получает следующие непрошедшие URL вакансий для скрапинга (по одной из каждого источника)"""
+        session = self.get_session()
+        try:
+            # Получаем по одной непрошедшей вакансии из каждого источника
+            djinni_url = session.query(JobUrl).filter_by(
+                source='djinni', is_processed=False
+            ).first()
+            
+            dou_url = session.query(JobUrl).filter_by(
+                source='dou', is_processed=False
+            ).first()
+            
+            result = []
+            if djinni_url:
+                result.append(djinni_url.to_dict())
+            if dou_url:
+                result.append(dou_url.to_dict())
+            
+            return result
+        finally:
+            session.close()
+
+    def count_unprocessed_job_urls(self):
+        """Подсчитывает количество непрошедших URL вакансий"""
+        session = self.get_session()
+        try:
+            djinni_count = session.query(JobUrl).filter_by(
+                source='djinni', is_processed=False
+            ).count()
+            
+            dou_count = session.query(JobUrl).filter_by(
+                source='dou', is_processed=False
+            ).count()
+            
+            return {
+                'djinni': djinni_count,
+                'dou': dou_count,
+                'total': djinni_count + dou_count
             }
         finally:
             session.close()

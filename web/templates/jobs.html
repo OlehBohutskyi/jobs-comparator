@@ -27,6 +27,33 @@
         background-color: #20c997;
         color: white;
     }
+    .filter-card {
+        margin-bottom: 1.5rem;
+        border-radius: 0.5rem;
+        transition: box-shadow 0.3s ease;
+    }
+    .filter-card:hover {
+        box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+    }
+    .filter-card .card-header {
+        background-color: #f8f9fa;
+        border-bottom: 1px solid rgba(0,0,0,0.125);
+    }
+    .range-slider {
+        width: 100%;
+    }
+    .filter-badge {
+        font-size: 0.8rem;
+        margin-right: 0.5rem;
+        margin-bottom: 0.5rem;
+        background-color: #f1f8ff;
+        color: #0366d6;
+        border: 1px solid #c8e1ff;
+    }
+    .filter-badge .close {
+        margin-left: 0.5rem;
+        font-size: 0.9rem;
+    }
 </style>
 {% endblock %}
 
@@ -56,6 +83,183 @@
         <input type="text" name="query" class="form-control me-2" placeholder="Search jobs..." value="{{ query }}">
         <button type="submit" class="btn btn-primary">Search</button>
     </form>
+</div>
+
+<!-- Filter Card -->
+<div class="card filter-card mb-4">
+    <div class="card-header">
+        <h5 class="mb-0 d-flex justify-content-between align-items-center">
+            <span>
+                <i class="bi bi-funnel me-2"></i>Filter Jobs
+            </span>
+            <button class="btn btn-sm btn-link text-decoration-none" type="button" data-bs-toggle="collapse" data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
+                <i class="bi bi-chevron-down"></i>
+            </button>
+        </h5>
+    </div>
+    <div class="collapse show" id="filterCollapse">
+        <div class="card-body">
+            <form method="GET" action="{{ url_for('web.jobs') }}" id="filter-form">
+                <!-- Hidden fields to preserve query and pagination -->
+                <input type="hidden" name="query" value="{{ query }}">
+                <input type="hidden" name="page" value="1">
+                
+                <div class="row">
+                    <!-- Experience Range -->
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label class="form-label">Experience (years)</label>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" name="experience_min" placeholder="Min" value="{{ experience_min }}" min="0">
+                            <input type="number" class="form-control" name="experience_max" placeholder="Max" value="{{ experience_max }}" min="0">
+                        </div>
+                    </div>
+                    
+                    <!-- Salary Range -->
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label class="form-label">Salary (USD)</label>
+                        <div class="d-flex">
+                            <input type="number" class="form-control me-2" name="salary_min" placeholder="Min" value="{{ salary_min }}" min="0">
+                            <input type="number" class="form-control" name="salary_max" placeholder="Max" value="{{ salary_max }}" min="0">
+                        </div>
+                    </div>
+                    
+                    <!-- English Level -->
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label class="form-label">English Level</label>
+                        <select class="form-select" name="english_level">
+                            <option value="" {% if not english_level %}selected{% endif %}>All Levels</option>
+                            {% for level in filter_metadata.english_levels %}
+                                <option value="{{ level }}" {% if english_level == level %}selected{% endif %}>{{ level }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <!-- Job Type -->
+                    <div class="col-md-6 col-lg-3 mb-3">
+                        <label class="form-label">Job Type</label>
+                        <select class="form-select" name="job_type">
+                            <option value="" {% if not job_type %}selected{% endif %}>All Types</option>
+                            {% for type in filter_metadata.job_types %}
+                                <option value="{{ type }}" {% if job_type == type %}selected{% endif %}>{{ type }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <!-- Location -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Location</label>
+                        <select class="form-select" name="location">
+                            <option value="" {% if not location %}selected{% endif %}>All Locations</option>
+                            {% for loc in filter_metadata.locations %}
+                                <option value="{{ loc }}" {% if location == loc %}selected{% endif %}>{{ loc }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                    
+                    <!-- Domain -->
+                    <div class="col-md-6 mb-3">
+                        <label class="form-label">Domain</label>
+                        <select class="form-select" name="domain">
+                            <option value="" {% if not domain %}selected{% endif %}>All Domains</option>
+                            {% for d in filter_metadata.domains %}
+                                <option value="{{ d }}" {% if domain == d %}selected{% endif %}>{{ d }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="d-flex gap-2">
+                    <button type="submit" class="btn btn-primary">
+                        <i class="bi bi-funnel me-1"></i>Apply Filters
+                    </button>
+                    <a href="{{ url_for('web.jobs', query=query) }}" class="btn btn-outline-secondary">
+                        <i class="bi bi-x-circle me-1"></i>Reset Filters
+                    </a>
+                </div>
+            </form>
+        </div>
+        
+        <!-- Active Filters Display -->
+        {% if experience_min or experience_max or salary_min or salary_max or english_level or location or job_type or domain %}
+        <div class="card-footer bg-white">
+            <div class="d-flex flex-wrap align-items-center">
+                <span class="me-2 text-muted">Active filters:</span>
+                
+                {% if experience_min %}
+                <span class="badge filter-badge">
+                    Min. Experience: {{ experience_min }} years
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if experience_max %}
+                <span class="badge filter-badge">
+                    Max. Experience: {{ experience_max }} years
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if salary_min %}
+                <span class="badge filter-badge">
+                    Min. Salary: ${{ salary_min }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if salary_max %}
+                <span class="badge filter-badge">
+                    Max. Salary: ${{ salary_max }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if english_level %}
+                <span class="badge filter-badge">
+                    English: {{ english_level }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, location=location, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if location %}
+                <span class="badge filter-badge">
+                    Location: {{ location }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, job_type=job_type, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if job_type %}
+                <span class="badge filter-badge">
+                    Job Type: {{ job_type }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, domain=domain) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+                
+                {% if domain %}
+                <span class="badge filter-badge">
+                    Domain: {{ domain }}
+                    <a href="{{ url_for('web.jobs', query=query, page=page, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type) }}" class="text-decoration-none">
+                        <i class="bi bi-x-circle"></i>
+                    </a>
+                </span>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
 </div>
 
 {% if jobs %}
@@ -130,15 +334,67 @@
         </table>
     </div>
     
+    <!-- Pagination Controls -->
+    {% if total_pages > 1 %}
+    <nav aria-label="Job pagination" class="my-4">
+        <ul class="pagination justify-content-center">
+            <li class="page-item {% if page == 1 %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for('web.jobs', query=query, page=page-1, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            
+            {% set start_page = [1, page - 2]|max %}
+            {% set end_page = [total_pages, page + 2]|min %}
+            
+            {% if start_page > 1 %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('web.jobs', query=query, page=1, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}">1</a>
+                </li>
+                {% if start_page > 2 %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+            {% endif %}
+            
+            {% for p in range(start_page, end_page + 1) %}
+                <li class="page-item {% if p == page %}active{% endif %}">
+                    <a class="page-link" href="{{ url_for('web.jobs', query=query, page=p, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}">{{ p }}</a>
+                </li>
+            {% endfor %}
+            
+            {% if end_page < total_pages %}
+                {% if end_page < total_pages - 1 %}
+                    <li class="page-item disabled"><span class="page-link">...</span></li>
+                {% endif %}
+                <li class="page-item">
+                    <a class="page-link" href="{{ url_for('web.jobs', query=query, page=total_pages, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}">{{ total_pages }}</a>
+                </li>
+            {% endif %}
+            
+            <li class="page-item {% if page == total_pages %}disabled{% endif %}">
+                <a class="page-link" href="{{ url_for('web.jobs', query=query, page=page+1, experience_min=experience_min, experience_max=experience_max, salary_min=salary_min, salary_max=salary_max, english_level=english_level, location=location, job_type=job_type, domain=domain) }}" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    {% endif %}
+    
     <div class="alert alert-info">
-        <p class="mb-0">Found {{ jobs|length }} job{% if jobs|length != 1 %}s{% endif %}.</p>
+        <p class="mb-0">
+            Showing {{ jobs|length }} of {{ total_jobs }} job{% if total_jobs != 1 %}s{% endif %}
+            {% if query or experience_min or experience_max or salary_min or salary_max or english_level or location or job_type or domain %}
+                matching your search criteria
+            {% endif %}
+            (Page {{ page }} of {{ total_pages }})
+        </p>
     </div>
 {% else %}
     <div class="alert alert-warning">
         <h4 class="alert-heading">No jobs found!</h4>
         <p>
-            {% if query %}
-                No jobs matching "{{ query }}" were found in the database.
+            {% if query or experience_min or experience_max or salary_min or salary_max or english_level or location or job_type or domain %}
+                No jobs matching your search criteria were found in the database.
             {% else %}
                 The database is empty. Try scraping some jobs first.
             {% endif %}
@@ -208,11 +464,7 @@
     // Start checking when page loads
     $(document).ready(function() {
         checkScrapingStatus();
-    });
-</script>
-
-<script>
-    $(document).ready(function() {
+        
         // Job row click handler
         $('.job-row').click(function() {
             const jobId = $(this).data('job-id');

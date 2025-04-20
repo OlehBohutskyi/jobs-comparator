@@ -1,9 +1,14 @@
 import asyncio
+import re
+import logging
+from flask import jsonify, Blueprint
 from concurrent.futures import ThreadPoolExecutor
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 import json
 from collections import defaultdict
 import datetime
+from scraper.sitemap_processor import SitemapProcessor
+import re
 
 web_bp = Blueprint('web', __name__)
 executor = ThreadPoolExecutor(max_workers=5)
@@ -42,15 +47,95 @@ def init_routes(app, db, scraper):
     
     @web_bp.route('/jobs', methods=['GET'])
     def jobs():
+        # Pagination parameters
+        page = request.args.get('page', 1, type=int)
+        per_page = request.args.get('per_page', 20, type=int)
+        
+        # Search query
         query = request.args.get('query', '')
+        
+        # Filter parameters
+        experience_min = request.args.get('experience_min', '', type=str)
+        experience_max = request.args.get('experience_max', '', type=str)
+        salary_min = request.args.get('salary_min', '', type=str)
+        salary_max = request.args.get('salary_max', '', type=str)
+        english_level = request.args.get('english_level', '')
+        location = request.args.get('location', '')
+        job_type = request.args.get('job_type', '')
+        domain = request.args.get('domain', '')
         
         # Get jobs from database
         if query:
-            jobs_data = db.search_jobs(query)
+            all_jobs = db.search_jobs(query)
         else:
-            jobs_data = db.get_all_jobs()
+            all_jobs = db.get_all_jobs()
         
-        return render_template('jobs.html', jobs=jobs_data, query=query)
+        # Apply filters
+        filtered_jobs = []
+        for job in all_jobs:
+            # Experience filter
+            if experience_min and (not job.get('experience_years') or job['experience_years'] < int(experience_min)):
+                continue
+            if experience_max and (not job.get('experience_years') or job['experience_years'] > int(experience_max)):
+                continue
+            
+            # Salary filter
+            if salary_min and (not job.get('salary_min') or job['salary_min'] < float(salary_min)):
+                continue
+            if salary_max and (not job.get('salary_max') or job['salary_max'] > float(salary_max)):
+                continue
+            
+            # English level filter
+            if english_level and job.get('english_level') != english_level:
+                continue
+            
+            # Location filter
+            if location and (not job.get('location') or location.lower() not in job['location'].lower()):
+                continue
+            
+            # Job type filter
+            if job_type and job.get('job_type') != job_type:
+                continue
+            
+            # Domain filter
+            if domain and job.get('domain') != domain:
+                continue
+            
+            filtered_jobs.append(job)
+        
+        # Get metadata for filters
+        filter_metadata = {
+            'english_levels': sorted(list(set(job.get('english_level') for job in all_jobs if job.get('english_level')))),
+            'locations': sorted(list(set(job.get('location') for job in all_jobs if job.get('location')))),
+            'job_types': sorted(list(set(job.get('job_type') for job in all_jobs if job.get('job_type')))),
+            'domains': sorted(list(set(job.get('domain') for job in all_jobs if job.get('domain')))),
+        }
+        
+        # Pagination
+        total_jobs = len(filtered_jobs)
+        total_pages = (total_jobs + per_page - 1) // per_page
+        start_index = (page - 1) * per_page
+        end_index = min(start_index + per_page, total_jobs)
+        paginated_jobs = filtered_jobs[start_index:end_index]
+        
+        return render_template(
+            'jobs.html',
+            jobs=paginated_jobs,
+            query=query,
+            page=page,
+            per_page=per_page,
+            total_jobs=total_jobs,
+            total_pages=total_pages,
+            experience_min=experience_min,
+            experience_max=experience_max,
+            salary_min=salary_min,
+            salary_max=salary_max,
+            english_level=english_level,
+            location=location,
+            job_type=job_type,
+            domain=domain,
+            filter_metadata=filter_metadata
+        )
     
     @web_bp.route('/jobs/<job_id>', methods=['GET'])
     def job_detail(job_id):
@@ -104,6 +189,162 @@ def init_routes(app, db, scraper):
     def api_scraping_status():
         status = db.get_scraping_status()
         return jsonify(status)
+    
+
+    @web_bp.route('/api/scrape/refresh', methods=['POST'])
+    def api_refresh_job_urls():
+        """Эндпоинт для принудительного обновления списка вакансий из карт сайтов"""
+        try:
+            sitemap_processor = SitemapProcessor(db)
+            results = sitemap_processor.refresh_job_urls()
+            
+            return jsonify({
+                'success': True,
+                'added': results,
+                'remaining': db.count_unprocessed_job_urls()
+            })
+        
+        except Exception as e:
+            logging.error(f"Error refreshing job URLs: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
+
+    @web_bp.route('/api/scrape/next', methods=['GET'])
+    def api_scrape_next():
+        """Эндпоинт для скрапинга следующей пары вакансий (одна из Djinni, одна из DOU)"""
+        try:
+            # Проверяем количество непрошедших URL
+            unprocessed_count = db.count_unprocessed_job_urls()
+            
+            # Если осталось мало вакансий, обновляем список
+            if unprocessed_count['total'] < 10:
+                sitemap_processor = SitemapProcessor(db)
+                refresh_result = sitemap_processor.refresh_job_urls()
+                logging.info(f"Refreshed job URLs: {refresh_result}")
+                
+            # Получаем следующие вакансии для обработки
+            next_urls = db.get_next_job_urls()
+            
+            results = []
+            for job_url_data in next_urls:
+                source = job_url_data['source']
+                url = job_url_data['url']
+                
+                if source == 'djinni':
+                    # Используем существующий скрапер для Djinni
+                    try:
+                        # Извлекаем ID вакансии из URL
+                        job_id_match = re.search(r'/jobs/(\d+)-', url)
+                        if job_id_match:
+                            job_id = job_id_match.group(1)
+                            
+                            # Создаём функцию для асинхронного скрапинга
+                            async def process_djinni_job():
+                                try:
+                                    # Инициализируем сессию скрапера
+                                    await scraper.init_session()
+                                    
+                                    # Получаем детали вакансии
+                                    job_detail = await scraper.get_job_detail(url)
+                                    
+                                    if job_detail:
+                                        # Добавляем job_id, если его нет
+                                        job_detail['job_id'] = job_id
+                                        
+                                        # Переводим данные
+                                        job_detail = await scraper.translator.translate_job_data(job_detail)
+                                        
+                                        # Сохраняем в БД
+                                        db.add_job(job_detail)
+                                        db.mark_job_url_processed(url, True)
+                                        return {
+                                            'source': 'djinni',
+                                            'url': url,
+                                            'status': 'success',
+                                            'job_id': job_id
+                                        }
+                                    else:
+                                        # Если не удалось получить детали, отмечаем как обработанную с ошибкой
+                                        db.mark_job_url_processed(url, False)
+                                        return {
+                                            'source': 'djinni',
+                                            'url': url,
+                                            'status': 'error',
+                                            'message': 'Failed to get job details'
+                                        }
+                                except Exception as e:
+                                    logging.error(f"Error processing Djinni job {job_id}: {e}")
+                                    # При любой ошибке отмечаем URL как обработанный с ошибкой
+                                    db.mark_job_url_processed(url, False)
+                                    return {
+                                        'source': 'djinni',
+                                        'url': url,
+                                        'status': 'error',
+                                        'message': str(e)
+                                    }
+                                finally:
+                                    # Закрываем сессию скрапера
+                                    await scraper.close_session()
+                            
+                            # Запускаем асинхронную задачу в текущем event loop или создаем новый
+                            try:
+                                # Используем app.loop, который определен в app.py
+                                result = app.loop.run_until_complete(process_djinni_job())
+                            except RuntimeError:
+                                # Если текущий loop уже работает, создаем новый
+                                loop = asyncio.new_event_loop()
+                                asyncio.set_event_loop(loop)
+                                result = loop.run_until_complete(process_djinni_job())
+                                loop.close()
+                            
+                            results.append(result)
+                        else:
+                            # Если не удалось извлечь ID, отмечаем как обработанную с ошибкой
+                            db.mark_job_url_processed(url, False)
+                            results.append({
+                                'source': 'djinni',
+                                'url': url,
+                                'status': 'error',
+                                'message': 'Failed to extract job ID from URL'
+                            })
+                    except Exception as e:
+                        logging.error(f"General error processing Djinni URL {url}: {e}")
+                        # При любой ошибке отмечаем URL как обработанный с ошибкой
+                        db.mark_job_url_processed(url, False)
+                        results.append({
+                            'source': 'djinni',
+                            'url': url,
+                            'status': 'error',
+                            'message': str(e)
+                        })
+                
+                elif source == 'dou':
+                    # Для DOU пока только отмечаем URL как обработанный
+                    # В будущем здесь будет логика скрапинга DOU
+                    db.mark_job_url_processed(url, True)
+                    results.append({
+                        'source': 'dou',
+                        'url': url,
+                        'status': 'skipped',
+                        'message': 'DOU scraper not implemented yet'
+                    })
+            
+            # Возвращаем результаты
+            return jsonify({
+                'success': True,
+                'processed': len(results),
+                'results': results,
+                'remaining': db.count_unprocessed_job_urls()
+            })
+        
+        except Exception as e:
+            logging.error(f"Error in scrape next endpoint: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
     
 
     @web_bp.route('/analytics')

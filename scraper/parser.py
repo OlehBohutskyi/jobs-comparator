@@ -1,3 +1,4 @@
+import json
 import re
 import datetime
 from bs4 import BeautifulSoup
@@ -97,10 +98,85 @@ class DjinniParser:
         if company_element:
             job_data['company_name'] = company_element.text.strip()
         
+        # Try to extract salary from schema.org JSON-LD data (most reliable source)
+        salary_found = False
+        for script_tag in soup.find_all('script', type='application/ld+json'):
+            try:
+                json_data = json.loads(script_tag.string)
+                if json_data.get('@type') == 'JobPosting' and 'baseSalary' in json_data:
+                    salary_data = json_data['baseSalary']
+                    if isinstance(salary_data, dict) and 'value' in salary_data:
+                        currency = salary_data.get('currency', 'USD')
+                        value = salary_data['value']
+                        
+                        if isinstance(value, dict):
+                            min_value = value.get('minValue')
+                            max_value = value.get('maxValue')
+                            
+                            if min_value is not None:
+                                job_data['salary_min'] = float(min_value)
+                            
+                            if max_value is not None:
+                                job_data['salary_max'] = float(max_value)
+                            
+                            job_data['currency'] = currency
+                            salary_found = True
+                            break
+            except (json.JSONDecodeError, KeyError, ValueError):
+                continue
+        
+        # If salary not found in JSON-LD, try to extract from HTML
+        if not salary_found:
+            # Find salary element with more specific selectors and context
+            salary_element = None
+            
+            # Try specific classes first
+            selectors = [
+                '.public-salary-item', 
+                '.text-success', 
+                '.salary',
+                '[data-analytics="salary"]'
+            ]
+            
+            for selector in selectors:
+                element = soup.select_one(selector)
+                if element:
+                    # Verify it actually contains currency symbols or salary-related keywords
+                    text = element.text.strip()
+                    if re.search(r'[$€£]|\b(?:USD|EUR|UAH|грн)\b|\b(?:зарплат|salary)\b', text, re.IGNORECASE):
+                        salary_element = element
+                        break
+            
+            # If not found by class, look for text near certain keywords
+            if not salary_element:
+                # Look for elements containing currency symbols with context
+                for element in soup.select('span, div, p'):
+                    text = element.text.strip()
+                    # Check for currency symbols with numbers
+                    if re.search(r'[$€£]\s*\d+', text):
+                        # Verify it's not something like "in 3-4 months" by requiring salary keywords
+                        if re.search(r'\b(?:зарплат|salary|оплат|compensation|оклад)\b', 
+                                    text.lower() + 
+                                    (element.parent.text.lower() if element.parent else '')):
+                            salary_element = element
+                            break
+            
+            if salary_element:
+                salary_text = salary_element.text.strip()
+                salary_data = self._parse_salary(salary_text)
+                
+                # Validate the extracted data to ensure it's actually a salary
+                if salary_data.get('salary_min') or salary_data.get('salary_max'):
+                    job_data.update(salary_data)
+        
         # Get job description
         description_element = soup.select_one('.job-post__description')
         if description_element:
             job_data['description'] = description_element.get_text('\n').strip()
+        
+        # Remaining code for other fields...
+        # ...
+    
         
         # Get job metadata from sidebar
         sidebar = soup.select_one('aside')
@@ -165,23 +241,73 @@ class DjinniParser:
         """Parse salary range from text"""
         result = {'salary_min': None, 'salary_max': None, 'currency': 'USD'}
         
-        # Extract salary range and currency
-        salary_match = re.search(r'(від|до)?\s*\$?(\d+(?:[.,]\d+)?)\s*(?:-\s*\$?(\d+(?:[.,]\d+)?))?\s*(\w+)?', salary_text)
+        # Filter out common false positives
+        if re.search(r'\b(?:month[s]?|week[s]?|day[s]?|hour[s]?|год[а-я]*|місяц[а-я]*|день|дн[а-я]+)\b', 
+                    salary_text, re.IGNORECASE):
+            # Check if it's a timeframe mention without salary context
+            if not re.search(r'[$€₴₽]|грн|usd|eur|uah', salary_text, re.IGNORECASE):
+                return result
+        
+        # More specific pattern for salary with currency
+        salary_match = re.search(
+            r'(?:від|до|from|up to|от|до)?\s*'
+            r'([$€₴₽])?\s*(\d+(?:[.,]\d+)?)[k]?\s*'
+            r'(?:([$€₴₽])|(\b(?:USD|EUR|UAH|грн)\b))?'
+            r'(?:\s*[-–—]\s*'
+            r'([$€₴₽])?\s*(\d+(?:[.,]\d+)?)[k]?\s*'
+            r'(?:([$€₴₽])|(\b(?:USD|EUR|UAH|грн)\b))?)?',
+            salary_text
+        )
         
         if salary_match:
-            prefix, min_val, max_val, currency = salary_match.groups()
+            # Extracting all groups
+            currency_symbol1, min_val, currency_symbol2, currency_word1, currency_symbol3, max_val, currency_symbol4, currency_word2 = salary_match.groups()
             
-            # Determine min and max based on prefix
-            if prefix and prefix.lower() == 'до':
-                result['salary_max'] = float(min_val.replace(',', '.'))
-            else:
-                result['salary_min'] = float(min_val.replace(',', '.'))
-                if max_val:
-                    result['salary_max'] = float(max_val.replace(',', '.'))
+            # Determine currency
+            currency = 'USD'  # default
+            for symbol in [currency_symbol1, currency_symbol2, currency_symbol3, currency_symbol4]:
+                if symbol:
+                    if symbol == '$':
+                        currency = 'USD'
+                        break
+                    elif symbol == '€':
+                        currency = 'EUR'
+                        break
+                    elif symbol == '₴':
+                        currency = 'UAH'
+                        break
+                    elif symbol == '₽':
+                        currency = 'RUB'
+                        break
             
-            # Set currency if present
-            if currency:
-                result['currency'] = currency
+            for word in [currency_word1, currency_word2]:
+                if word:
+                    word = word.upper()
+                    if word in ['USD', 'EUR', 'UAH']:
+                        currency = word
+                        break
+                    elif word == 'ГРН':
+                        currency = 'UAH'
+                        break
+            
+            # Convert to float and handle k suffix (thousands)
+            if min_val:
+                min_val = min_val.replace(',', '.')
+                if 'k' in min_val.lower():
+                    min_val = float(min_val.lower().replace('k', '')) * 1000
+                else:
+                    min_val = float(min_val)
+                result['salary_min'] = min_val
+                
+            if max_val:
+                max_val = max_val.replace(',', '.')
+                if 'k' in max_val.lower():
+                    max_val = float(max_val.lower().replace('k', '')) * 1000
+                else:
+                    max_val = float(max_val)
+                result['salary_max'] = max_val
+            
+            result['currency'] = currency
         
         return result
     
