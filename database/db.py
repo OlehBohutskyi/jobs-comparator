@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
-from .models import Base, Job, ScrapingProgress, ScrapingStatus, JobUrl
+from .models import Base, Job, ScrapingProgress, ScrapingStatus, JobUrl, RequirementsAnalysis
 import datetime, re
 
 class Database:
@@ -252,5 +252,133 @@ class Database:
                 'dou': dou_count,
                 'total': djinni_count + dou_count
             }
+        finally:
+            session.close()
+
+    # Add these methods to the Database class in database/db.py
+
+    def add_requirements_analysis(self, domains, top_words=None, summary=None, 
+                                is_educational_analysis=False, education_program_file=None,
+                                education_program_filename=None, education_program_filetype=None,
+                                education_program_text=None, education_program_analysis=None):
+        """Add a new requirements analysis record"""
+        session = self.get_session()
+        try:
+            analysis = RequirementsAnalysis(
+                domains=domains,
+                top_words=top_words,
+                summary=summary,
+                is_educational_analysis=is_educational_analysis,
+                education_program_file=education_program_file,
+                education_program_filename=education_program_filename,
+                education_program_filetype=education_program_filetype,
+                education_program_text=education_program_text,
+                education_program_analysis=education_program_analysis
+            )
+            session.add(analysis)
+            session.commit()
+            return analysis.id
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+
+    def update_requirements_analysis(self, analysis_id, top_words=None, summary=None,
+                                    education_program_analysis=None):
+        """Update an existing requirements analysis record"""
+        session = self.get_session()
+        try:
+            analysis = session.query(RequirementsAnalysis).filter_by(id=analysis_id).first()
+            if analysis:
+                if top_words is not None:
+                    analysis.top_words = top_words
+                if summary is not None:
+                    analysis.summary = summary
+                if education_program_analysis is not None:
+                    analysis.education_program_analysis = education_program_analysis
+                session.commit()
+                return True
+            return False
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+    def get_educational_analyses(self):
+        """Get all requirements analyses that include educational program analysis"""
+        session = self.get_session()
+        try:
+            analyses = session.query(RequirementsAnalysis).filter_by(
+                is_educational_analysis=True
+            ).order_by(RequirementsAnalysis.created_at.desc()).all()
+            return [analysis.to_dict() for analysis in analyses]
+        finally:
+            session.close()
+
+
+    def get_regular_analyses(self):
+        """Get all requirements analyses that don't include educational program analysis"""
+        session = self.get_session()
+        try:
+            analyses = session.query(RequirementsAnalysis).filter_by(
+                is_educational_analysis=False
+            ).order_by(RequirementsAnalysis.created_at.desc()).all()
+            return [analysis.to_dict() for analysis in analyses]
+        finally:
+            session.close()
+
+
+    def get_requirements_analysis(self, analysis_id):
+        """Get a requirements analysis by ID"""
+        session = self.get_session()
+        try:
+            analysis = session.query(RequirementsAnalysis).filter_by(id=analysis_id).first()
+            return analysis.to_dict() if analysis else None
+        finally:
+            session.close()
+
+    def get_all_requirements_analyses(self):
+        """Get all requirements analyses"""
+        session = self.get_session()
+        try:
+            analyses = session.query(RequirementsAnalysis).order_by(RequirementsAnalysis.created_at.desc()).all()
+            return [analysis.to_dict() for analysis in analyses]
+        finally:
+            session.close()
+
+    def get_jobs_by_domains(self, domains, limit=100):
+        """Get jobs filtered by domain"""
+        session = self.get_session()
+        try:
+            jobs = []
+            for domain in domains:
+                domain_jobs = session.query(Job).filter(
+                    Job.domain.ilike(f'%{domain}%') | Job.domain_en.ilike(f'%{domain}%')
+                ).limit(limit).all()
+                
+                jobs.extend([job.to_dict() for job in domain_jobs])
+            
+            return jobs
+        finally:
+            session.close()
+
+    
+    
+    def delete_requirements_analysis(self, analysis_id):
+        """Delete a requirements analysis by ID"""
+        session = self.get_session()
+        try:
+            analysis = session.query(RequirementsAnalysis).filter_by(id=analysis_id).first()
+            if analysis:
+                session.delete(analysis)
+                session.commit()
+                return True
+            return False
+        except Exception as e:
+            session.rollback()
+            raise e
         finally:
             session.close()

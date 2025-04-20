@@ -1,0 +1,1231 @@
+{% extends 'base.html' %}
+
+{% block title %}Job Requirements Analysis{% endblock %}
+
+{% block extra_css %}
+<style>
+    .requirements-card {
+        transition: all 0.3s ease;
+        height: 100%;
+    }
+    .requirements-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .domain-badge {
+        margin-right: 5px;
+        margin-bottom: 5px;
+        background-color: #4C6EF5;
+    }
+    .timestamp {
+        font-size: 0.8rem;
+        color: #6c757d;
+    }
+    #domainsSelect {
+        min-height: 150px;
+    }
+    .progress-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 1050;
+        flex-direction: column;
+    }
+    .progress-card {
+        background: white;
+        border-radius: 8px;
+        padding: 20px;
+        width: 80%;
+        max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+    .word-cloud {
+        height: 300px;
+        width: 100%;
+    }
+    .summary-content {
+        line-height: 1.6;
+    }
+    .top-words-list {
+        max-height: 300px;
+        overflow-y: auto;
+    }
+    .delete-btn {
+        color: #dc3545;
+        cursor: pointer;
+    }
+    .delete-btn:hover {
+        color: #bd2130;
+    }
+    .filter-controls {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 15px;
+    }
+    .no-analyses {
+        padding: 30px;
+        text-align: center;
+        color: #6c757d;
+    }
+    .analysis-item.educational {
+        background-color: #e8f4ff;
+    }
+    .educational-badge {
+        background-color: #20c997;
+        color: white;
+        font-size: 0.7rem;
+        padding: 0.2rem 0.4rem;
+        margin-left: 0.5rem;
+    }
+    .file-info {
+        font-size: 0.8rem;
+        color: #6c757d;
+        margin-top: 0.5rem;
+    }
+    .file-preview {
+        max-height: 400px;
+        overflow-y: auto;
+        background-color: #f8f9fa;
+        padding: 1rem;
+        border-radius: 0.25rem;
+        font-family: monospace;
+        font-size: 0.9rem;
+        line-height: 1.4;
+        white-space: pre-wrap;
+        margin-top: 1rem;
+    }
+    .tab-pane {
+        padding-top: 1rem;
+    }
+    .educational-program-section {
+        margin-top: 1.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #dee2e6;
+    }
+    .input-file-container {
+        margin-top: 15px;
+        padding: 15px;
+        border: 1px dashed #ced4da;
+        border-radius: 5px;
+        background-color: #f8f9fa;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Job Requirements Analysis <small class="text-muted">Generate requirement summaries</small></h1>
+</div>
+
+<div class="row">
+    <!-- New Analysis Form -->
+    <div class="col-lg-4 mb-4">
+        <div class="card shadow">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Create New Analysis</h5>
+            </div>
+            <div class="card-body">
+                <form id="analysisForm" method="post" enctype="multipart/form-data">
+                    <div class="mb-3">
+                        <label for="domainsSelect" class="form-label">Select Domains (hold Ctrl/Cmd to select multiple)</label>
+                        <select class="form-select" id="domainsSelect" name="domains[]" multiple required>
+                            {% for domain in domains %}
+                                <option value="{{ domain }}">{{ domain }}</option>
+                            {% endfor %}
+                        </select>
+                        <div class="form-text">Select job domains to analyze their requirements</div>
+                    </div>
+                    
+                    <div class="form-check mb-3">
+                        <input class="form-check-input" type="checkbox" id="educationAnalysis" name="education_analysis">
+                        <label class="form-check-label" for="educationAnalysis">
+                            Compare with the educational program
+                        </label>
+                    </div>
+                    
+                    <div id="educationProgramUpload" class="input-file-container" style="display: none;">
+                        <label for="programFile" class="form-label">Upload Educational Program File</label>
+                        <input class="form-control" type="file" id="programFile" name="program_file" accept=".pdf,.doc,.docx,.txt">
+                        <div class="form-text">Upload PDF, Word or TXT file with educational program contents</div>
+                    </div>
+                    
+                    <div class="d-grid mt-3">
+                        <button type="submit" class="btn btn-primary" id="analyzeBtn">
+                            <i class="bi bi-cpu me-2"></i>Generate Requirements Analysis
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0">About This Tool</h5>
+            </div>
+            <div class="card-body">
+                <p>This tool helps you understand common requirements for jobs in specific domains by:</p>
+                <ul>
+                    <li>Analyzing the text of up to 100 job listings in each selected domain</li>
+                    <li>Performing frequency analysis to identify the most common terms</li>
+                    <li>Using AI to generate a comprehensive summary of typical requirements</li>
+                    <li>Optionally comparing with educational programs to identify improvement areas</li>
+                </ul>
+                <p class="mb-0 text-muted small">Note: Custom stop words can be edited in the "stop_words.txt" file at the app root to improve analysis quality.</p>
+            </div>
+        </div>
+        
+        <div class="card mt-4 shadow">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0">Troubleshooting</h5>
+            </div>
+            <div class="card-body">
+                <p>If you encounter issues with the analysis:</p>
+                <ol>
+                    <li>
+                        <strong>API Key:</strong> Make sure your OpenAI API key is properly set in the .env file with no quotes or spaces
+                    </li>
+                    <li>
+                        <strong>Stop Words:</strong> Edit stop_words.txt to improve word frequency quality
+                    </li>
+                    <li>
+                        <strong>Test Connection:</strong> <a href="#" class="test-api-link">Test OpenAI API connection</a>
+                    </li>
+                </ol>
+                <div id="api-test-result" class="mt-3" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Previously Generated Analyses -->
+    <div class="col-lg-8">
+        <div class="card shadow mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0">Previously Generated Analyses</h5>
+            </div>
+            
+            <!-- Filter Controls -->
+            <div class="filter-controls">
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="domainFilter" placeholder="Filter by domain name...">
+                            <button class="btn btn-outline-secondary" type="button" id="applyFilter">Filter</button>
+                            <button class="btn btn-outline-danger" type="button" id="clearFilter">Clear</button>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="btn-group w-100" role="group">
+                            <a href="{{ url_for('web.requirements_analysis', type='all') }}" class="btn btn-outline-primary {{ 'active' if filter_type == 'all' else '' }}">All Analyses</a>
+                            <a href="{{ url_for('web.requirements_analysis', type='regular') }}" class="btn btn-outline-primary {{ 'active' if filter_type == 'regular' else '' }}">Regular</a>
+                            <a href="{{ url_for('web.requirements_analysis', type='educational') }}" class="btn btn-outline-primary {{ 'active' if filter_type == 'educational' else '' }}">Educational</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card-body p-0">
+                <div id="analysesList">
+                    {% if analyses %}
+                        <div class="list-group list-group-flush">
+                            {% for analysis in analyses %}
+                                <div class="list-group-item analysis-item {{ 'educational' if analysis.is_educational_analysis else '' }}" data-analysis-id="{{ analysis.id }}">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="mb-0">{{ analysis.domains }}</h6>
+                                                {% if analysis.is_educational_analysis %}
+                                                    <span class="educational-badge">Educational</span>
+                                                {% endif %}
+                                                <a href="#" class="ms-2 delete-btn" data-analysis-id="{{ analysis.id }}" title="Delete analysis">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                            <div>
+                                                {% for domain in analysis.domains.split(',') %}
+                                                    <span class="badge domain-badge">{{ domain }}</span>
+                                                {% endfor %}
+                                            </div>
+                                            {% if analysis.is_educational_analysis and analysis.education_program_filename %}
+                                                <div class="file-info">
+                                                    <i class="bi bi-file-earmark-text"></i> {{ analysis.education_program_filename }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <small class="timestamp">{{ analysis.created_at }}</small>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        <div class="no-analyses">
+                            <p class="text-muted mb-0">No analyses have been generated yet. Use the form to create your first analysis.</p>
+                        </div>
+                    {% endif %}
+                </div>
+                
+                <div id="noFilterResults" class="no-analyses" style="display: none;">
+                    <p class="text-muted mb-0">No analyses match your filter criteria.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Analysis Results Modal -->
+<div class="modal fade" id="analysisModal" tabindex="-1" aria-labelledby="analysisModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="analysisModalLabel">Job Requirements Analysis</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="analysisModalBody">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Progress Overlay -->
+<div class="progress-overlay" id="progressOverlay" style="display: none;">
+    <div class="progress-card">
+        <h4 class="mb-3 text-center">Analyzing Job Requirements</h4>
+        <div class="progress mb-3" style="height: 25px;">
+            <div id="analysisProgress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 0%"></div>
+        </div>
+        <p id="progressText" class="text-center mb-0">Processing job data...</p>
+    </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteConfirmModalLabel">Confirm Deletion</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                Are you sure you want to delete this analysis? This action cannot be undone.
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+                <button type="button" class="btn btn-danger" id="confirmDeleteBtn">Delete</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Educational Program Viewer Modal -->
+<div class="modal fade" id="programViewerModal" tabindex="-1" aria-labelledby="programViewerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="programViewerModalLabel">Educational Program</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="programViewerBody">
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="downloadProgramBtn" class="btn btn-primary" target="_blank">Download Original File</a>
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+// Замініть весь блок extra_js у файлі requirements.html на цей код
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+<script>
+// Функція для перегляду освітньої програми
+function viewEducationalProgram(analysis) {
+    console.log("Відкриваємо перегляд файлу для аналізу:", analysis.id);
+    
+    // Встановлюємо елементи модального вікна
+    const programViewerModalLabel = document.getElementById('programViewerModalLabel');
+    const programViewerBody = document.getElementById('programViewerBody');
+    const downloadProgramBtn = document.getElementById('downloadProgramBtn');
+    const programViewerModal = new bootstrap.Modal(document.getElementById('programViewerModal'));
+    
+    if (!analysis.education_program_filename || !analysis.education_program_file) {
+        console.error("Немає інформації про файл", analysis);
+        programViewerBody.innerHTML = `
+            <div class="alert alert-warning">
+                <strong>Інформація про файл відсутня.</strong> Дані про файл освітньої програми відсутні.
+            </div>
+        `;
+        programViewerModal.show();
+        return;
+    }
+    
+    console.log("Файл для перегляду:", analysis.education_program_filename);
+    
+    programViewerModalLabel.textContent = `Освітня програма: ${analysis.education_program_filename}`;
+    
+    // Показуємо індикатор завантаження
+    programViewerBody.innerHTML = `
+        <div class="d-flex justify-content-center p-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Завантаження...</span>
+            </div>
+            <div class="ms-3">Завантажуємо вміст файлу...</div>
+        </div>
+    `;
+    
+    // Виправляємо шлях до файлу - беремо лише ім'я файлу
+    const filename = analysis.education_program_file.split('/').pop();
+    console.log("Шлях до файлу:", filename);
+    
+    // Виправляємо посилання для завантаження
+    downloadProgramBtn.href = `/uploads/${filename}`;
+    downloadProgramBtn.setAttribute('download', analysis.education_program_filename);
+    
+    // Відображаємо модальне вікно
+    programViewerModal.show();
+    
+    // Отримуємо вміст файлу для перегляду
+    fetch(`/api/preview/${filename}`)
+        .then(response => {
+            console.log("Відповідь від сервера:", response.status);
+            if (!response.ok) {
+                throw new Error(`Не вдалося завантажити попередній перегляд файлу (Статус: ${response.status})`);
+            }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Отримані дані:", data);
+            if (data.success) {
+                // Відображаємо вміст файлу з відповідним форматуванням
+                let contentDisplay = '';
+                
+                if (data.format === 'pdf') {
+                    contentDisplay = `
+                        <div class="alert alert-info mb-3">
+                            <i class="bi bi-file-earmark-pdf me-2"></i>
+                            Це витягнутий текст з PDF-файлу. Форматування може бути спрощеним.
+                        </div>
+                        <div class="file-preview">${data.content.replace(/\n/g, '<br>')}</div>
+                    `;
+                } else if (data.format === 'docx') {
+                    contentDisplay = `
+                        <div class="alert alert-info mb-3">
+                            <i class="bi bi-file-earmark-word me-2"></i>
+                            Це витягнутий текст з документа Word. Форматування може бути спрощеним.
+                        </div>
+                        <div class="file-preview">${data.content.replace(/\n/g, '<br>')}</div>
+                    `;
+                } else {
+                    contentDisplay = `<div class="file-preview">${data.content.replace(/\n/g, '<br>')}</div>`;
+                }
+                
+                programViewerBody.innerHTML = contentDisplay;
+                
+                // Додаємо опцію прямого завантаження вгорі
+                const downloadInfo = document.createElement('div');
+                downloadInfo.className = 'alert alert-primary mb-3';
+                downloadInfo.innerHTML = `
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div>
+                            <i class="bi bi-info-circle me-2"></i>
+                            Ви також можете завантажити оригінальний файл для кращого перегляду.
+                        </div>
+                        <a href="/uploads/${filename}" class="btn btn-sm btn-primary" download="${analysis.education_program_filename}">
+                            <i class="bi bi-download me-1"></i>Завантажити оригінал
+                        </a>
+                    </div>
+                `;
+                programViewerBody.insertBefore(downloadInfo, programViewerBody.firstChild);
+                
+            } else {
+                programViewerBody.innerHTML = `
+                    <div class="alert alert-danger">
+                        <strong>Помилка!</strong> ${data.error}
+                    </div>
+                    <div class="alert alert-info">
+                        <strong>Порада:</strong> Ви все ще можете завантажити оригінальний файл за допомогою кнопки нижче.
+                    </div>
+                `;
+            }
+        })
+        .catch(error => {
+            console.error("Помилка при завантаженні файлу:", error);
+            programViewerBody.innerHTML = `
+                <div class="alert alert-danger">
+                    <strong>Помилка!</strong> ${error.message}
+                </div>
+                <div class="alert alert-info">
+                    <strong>Порада:</strong> Ви все ще можете завантажити оригінальний файл за допомогою кнопки нижче.
+                </div>
+            `;
+        });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    console.log("Сторінка завантажена, ініціалізуємо функціональність");
+    
+    const analysisForm = document.getElementById('analysisForm');
+    const analyzeBtn = document.getElementById('analyzeBtn');
+    const progressOverlay = document.getElementById('progressOverlay');
+    const analysisProgress = document.getElementById('analysisProgress');
+    const progressText = document.getElementById('progressText');
+    const analysisModal = new bootstrap.Modal(document.getElementById('analysisModal'));
+    const analysisModalBody = document.getElementById('analysisModalBody');
+    const deleteConfirmModal = new bootstrap.Modal(document.getElementById('deleteConfirmModal'));
+    const confirmDeleteBtn = document.getElementById('confirmDeleteBtn');
+    const domainFilter = document.getElementById('domainFilter');
+    const applyFilterBtn = document.getElementById('applyFilter');
+    const clearFilterBtn = document.getElementById('clearFilter');
+    const educationAnalysisCheckbox = document.getElementById('educationAnalysis');
+    const educationProgramUpload = document.getElementById('educationProgramUpload');
+    
+    // Додаємо глобальний обробник кліків для кнопок View
+    document.addEventListener('click', function(e) {
+        // Перевіряємо, чи клік був по кнопці перегляду
+        if (e.target.closest('.view-program-btn')) {
+            e.preventDefault();
+            console.log("Клікнули на кнопку перегляду");
+            
+            const btn = e.target.closest('.view-program-btn');
+            const analysisId = btn.getAttribute('data-analysis-id');
+            
+            console.log("ID аналізу для перегляду:", analysisId);
+            
+            // Отримуємо дані аналізу
+            fetch(`/api/requirements/${analysisId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        console.log("Отримані дані аналізу:", data.analysis);
+                        viewEducationalProgram(data.analysis);
+                    } else {
+                        alert(`Помилка: ${data.error}`);
+                    }
+                })
+                .catch(error => {
+                    console.error("Помилка отримання даних аналізу:", error);
+                    alert(`Помилка: ${error.message}`);
+                });
+        }
+    });
+    
+    // Toggle education program upload section
+    educationAnalysisCheckbox.addEventListener('change', function() {
+        educationProgramUpload.style.display = this.checked ? 'block' : 'none';
+        
+        // Make program file required if checkbox is checked
+        const programFile = document.getElementById('programFile');
+        programFile.required = this.checked;
+    });
+    
+    // Current analysis being deleted
+    let currentDeleteId = null;
+    
+    // Form submission for new analysis
+    analysisForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        // Get selected domains
+        const domainsSelect = document.getElementById('domainsSelect');
+        const selectedDomains = Array.from(domainsSelect.selectedOptions).map(option => option.value);
+        
+        if (selectedDomains.length === 0) {
+            alert('Please select at least one domain to analyze.');
+            return;
+        }
+        
+        // Check if file is required but not provided
+        const educationAnalysis = educationAnalysisCheckbox.checked;
+        const programFile = document.getElementById('programFile');
+        
+        if (educationAnalysis && (!programFile.files || programFile.files.length === 0)) {
+            alert('Please upload an educational program file.');
+            return;
+        }
+        
+        // Disable button and show progress
+        analyzeBtn.disabled = true;
+        analyzeBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Analyzing...';
+        progressOverlay.style.display = 'flex';
+        
+        // Simulate progress (actual processing happens on server)
+        let progress = 0;
+        const progressInterval = setInterval(function() {
+            progress += Math.random() * 5; // Slower progress for educational analysis
+            if (progress > 95) {
+                progress = 95;
+                clearInterval(progressInterval);
+            }
+            analysisProgress.style.width = `${progress}%`;
+            
+            // Update progress text
+            if (progress < 20) {
+                progressText.textContent = 'Collecting job data...';
+            } else if (progress < 40) {
+                progressText.textContent = 'Performing frequency analysis...';
+            } else if (progress < 60) {
+                progressText.textContent = 'Generating job requirements summary...';
+            } else if (educationAnalysis && progress < 80) {
+                progressText.textContent = 'Processing educational program...';
+            } else {
+                progressText.textContent = 'Generating final analysis...';
+            }
+        }, 500);
+        
+        // Prepare form data
+        const formData = new FormData(analysisForm);
+        
+        // Send API request
+        fetch('/api/requirements/analyze', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Clear progress interval
+            clearInterval(progressInterval);
+            
+            if (data.success) {
+                // Complete progress bar
+                analysisProgress.style.width = '100%';
+                progressText.textContent = 'Analysis complete!';
+                
+                // Show the analysis
+                displayAnalysis(data.analysis);
+                
+                // Reload the page after a short delay to show updated list
+                setTimeout(function() {
+                    location.reload();
+                }, 1500);
+            } else {
+                progressText.textContent = `Error: ${data.error}`;
+                
+                // Restore button after a short delay
+                setTimeout(function() {
+                    progressOverlay.style.display = 'none';
+                    analyzeBtn.disabled = false;
+                    analyzeBtn.innerHTML = '<i class="bi bi-cpu me-2"></i>Generate Requirements Analysis';
+                    
+                    // Show error message
+                    alert(`Error: ${data.error}`);
+                }, 1500);
+            }
+        })
+        .catch(error => {
+            // Handle errors
+            clearInterval(progressInterval);
+            progressText.textContent = `Error: ${error.message}`;
+            
+            // Restore button after a short delay
+            setTimeout(function() {
+                progressOverlay.style.display = 'none';
+                analyzeBtn.disabled = false;
+                analyzeBtn.innerHTML = '<i class="bi bi-cpu me-2"></i>Generate Requirements Analysis';
+                
+                // Show error message
+                alert(`Error: ${error.message}`);
+            }, 1500);
+        });
+    });
+    
+    // Click handler for analysis items to view details
+    document.addEventListener('click', function(e) {
+        // Only process clicks on elements that aren't delete buttons
+        if (e.target.closest('.analysis-item') && !e.target.closest('.delete-btn') && !e.target.closest('.view-program-btn')) {
+            const item = e.target.closest('.analysis-item');
+            const analysisId = item.dataset.analysisId;
+            
+            // Show loading in modal
+            analysisModalBody.innerHTML = `
+                <div class="d-flex justify-content-center">
+                    <div class="spinner-border text-primary" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                </div>
+            `;
+            
+            // Show the modal
+            analysisModal.show();
+            
+            // Fetch the analysis data
+            fetch(`/api/requirements/${analysisId}`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        displayAnalysis(data.analysis);
+                    } else {
+                        analysisModalBody.innerHTML = `
+                            <div class="alert alert-danger">
+                                Error loading analysis: ${data.error}
+                            </div>
+                        `;
+                    }
+                })
+                .catch(error => {
+                    analysisModalBody.innerHTML = `
+                        <div class="alert alert-danger">
+                            Error loading analysis: ${error.message}
+                        </div>
+                    `;
+                });
+        }
+    });
+    
+    // Delete button click handler
+    document.addEventListener('click', function(e) {
+        if (e.target.closest('.delete-btn')) {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const deleteBtn = e.target.closest('.delete-btn');
+            currentDeleteId = deleteBtn.dataset.analysisId;
+            
+            // Show confirmation modal
+            deleteConfirmModal.show();
+        }
+    });
+    
+    // Confirm delete button
+    confirmDeleteBtn.addEventListener('click', function() {
+        if (currentDeleteId) {
+            // Show loading state
+            confirmDeleteBtn.disabled = true;
+            confirmDeleteBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Deleting...';
+            
+            // Send delete request
+            fetch(`/api/requirements/${currentDeleteId}`, {
+                method: 'DELETE'
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // Hide modal
+                    deleteConfirmModal.hide();
+                    
+                    // Remove item from list
+                    const item = document.querySelector(`.analysis-item[data-analysis-id="${currentDeleteId}"]`);
+                    if (item) {
+                        item.remove();
+                    }
+                    
+                    // Show message
+                    const alertBox = document.createElement('div');
+                    alertBox.className = 'alert alert-success alert-dismissible fade show mb-3';
+                    alertBox.innerHTML = `
+                        Analysis deleted successfully.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    `;
+                    document.querySelector('.col-lg-8').prepend(alertBox);
+                    
+                    // Auto-dismiss alert after 3 seconds
+                    setTimeout(() => {
+                        const bsAlert = new bootstrap.Alert(alertBox);
+                        bsAlert.close();
+                    }, 3000);
+                    
+                    // Check if list is now empty
+                    const listItems = document.querySelectorAll('.analysis-item');
+                    if (listItems.length === 0) {
+                        document.getElementById('analysesList').innerHTML = `
+                            <div class="no-analyses">
+                                <p class="text-muted mb-0">No analyses have been generated yet. Use the form to create your first analysis.</p>
+                            </div>
+                        `;
+                    }
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+                
+                // Reset button and ID
+                confirmDeleteBtn.disabled = false;
+                confirmDeleteBtn.innerHTML = 'Delete';
+                currentDeleteId = null;
+            })
+            .catch(error => {
+                alert(`Error: ${error.message}`);
+                
+                // Reset button and ID
+                confirmDeleteBtn.disabled = false;
+                confirmDeleteBtn.innerHTML = 'Delete';
+                currentDeleteId = null;
+                
+                // Hide modal
+                deleteConfirmModal.hide();
+            });
+        }
+    });
+    
+    // Domain filter functionality
+    applyFilterBtn.addEventListener('click', function() {
+        const filterValue = domainFilter.value.trim();
+        if (filterValue) {
+            filterAnalyses(filterValue);
+        }
+    });
+    
+    // Allow Enter key in filter input
+    domainFilter.addEventListener('keypress', function(e) {
+        if (e.key === 'Enter') {
+            applyFilterBtn.click();
+        }
+    });
+    
+    // Clear filter button
+    clearFilterBtn.addEventListener('click', function() {
+        domainFilter.value = '';
+        clearFilter();
+    });
+    
+    // Function to filter analyses
+    function filterAnalyses(domain) {
+        // Show loading state
+        const analysesList = document.getElementById('analysesList');
+        analysesList.innerHTML = `
+            <div class="d-flex justify-content-center p-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        `;
+        
+        // Send filter request to API
+        fetch(`/api/requirements/filter?domain=${encodeURIComponent(domain)}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.analyses.length > 0) {
+                        // Create HTML for filtered analyses
+                        let htmlContent = '<div class="list-group list-group-flush">';
+                        
+                        data.analyses.forEach(analysis => {
+                            const domains = analysis.domains.split(',');
+                            let domainBadges = '';
+                            
+                            domains.forEach(d => {
+                                domainBadges += `<span class="badge domain-badge">${d}</span>`;
+                            });
+                            
+                            const isEducational = analysis.is_educational_analysis;
+                            
+                            htmlContent += `
+                                <div class="list-group-item analysis-item ${isEducational ? 'educational' : ''}" data-analysis-id="${analysis.id}">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="mb-0">${analysis.domains}</h6>
+                                                ${isEducational ? '<span class="educational-badge">Освітня програма</span>' : ''}
+                                                <a href="#" class="ms-2 delete-btn" data-analysis-id="${analysis.id}" title="Delete analysis">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                            <div>${domainBadges}</div>
+                                            ${isEducational && analysis.education_program_filename ? 
+                                                `<div class="file-info">
+                                                    <i class="bi bi-file-earmark-text"></i> ${analysis.education_program_filename}
+                                                    <button type="button" class="btn btn-sm btn-link view-program-btn ms-2" data-analysis-id="${analysis.id}">
+                                                        <i class="bi bi-eye me-1"></i>View
+                                                    </button>
+                                                </div>` : ''
+                                            }
+                                        </div>
+                                        <small class="timestamp">${analysis.created_at}</small>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        htmlContent += '</div>';
+                        analysesList.innerHTML = htmlContent;
+                        document.getElementById('noFilterResults').style.display = 'none';
+                        
+                        // Show filter indicator
+                        const alertBox = document.createElement('div');
+                        alertBox.className = 'alert alert-info alert-dismissible fade show mb-3';
+                        alertBox.innerHTML = `
+                            Showing ${data.analyses.length} results for domain: <strong>${data.filter}</strong>
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        `;
+                        document.querySelector('.col-lg-8').prepend(alertBox);
+                        
+                        // Auto-dismiss filter alert after 5 seconds
+                        setTimeout(() => {
+                            const bsAlert = new bootstrap.Alert(alertBox);
+                            bsAlert.close();
+                        }, 5000);
+                    } else {
+                        // No results
+                        analysesList.innerHTML = '';
+                        document.getElementById('noFilterResults').style.display = 'block';
+                    }
+                } else {
+                    alert(`Error: ${data.error}`);
+                    clearFilter();
+                }
+            })
+            .catch(error => {
+                alert(`Error: ${error.message}`);
+                clearFilter();
+            });
+    }
+    
+    // Function to clear filter and show all analyses
+    function clearFilter() {
+        // Show loading state
+        const analysesList = document.getElementById('analysesList');
+        analysesList.innerHTML = `
+            <div class="d-flex justify-content-center p-5">
+                <div class="spinner-border text-primary" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        `;
+        
+        // Get all analyses
+        fetch('/api/requirements/filter')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    if (data.analyses.length > 0) {
+                        // Create HTML for all analyses
+                        let htmlContent = '<div class="list-group list-group-flush">';
+                        
+                        data.analyses.forEach(analysis => {
+                            const domains = analysis.domains.split(',');
+                            let domainBadges = '';
+                            
+                            domains.forEach(d => {
+                                domainBadges += `<span class="badge domain-badge">${d}</span>`;
+                            });
+                            
+                            const isEducational = analysis.is_educational_analysis;
+                            
+                            htmlContent += `
+                                <div class="list-group-item analysis-item ${isEducational ? 'educational' : ''}" data-analysis-id="${analysis.id}">
+                                    <div class="d-flex justify-content-between align-items-start">
+                                        <div>
+                                            <div class="d-flex align-items-center mb-1">
+                                                <h6 class="mb-0">${analysis.domains}</h6>
+                                                ${isEducational ? '<span class="educational-badge">Освітня програма</span>' : ''}
+                                                <a href="#" class="ms-2 delete-btn" data-analysis-id="${analysis.id}" title="Delete analysis">
+                                                    <i class="bi bi-trash"></i>
+                                                </a>
+                                            </div>
+                                            <div>${domainBadges}</div>
+                                            ${isEducational && analysis.education_program_filename ? 
+                                                `<div class="file-info">
+                                                    <i class="bi bi-file-earmark-text"></i> ${analysis.education_program_filename}
+                                                    <button type="button" class="btn btn-sm btn-link view-program-btn ms-2" data-analysis-id="${analysis.id}">
+                                                        <i class="bi bi-eye me-1"></i>View
+                                                    </button>
+                                                </div>` : ''
+                                            }
+                                        </div>
+                                        <small class="timestamp">${analysis.created_at}</small>
+                                    </div>
+                                </div>
+                            `;
+                        });
+                        
+                        htmlContent += '</div>';
+                        analysesList.innerHTML = htmlContent;
+                        document.getElementById('noFilterResults').style.display = 'none';
+                    } else {
+                        // No analyses at all
+                        analysesList.innerHTML = `
+                            <div class="no-analyses">
+                                <p class="text-muted mb-0">No analyses have been generated yet. Use the form to create your first analysis.</p>
+                            </div>
+                        `;
+                        document.getElementById('noFilterResults').style.display = 'none';
+                    }
+                } else {
+                    alert(`Error: ${data.error}`);
+                }
+            })
+            .catch(error => {
+                alert(`Error: ${error.message}`);
+            });
+    }
+    
+    // Function to display analysis results
+    function displayAnalysis(analysis) {
+        // Set the modal title
+        document.getElementById('analysisModalLabel').textContent = `Job Requirements Analysis: ${analysis.domains}`;
+        
+        // Get the top words if available
+        let topWordsHtml = '<p class="text-muted">No word frequency data available.</p>';
+        let wordFrequencyChart = '';
+        
+        if (analysis.top_words) {
+            try {
+                const topWordsData = JSON.parse(analysis.top_words);
+                
+                // Create the top words list
+                const topWordsEntries = Object.entries(topWordsData.top_words);
+                if (topWordsEntries.length > 0) {
+                    topWordsHtml = `
+                        <div class="top-words-list">
+                            <div class="list-group">
+                                ${topWordsEntries.map(([word, count], index) => `
+                                    <div class="list-group-item d-flex justify-content-between align-items-center">
+                                        <span>${index + 1}. ${word}</span>
+                                        <span class="badge bg-primary rounded-pill">${count}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    `;
+                    
+                    // Create data for frequency chart
+                    const chartData = {
+                        labels: topWordsEntries.slice(0, 15).map(([word, _]) => word),
+                        values: topWordsEntries.slice(0, 15).map(([_, count]) => count)
+                    };
+                    
+                    wordFrequencyChart = `
+                        <div>
+                            <canvas id="wordFrequencyChart"></canvas>
+                        </div>
+                    `;
+                    
+                    // After rendering, initialize the chart
+                    setTimeout(() => {
+                        const ctx = document.getElementById('wordFrequencyChart')?.getContext('2d');
+                        if (ctx) {
+                            new Chart(ctx, {
+                                type: 'bar',
+                                data: {
+                                    labels: chartData.labels,
+                                    datasets: [{
+                                        label: 'Word Frequency',
+                                        data: chartData.values,
+                                        backgroundColor: 'rgba(76, 110, 245, 0.8)',
+                                        borderColor: 'rgb(76, 110, 245)',
+                                        borderWidth: 1
+                                    }]
+                                },
+                                options: {
+                                    indexAxis: 'y',
+                                    responsive: true,
+                                    maintainAspectRatio: true,
+                                    scales: {
+                                        x: {
+                                            beginAtZero: true,
+                                            title: {
+                                                display: true,
+                                                text: 'Frequency'
+                                            }
+                                        }
+                                    }
+                                }
+                            });
+                        }
+                    }, 100);
+                }
+            } catch (e) {
+                console.error("Error parsing top words:", e);
+                topWordsHtml = `
+                    <div class="alert alert-danger">
+                        Error parsing word frequency data: ${e.message}
+                    </div>
+                `;
+            }
+        }
+        
+        // Get the summary if available
+        let summaryHtml = '<p class="text-muted">No summary available.</p>';
+        if (analysis.summary) {
+            // Convert markdown to HTML if needed
+            const summaryText = analysis.summary;
+            summaryHtml = `
+                <div class="summary-content">
+                    ${marked.parse(summaryText)}
+                </div>
+            `;
+        }
+        
+        // Get educational program analysis if available
+        let educationalProgramTabHtml = '';
+        let educationalProgramContentHtml = '';
+        
+        if (analysis.is_educational_analysis) {
+            educationalProgramTabHtml = `
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="educational-tab" data-bs-toggle="tab" data-bs-target="#educational" type="button" role="tab">Educational Program Analysis</button>
+                </li>
+            `;
+            
+            let programAnalysisHtml = '<p class="text-muted">No educational program analysis available.</p>';
+            if (analysis.education_program_analysis) {
+                programAnalysisHtml = `
+                    <div class="summary-content">
+                        ${marked.parse(analysis.education_program_analysis)}
+                    </div>
+                `;
+            }
+            
+            // Program file information
+            let programFileHtml = '';
+            if (analysis.education_program_filename) {
+                programFileHtml = `
+                    <div class="card mb-3">
+                        <div class="card-header bg-light">
+                            <h6 class="mb-0">Educational Program File</h6>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-file-earmark-text fs-3 me-3"></i>
+                                <div>
+                                    <div class="fw-bold">${analysis.education_program_filename}</div>
+                                    <div class="text-muted small">${analysis.education_program_filetype.toUpperCase()}</div>
+                                </div>
+                                <div class="ms-auto">
+                                    <button type="button" class="btn btn-sm btn-outline-primary view-program-btn" 
+                                            data-analysis-id="${analysis.id}">
+                                        <i class="bi bi-eye me-1"></i>View
+                                    </button>
+                                    <a href="/uploads/${analysis.education_program_file.split('/').pop()}" class="btn btn-sm btn-outline-secondary" download="${analysis.education_program_filename}">
+                                        <i class="bi bi-download me-1"></i>Download
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            
+            educationalProgramContentHtml = `
+                <div class="tab-pane fade" id="educational" role="tabpanel">
+                    <h5>Educational Program Analysis</h5>
+                    <p class="text-muted">Comparison of job requirements with the educational program for ${analysis.domains}</p>
+                    
+                    ${programFileHtml}
+                    
+                    <div class="card">
+                        <div class="card-header bg-light">
+                            <h6 class="mb-0">Analysis Results</h6>
+                        </div>
+                        <div class="card-body">
+                            ${programAnalysisHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+        
+        // Set the modal content
+        analysisModalBody.innerHTML = `
+            <ul class="nav nav-tabs mb-3" id="analysisTabs" role="tablist">
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link active" id="summary-tab" data-bs-toggle="tab" data-bs-target="#summary" type="button" role="tab">Summary</button>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <button class="nav-link" id="frequency-tab" data-bs-toggle="tab" data-bs-target="#frequency" type="button" role="tab">Word Frequency</button>
+                </li>
+                ${educationalProgramTabHtml}
+            </ul>
+            <div class="tab-content" id="analysisTabContent">
+                <div class="tab-pane fade show active" id="summary" role="tabpanel">
+                    <div class="mb-3">
+                        <h5>Requirements Summary for ${analysis.domains}</h5>
+                        <div class="mb-2">
+                            ${analysis.domains.split(',').map(domain => `
+                                <span class="badge domain-badge">${domain}</span>
+                            `).join('')}
+                        </div>
+                        <small class="timestamp">Generated on ${analysis.created_at}</small>
+                    </div>
+                    <div class="card bg-light">
+                        <div class="card-body">
+                            ${summaryHtml}
+                        </div>
+                    </div>
+                </div>
+                <div class="tab-pane fade" id="frequency" role="tabpanel">
+                    <div class="row">
+                        <div class="col-md-7">
+                            <h5>Top 15 Most Frequent Words</h5>
+                            ${wordFrequencyChart}
+                        </div>
+                        <div class="col-md-5">
+                            <h5>All Top Words</h5>
+                            ${topWordsHtml}
+                        </div>
+                    </div>
+                </div>
+                ${educationalProgramContentHtml}
+            </div>
+        `;
+    }
+    
+    // API Testing functionality
+    document.querySelector('.test-api-link')?.addEventListener('click', function(e) {
+        e.preventDefault();
+        
+        const resultDiv = document.getElementById('api-test-result');
+        resultDiv.innerHTML = '<div class="d-flex align-items-center"><div class="spinner-border spinner-border-sm me-2" role="status"></div> Testing API connection...</div>';
+        resultDiv.style.display = 'block';
+        
+        fetch('/api/test/openai')
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-success">
+                            <strong>Success!</strong> ${data.message}
+                            <hr>
+                            <small>Response preview: ${data.response_preview}</small>
+                        </div>
+                    `;
+                    
+                    // Auto-dismiss success message after 10 seconds
+                    setTimeout(() => {
+                        resultDiv.style.display = 'none';
+                    }, 10000);
+                } else {
+                    resultDiv.innerHTML = `
+                        <div class="alert alert-danger">
+                            <strong>Error!</strong> ${data.error}
+                            ${data.api_key_preview ? `<hr><small>API key format: ${data.api_key_preview}</small>` : ''}
+                        </div>
+                    `;
+                    
+                    // Keep error messages visible longer (15 seconds)
+                    setTimeout(() => {
+                        resultDiv.style.display = 'none';
+                    }, 15000);
+                }
+            })
+            .catch(error => {
+                resultDiv.innerHTML = `
+                    <div class="alert alert-danger">
+                        <strong>Error!</strong> ${error.message}
+                    </div>
+                `;
+            });
+    });
+});
+</script>
+{% endblock %}

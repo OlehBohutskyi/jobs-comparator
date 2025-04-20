@@ -1,7 +1,7 @@
 import asyncio
 import re
 import logging
-from flask import jsonify, Blueprint
+from flask import jsonify, Blueprint, send_from_directory
 from concurrent.futures import ThreadPoolExecutor
 from flask import Blueprint, render_template, request, redirect, url_for, flash, jsonify
 import json
@@ -9,10 +9,18 @@ from collections import defaultdict
 import datetime
 from scraper.sitemap_processor import SitemapProcessor
 from scraper.dou_scraper import DouScraper
-import re
+from text_processor import TextProcessor
+from chatgpt_api import ChatGPTAPI
+from file_processor import FileProcessor
+from werkzeug.utils import secure_filename
+import os
+from flask import send_from_directory, send_file
+
+
 
 web_bp = Blueprint('web', __name__)
 executor = ThreadPoolExecutor(max_workers=5)
+file_processor = FileProcessor(upload_folder='uploads')
 
 def init_routes(app, db, scraper):
 
@@ -22,6 +30,8 @@ def init_routes(app, db, scraper):
 
     @web_bp.route('/', methods=['GET', 'POST'])
     def index():
+
+        return redirect(url_for('web.jobs'))
         if request.method == 'POST':
             site = request.form.get('site', 'djinni')
             count = int(request.form.get('count', 10))
@@ -701,5 +711,396 @@ def init_routes(app, db, scraper):
             'stats': stats,
             'chart_data': chart_data
         })
+    
+
+    @web_bp.route('/requirements')
+    def requirements_analysis():
+        """Render the requirements analysis page"""
+        # Get filter type
+        filter_type = request.args.get('type', 'all')
+        
+        # Get analyses based on filter
+        if filter_type == 'educational':
+            analyses = db.get_educational_analyses()
+        elif filter_type == 'regular':
+            analyses = db.get_regular_analyses()
+        else:
+            # Default to all analyses
+            analyses = db.get_all_requirements_analyses()
+        
+        # Get unique domains for the dropdown
+        all_jobs = db.get_all_jobs()
+        domains = set()
+        for job in all_jobs:
+            if job.get('domain') and job['domain'] not in ('Not specified', ''):
+                domains.add(job['domain'])
+        
+        return render_template(
+            'requirements.html',
+            analyses=analyses,
+            domains=sorted(list(domains)),
+            filter_type=filter_type
+        )
+
+    @web_bp.route('/api/requirements/analyze', methods=['POST'])
+    def api_analyze_requirements():
+        """API endpoint for analyzing job requirements"""
+        try:
+            # Get basic parameters
+            selected_domains = request.form.getlist('domains[]')
+            is_educational_analysis = 'education_analysis' in request.form
+            
+            if not selected_domains:
+                return jsonify({
+                    'success': False,
+                    'error': 'No domains selected'
+                }), 400
+            
+            # Convert to list if it's a string
+            if isinstance(selected_domains, str):
+                selected_domains = [selected_domains]
+            
+            # Create a comma-separated string of domains for DB storage
+            domains_str = ','.join(selected_domains)
+            
+            # Get educational program file if provided
+            education_program_file = None
+            education_program_filename = None
+            education_program_filetype = None
+            education_program_text = None
+            
+            if is_educational_analysis:
+                if 'program_file' not in request.files:
+                    return jsonify({
+                        'success': False,
+                        'error': 'No educational program file provided'
+                    }), 400
+                    
+                program_file = request.files['program_file']
+                
+                if program_file.filename == '':
+                    return jsonify({
+                        'success': False,
+                        'error': 'No selected file'
+                    }), 400
+                    
+                # Process the file
+                file_info = file_processor.save_file(program_file)
+                education_program_file = file_info['path']
+                education_program_filename = file_info['filename']
+                education_program_filetype = file_info['file_type']
+                
+                # Extract text from file
+                education_program_text = file_processor.extract_text(
+                    file_info['path'], 
+                    file_info['file_type']
+                )
+            
+            # Check if we already have an analysis for these domains
+            existing_analyses = db.get_all_requirements_analyses()
+            for analysis in existing_analyses:
+                if analysis['domains'] == domains_str and analysis['is_educational_analysis'] == is_educational_analysis:
+                    # For educational analysis, we don't consider it a duplicate unless filenames match
+                    if is_educational_analysis and analysis['education_program_filename'] != education_program_filename:
+                        continue
+                    return jsonify({
+                        'success': True,
+                        'analysis': analysis,
+                        'message': 'Found existing analysis'
+                    })
+            
+            # Create a new analysis record
+            analysis_id = db.add_requirements_analysis(
+                domains=domains_str,
+                is_educational_analysis=is_educational_analysis,
+                education_program_file=education_program_file,
+                education_program_filename=education_program_filename,
+                education_program_filetype=education_program_filetype,
+                education_program_text=education_program_text
+            )
+            
+            # Get jobs for the selected domains
+            jobs = db.get_jobs_by_domains(selected_domains, limit=100)
+            
+            if not jobs:
+                return jsonify({
+                    'success': False,
+                    'error': 'No jobs found for the selected domains'
+                }), 404
+            
+            # Initialize text processor and analyze job requirements
+            text_processor = TextProcessor()
+            frequency_data = text_processor.analyze_frequency(jobs, top_n=50)
+            
+            # Save the frequency analysis
+            db.update_requirements_analysis(analysis_id, top_words=json.dumps(frequency_data))
+            
+            # Initialize ChatGPT API and generate summary
+            chatgpt = ChatGPTAPI()
+            summary = chatgpt.generate_job_requirements_summary(
+                selected_domains, 
+                frequency_data['top_words']
+            )
+            
+            # Save the summary
+            db.update_requirements_analysis(analysis_id, summary=summary)
+            
+            # If this is an educational program analysis, compare with the program
+            if is_educational_analysis and education_program_text:
+                education_analysis = chatgpt.analyze_educational_program(
+                    selected_domains,
+                    summary,
+                    education_program_text
+                )
+                
+                # Save the educational program analysis
+                db.update_requirements_analysis(analysis_id, education_program_analysis=education_analysis)
+            
+            # Get the updated analysis
+            analysis = db.get_requirements_analysis(analysis_id)
+            
+            return jsonify({
+                'success': True,
+                'analysis': analysis,
+                'message': 'Analysis completed successfully'
+            })
+            
+        except Exception as e:
+            logging.error(f"Error analyzing requirements: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
+
+    # Add route to serve the uploaded files
+    @web_bp.route('/uploads/<path:filename>')
+    def serve_upload(filename):
+        """Serve uploaded files"""
+        try:
+            # Ensure the uploads directory exists
+            uploads_dir = os.path.join(os.getcwd(), 'uploads')
+            if not os.path.exists(uploads_dir):
+                os.makedirs(uploads_dir)
+            
+            # Get file extension
+            _, ext = os.path.splitext(filename)
+            
+            # Set the correct MIME type based on extension
+            mimetype = None
+            if ext.lower() == '.pdf':
+                mimetype = 'application/pdf'
+            elif ext.lower() in ['.doc', '.docx']:
+                mimetype = 'application/msword'
+            elif ext.lower() == '.txt':
+                mimetype = 'text/plain'
+            
+            # Log for debugging
+            logging.info(f"Serving file: {filename} with mimetype: {mimetype}")
+            
+            # Force download by setting as_attachment=True for non-text files
+            as_attachment = ext.lower() != '.txt'
+            
+            return send_from_directory(
+                'uploads', 
+                filename, 
+                mimetype=mimetype,
+                as_attachment=as_attachment
+            )
+        except Exception as e:
+            logging.error(f"Error serving file {filename}: {e}")
+            return f"Error: Could not retrieve file: {str(e)}", 404
+
+    @web_bp.route('/api/requirements/<int:analysis_id>', methods=['GET'])
+    def api_get_requirements_analysis(analysis_id):
+        """Get a specific requirements analysis by ID"""
+        try:
+            analysis = db.get_requirements_analysis(analysis_id)
+            if not analysis:
+                return jsonify({
+                    'success': False,
+                    'error': 'Analysis not found'
+                }), 404
+                
+            return jsonify({
+                'success': True,
+                'analysis': analysis
+            })
+            
+        except Exception as e:
+            logging.error(f"Error getting analysis: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
+        
+    @web_bp.route('/api/requirements/<int:analysis_id>', methods=['DELETE'])
+    def api_delete_requirements_analysis(analysis_id):
+        """Delete a specific requirements analysis by ID"""
+        try:
+            success = db.delete_requirements_analysis(analysis_id)
+            if not success:
+                return jsonify({
+                    'success': False,
+                    'error': 'Analysis not found'
+                }), 404
+                
+            return jsonify({
+                'success': True,
+                'message': f'Analysis {analysis_id} deleted successfully'
+            })
+            
+        except Exception as e:
+            logging.error(f"Error deleting analysis: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
+
+    @web_bp.route('/api/requirements/filter', methods=['GET'])
+    def api_filter_requirements_analyses():
+        """Filter requirements analyses by domain"""
+        try:
+            # Get filter parameter
+            filter_domain = request.args.get('domain', '').strip()
+            
+            if not filter_domain:
+                # If no filter is provided, return all analyses
+                analyses = db.get_all_requirements_analyses()
+                return jsonify({
+                    'success': True,
+                    'analyses': analyses
+                })
+            
+            # Get all analyses and filter them
+            all_analyses = db.get_all_requirements_analyses()
+            
+            # Filter analyses that contain the specified domain
+            filtered_analyses = []
+            for analysis in all_analyses:
+                domains = analysis['domains'].split(',')
+                if any(filter_domain.lower() in domain.lower() for domain in domains):
+                    filtered_analyses.append(analysis)
+            
+            return jsonify({
+                'success': True,
+                'analyses': filtered_analyses,
+                'filter': filter_domain,
+                'count': len(filtered_analyses)
+            })
+            
+        except Exception as e:
+            logging.error(f"Error filtering analyses: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
+        
+    @web_bp.route('/api/preview/<path:filename>')
+    def preview_file(filename):
+        """Preview text-based files"""
+        try:
+            # Ensure the uploads directory exists
+            uploads_dir = os.path.join(os.getcwd(), 'uploads')
+            file_path = os.path.join(uploads_dir, filename)
+            
+            if not os.path.exists(file_path):
+                return jsonify({
+                    'success': False,
+                    'error': 'File not found'
+                }), 404
+            
+            # Get file extension
+            _, ext = os.path.splitext(filename)
+            
+            # For text files, return the content directly
+            if ext.lower() == '.txt':
+                with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
+                    content = f.read()
+                return jsonify({
+                    'success': True,
+                    'content': content,
+                    'format': 'text'
+                })
+            
+            # For other files, extract text using file processor
+            from file_processor import FileProcessor
+            processor = FileProcessor()
+            
+            if ext.lower() == '.pdf':
+                content = processor.extract_text(file_path, 'pdf')
+                return jsonify({
+                    'success': True,
+                    'content': content,
+                    'format': 'pdf'
+                })
+            elif ext.lower() in ['.doc', '.docx']:
+                content = processor.extract_text(file_path, 'docx')
+                return jsonify({
+                    'success': True,
+                    'content': content,
+                    'format': 'docx'
+                })
+            else:
+                return jsonify({
+                    'success': False,
+                    'error': 'Unsupported file format for preview'
+                }), 400
+        
+        except Exception as e:
+            logging.error(f"Error previewing file {filename}: {e}")
+            return jsonify({
+                'success': False,
+                'error': f"Could not preview file: {str(e)}"
+            }), 500
+    
+    # Add this route to web/routes.py
+
+    @web_bp.route('/api/test/openai', methods=['GET'])
+    def test_openai_api():
+        """Test the OpenAI API connection"""
+        try:
+            from chatgpt_api import ChatGPTAPI
+            import os
+            from dotenv import load_dotenv
+            
+            # Reload environment variables
+            load_dotenv()
+            
+            # Get API key
+            api_key = os.getenv('OPENAI_API_KEY', '')
+            
+            if not api_key:
+                return jsonify({
+                    'success': False,
+                    'error': 'API key is not configured in .env file'
+                })
+            
+            # Test with a simple prompt
+            api = ChatGPTAPI()
+            test_response = api.generate_job_requirements_summary(
+                ['Test'], 
+                {'python': 100, 'javascript': 90, 'sql': 80, 'html': 70, 'css': 60}
+            )
+            
+            # Check if we got an error response
+            if test_response.startswith('Error:'):
+                return jsonify({
+                    'success': False,
+                    'error': test_response,
+                    'api_key_preview': f"{api_key[:3]}...{api_key[-3:]}" if len(api_key) > 6 else "Too short"
+                })
+            
+            return jsonify({
+                'success': True,
+                'message': 'Successfully connected to OpenAI API',
+                'response_preview': test_response[:200] + '...' if len(test_response) > 200 else test_response
+            })
+        
+        except Exception as e:
+            logging.error(f"Error testing OpenAI API: {e}")
+            return jsonify({
+                'success': False,
+                'error': str(e)
+            }), 500
     
     app.register_blueprint(web_bp)

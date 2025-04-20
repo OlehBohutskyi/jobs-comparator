@@ -6,6 +6,7 @@ from config import Config
 from database.db import Database
 from scraper.scraper import DjinniScraper
 from web.routes import init_routes
+import os
 
 # Configure logging
 logging.basicConfig(
@@ -51,6 +52,11 @@ class DjinniApp:
         init_routes(self.app, self.db, self.scraper)
         
         logger.info("Application initialized")
+
+        uploads_dir = os.path.join(os.getcwd(), 'uploads')
+        if not os.path.exists(uploads_dir):
+            os.makedirs(uploads_dir)
+            logger.info(f"Created uploads directory: {uploads_dir}")
     
     def run(self):
         """Run the Flask web application"""
