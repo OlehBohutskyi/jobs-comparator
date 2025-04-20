@@ -1,20 +1,15 @@
 {% extends 'base.html' %}
 
-{% block title %}Djinni Job Scraper - Search{% endblock %}
+{% block title %}Job Scraper - Search{% endblock %}
 
 {% block content %}
 <div class="row justify-content-center">
     <div class="col-md-8">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
-                <h2 class="h4 mb-0">Search and Scrape Djinni Jobs</h2>
+                <h2 class="h4 mb-0">Search and Scrape Jobs</h2>
             </div>
             <div class="card-body">
-
-                <div class="alert alert-info mb-4">
-                    {% set next_job_id = db.get_last_scraped_job_id('djinni') + 1 %}
-                    <p>Next scraping will start from job ID: <strong>{{ next_job_id }}</strong></p>
-                </div>
 
                 <form method="POST" action="{{ url_for('web.index') }}">
                     <div class="mb-3">
@@ -44,14 +39,12 @@
                 <h3 class="h5 mb-0">About This Tool</h3>
             </div>
             <div class="card-body">
-                <p>This tool allows you to scrape job listings from Djinni.co, a Ukrainian job board for IT professionals. The scraper:</p>
+                <p>This platform offers comprehensive job market intelligence through advanced data collection and analysis capabilities. The system:</p>
                 <ul>
-                    <li>Extracts job details including title, company, salary, and requirements</li>
-                    <li>Translates job information from Ukrainian to English</li>
-                    <li>Stores data in a searchable database</li>
-                    <li>Operates asynchronously to keep the web interface responsive</li>
+                    <li>Aggregates job listings from multiple employment marketplaces</li>
+                    <li>Processes and categorizes employment data for deeper insights</li>
+                    <li>Provides detailed analytical visualizations including trends, salary ranges, and demand metrics</li>
                 </ul>
-                <p>Enter a search query above to find specific jobs, or leave it empty to scrape all available jobs.</p>
             </div>
         </div>
     </div>

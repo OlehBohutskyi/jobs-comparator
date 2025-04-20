@@ -1892,3 +1892,272 @@
 2025-03-09 15:00:41,014 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:41] "GET /api/jobs/1 HTTP/1.1" 200 -
 2025-03-09 15:00:48,102 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:00:48] "GET /api/jobs/7 HTTP/1.1" 200 -
 2025-03-09 15:01:07,696 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:01:07] "GET /api/jobs/1 HTTP/1.1" 200 -
+2025-03-09 15:14:27,198 - __main__ - INFO - Application initialized
+2025-03-09 15:14:27,198 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:14:27,219 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.1:5000
+2025-03-09 15:14:27,219 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 15:14:27,220 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:14:28,036 - __main__ - INFO - Application initialized
+2025-03-09 15:14:28,036 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:14:28,049 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:14:28,051 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:14:31,759 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:31] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 15:14:31,841 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:14:31,847 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:14:31,976 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:31] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 15:14:33,043 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:33] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 15:14:33,074 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:14:33,095 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:14:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:19:19,748 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\database\\db.py', reloading
+2025-03-09 15:19:19,810 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:19:20,686 - __main__ - INFO - Application initialized
+2025-03-09 15:19:20,686 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:19:20,698 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:19:20,701 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:19:31,953 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-03-09 15:19:32,013 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:19:32,865 - __main__ - INFO - Application initialized
+2025-03-09 15:19:32,865 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:19:32,878 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:19:32,880 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:19:52,437 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-03-09 15:19:52,489 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:19:53,369 - __main__ - INFO - Application initialized
+2025-03-09 15:19:53,369 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:19:53,384 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:19:53,388 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:20:45,217 - __main__ - INFO - Application initialized
+2025-03-09 15:20:45,217 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:20:45,237 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.1:5000
+2025-03-09 15:20:45,238 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 15:20:45,239 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:20:46,069 - __main__ - INFO - Application initialized
+2025-03-09 15:20:46,070 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:20:46,083 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:20:46,085 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:20:49,565 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:20:49] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 15:20:49,645 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:20:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:20:49,654 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:20:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:20:52,271 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:20:52] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:21:03,069 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:21:03] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:21:07,708 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:21:07] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:21:09,908 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:21:09] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:21:54,889 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:21:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:23:10,998 - __main__ - INFO - Application initialized
+2025-03-09 15:23:10,999 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:23:11,019 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://172.19.0.1:5000
+2025-03-09 15:23:11,020 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 15:23:11,021 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 15:23:11,863 - __main__ - INFO - Application initialized
+2025-03-09 15:23:11,863 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 15:23:11,875 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 15:23:11,878 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 15:23:36,943 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:36] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 15:23:37,028 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:23:37,033 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:23:39,169 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:39] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:23:42,581 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:42] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:23:47,005 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:47] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:23:53,957 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:23:53] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 15:54:28,343 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:54:28] "GET / HTTP/1.1" 200 -
+2025-03-09 15:54:28,389 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:54:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:54:28,392 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:54:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 15:58:52,394 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:58:52] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 15:58:52,432 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:58:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 15:58:52,435 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 15:58:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 19:26:09,500 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:09] "GET / HTTP/1.1" 200 -
+2025-03-09 19:26:09,540 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 19:26:09,738 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 19:26:11,728 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:11] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 19:26:11,763 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 19:26:11,964 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 19:26:12,277 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:12] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 19:26:50,121 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:50] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 19:26:50,420 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 19:26:50,466 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 19:26:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:03:38,373 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:03:38] "GET / HTTP/1.1" 200 -
+2025-03-09 22:03:38,413 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:03:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:03:38,639 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:03:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:25:52,666 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:25:52] "GET / HTTP/1.1" 200 -
+2025-03-09 22:25:52,693 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:25:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:25:52,897 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:25:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:29:55,214 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:29:55] "GET / HTTP/1.1" 200 -
+2025-03-09 22:29:55,241 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:29:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:29:55,463 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:29:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:30:16,287 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:16] "GET / HTTP/1.1" 200 -
+2025-03-09 22:30:16,314 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:16] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:30:16,542 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:16] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:30:49,375 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:49] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 22:30:49,419 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:30:49,617 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:30:49,931 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:30:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 22:31:15,667 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:15] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 22:31:15,976 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:31:15,998 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:31:16,316 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:16] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 22:31:17,779 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:17] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:31:18,059 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:31:18,135 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:31:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:33:50,021 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:33:50] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:33:50,053 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:33:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:33:50,278 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:33:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:34:05,297 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:05] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:34:05,326 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:34:05,556 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:34:53,454 - __main__ - INFO - Application initialized
+2025-03-09 22:34:53,454 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:34:53,476 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-09 22:34:53,477 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-09 22:34:53,478 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 22:34:54,301 - __main__ - INFO - Application initialized
+2025-03-09 22:34:54,302 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:34:54,314 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 22:34:54,326 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 22:34:57,076 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:57] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:34:57,156 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:34:57,302 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:34:58,815 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:58] "GET / HTTP/1.1" 200 -
+2025-03-09 22:34:58,852 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:34:59,066 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:34:59,825 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:59] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:34:59,861 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:34:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:35:00,084 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:35:01,971 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:01] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-09 22:35:40,360 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-03-09 22:35:40,418 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 22:35:41,257 - __main__ - INFO - Application initialized
+2025-03-09 22:35:41,258 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:35:41,272 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 22:35:41,275 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 22:35:42,595 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:42] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:35:42,664 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:35:42,842 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:35:51,130 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:51] "GET / HTTP/1.1" 200 -
+2025-03-09 22:35:51,166 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:35:51,393 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:35:52,043 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:52] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:35:52,078 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:35:52,310 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:35:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:36:06,718 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:36:06] "GET /analytics HTTP/1.1" 200 -
+2025-03-09 22:36:06,743 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:36:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:36:06,981 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:36:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:37:29,309 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:29] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 22:37:29,354 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:37:29,536 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:37:29,846 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:29] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 22:37:30,413 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:30] "GET /api/jobs/4 HTTP/1.1" 200 -
+2025-03-09 22:37:34,536 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:34] "GET /api/jobs/96 HTTP/1.1" 200 -
+2025-03-09 22:37:39,443 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:39] "GET /api/jobs/99 HTTP/1.1" 200 -
+2025-03-09 22:37:43,846 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:43] "GET /api/jobs/100 HTTP/1.1" 200 -
+2025-03-09 22:37:45,736 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:45] "GET /api/jobs/100 HTTP/1.1" 200 -
+2025-03-09 22:37:54,112 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:37:54] "GET /api/jobs/85 HTTP/1.1" 200 -
+2025-03-09 22:38:00,418 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:38:00] "GET /api/jobs/81 HTTP/1.1" 200 -
+2025-03-09 22:38:02,448 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:38:02] "GET /api/jobs/78 HTTP/1.1" 200 -
+2025-03-09 22:39:32,322 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:32] "GET /jobs HTTP/1.1" 200 -
+2025-03-09 22:39:32,349 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-09 22:39:32,585 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-09 22:39:32,902 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-09 22:39:34,376 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:34] "GET /api/jobs/13 HTTP/1.1" 200 -
+2025-03-09 22:39:37,441 - werkzeug - INFO - 127.0.0.1 - - [09/Mar/2025 22:39:37] "GET /api/jobs/7 HTTP/1.1" 200 -
+2025-03-09 22:51:21,409 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\freq.py', reloading
+2025-03-09 22:51:21,481 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 22:51:22,341 - __main__ - INFO - Application initialized
+2025-03-09 22:51:22,342 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:51:22,354 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 22:51:22,356 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 22:53:03,357 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\freq.py', reloading
+2025-03-09 22:53:03,409 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 22:53:04,286 - __main__ - INFO - Application initialized
+2025-03-09 22:53:04,287 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:53:04,303 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 22:53:04,308 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-09 22:55:33,657 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\freq.py', reloading
+2025-03-09 22:55:33,712 - werkzeug - INFO -  * Restarting with stat
+2025-03-09 22:55:34,576 - __main__ - INFO - Application initialized
+2025-03-09 22:55:34,577 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-09 22:55:34,589 - werkzeug - WARNING -  * Debugger is active!
+2025-03-09 22:55:34,592 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-14 19:10:54,638 - __main__ - INFO - Application initialized
+2025-03-14 19:10:54,638 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-14 19:10:54,711 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.0.114:5000
+2025-03-14 19:10:54,711 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-03-14 19:10:54,717 - werkzeug - INFO -  * Restarting with stat
+2025-03-14 19:10:55,586 - __main__ - INFO - Application initialized
+2025-03-14 19:10:55,587 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-03-14 19:10:55,601 - werkzeug - WARNING -  * Debugger is active!
+2025-03-14 19:10:55,604 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-03-14 19:11:41,915 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:41] "GET / HTTP/1.1" 200 -
+2025-03-14 19:11:42,195 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-14 19:11:42,281 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-14 19:11:47,019 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:47] "GET / HTTP/1.1" 200 -
+2025-03-14 19:11:47,286 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-14 19:11:47,333 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-14 19:11:47,913 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:11:47] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-03-14 19:12:22,052 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:22] "GET /jobs HTTP/1.1" 200 -
+2025-03-14 19:12:22,131 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-14 19:12:22,266 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-14 19:12:22,588 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:22] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-14 19:12:40,060 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:40] "GET /api/jobs/19 HTTP/1.1" 200 -
+2025-03-14 19:12:44,060 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:12:44] "GET /api/jobs/18 HTTP/1.1" 200 -
+2025-03-14 19:13:00,171 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:13:00] "GET /analytics HTTP/1.1" 200 -
+2025-03-14 19:13:00,442 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:13:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-14 19:13:00,559 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:13:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-14 19:13:19,221 - werkzeug - INFO - 127.0.0.1 - - [14/Mar/2025 19:13:19] "POST /api/analytics/filter HTTP/1.1" 200 -
+2025-03-17 23:20:42,827 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:20:42] "GET / HTTP/1.1" 200 -
+2025-03-17 23:20:43,069 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:20:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:20:43,175 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:20:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:03,286 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:03] "GET /jobs HTTP/1.1" 200 -
+2025-03-17 23:22:03,355 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:03,526 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:03,636 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:22:11,626 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:11] "GET /jobs?query=Python+Developer HTTP/1.1" 200 -
+2025-03-17 23:22:11,937 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:11,983 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:12,293 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:12] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:22:17,220 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:17] "GET /jobs?query= HTTP/1.1" 200 -
+2025-03-17 23:22:17,525 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:17,573 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:17] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:17,881 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:17] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:22:22,770 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:22] "GET /jobs?query=Developer HTTP/1.1" 200 -
+2025-03-17 23:22:23,074 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:23,135 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:23,442 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:23] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:22:27,555 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:27] "GET /jobs?query= HTTP/1.1" 200 -
+2025-03-17 23:22:27,605 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:27,818 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:28,128 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:28] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:22:29,361 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:29] "GET /analytics HTTP/1.1" 200 -
+2025-03-17 23:22:29,659 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:29,720 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:32,636 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:32] "GET / HTTP/1.1" 200 -
+2025-03-17 23:22:32,720 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:32,899 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:46,498 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:46] "GET /jobs HTTP/1.1" 200 -
+2025-03-17 23:22:46,804 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:22:46,851 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:22:47,164 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:22:47] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:24:18,318 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:24:18] "GET / HTTP/1.1" 200 -
+2025-03-17 23:24:18,429 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:24:18] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:24:18,588 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:24:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:25:46,874 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:46] "GET /jobs HTTP/1.1" 200 -
+2025-03-17 23:25:46,963 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:25:47,137 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-03-17 23:25:47,232 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:25:47] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-03-17 23:26:27,588 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:27] "GET /analytics HTTP/1.1" 200 -
+2025-03-17 23:26:27,891 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-03-17 23:26:27,953 - werkzeug - INFO - 127.0.0.1 - - [17/Mar/2025 23:26:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -

@@ -1,0 +1,634 @@
+{% extends 'base.html' %}
+
+{% block title %}Job Analytics{% endblock %}
+
+{% block extra_css %}
+<style>
+    .stats-card {
+        transition: all 0.3s ease;
+    }
+    .stats-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    .chart-container {
+        position: relative;
+        margin: auto;
+        height: 300px;
+    }
+    .filter-panel {
+        background-color: #f8f9fa;
+        padding: 15px;
+        border-radius: 8px;
+        margin-bottom: 20px;
+    }
+    .chart-card {
+        margin-bottom: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+        border-radius: 8px;
+        overflow: hidden;
+    }
+    .chart-card .card-header {
+        background-color: #4C6EF5;
+        color: white;
+        font-weight: 500;
+    }
+    .chart-card .card-footer {
+        background-color: #f8f9fa;
+        font-size: 0.85rem;
+    }
+    #salaryDistribution {
+        max-height: 400px;
+    }
+</style>
+{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>Job Analytics <small class="text-muted">Insights from jobs</small></h1>
+</div>
+
+<div class="filter-panel">
+    <div class="row">
+        <div class="col-md-3 mb-2">
+            <label for="timeRangeFilter" class="form-label">Time Range</label>
+            <select id="timeRangeFilter" class="form-select form-select-sm">
+                <option value="all" selected>All Time</option>
+                <option value="month">Last Month</option>
+                <option value="quarter">Last Quarter</option>
+                <option value="year">Last Year</option>
+            </select>
+        </div>
+        <div class="col-md-3 mb-2">
+            <label for="jobTypeFilter" class="form-label">Job Type</label>
+            <select id="jobTypeFilter" class="form-select form-select-sm">
+                <option value="all" selected>All Types</option>
+                <option value="Remote">Remote</option>
+                <option value="Office">Office</option>
+                <option value="Hybrid">Hybrid</option>
+            </select>
+        </div>
+        <div class="col-md-3 mb-2">
+            <label for="experienceFilter" class="form-label">Experience Level</label>
+            <select id="experienceFilter" class="form-select form-select-sm">
+                <option value="all" selected>All Levels</option>
+                <option value="0-1">0-1 years</option>
+                <option value="1-3">1-3 years</option>
+                <option value="3-5">3-5 years</option>
+                <option value="5+">5+ years</option>
+            </select>
+        </div>
+        <div class="col-md-3 mb-2">
+            <label for="categoryFilter" class="form-label">Category</label>
+            <select id="categoryFilter" class="form-select form-select-sm">
+                <option value="all" selected>All Categories</option>
+                <!-- Заповнюється динамічно через JavaScript -->
+            </select>
+        </div>
+    </div>
+    <div class="row mt-2">
+        <div class="col-md-6">
+            <button id="applyFilters" class="btn btn-primary btn-sm">Apply Filters</button>
+            <button id="resetFilters" class="btn btn-outline-secondary btn-sm">Reset</button>
+        </div>
+    </div>
+</div>
+
+<!-- Key Metrics Cards -->
+<div class="row mb-4">
+    <div class="col-md-3 mb-3">
+        <div class="card stats-card h-100 bg-primary text-white">
+            <div class="card-body">
+                <h5 class="card-title">Total Jobs</h5>
+                <h2 class="display-4">{{ stats.total_jobs }}</h2>
+                <p class="card-text">
+                    <small>{{ stats.active_jobs }} active jobs</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card stats-card h-100 bg-success text-white">
+            <div class="card-body">
+                <h5 class="card-title">Average Salary</h5>
+                <h2 class="display-4">${{ stats.avg_salary|int }}</h2>
+                <p class="card-text">
+                    <small>Based on jobs with salary info</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card stats-card h-100 bg-info text-white">
+            <div class="card-body">
+                <h5 class="card-title">Lowest Salary</h5>
+                <h2 class="display-4">${{ stats.min_salary|int }}</h2>
+                <p class="card-text">
+                    <small>Minimum offered salary</small>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3 mb-3">
+        <div class="card stats-card h-100 bg-warning text-dark">
+            <div class="card-body">
+                <h5 class="card-title">Highest Salary</h5>
+                <h2 class="display-4">${{ stats.max_salary|int }}</h2>
+                <p class="card-text">
+                    <small>Maximum offered salary</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row for Salary Distribution and Job Types -->
+<div class="row mb-4">
+    <div class="col-md-8">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Salary Distribution</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="salaryDistribution"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers across different salary ranges in USD</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Job Types</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="jobTypesChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of remote, office, and hybrid job offers</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row for Experience and English Level -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Experience Requirements</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="experienceChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers by years of experience required</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">English Level Requirements</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="englishLevelChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers by English proficiency level</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Row for Categories and Locations -->
+<div class="row mb-4">
+    <div class="col-md-6">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Top Job Categories</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="categoriesChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers by category (top 10 shown)</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Top Locations</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="locationsChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers by location (top 10 shown)</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Employment Types -->
+<div class="row mb-4">
+    <div class="col-md-12">
+        <div class="card chart-card">
+            <div class="card-header">
+                <h5 class="mb-0">Employment Types</h5>
+            </div>
+            <div class="card-body">
+                <div class="chart-container">
+                    <canvas id="employmentTypesChart"></canvas>
+                </div>
+            </div>
+            <div class="card-footer">
+                <small>Distribution of job offers by employment type</small>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+    // Chart.js configuration options
+    const chartOptions = {
+        responsive: true,
+        maintainAspectRatio: false,
+    };
+    
+    // Chart.js color schemes
+    const colorScheme = [
+        'rgba(76, 110, 245, 0.8)',  // Primary blue
+        'rgba(40, 167, 69, 0.8)',   // Success green
+        'rgba(255, 193, 7, 0.8)',   // Warning yellow
+        'rgba(220, 53, 69, 0.8)',   // Danger red
+        'rgba(23, 162, 184, 0.8)',  // Info teal
+        'rgba(102, 16, 242, 0.8)',  // Purple
+        'rgba(253, 126, 20, 0.8)',  // Orange
+        'rgba(108, 117, 125, 0.8)', // Gray
+        'rgba(32, 201, 151, 0.8)',  // Teal
+        'rgba(255, 127, 80, 0.8)'   // Coral
+    ];
+    
+    // Parse the chart data from the server
+    const chartData = {{ chart_data|safe }};
+    
+    // Global variables for charts
+    let salaryChart, jobTypesChart, experienceChart, englishChart, 
+        categoriesChart, locationsChart, employmentChart;
+    
+    // Initialize charts when DOM content is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        // Populate category filter
+        const categorySelect = document.getElementById('categoryFilter');
+        const uniqueCategories = [...new Set(chartData.categories.labels)];
+        uniqueCategories.forEach(category => {
+            if (category && category !== 'Not specified') {
+                const option = document.createElement('option');
+                option.value = category;
+                option.textContent = category;
+                categorySelect.appendChild(option);
+            }
+        });
+        
+        // Initialize all charts
+        initializeCharts();
+        
+        // Apply filters button event
+        document.getElementById('applyFilters').addEventListener('click', function() {
+            // Show loading indicator
+            const button = this;
+            const originalText = button.innerHTML;
+            button.disabled = true;
+            button.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>Filtering...';
+            
+            // Collect filter values
+            const filters = {
+                timeRange: document.getElementById('timeRangeFilter').value,
+                jobType: document.getElementById('jobTypeFilter').value,
+                experience: document.getElementById('experienceFilter').value,
+                category: document.getElementById('categoryFilter').value
+            };
+            
+            // Send AJAX request
+            fetch('/api/analytics/filter', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(filters),
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Update stats cards
+                updateStats(data.stats);
+                
+                // Update all charts
+                updateCharts(data.chart_data);
+                
+                // Create alert for success message
+                const alertContainer = document.createElement('div');
+                alertContainer.className = 'alert alert-success alert-dismissible fade show';
+                alertContainer.innerHTML = `
+                    <strong>Success!</strong> Found ${data.stats.total_jobs} jobs matching your filters.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                
+                // Insert alert at the top of the content
+                const content = document.querySelector('.filter-panel');
+                content.parentNode.insertBefore(alertContainer, content);
+                
+                // Auto dismiss alert after 5 seconds
+                setTimeout(() => {
+                    alertContainer.classList.remove('show');
+                    setTimeout(() => alertContainer.remove(), 500);
+                }, 5000);
+                
+                // Restore button
+                button.disabled = false;
+                button.innerHTML = originalText;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Create alert for error message
+                const alertContainer = document.createElement('div');
+                alertContainer.className = 'alert alert-danger alert-dismissible fade show';
+                alertContainer.innerHTML = `
+                    <strong>Error!</strong> Failed to filter data. Please try again.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                `;
+                
+                // Insert alert at the top of the content
+                const content = document.querySelector('.filter-panel');
+                content.parentNode.insertBefore(alertContainer, content);
+                
+                // Restore button
+                button.disabled = false;
+                button.innerHTML = originalText;
+            });
+        });
+        
+        // Reset filters button event
+        document.getElementById('resetFilters').addEventListener('click', function() {
+            document.getElementById('timeRangeFilter').value = 'all';
+            document.getElementById('jobTypeFilter').value = 'all';
+            document.getElementById('experienceFilter').value = 'all';
+            document.getElementById('categoryFilter').value = 'all';
+            
+            // Trigger the apply filters button
+            document.getElementById('applyFilters').click();
+        });
+    });
+    
+    // Initialize all charts
+    function initializeCharts() {
+        // 1. Salary Distribution Chart (Bar chart)
+        const salaryCtx = document.getElementById('salaryDistribution').getContext('2d');
+        salaryChart = new Chart(salaryCtx, {
+            type: 'bar',
+            data: {
+                labels: chartData.salary_ranges.labels,
+                datasets: [{
+                    label: 'Number of Jobs',
+                    data: chartData.salary_ranges.data,
+                    backgroundColor: 'rgba(76, 110, 245, 0.8)',
+                    borderColor: 'rgb(76, 110, 245)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        title: {
+                            display: true,
+                            text: 'Number of Jobs'
+                        }
+                    },
+                    x: {
+                        title: {
+                            display: true,
+                            text: 'Salary Range (USD)'
+                        }
+                    }
+                }
+            }
+        });
+        
+        // 2. Job Types Chart (Pie chart)
+        const jobTypesCtx = document.getElementById('jobTypesChart').getContext('2d');
+        jobTypesChart = new Chart(jobTypesCtx, {
+            type: 'pie',
+            data: {
+                labels: chartData.job_types.labels,
+                datasets: [{
+                    data: chartData.job_types.data,
+                    backgroundColor: colorScheme,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+        
+        // 3. Experience Chart (Polar Area chart)
+        const experienceCtx = document.getElementById('experienceChart').getContext('2d');
+        experienceChart = new Chart(experienceCtx, {
+            type: 'polarArea',
+            data: {
+                labels: chartData.experience.labels,
+                datasets: [{
+                    data: chartData.experience.data,
+                    backgroundColor: colorScheme
+                }]
+            },
+            options: chartOptions
+        });
+        
+        // 4. English Level Chart (Doughnut chart)
+        const englishCtx = document.getElementById('englishLevelChart').getContext('2d');
+        englishChart = new Chart(englishCtx, {
+            type: 'doughnut',
+            data: {
+                labels: chartData.english_levels.labels,
+                datasets: [{
+                    data: chartData.english_levels.data,
+                    backgroundColor: colorScheme,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+        
+        // 5. Categories Chart (Horizontal Bar chart)
+        const categoriesCtx = document.getElementById('categoriesChart').getContext('2d');
+        categoriesChart = new Chart(categoriesCtx, {
+            type: 'bar',
+            data: {
+                labels: chartData.categories.labels,
+                datasets: [{
+                    label: 'Number of Jobs',
+                    data: chartData.categories.data,
+                    backgroundColor: colorScheme,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // 6. Locations Chart (Horizontal Bar chart)
+        const locationsCtx = document.getElementById('locationsChart').getContext('2d');
+        locationsChart = new Chart(locationsCtx, {
+            type: 'bar',
+            data: {
+                labels: chartData.locations.labels,
+                datasets: [{
+                    label: 'Number of Jobs',
+                    data: chartData.locations.data,
+                    backgroundColor: colorScheme,
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                indexAxis: 'y',
+                scales: {
+                    x: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+        
+        // 7. Employment Types Chart (Bar chart)
+        const employmentCtx = document.getElementById('employmentTypesChart').getContext('2d');
+        employmentChart = new Chart(employmentCtx, {
+            type: 'bar',
+            data: {
+                labels: chartData.employment_types.labels,
+                datasets: [{
+                    label: 'Number of Jobs',
+                    data: chartData.employment_types.data,
+                    backgroundColor: 'rgba(32, 201, 151, 0.8)',
+                    borderColor: 'rgb(32, 201, 151)',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                ...chartOptions,
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    }
+    
+    // Update stats cards with new data
+    function updateStats(stats) {
+        // Format numbers with thousands separators
+        const formatNumber = (num) => Math.round(num).toLocaleString();
+        
+        // Більш безпечні селектори з перевіркою на null
+        const totalJobsElement = document.querySelector('.row.mb-4 .col-md-3:nth-child(1) .display-4');
+        const activeJobsElement = document.querySelector('.row.mb-4 .col-md-3:nth-child(1) .card-text small');
+        const avgSalaryElement = document.querySelector('.row.mb-4 .col-md-3:nth-child(2) .display-4');
+        const minSalaryElement = document.querySelector('.row.mb-4 .col-md-3:nth-child(3) .display-4');
+        const maxSalaryElement = document.querySelector('.row.mb-4 .col-md-3:nth-child(4) .display-4');
+        
+        // Перевірки на null перед оновленням вмісту
+        if (totalJobsElement) totalJobsElement.textContent = stats.total_jobs;
+        if (activeJobsElement) activeJobsElement.textContent = `${stats.active_jobs} active jobs`;
+        if (avgSalaryElement) avgSalaryElement.textContent = `$${formatNumber(stats.avg_salary)}`;
+        if (minSalaryElement) minSalaryElement.textContent = `$${formatNumber(stats.min_salary)}`;
+        if (maxSalaryElement) maxSalaryElement.textContent = `$${formatNumber(stats.max_salary)}`;
+        
+        // Виведення для налагодження, щоб знайти відсутні елементи
+        if (!totalJobsElement) console.log('Не вдалося знайти елемент для total jobs');
+        if (!activeJobsElement) console.log('Не вдалося знайти елемент для active jobs');
+        if (!avgSalaryElement) console.log('Не вдалося знайти елемент для avg salary');
+        if (!minSalaryElement) console.log('Не вдалося знайти елемент для min salary');
+        if (!maxSalaryElement) console.log('Не вдалося знайти елемент для max salary');
+    }
+    
+    
+    // Update all charts with new data
+    function updateCharts(newChartData) {
+        // 1. Update Salary Distribution Chart
+        salaryChart.data.labels = newChartData.salary_ranges.labels;
+        salaryChart.data.datasets[0].data = newChartData.salary_ranges.data;
+        salaryChart.update();
+        
+        // 2. Update Job Types Chart
+        jobTypesChart.data.labels = newChartData.job_types.labels;
+        jobTypesChart.data.datasets[0].data = newChartData.job_types.data;
+        jobTypesChart.update();
+        
+        // 3. Update Experience Chart
+        experienceChart.data.labels = newChartData.experience.labels;
+        experienceChart.data.datasets[0].data = newChartData.experience.data;
+        experienceChart.update();
+        
+        // 4. Update English Level Chart
+        englishChart.data.labels = newChartData.english_levels.labels;
+        englishChart.data.datasets[0].data = newChartData.english_levels.data;
+        englishChart.update();
+        
+        // 5. Update Categories Chart
+        categoriesChart.data.labels = newChartData.categories.labels;
+        categoriesChart.data.datasets[0].data = newChartData.categories.data;
+        categoriesChart.update();
+        
+        // 6. Update Locations Chart
+        locationsChart.data.labels = newChartData.locations.labels;
+        locationsChart.data.datasets[0].data = newChartData.locations.data;
+        locationsChart.update();
+        
+        // 7. Update Employment Types Chart
+        employmentChart.data.labels = newChartData.employment_types.labels;
+        employmentChart.data.datasets[0].data = newChartData.employment_types.data;
+        employmentChart.update();
+    }
+</script>
+{% endblock %}

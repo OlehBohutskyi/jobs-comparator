@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Djinni Job Scraper{% endblock %}</title>
+    <title>{% block title %}Job Scraper{% endblock %}</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
@@ -12,7 +12,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
         <div class="container">
-            <a class="navbar-brand" href="{{ url_for('web.index') }}">Djinni Job Scraper</a>
+            <a class="navbar-brand" href="{{ url_for('web.index') }}">Job Scraper</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -23,6 +23,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('web.jobs') }}">Jobs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('web.analytics') }}">Analytics</a>
                     </li>
                 </ul>
             </div>
@@ -46,7 +49,7 @@
 
     <footer class="bg-light py-3 mt-auto">
         <div class="container text-center">
-            <p class="text-muted mb-0">Djinni Job Scraper &copy; {{ now.year }}</p>
+            <p class="text-muted mb-0">Job Scraper &copy; {{ now.year }}</p>
         </div>
     </footer>
 
