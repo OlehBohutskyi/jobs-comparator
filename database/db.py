@@ -22,16 +22,26 @@ class Database:
     def add_job(self, job_data):
         session = self.get_session()
         try:
-            existing_job = session.query(Job).filter_by(job_id=job_data['job_id']).first()
+            # Make a copy of the job data to avoid modifying the original
+            job_data_copy = job_data.copy()
+            
+            # Remove location_type if it exists (temporary fix until database schema is updated)
+            location_type = job_data_copy.pop('location_type', None)
+            
+            # Store the location_type in a separate log for future reference
+            if location_type:
+                print(f"Location type for job {job_data_copy.get('job_id')}: {location_type}")
+            
+            existing_job = session.query(Job).filter_by(job_id=job_data_copy['job_id']).first()
             
             if existing_job:
                 # Update existing job
-                for key, value in job_data.items():
+                for key, value in job_data_copy.items():
                     setattr(existing_job, key, value)
                 job = existing_job
             else:
                 # Create new job
-                job = Job(**job_data)
+                job = Job(**job_data_copy)
                 session.add(job)
                 
             session.commit()

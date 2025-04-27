@@ -68,6 +68,38 @@ class DjinniParser:
         
         return job_data
     
+
+    def _standardize_location(self, location_text):
+        """
+        Simplify location text into standard categories.
+        
+        Args:
+            location_text (str): Raw location text from job posting
+            
+        Returns:
+            str: Standardized location - "Remote", "Ukraine", "Whole World", or "Other"
+        """
+        if not location_text:
+            return "Other"
+        
+        # Lowercase for easier matching
+        text = location_text.lower()
+        
+        # Check for remote indicators
+        if any(keyword in text for keyword in ['remote', 'віддалено', 'удаленно', 'remotely']):
+            return "Remote"
+        
+        # Check for Ukraine mentions
+        if any(keyword in text for keyword in ['ukraine', 'україна', 'украина', 'київ', 'kyiv', 'львів', 'lviv']):
+            return "Ukraine"
+        
+        # Check for worldwide indicators
+        if any(keyword in text for keyword in ['worldwide', 'the whole world', 'global', 'any location', 'весь світ']):
+            return "Whole World"
+        
+        # Default case
+        return "Other"
+    
     def parse_job_detail(self, html_content):
         """Parse the job detail page and extract comprehensive job information"""
         soup = BeautifulSoup(html_content, 'html.parser')
@@ -98,9 +130,9 @@ class DjinniParser:
         if company_element:
             job_data['company_name'] = company_element.text.strip()
         
-        # Try to extract salary from schema.org JSON-LD data (most reliable source)
-        salary_found = False
-        for script_tag in soup.find_all('script', type='application/ld+json'):
+        # Extract salary from JSON-LD data in script tag
+        script_tags = soup.find_all('script', type='application/ld+json')
+        for script_tag in script_tags:
             try:
                 json_data = json.loads(script_tag.string)
                 if json_data.get('@type') == 'JobPosting' and 'baseSalary' in json_data:
@@ -120,54 +152,10 @@ class DjinniParser:
                                 job_data['salary_max'] = float(max_value)
                             
                             job_data['currency'] = currency
-                            salary_found = True
                             break
-            except (json.JSONDecodeError, KeyError, ValueError):
+            except (json.JSONDecodeError, KeyError, ValueError) as e:
+                print(f"Error parsing JSON-LD data: {e}")
                 continue
-        
-        # If salary not found in JSON-LD, try to extract from HTML
-        if not salary_found:
-            # Find salary element with more specific selectors and context
-            salary_element = None
-            
-            # Try specific classes first
-            selectors = [
-                '.public-salary-item', 
-                '.text-success', 
-                '.salary',
-                '[data-analytics="salary"]'
-            ]
-            
-            for selector in selectors:
-                element = soup.select_one(selector)
-                if element:
-                    # Verify it actually contains currency symbols or salary-related keywords
-                    text = element.text.strip()
-                    if re.search(r'[$€£]|\b(?:USD|EUR|UAH|грн)\b|\b(?:зарплат|salary)\b', text, re.IGNORECASE):
-                        salary_element = element
-                        break
-            
-            # If not found by class, look for text near certain keywords
-            if not salary_element:
-                # Look for elements containing currency symbols with context
-                for element in soup.select('span, div, p'):
-                    text = element.text.strip()
-                    # Check for currency symbols with numbers
-                    if re.search(r'[$€£]\s*\d+', text):
-                        # Verify it's not something like "in 3-4 months" by requiring salary keywords
-                        if re.search(r'\b(?:зарплат|salary|оплат|compensation|оклад)\b', 
-                                    text.lower() + 
-                                    (element.parent.text.lower() if element.parent else '')):
-                            salary_element = element
-                            break
-            
-            if salary_element:
-                salary_text = salary_element.text.strip()
-                salary_data = self._parse_salary(salary_text)
-                
-                # Validate the extracted data to ensure it's actually a salary
-                if salary_data.get('salary_min') or salary_data.get('salary_max'):
-                    job_data.update(salary_data)
         
         # Get job description
         description_element = soup.select_one('.job-post__description')
@@ -194,7 +182,8 @@ class DjinniParser:
             # Location
             location_element = sidebar.select_one('.location-text')
             if location_element:
-                job_data['location'] = location_element.text.strip()
+                location_text = location_element.text.strip()
+                job_data['location'] = self._standardize_location(location_text)
             
             # Job type (remote, office)
             job_type_element = sidebar.select_one('li:contains("віддалено")')

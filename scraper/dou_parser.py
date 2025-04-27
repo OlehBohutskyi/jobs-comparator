@@ -13,6 +13,37 @@ class DouParser:
     
     def __init__(self):
         pass
+
+    def _standardize_location(self, location_text):
+        """
+        Simplify location text into standard categories.
+        
+        Args:
+            location_text (str): Raw location text from job posting
+            
+        Returns:
+            str: Standardized location - "Remote", "Ukraine", "Whole World", or "Other"
+        """
+        if not location_text:
+            return "Other"
+        
+        # Lowercase for easier matching
+        text = location_text.lower()
+        
+        # Check for remote indicators
+        if any(keyword in text for keyword in ['remote', 'віддалено', 'удаленно', 'remotely']):
+            return "Remote"
+        
+        # Check for Ukraine mentions
+        if any(keyword in text for keyword in ['ukraine', 'україна', 'украина', 'київ', 'kyiv', 'львів', 'lviv']):
+            return "Ukraine"
+        
+        # Check for worldwide indicators
+        if any(keyword in text for keyword in ['worldwide', 'the whole world', 'global', 'any location', 'весь світ']):
+            return "Whole World"
+        
+        # Default case
+        return "Other"
     
     def parse_job_detail(self, html_content):
         """Parse job details from DOU vacancy page"""
@@ -44,12 +75,12 @@ class DouParser:
             location_element = soup.select_one('.place')
             if location_element:
                 location_text = location_element.text.strip()
-                job_data['location'] = location_text
+                job_data['location'] = self._standardize_location(location_text)
                 
                 # Determine job type (Remote, Office, Hybrid)
-                if 'віддалено' in location_text.lower():
+                if 'віддалено' in location_text.lower() or 'remote' in location_text.lower():
                     job_data['job_type'] = 'Remote'
-                elif 'офіс' in location_text.lower():
+                elif 'офіс' in location_text.lower() or 'office' in location_text.lower():
                     job_data['job_type'] = 'Office'
                 else:
                     job_data['job_type'] = 'Hybrid'
@@ -64,9 +95,11 @@ class DouParser:
             if date_element:
                 job_data['posted_date'] = self._parse_date(date_element.text.strip())
             
-            # Get salary if available
-            salary_data = self._extract_salary(job_data.get('description', ''))
-            job_data.update(salary_data)
+            # Extract salary from the span with class "salary"
+            salary_element = soup.select_one('span.salary')
+            if salary_element:
+                salary_text = salary_element.text.strip()
+                job_data.update(self._parse_salary_from_text(salary_text))
             
             # Extract category from breadcrumbs
             category_element = soup.select('.breadcrumbs a')
@@ -123,40 +156,37 @@ class DouParser:
             logger.error(f"Error parsing date: {e}")
             return datetime.datetime.now()
     
-    def _extract_salary(self, text):
-        """Extract salary information from job description"""
+    def _parse_salary_from_text(self, text):
+        """Extract salary information directly from the salary element text"""
         result = {'salary_min': None, 'salary_max': None, 'currency': 'USD'}
         
-        # Match salary patterns
-        salary_patterns = [
-            # $1000-2000
-            r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)\s*(?:-|–|—)\s*\$?\s*(\d+[\d\s]*(?:[.,]\d+)?)',
-            # from $1000
-            r'(?:від|from)\s*\$\s*(\d+[\d\s]*(?:[.,]\d+)?)',
-            # up to $2000
-            r'(?:до|up to)\s*\$\s*(\d+[\d\s]*(?:[.,]\d+)?)',
-            # $1000
-            r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)'
-        ]
+        # Example format: "$6400–7000" or "$6400-7000"
+        salary_pattern = r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)\s*(?:[-–—])\s*(\d+[\d\s]*(?:[.,]\d+)?)'
+        single_value_pattern = r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)'
         
-        for pattern in salary_patterns:
-            match = re.search(pattern, text, re.IGNORECASE)
-            if match:
-                if len(match.groups()) == 2:  # Range
-                    min_val = match.group(1).replace(' ', '').replace(',', '.')
-                    max_val = match.group(2).replace(' ', '').replace(',', '.')
-                    result['salary_min'] = float(min_val)
-                    result['salary_max'] = float(max_val)
-                elif 'від' in text.lower() or 'from' in text.lower():  # Minimum
-                    min_val = match.group(1).replace(' ', '').replace(',', '.')
-                    result['salary_min'] = float(min_val)
-                elif 'до' in text.lower() or 'up to' in text.lower():  # Maximum
-                    max_val = match.group(1).replace(' ', '').replace(',', '.')
-                    result['salary_max'] = float(max_val)
-                else:  # Single value, treat as minimum
-                    val = match.group(1).replace(' ', '').replace(',', '.')
-                    result['salary_min'] = float(val)
-                break
+        # Try to match salary range
+        match = re.search(salary_pattern, text)
+        if match:
+            min_val = match.group(1).replace(' ', '').replace(',', '.')
+            max_val = match.group(2).replace(' ', '').replace(',', '.')
+            result['salary_min'] = float(min_val)
+            result['salary_max'] = float(max_val)
+            result['currency'] = 'USD'  # Assuming USD as default for $ sign
+            return result
+        
+        # Try to match single value
+        match = re.search(single_value_pattern, text)
+        if match:
+            val = match.group(1).replace(' ', '').replace(',', '.')
+            result['salary_min'] = float(val)
+            result['currency'] = 'USD'  # Assuming USD as default for $ sign
+            return result
+        
+        # Check for other currencies
+        if '€' in text:
+            result['currency'] = 'EUR'
+        elif '₴' in text or 'грн' in text.lower():
+            result['currency'] = 'UAH'
         
         return result
     
@@ -193,16 +223,16 @@ class DouParser:
                 break
         
         # Extract domain
-        domain_patterns = {
-            r'\b(?:product|продукт)\b': 'Product',
-            r'\b(?:outsource|outsourcing|аутсорс)\b': 'Outsource',
-            r'\b(?:outstaff|аутстаф)\b': 'Outstaff',
-            r'\b(?:fintech)\b': 'Fintech',
-            r'\b(?:ecommerce|e-commerce)\b': 'E-commerce',
-            r'\b(?:healthcare|медицин[а|и|і])\b': 'Healthcare'
-        }
+        # domain_patterns = {
+        #     r'\b(?:product|продукт)\b': 'Product',
+        #     r'\b(?:outsource|outsourcing|аутсорс)\b': 'Outsource',
+        #     r'\b(?:outstaff|аутстаф)\b': 'Outstaff',
+        #     r'\b(?:fintech)\b': 'Fintech',
+        #     r'\b(?:ecommerce|e-commerce)\b': 'E-commerce',
+        #     r'\b(?:healthcare|медицин[а|и|і])\b': 'Healthcare'
+        # }
         
-        for pattern, domain in domain_patterns.items():
-            if re.search(pattern, description, re.IGNORECASE):
-                job_data['domain'] = domain
-                break
+        # for pattern, domain in domain_patterns.items():
+        #     if re.search(pattern, description, re.IGNORECASE):
+        #         job_data['domain'] = domain
+        #         break

@@ -20,6 +20,7 @@ class Job(Base):
     description_en = Column(Text)
     location = Column(String(255))
     location_en = Column(String(255))
+    location_type = Column(String(50), nullable=True)  # Added location_type field
     experience_years = Column(Integer, nullable=True)
     english_level = Column(String(50), nullable=True)
     job_type = Column(String(50))  # Remote, Office, Hybrid
@@ -45,6 +46,7 @@ class Job(Base):
             'currency': self.currency,
             'description': self.description_en or self.description,
             'location': self.location_en or self.location,
+            'location_type': self.location_type,  # Added to dictionary output
             'experience_years': self.experience_years,
             'english_level': self.english_level,
             'job_type': self.job_type,
@@ -57,6 +59,7 @@ class Job(Base):
             'updated_at': self.updated_at.isoformat() if self.updated_at else None,
             'is_active': self.is_active
         }
+
     
 class ScrapingProgress(Base):
     __tablename__ = 'scraping_progress'
