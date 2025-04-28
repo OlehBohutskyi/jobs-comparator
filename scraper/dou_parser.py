@@ -15,30 +15,17 @@ class DouParser:
         pass
 
     def _standardize_location(self, location_text):
-        """
-        Simplify location text into standard categories.
-        
-        Args:
-            location_text (str): Raw location text from job posting
-            
-        Returns:
-            str: Standardized location - "Remote", "Ukraine", "Whole World", or "Other"
-        """
         if not location_text:
             return "Other"
         
-        # Lowercase for easier matching
         text = location_text.lower()
         
-        # Check for remote indicators
         if any(keyword in text for keyword in ['remote', 'віддалено', 'удаленно', 'remotely']):
             return "Remote"
         
-        # Check for Ukraine mentions
         if any(keyword in text for keyword in ['ukraine', 'україна', 'украина', 'київ', 'kyiv', 'львів', 'lviv']):
             return "Ukraine"
         
-        # Check for worldwide indicators
         if any(keyword in text for keyword in ['worldwide', 'the whole world', 'global', 'any location', 'весь світ']):
             return "Whole World"
         
@@ -50,34 +37,28 @@ class DouParser:
         try:
             soup = BeautifulSoup(html_content, 'html.parser')
             job_data = {}
-            
-            # Extract job ID from canonical URL
+
             canonical_url = soup.select_one('link[rel="canonical"]')
             if canonical_url:
                 job_data['url'] = canonical_url['href']
                 job_id = self._extract_job_id(job_data['url'])
                 job_data['job_id'] = job_id
-            
-            # Check if job is active (assumption: all scraped jobs are active)
+
             job_data['is_active'] = True
-            
-            # Get job title
+
             job_title = soup.select_one('h1.g-h2')
             if job_title:
                 job_data['title'] = job_title.text.strip()
-            
-            # Get company name
+
             company_element = soup.select_one('.l-n a')
             if company_element:
                 job_data['company_name'] = company_element.text.strip()
-            
-            # Get location
+
             location_element = soup.select_one('.place')
             if location_element:
                 location_text = location_element.text.strip()
                 job_data['location'] = self._standardize_location(location_text)
-                
-                # Determine job type (Remote, Office, Hybrid)
+
                 if 'віддалено' in location_text.lower() or 'remote' in location_text.lower():
                     job_data['job_type'] = 'Remote'
                 elif 'офіс' in location_text.lower() or 'office' in location_text.lower():
@@ -85,32 +66,26 @@ class DouParser:
                 else:
                     job_data['job_type'] = 'Hybrid'
             
-            # Get description
             description_element = soup.select_one('.b-typo.vacancy-section')
             if description_element:
                 job_data['description'] = description_element.get_text('\n').strip()
             
-            # Get posted date
             date_element = soup.select_one('.date')
             if date_element:
                 job_data['posted_date'] = self._parse_date(date_element.text.strip())
             
-            # Extract salary from the span with class "salary"
             salary_element = soup.select_one('span.salary')
             if salary_element:
                 salary_text = salary_element.text.strip()
                 job_data.update(self._parse_salary_from_text(salary_text))
             
-            # Extract category from breadcrumbs
             category_element = soup.select('.breadcrumbs a')
             if len(category_element) > 1:
                 job_data['domain'] = category_element[1].text.strip()
             
-            # Extract experience, skills, and domain from description
             self._extract_additional_info(job_data)
             
-            # Default values
-            job_data['employment_type'] = 'Full-time'  # Default assumption
+            job_data['employment_type'] = 'Full-time'
             
             return job_data
         
@@ -126,7 +101,6 @@ class DouParser:
     def _parse_date(self, date_text):
         """Parse date from text"""
         try:
-            # Map Ukrainian month names to numbers
             month_map = {
                 'січня': 1, 'лютого': 2, 'березня': 3, 'квітня': 4,
                 'травня': 5, 'червня': 6, 'липня': 7, 'серпня': 8,
@@ -160,7 +134,6 @@ class DouParser:
         """Extract salary information directly from the salary element text"""
         result = {'salary_min': None, 'salary_max': None, 'currency': 'USD'}
         
-        # Example format: "$6400–7000" or "$6400-7000"
         salary_pattern = r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)\s*(?:[-–—])\s*(\d+[\d\s]*(?:[.,]\d+)?)'
         single_value_pattern = r'\$\s*(\d+[\d\s]*(?:[.,]\d+)?)'
         
@@ -171,15 +144,14 @@ class DouParser:
             max_val = match.group(2).replace(' ', '').replace(',', '.')
             result['salary_min'] = float(min_val)
             result['salary_max'] = float(max_val)
-            result['currency'] = 'USD'  # Assuming USD as default for $ sign
+            result['currency'] = 'USD' 
             return result
         
-        # Try to match single value
         match = re.search(single_value_pattern, text)
         if match:
             val = match.group(1).replace(' ', '').replace(',', '.')
             result['salary_min'] = float(val)
-            result['currency'] = 'USD'  # Assuming USD as default for $ sign
+            result['currency'] = 'USD'
             return result
         
         # Check for other currencies
@@ -221,18 +193,3 @@ class DouParser:
             if re.search(pattern, description, re.IGNORECASE):
                 job_data['english_level'] = level
                 break
-        
-        # Extract domain
-        # domain_patterns = {
-        #     r'\b(?:product|продукт)\b': 'Product',
-        #     r'\b(?:outsource|outsourcing|аутсорс)\b': 'Outsource',
-        #     r'\b(?:outstaff|аутстаф)\b': 'Outstaff',
-        #     r'\b(?:fintech)\b': 'Fintech',
-        #     r'\b(?:ecommerce|e-commerce)\b': 'E-commerce',
-        #     r'\b(?:healthcare|медицин[а|и|і])\b': 'Healthcare'
-        # }
-        
-        # for pattern, domain in domain_patterns.items():
-        #     if re.search(pattern, description, re.IGNORECASE):
-        #         job_data['domain'] = domain
-        #         break

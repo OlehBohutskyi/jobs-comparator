@@ -16190,3 +16190,213 @@
 2025-04-27 22:34:19,070 - __main__ - INFO - Starting web server on 0.0.0.0:5000
 2025-04-27 22:34:19,082 - werkzeug - WARNING -  * Debugger is active!
 2025-04-27 22:34:19,085 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-04-28 22:12:42,142 - __main__ - INFO - Application initialized
+2025-04-28 22:12:42,142 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-04-28 22:12:42,160 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-04-28 22:12:42,160 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-28 22:12:42,162 - werkzeug - INFO -  * Restarting with stat
+2025-04-28 22:12:43,103 - __main__ - INFO - Application initialized
+2025-04-28 22:12:43,103 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-04-28 22:12:43,115 - werkzeug - WARNING -  * Debugger is active!
+2025-04-28 22:12:43,118 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-04-28 22:12:44,917 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:44] "GET /analytics HTTP/1.1" 200 -
+2025-04-28 22:12:45,028 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:12:45,043 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:12:56,894 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:56] "GET /requirements HTTP/1.1" 200 -
+2025-04-28 22:12:56,978 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:12:56,980 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:12:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:56:04,763 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:56:04] "GET /analytics HTTP/1.1" 200 -
+2025-04-28 22:56:04,843 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:56:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:56:04,859 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:56:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:10,215 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:10] "GET /jobs HTTP/1.1" 200 -
+2025-04-28 22:57:10,285 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:10,305 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:10,805 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:10] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:29,245 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:29] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=30000&salary_max=&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:29,404 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:29,620 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:29,936 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:29] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:32,866 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:32] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=30000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:33,022 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:33,256 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:33,569 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:33] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:37,343 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:37] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:37,487 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:37,736 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:38,048 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:38] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:51,637 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:51] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=30000&salary_max=40000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:51,799 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:52,020 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:52,335 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:52] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:54,485 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:54] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=30000&salary_max=40001&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:54,656 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:54] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:54,853 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:54] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:55,167 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:55] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:56,428 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:56] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_max=40001&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:56,587 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:56,820 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:57,135 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:58,098 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:58] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=40001&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:58,252 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:58] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:58,486 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:58] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:58,962 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:58] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 22:57:58,962 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:58] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:57:59,053 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:57:59,336 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:57:59,340 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:57:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:58:03,077 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:03] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=39000&salary_max=&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:58:03,149 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:58:03,187 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:58:03,518 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:58:04,642 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:04] "GET /analytics HTTP/1.1" 200 -
+2025-04-28 22:58:04,802 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:58:05,036 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:58:06,039 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:06] "GET /jobs HTTP/1.1" 200 -
+2025-04-28 22:58:06,118 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:58:06,122 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:58:06,456 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:58:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:40,996 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:40] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=41000&salary_max=&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:41,085 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:59:41,117 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:41] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:59:41,485 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:41] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:44,692 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:44] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=39000&salary_max=&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:44,834 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:59:45,085 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:59:45,401 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:45] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:45,803 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:45] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_max=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:45,892 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:59:46,185 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:59:46,190 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:46] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:49,896 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:49] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=39000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:49,965 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:59:50,003 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:59:50,318 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:50] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:56,192 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:56] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=41000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:56,348 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 22:59:56,585 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 22:59:56,892 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:56] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 22:59:59,681 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:59] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=39000&salary_max=41000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 22:59:59,816 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 22:59:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:00,068 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:00,379 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:00] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:02,255 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:02] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_max=41000&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:02,420 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:02] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:02,603 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:02] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:02,918 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:02] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:03,515 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:03] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:03,668 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:03,902 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:04,208 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:04] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:21,959 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:21] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=700&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:22,112 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:22,335 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:22,651 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:22] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:29,813 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:29] "GET /jobs?query= HTTP/1.1" 200 -
+2025-04-28 23:00:29,966 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:30,201 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:30,517 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:30] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:39,273 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:39] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=40000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:39,401 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:39] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:39,669 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:39] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:39,982 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:39] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:45,923 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:45] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=40000&salary_max=40000&english_level=&job_type=&location=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:46,086 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:46,317 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:46,635 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:46] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:47,607 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:47] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_max=40000&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:47,769 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:48,000 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:48,466 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-28 23:00:48,581 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:00:48,581 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:00:48,834 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-28 23:00:48,839 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:00:48] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-28 23:39:45,401 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:39:45] "GET /analytics HTTP/1.1" 200 -
+2025-04-28 23:39:45,486 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:39:45] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-28 23:39:45,500 - werkzeug - INFO - 127.0.0.1 - - [28/Apr/2025 23:39:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:06:59,135 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:06:59] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:06:59,209 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:06:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:06:59,211 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:06:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:06:59,681 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:06:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:09:00,661 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:09:00] "GET /analytics HTTP/1.1" 200 -
+2025-04-29 01:09:00,721 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:09:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:09:00,751 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:09:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:10:38,244 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:10:38] "GET /analytics HTTP/1.1" 200 -
+2025-04-29 01:10:38,293 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:10:38] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:10:38,357 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:10:38] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:12:06,653 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:06] "GET /analytics HTTP/1.1" 200 -
+2025-04-29 01:12:06,708 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:06] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:12:06,760 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:06] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:12:26,309 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:26] "GET /requirements HTTP/1.1" 200 -
+2025-04-29 01:12:26,364 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:26] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:12:26,414 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:12:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:13:50,423 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:50] "GET /analytics HTTP/1.1" 200 -
+2025-04-29 01:13:50,503 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:13:50,506 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:13:51,411 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:51] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:13:51,499 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:13:51,501 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:13:51,831 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:51] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:13:53,296 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:13:53] "GET /api/jobs/731230 HTTP/1.1" 200 -
+2025-04-29 01:14:03,213 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:03] "GET /jobs?query=&page=1&experience_min=&experience_max=&salary_min=&salary_max=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-29 01:14:03,289 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:14:03,329 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:14:03,785 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:14:05,070 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:05] "GET /jobs?query=&page=2&experience_min=&experience_max=&salary_min=&salary_max=&english_level=&location=&job_type=&domain= HTTP/1.1" 200 -
+2025-04-29 01:14:05,212 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:05] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:14:05,460 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:05] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:14:05,768 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:05] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:14:07,278 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:14:07] "GET /api/jobs/731217 HTTP/1.1" 200 -
+2025-04-29 01:15:28,345 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:15:28] "GET /requirements HTTP/1.1" 200 -
+2025-04-29 01:15:28,452 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:15:28] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:15:28,455 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:15:28] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:14,299 - __main__ - INFO - Application initialized
+2025-04-29 01:51:14,299 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-04-29 01:51:14,323 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-04-29 01:51:14,323 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-04-29 01:51:14,324 - werkzeug - INFO -  * Restarting with stat
+2025-04-29 01:51:15,281 - __main__ - INFO - Application initialized
+2025-04-29 01:51:15,281 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-04-29 01:51:15,294 - werkzeug - WARNING -  * Debugger is active!
+2025-04-29 01:51:15,297 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-04-29 01:51:20,216 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:20] "GET /requirements HTTP/1.1" 200 -
+2025-04-29 01:51:20,336 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:20] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-04-29 01:51:20,339 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:21,754 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:21] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-29 01:51:22,080 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:22] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:51:22,149 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:22] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:22,453 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:22,715 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:22] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:51:25,829 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:25] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:51:25,981 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:25] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:26,198 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:26] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:26,507 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:26] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:51:26,818 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:26] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-29 01:51:27,280 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:27] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:51:27,653 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:27] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:27,653 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:27] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:27,900 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:27] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:51:28,303 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:28] "[32mGET / HTTP/1.1[0m" 302 -
+2025-04-29 01:51:28,765 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:28] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:51:29,137 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:29] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:29,138 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:29] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:29,385 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:29] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:51:48,796 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:48] "GET /jobs HTTP/1.1" 200 -
+2025-04-29 01:51:48,943 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-04-29 01:51:49,160 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-04-29 01:51:49,468 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-04-29 01:51:50,983 - werkzeug - INFO - 127.0.0.1 - - [29/Apr/2025 01:51:50] "GET /api/jobs/731230 HTTP/1.1" 200 -
+2025-04-29 01:52:13,666 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-04-29 01:52:13,757 - werkzeug - INFO -  * Restarting with stat
+2025-04-29 01:52:14,681 - __main__ - INFO - Application initialized
+2025-04-29 01:52:14,681 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-04-29 01:52:14,693 - werkzeug - WARNING -  * Debugger is active!
+2025-04-29 01:52:14,695 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-04-29 01:52:16,299 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
+2025-04-29 01:52:16,384 - werkzeug - INFO -  * Restarting with stat

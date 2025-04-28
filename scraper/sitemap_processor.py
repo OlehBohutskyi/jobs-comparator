@@ -13,7 +13,6 @@ class SitemapProcessor:
         try:
             logger.info(f"Processing Djinni sitemap: {sitemap_url}")
             
-            # Добавляем заголовки, имитирующие обычный браузер
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -23,7 +22,6 @@ class SitemapProcessor:
                 'Cache-Control': 'max-age=0',
             }
             
-            # Создаем сессию и устанавливаем заголовки
             session = requests.Session()
             response = session.get(sitemap_url, headers=headers)
             response.raise_for_status()
@@ -54,7 +52,6 @@ class SitemapProcessor:
         try:
             logger.info(f"Processing DOU sitemap: {sitemap_url}")
             
-            # Добавляем заголовки, имитирующие обычный браузер
             headers = {
                 'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
                 'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8',
@@ -64,17 +61,13 @@ class SitemapProcessor:
                 'Cache-Control': 'max-age=0',
             }
             
-            # Создаем сессию и устанавливаем заголовки
             session = requests.Session()
             response = session.get(sitemap_url, headers=headers)
             response.raise_for_status()
             
-            # Парсим XML
             root = ET.fromstring(response.content)
-            # Находим все URLs в карте сайта
             urls = []
             
-            # Определяем namespace из XML
             ns = {'sm': 'http://www.sitemaps.org/schemas/sitemap/0.9'}
             
             for url_element in root.findall(".//sm:url", ns):
@@ -82,7 +75,6 @@ class SitemapProcessor:
                 if loc_element is not None:
                     url = loc_element.text
                     urls.append(url)
-                    # Добавляем URL в базу данных
                     self.db.add_job_url(url, 'dou')
             
             logger.info(f"Added {len(urls)} DOU job URLs to the database")

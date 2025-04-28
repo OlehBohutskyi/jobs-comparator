@@ -51,7 +51,7 @@ class FileProcessor:
                 file_type = 'unknown'
             
             return {
-                'path': unique_filename,  # Return just the filename, not the full path
+                'path': unique_filename,
                 'filename': filename,
                 'file_type': file_type,
                 'size': os.path.getsize(file_path)

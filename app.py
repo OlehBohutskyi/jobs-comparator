@@ -8,7 +8,6 @@ from scraper.scraper import DjinniScraper
 from web.routes import init_routes
 import os
 
-# Configure logging
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -20,7 +19,6 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-# Create a global event loop for async operations
 global_loop = asyncio.new_event_loop()
 asyncio.set_event_loop(global_loop)
 
@@ -32,23 +30,18 @@ class DjinniApp:
                          template_folder='web/templates')
         self.app.config['SECRET_KEY'] = self.config.SECRET_KEY
         self.app.config['DEBUG'] = self.config.DEBUG
-        
-        # Add the event loop as an attribute to the Flask app
+
         self.app.loop = global_loop
-        
-        # Initialize database
+
         self.db = Database(self.config.DATABASE_URL)
         self.db.init_db()
-        
-        # Initialize scraper
+
         self.scraper = DjinniScraper(self.db, self.config.MAX_CONCURRENT_REQUESTS)
-        
-        # Add template context processors
+
         @self.app.context_processor
         def inject_now():
             return {'now': datetime.datetime.now()}
-        
-        # Initialize routes
+
         init_routes(self.app, self.db, self.scraper)
         
         logger.info("Application initialized")

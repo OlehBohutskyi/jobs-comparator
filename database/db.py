@@ -22,13 +22,10 @@ class Database:
     def add_job(self, job_data):
         session = self.get_session()
         try:
-            # Make a copy of the job data to avoid modifying the original
             job_data_copy = job_data.copy()
             
-            # Remove location_type if it exists (temporary fix until database schema is updated)
             location_type = job_data_copy.pop('location_type', None)
-            
-            # Store the location_type in a separate log for future reference
+    
             if location_type:
                 print(f"Location type for job {job_data_copy.get('job_id')}: {location_type}")
             
@@ -177,12 +174,10 @@ class Database:
             session.close()
 
     def add_job_url(self, url, source):
-        """Добавляет URL вакансии в очередь на скрапинг"""
         session = self.get_session()
         try:
             existing_url = session.query(JobUrl).filter_by(url=url).first()
             if not existing_url:
-                # Извлекаем job_id из URL
                 job_id = None
                 if source == 'djinni':
                     match = re.search(r'/jobs/(\d+)-', url)
@@ -205,7 +200,6 @@ class Database:
             session.close()
 
     def mark_job_url_processed(self, url, success=True):
-        """Отмечает URL вакансии как обработанный"""
         session = self.get_session()
         try:
             job_url = session.query(JobUrl).filter_by(url=url).first()
@@ -223,10 +217,8 @@ class Database:
             session.close()
 
     def get_next_job_urls(self):
-        """Получает следующие непрошедшие URL вакансий для скрапинга (по одной из каждого источника)"""
         session = self.get_session()
         try:
-            # Получаем по одной непрошедшей вакансии из каждого источника
             djinni_url = session.query(JobUrl).filter_by(
                 source='djinni', is_processed=False
             ).first()
@@ -246,7 +238,6 @@ class Database:
             session.close()
 
     def count_unprocessed_job_urls(self):
-        """Подсчитывает количество непрошедших URL вакансий"""
         session = self.get_session()
         try:
             djinni_count = session.query(JobUrl).filter_by(
@@ -265,7 +256,6 @@ class Database:
         finally:
             session.close()
 
-    # Add these methods to the Database class in database/db.py
 
     def add_requirements_analysis(self, domains, top_words=None, summary=None, 
                                 is_educational_analysis=False, education_program_file=None,

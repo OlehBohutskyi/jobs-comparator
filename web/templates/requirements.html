@@ -125,7 +125,7 @@
 </div>
 
 <div class="row">
-    <!-- New Analysis Form -->
+    
     <div class="col-lg-4 mb-4">
         <div class="card shadow">
             <div class="card-header bg-primary text-white">
@@ -203,14 +203,14 @@
         </div>
     </div>
     
-    <!-- Previously Generated Analyses -->
+    
     <div class="col-lg-8">
         <div class="card shadow mb-4">
             <div class="card-header bg-primary text-white">
                 <h5 class="mb-0">Previously Generated Analyses</h5>
             </div>
             
-            <!-- Filter Controls -->
+            
             <div class="filter-controls">
                 <div class="row align-items-center">
                     <div class="col-md-6">
@@ -278,7 +278,7 @@
     </div>
 </div>
 
-<!-- Analysis Results Modal -->
+
 <div class="modal fade" id="analysisModal" tabindex="-1" aria-labelledby="analysisModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
         <div class="modal-content">
@@ -300,7 +300,7 @@
     </div>
 </div>
 
-<!-- Progress Overlay -->
+
 <div class="progress-overlay" id="progressOverlay" style="display: none;">
     <div class="progress-card">
         <h4 class="mb-3 text-center">Analyzing Job Requirements</h4>
@@ -311,7 +311,7 @@
     </div>
 </div>
 
-<!-- Delete Confirmation Modal -->
+
 <div class="modal fade" id="deleteConfirmModal" tabindex="-1" aria-labelledby="deleteConfirmModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -330,7 +330,7 @@
     </div>
 </div>
 
-<!-- Educational Program Viewer Modal -->
+
 <div class="modal fade" id="programViewerModal" tabindex="-1" aria-labelledby="programViewerModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
         <div class="modal-content">
@@ -354,17 +354,17 @@
 </div>
 {% endblock %}
 
-// Замініть весь блок extra_js у файлі requirements.html на цей код
+
 {% block extra_js %}
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 
 <script>
-// Функція для перегляду освітньої програми
+
 function viewEducationalProgram(analysis) {
     console.log("Відкриваємо перегляд файлу для аналізу:", analysis.id);
     
-    // Встановлюємо елементи модального вікна
+    
     const programViewerModalLabel = document.getElementById('programViewerModalLabel');
     const programViewerBody = document.getElementById('programViewerBody');
     const downloadProgramBtn = document.getElementById('downloadProgramBtn');
@@ -385,7 +385,7 @@ function viewEducationalProgram(analysis) {
     
     programViewerModalLabel.textContent = `Освітня програма: ${analysis.education_program_filename}`;
     
-    // Показуємо індикатор завантаження
+    
     programViewerBody.innerHTML = `
         <div class="d-flex justify-content-center p-4">
             <div class="spinner-border text-primary" role="status">
@@ -395,18 +395,18 @@ function viewEducationalProgram(analysis) {
         </div>
     `;
     
-    // Виправляємо шлях до файлу - беремо лише ім'я файлу
+    
     const filename = analysis.education_program_file.split('/').pop();
     console.log("Шлях до файлу:", filename);
     
-    // Виправляємо посилання для завантаження
+    
     downloadProgramBtn.href = `/uploads/${filename}`;
     downloadProgramBtn.setAttribute('download', analysis.education_program_filename);
     
-    // Відображаємо модальне вікно
+    
     programViewerModal.show();
     
-    // Отримуємо вміст файлу для перегляду
+    
     fetch(`/api/preview/${filename}`)
         .then(response => {
             console.log("Відповідь від сервера:", response.status);
@@ -418,7 +418,7 @@ function viewEducationalProgram(analysis) {
         .then(data => {
             console.log("Отримані дані:", data);
             if (data.success) {
-                // Відображаємо вміст файлу з відповідним форматуванням
+                
                 let contentDisplay = '';
                 
                 if (data.format === 'pdf') {
@@ -443,7 +443,7 @@ function viewEducationalProgram(analysis) {
                 
                 programViewerBody.innerHTML = contentDisplay;
                 
-                // Додаємо опцію прямого завантаження вгорі
+                
                 const downloadInfo = document.createElement('div');
                 downloadInfo.className = 'alert alert-primary mb-3';
                 downloadInfo.innerHTML = `
@@ -501,9 +501,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const educationAnalysisCheckbox = document.getElementById('educationAnalysis');
     const educationProgramUpload = document.getElementById('educationProgramUpload');
     
-    // Додаємо глобальний обробник кліків для кнопок View
+    
     document.addEventListener('click', function(e) {
-        // Перевіряємо, чи клік був по кнопці перегляду
+        
         if (e.target.closest('.view-program-btn')) {
             e.preventDefault();
             console.log("Клікнули на кнопку перегляду");
@@ -513,7 +513,7 @@ document.addEventListener('DOMContentLoaded', function() {
             
             console.log("ID аналізу для перегляду:", analysisId);
             
-            // Отримуємо дані аналізу
+            
             fetch(`/api/requirements/${analysisId}`)
                 .then(response => response.json())
                 .then(data => {
@@ -531,23 +531,23 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Toggle education program upload section
+    
     educationAnalysisCheckbox.addEventListener('change', function() {
         educationProgramUpload.style.display = this.checked ? 'block' : 'none';
         
-        // Make program file required if checkbox is checked
+        
         const programFile = document.getElementById('programFile');
         programFile.required = this.checked;
     });
     
-    // Current analysis being deleted
+    
     let currentDeleteId = null;
     
-    // Form submission for new analysis
+    
     analysisForm.addEventListener('submit', function(e) {
         e.preventDefault();
         
-        // Get selected domains
+        
         const domainsSelect = document.getElementById('domainsSelect');
         const selectedDomains = Array.from(domainsSelect.selectedOptions).map(option => option.value);
         
@@ -556,7 +556,7 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Check if file is required but not provided
+        
         const educationAnalysis = educationAnalysisCheckbox.checked;
         const programFile = document.getElementById('programFile');
         
@@ -565,22 +565,22 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
         
-        // Disable button and show progress
+        
         analyzeBtn.disabled = true;
         analyzeBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Analyzing...';
         progressOverlay.style.display = 'flex';
         
-        // Simulate progress (actual processing happens on server)
+        
         let progress = 0;
         const progressInterval = setInterval(function() {
-            progress += Math.random() * 5; // Slower progress for educational analysis
+            progress += Math.random() * 5; 
             if (progress > 95) {
                 progress = 95;
                 clearInterval(progressInterval);
             }
             analysisProgress.style.width = `${progress}%`;
             
-            // Update progress text
+            
             if (progress < 20) {
                 progressText.textContent = 'Collecting job data...';
             } else if (progress < 40) {
@@ -594,70 +594,70 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }, 500);
         
-        // Prepare form data
+        
         const formData = new FormData(analysisForm);
         
-        // Send API request
+        
         fetch('/api/requirements/analyze', {
             method: 'POST',
             body: formData
         })
         .then(response => response.json())
         .then(data => {
-            // Clear progress interval
+            
             clearInterval(progressInterval);
             
             if (data.success) {
-                // Complete progress bar
+                
                 analysisProgress.style.width = '100%';
                 progressText.textContent = 'Analysis complete!';
                 
-                // Show the analysis
+                
                 displayAnalysis(data.analysis);
                 
-                // Reload the page after a short delay to show updated list
+                
                 setTimeout(function() {
                     location.reload();
                 }, 1500);
             } else {
                 progressText.textContent = `Error: ${data.error}`;
                 
-                // Restore button after a short delay
+                
                 setTimeout(function() {
                     progressOverlay.style.display = 'none';
                     analyzeBtn.disabled = false;
                     analyzeBtn.innerHTML = '<i class="bi bi-cpu me-2"></i>Generate Requirements Analysis';
                     
-                    // Show error message
+                    
                     alert(`Error: ${data.error}`);
                 }, 1500);
             }
         })
         .catch(error => {
-            // Handle errors
+            
             clearInterval(progressInterval);
             progressText.textContent = `Error: ${error.message}`;
             
-            // Restore button after a short delay
+            
             setTimeout(function() {
                 progressOverlay.style.display = 'none';
                 analyzeBtn.disabled = false;
                 analyzeBtn.innerHTML = '<i class="bi bi-cpu me-2"></i>Generate Requirements Analysis';
                 
-                // Show error message
+                
                 alert(`Error: ${error.message}`);
             }, 1500);
         });
     });
     
-    // Click handler for analysis items to view details
+    
     document.addEventListener('click', function(e) {
-        // Only process clicks on elements that aren't delete buttons
+        
         if (e.target.closest('.analysis-item') && !e.target.closest('.delete-btn') && !e.target.closest('.view-program-btn')) {
             const item = e.target.closest('.analysis-item');
             const analysisId = item.dataset.analysisId;
             
-            // Show loading in modal
+            
             analysisModalBody.innerHTML = `
                 <div class="d-flex justify-content-center">
                     <div class="spinner-border text-primary" role="status">
@@ -666,10 +666,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 </div>
             `;
             
-            // Show the modal
+            
             analysisModal.show();
             
-            // Fetch the analysis data
+            
             fetch(`/api/requirements/${analysisId}`)
                 .then(response => response.json())
                 .then(data => {
@@ -693,7 +693,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Delete button click handler
+    
     document.addEventListener('click', function(e) {
         if (e.target.closest('.delete-btn')) {
             e.preventDefault();
@@ -702,35 +702,35 @@ document.addEventListener('DOMContentLoaded', function() {
             const deleteBtn = e.target.closest('.delete-btn');
             currentDeleteId = deleteBtn.dataset.analysisId;
             
-            // Show confirmation modal
+            
             deleteConfirmModal.show();
         }
     });
     
-    // Confirm delete button
+    
     confirmDeleteBtn.addEventListener('click', function() {
         if (currentDeleteId) {
-            // Show loading state
+            
             confirmDeleteBtn.disabled = true;
             confirmDeleteBtn.innerHTML = '<span class="spinner-border spinner-border-sm me-2" role="status"></span>Deleting...';
             
-            // Send delete request
+            
             fetch(`/api/requirements/${currentDeleteId}`, {
                 method: 'DELETE'
             })
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
-                    // Hide modal
+                    
                     deleteConfirmModal.hide();
                     
-                    // Remove item from list
+                    
                     const item = document.querySelector(`.analysis-item[data-analysis-id="${currentDeleteId}"]`);
                     if (item) {
                         item.remove();
                     }
                     
-                    // Show message
+                    
                     const alertBox = document.createElement('div');
                     alertBox.className = 'alert alert-success alert-dismissible fade show mb-3';
                     alertBox.innerHTML = `
@@ -739,13 +739,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     `;
                     document.querySelector('.col-lg-8').prepend(alertBox);
                     
-                    // Auto-dismiss alert after 3 seconds
+                    
                     setTimeout(() => {
                         const bsAlert = new bootstrap.Alert(alertBox);
                         bsAlert.close();
                     }, 3000);
                     
-                    // Check if list is now empty
+                    
                     const listItems = document.querySelectorAll('.analysis-item');
                     if (listItems.length === 0) {
                         document.getElementById('analysesList').innerHTML = `
@@ -758,7 +758,7 @@ document.addEventListener('DOMContentLoaded', function() {
                     alert(`Error: ${data.error}`);
                 }
                 
-                // Reset button and ID
+                
                 confirmDeleteBtn.disabled = false;
                 confirmDeleteBtn.innerHTML = 'Delete';
                 currentDeleteId = null;
@@ -766,18 +766,18 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(error => {
                 alert(`Error: ${error.message}`);
                 
-                // Reset button and ID
+                
                 confirmDeleteBtn.disabled = false;
                 confirmDeleteBtn.innerHTML = 'Delete';
                 currentDeleteId = null;
                 
-                // Hide modal
+                
                 deleteConfirmModal.hide();
             });
         }
     });
     
-    // Domain filter functionality
+    
     applyFilterBtn.addEventListener('click', function() {
         const filterValue = domainFilter.value.trim();
         if (filterValue) {
@@ -785,22 +785,22 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
     
-    // Allow Enter key in filter input
+    
     domainFilter.addEventListener('keypress', function(e) {
         if (e.key === 'Enter') {
             applyFilterBtn.click();
         }
     });
     
-    // Clear filter button
+    
     clearFilterBtn.addEventListener('click', function() {
         domainFilter.value = '';
         clearFilter();
     });
     
-    // Function to filter analyses
+    
     function filterAnalyses(domain) {
-        // Show loading state
+        
         const analysesList = document.getElementById('analysesList');
         analysesList.innerHTML = `
             <div class="d-flex justify-content-center p-5">
@@ -810,13 +810,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Send filter request to API
+        
         fetch(`/api/requirements/filter?domain=${encodeURIComponent(domain)}`)
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     if (data.analyses.length > 0) {
-                        // Create HTML for filtered analyses
+                        
                         let htmlContent = '<div class="list-group list-group-flush">';
                         
                         data.analyses.forEach(analysis => {
@@ -860,7 +860,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         analysesList.innerHTML = htmlContent;
                         document.getElementById('noFilterResults').style.display = 'none';
                         
-                        // Show filter indicator
+                        
                         const alertBox = document.createElement('div');
                         alertBox.className = 'alert alert-info alert-dismissible fade show mb-3';
                         alertBox.innerHTML = `
@@ -869,13 +869,13 @@ document.addEventListener('DOMContentLoaded', function() {
                         `;
                         document.querySelector('.col-lg-8').prepend(alertBox);
                         
-                        // Auto-dismiss filter alert after 5 seconds
+                        
                         setTimeout(() => {
                             const bsAlert = new bootstrap.Alert(alertBox);
                             bsAlert.close();
                         }, 5000);
                     } else {
-                        // No results
+                        
                         analysesList.innerHTML = '';
                         document.getElementById('noFilterResults').style.display = 'block';
                     }
@@ -890,9 +890,9 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     
-    // Function to clear filter and show all analyses
+    
     function clearFilter() {
-        // Show loading state
+        
         const analysesList = document.getElementById('analysesList');
         analysesList.innerHTML = `
             <div class="d-flex justify-content-center p-5">
@@ -902,13 +902,13 @@ document.addEventListener('DOMContentLoaded', function() {
             </div>
         `;
         
-        // Get all analyses
+        
         fetch('/api/requirements/filter')
             .then(response => response.json())
             .then(data => {
                 if (data.success) {
                     if (data.analyses.length > 0) {
-                        // Create HTML for all analyses
+                        
                         let htmlContent = '<div class="list-group list-group-flush">';
                         
                         data.analyses.forEach(analysis => {
@@ -952,7 +952,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         analysesList.innerHTML = htmlContent;
                         document.getElementById('noFilterResults').style.display = 'none';
                     } else {
-                        // No analyses at all
+                        
                         analysesList.innerHTML = `
                             <div class="no-analyses">
                                 <p class="text-muted mb-0">No analyses have been generated yet. Use the form to create your first analysis.</p>
@@ -969,12 +969,12 @@ document.addEventListener('DOMContentLoaded', function() {
             });
     }
     
-    // Function to display analysis results
+    
     function displayAnalysis(analysis) {
-        // Set the modal title
+        
         document.getElementById('analysisModalLabel').textContent = `Job Requirements Analysis: ${analysis.domains}`;
         
-        // Get the top words if available
+        
         let topWordsHtml = '<p class="text-muted">No word frequency data available.</p>';
         let wordFrequencyChart = '';
         
@@ -982,7 +982,7 @@ document.addEventListener('DOMContentLoaded', function() {
             try {
                 const topWordsData = JSON.parse(analysis.top_words);
                 
-                // Create the top words list
+                
                 const topWordsEntries = Object.entries(topWordsData.top_words);
                 if (topWordsEntries.length > 0) {
                     topWordsHtml = `
@@ -998,7 +998,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                     
-                    // Create data for frequency chart
+                    
                     const chartData = {
                         labels: topWordsEntries.slice(0, 15).map(([word, _]) => word),
                         values: topWordsEntries.slice(0, 15).map(([_, count]) => count)
@@ -1010,7 +1010,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                     
-                    // After rendering, initialize the chart
+                    
                     setTimeout(() => {
                         const ctx = document.getElementById('wordFrequencyChart')?.getContext('2d');
                         if (ctx) {
@@ -1054,10 +1054,10 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         }
         
-        // Get the summary if available
+        
         let summaryHtml = '<p class="text-muted">No summary available.</p>';
         if (analysis.summary) {
-            // Convert markdown to HTML if needed
+            
             const summaryText = analysis.summary;
             summaryHtml = `
                 <div class="summary-content">
@@ -1066,7 +1066,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
         
-        // Get educational program analysis if available
+        
         let educationalProgramTabHtml = '';
         let educationalProgramContentHtml = '';
         
@@ -1086,7 +1086,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
             }
             
-            // Program file information
+            
             let programFileHtml = '';
             if (analysis.education_program_filename) {
                 programFileHtml = `
@@ -1135,7 +1135,7 @@ document.addEventListener('DOMContentLoaded', function() {
             `;
         }
         
-        // Set the modal content
+        
         analysisModalBody.innerHTML = `
             <ul class="nav nav-tabs mb-3" id="analysisTabs" role="tablist">
                 <li class="nav-item" role="presentation">
@@ -1180,7 +1180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         `;
     }
     
-    // API Testing functionality
+    
     document.querySelector('.test-api-link')?.addEventListener('click', function(e) {
         e.preventDefault();
         
@@ -1200,7 +1200,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                     
-                    // Auto-dismiss success message after 10 seconds
+                    
                     setTimeout(() => {
                         resultDiv.style.display = 'none';
                     }, 10000);
@@ -1212,7 +1212,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     `;
                     
-                    // Keep error messages visible longer (15 seconds)
+                    
                     setTimeout(() => {
                         resultDiv.style.display = 'none';
                     }, 15000);

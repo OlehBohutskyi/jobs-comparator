@@ -30,42 +30,18 @@ def init_routes(app, db, scraper):
 
     @web_bp.route('/', methods=['GET', 'POST'])
     def index():
-
         return redirect(url_for('web.jobs'))
-        if request.method == 'POST':
-            site = request.form.get('site', 'djinni')
-            count = int(request.form.get('count', 10))
-            
-            # Get the last scraped job ID for this site
-            last_job_id = db.get_last_scraped_job_id(site)
-            start_id = last_job_id + 1
-            
-            # Start scraping in background using the executor
-            def run_scraper():
-                async_loop = asyncio.new_event_loop()
-                asyncio.set_event_loop(async_loop)
-                try:
-                    async_loop.run_until_complete(scraper.scrape_sequential_jobs(start_id, count))
-                finally:
-                    async_loop.close()
-            
-            executor.submit(run_scraper)
-            
-            flash(f'Started scraping {count} jobs starting from ID {start_id}.')
-            return redirect(url_for('web.jobs'))
-        
-        return render_template('index.html')
     
     @web_bp.route('/jobs', methods=['GET'])
     def jobs():
-        # Pagination parameters
+        
         page = request.args.get('page', 1, type=int)
         per_page = request.args.get('per_page', 20, type=int)
         
-        # Search query
+        
         query = request.args.get('query', '')
         
-        # Filter parameters
+        
         experience_min = request.args.get('experience_min', '', type=str)
         experience_max = request.args.get('experience_max', '', type=str)
         salary_min = request.args.get('salary_min', '', type=str)
@@ -75,46 +51,46 @@ def init_routes(app, db, scraper):
         job_type = request.args.get('job_type', '')
         domain = request.args.get('domain', '')
         
-        # Get jobs from database
+        
         if query:
             all_jobs = db.search_jobs(query)
         else:
             all_jobs = db.get_all_jobs()
         
-        # Apply filters
+        
         filtered_jobs = []
         for job in all_jobs:
-            # Experience filter
+            
             if experience_min and (not job.get('experience_years') or job['experience_years'] < int(experience_min)):
                 continue
             if experience_max and (not job.get('experience_years') or job['experience_years'] > int(experience_max)):
                 continue
             
-            # Salary filter
+            
             if salary_min and (not job.get('salary_min') or job['salary_min'] < float(salary_min)):
                 continue
             if salary_max and (not job.get('salary_max') or job['salary_max'] > float(salary_max)):
                 continue
             
-            # English level filter
+            
             if english_level and job.get('english_level') != english_level:
                 continue
             
-            # Location filter
+            
             if location and (not job.get('location') or location.lower() not in job['location'].lower()):
                 continue
             
-            # Job type filter
+            
             if job_type and job.get('job_type') != job_type:
                 continue
             
-            # Domain filter
+            
             if domain and job.get('domain') != domain:
                 continue
             
             filtered_jobs.append(job)
         
-        # Get metadata for filters
+        
         filter_metadata = {
             'english_levels': sorted(list(set(job.get('english_level') for job in all_jobs if job.get('english_level')))),
             'locations': sorted(list(set(job.get('location') for job in all_jobs if job.get('location')))),
@@ -122,9 +98,9 @@ def init_routes(app, db, scraper):
             'domains': sorted(list(set(job.get('domain') for job in all_jobs if job.get('domain')))),
         }
         
-        # Pagination
+        
         total_jobs = len(filtered_jobs)
-        total_pages = (total_jobs + per_page - 1) // per_page
+        total_pages = (total_jobs + per_page - 1) 
         start_index = (page - 1) * per_page
         end_index = min(start_index + per_page, total_jobs)
         paginated_jobs = filtered_jobs[start_index:end_index]
@@ -162,7 +138,7 @@ def init_routes(app, db, scraper):
         query = request.json.get('query', '')
         pages = int(request.json.get('pages', 1))
         
-        # Start scraping in background
+        
         def run_scraper():
             async_loop = asyncio.new_event_loop()
             asyncio.set_event_loop(async_loop)
@@ -221,18 +197,14 @@ def init_routes(app, db, scraper):
 
     @web_bp.route('/api/scrape/next', methods=['GET'])
     def api_scrape_next():
-        """Эндпоинт для скрапинга следующей пары вакансий (одна из Djinni, одна из DOU)"""
         try:
-            # Проверяем количество непрошедших URL
             unprocessed_count = db.count_unprocessed_job_urls()
             
-            # Если осталось мало вакансий, обновляем список
             if unprocessed_count['total'] < 10:
                 sitemap_processor = SitemapProcessor(db)
                 refresh_result = sitemap_processor.refresh_job_urls()
                 logging.info(f"Refreshed job URLs: {refresh_result}")
-                
-            # Получаем следующие вакансии для обработки
+
             next_urls = db.get_next_job_urls()
             
             results = []
@@ -241,30 +213,23 @@ def init_routes(app, db, scraper):
                 url = job_url_data['url']
                 
                 if source == 'djinni':
-                    # Используем существующий скрапер для Djinni
                     try:
-                        # Извлекаем ID вакансии из URL
                         job_id_match = re.search(r'/jobs/(\d+)-', url)
                         if job_id_match:
                             job_id = job_id_match.group(1)
-                            
-                            # Создаём функцию для асинхронного скрапинга
+
                             async def process_djinni_job():
                                 try:
-                                    # Инициализируем сессию скрапера
+
                                     await scraper.init_session()
                                     
-                                    # Получаем детали вакансии
                                     job_detail = await scraper.get_job_detail(url)
                                     
                                     if job_detail:
-                                        # Добавляем job_id, если его нет
                                         job_detail['job_id'] = job_id
                                         
-                                        # Переводим данные
                                         job_detail = await scraper.translator.translate_job_data(job_detail)
-                                        
-                                        # Сохраняем в БД
+
                                         db.add_job(job_detail)
                                         db.mark_job_url_processed(url, True)
                                         return {
@@ -274,7 +239,6 @@ def init_routes(app, db, scraper):
                                             'job_id': job_id
                                         }
                                     else:
-                                        # Если не удалось получить детали, отмечаем как обработанную с ошибкой
                                         db.mark_job_url_processed(url, False)
                                         return {
                                             'source': 'djinni',
@@ -284,7 +248,6 @@ def init_routes(app, db, scraper):
                                         }
                                 except Exception as e:
                                     logging.error(f"Error processing Djinni job {job_id}: {e}")
-                                    # При любой ошибке отмечаем URL как обработанный с ошибкой
                                     db.mark_job_url_processed(url, False)
                                     return {
                                         'source': 'djinni',
@@ -293,15 +256,11 @@ def init_routes(app, db, scraper):
                                         'message': str(e)
                                     }
                                 finally:
-                                    # Закрываем сессию скрапера
                                     await scraper.close_session()
                             
-                            # Запускаем асинхронную задачу в текущем event loop или создаем новый
                             try:
-                                # Используем app.loop, который определен в app.py
                                 result = app.loop.run_until_complete(process_djinni_job())
                             except RuntimeError:
-                                # Если текущий loop уже работает, создаем новый
                                 loop = asyncio.new_event_loop()
                                 asyncio.set_event_loop(loop)
                                 result = loop.run_until_complete(process_djinni_job())
@@ -309,7 +268,6 @@ def init_routes(app, db, scraper):
                             
                             results.append(result)
                         else:
-                            # Если не удалось извлечь ID, отмечаем как обработанную с ошибкой
                             db.mark_job_url_processed(url, False)
                             results.append({
                                 'source': 'djinni',
@@ -319,7 +277,6 @@ def init_routes(app, db, scraper):
                             })
                     except Exception as e:
                         logging.error(f"General error processing Djinni URL {url}: {e}")
-                        # При любой ошибке отмечаем URL как обработанный с ошибкой
                         db.mark_job_url_processed(url, False)
                         results.append({
                             'source': 'djinni',
@@ -329,20 +286,15 @@ def init_routes(app, db, scraper):
                         })
                 
                 elif source == 'dou':
-                    # Для DOU используем наш новый скрапер
                     try:
-                        # Извлекаем ID вакансии из URL
                         job_id_match = re.search(r'/vacancies/(\d+)/', url)
                         if job_id_match:
                             job_id = job_id_match.group(1)
                             
-                            # Создаём функцию для асинхронного скрапинга
                             async def process_dou_job():
                                 try:
-                                    # Создаем экземпляр скрапера DOU
                                     dou_scraper = DouScraper(db)
                                     
-                                    # Обрабатываем вакансию
                                     result = await dou_scraper.process_job(url)
                                     
                                     if result:
@@ -368,8 +320,7 @@ def init_routes(app, db, scraper):
                                         'status': 'error',
                                         'message': str(e)
                                     }
-                            
-                            # Запускаем асинхронную задачу
+
                             try:
                                 result = app.loop.run_until_complete(process_dou_job())
                             except RuntimeError:
@@ -396,8 +347,7 @@ def init_routes(app, db, scraper):
                             'status': 'error',
                             'message': str(e)
                         })
-            
-            # Возвращаем результаты
+
             return jsonify({
                 'success': True,
                 'processed': len(results),
@@ -415,10 +365,8 @@ def init_routes(app, db, scraper):
 
     @web_bp.route('/analytics')
     def analytics():
-        # Отримати всі вакансії
         jobs_data = db.get_all_jobs()
-        
-        # Загальна статистика
+
         stats = {
             'total_jobs': len(jobs_data),
             'active_jobs': sum(1 for job in jobs_data if job.get('is_active', False)),
@@ -427,7 +375,6 @@ def init_routes(app, db, scraper):
             'max_salary': 0,
         }
         
-        # Зарплатна статистика
         salaries = [job['salary_min'] for job in jobs_data if job.get('salary_min')]
         if salaries:
             stats['min_salary'] = min(salaries)
@@ -436,8 +383,7 @@ def init_routes(app, db, scraper):
         max_salaries = [job['salary_max'] for job in jobs_data if job.get('salary_max')]
         if max_salaries:
             stats['max_salary'] = max(max_salaries)
-        
-        # Дані для діаграм
+
         job_types_data = defaultdict(int)
         experience_data = defaultdict(int)
         english_levels_data = defaultdict(int)
@@ -454,32 +400,25 @@ def init_routes(app, db, scraper):
         }
         
         for job in jobs_data:
-            # Тип роботи (Remote, Office, Hybrid)
             job_type = job.get('job_type', 'Not specified')
             job_types_data[job_type] += 1
             
-            # Досвід роботи
             exp = job.get('experience_years')
             exp_key = f"{exp} years" if exp else "Not specified"
             experience_data[exp_key] += 1
             
-            # Рівень англійської
             english = job.get('english_level', 'Not specified')
             english_levels_data[english] += 1
             
-            # Локація
             location = job.get('location', 'Not specified')
             location_data[location] += 1
-            
-            # Тип зайнятості
+
             employment = job.get('employment_type', 'Not specified')
             employment_types_data[employment] += 1
-            
-            # Категорія
+
             category = job.get('category', 'Not specified')
             categories_data[category] += 1
-            
-            # Діапазони зарплат
+
             salary_min = job.get('salary_min', 0)
             if salary_min:
                 if salary_min < 1000:
@@ -494,8 +433,7 @@ def init_routes(app, db, scraper):
                     salary_ranges['4000-5000'] += 1
                 else:
                     salary_ranges['5000+'] += 1
-        
-        # Перетворення даних для Chart.js
+
         chart_data = {
             'job_types': {
                 'labels': list(job_types_data.keys()),
@@ -510,7 +448,7 @@ def init_routes(app, db, scraper):
                 'data': list(english_levels_data.values())
             },
             'locations': {
-                'labels': list(location_data.keys())[:10],  # Top 10 locations
+                'labels': list(location_data.keys())[:10],
                 'data': list(location_data.values())[:10]
             },
             'employment_types': {
@@ -518,7 +456,7 @@ def init_routes(app, db, scraper):
                 'data': list(employment_types_data.values())
             },
             'categories': {
-                'labels': list(categories_data.keys())[:10],  # Top 10 categories
+                'labels': list(categories_data.keys())[:10],
                 'data': list(categories_data.values())[:10]
             },
             'salary_ranges': {
@@ -534,22 +472,17 @@ def init_routes(app, db, scraper):
     
     @web_bp.route('/api/analytics/filter', methods=['POST'])
     def api_filter_analytics():
-        # Отримуємо параметри фільтрації з запиту
         filters = request.json
         time_range = filters.get('timeRange', 'all')
         job_type = filters.get('jobType', 'all')
         experience = filters.get('experience', 'all')
         category = filters.get('category', 'all')
-        
-        # Отримуємо всі вакансії
+
         jobs_data = db.get_all_jobs()
-        
-        # Фільтруємо вакансії
+
         filtered_jobs = []
         for job in jobs_data:
-            # Фільтр за часовим діапазоном
             if time_range != 'all':
-                # Конвертуємо posted_date у дату, якщо це можливо
                 posted_date = job.get('posted_date')
                 if not posted_date:
                     continue
@@ -565,14 +498,11 @@ def init_routes(app, db, scraper):
                     elif time_range == 'year' and (now - posted_date).days > 365:
                         continue
                 except (ValueError, TypeError):
-                    # Якщо не вдалося конвертувати дату, пропускаємо фільтрацію за часом
                     pass
-            
-            # Фільтр за типом роботи
+
             if job_type != 'all' and job.get('job_type') != job_type:
                 continue
-                
-            # Фільтр за досвідом
+
             if experience != 'all':
                 exp_years = job.get('experience_years')
                 if exp_years is None:
@@ -586,15 +516,12 @@ def init_routes(app, db, scraper):
                     continue
                 elif experience == '5+' and exp_years < 5:
                     continue
-                    
-            # Фільтр за категорією
+
             if category != 'all' and job.get('category') != category:
                 continue
-                
-            # Якщо вакансія пройшла всі фільтри, додаємо її
+
             filtered_jobs.append(job)
-            
-        # Статистика
+
         stats = {
             'total_jobs': len(filtered_jobs),
             'active_jobs': sum(1 for job in filtered_jobs if job.get('is_active', False)),
@@ -603,7 +530,6 @@ def init_routes(app, db, scraper):
             'max_salary': 0,
         }
         
-        # Зарплатна статистика
         salaries = [job['salary_min'] for job in filtered_jobs if job.get('salary_min')]
         if salaries:
             stats['min_salary'] = min(salaries)
@@ -613,7 +539,6 @@ def init_routes(app, db, scraper):
         if max_salaries:
             stats['max_salary'] = max(max_salaries)
         
-        # Дані для діаграм
         job_types_data = defaultdict(int)
         experience_data = defaultdict(int)
         english_levels_data = defaultdict(int)
@@ -630,32 +555,25 @@ def init_routes(app, db, scraper):
         }
         
         for job in filtered_jobs:
-            # Тип роботи (Remote, Office, Hybrid)
             job_type = job.get('job_type', 'Not specified')
             job_types_data[job_type] += 1
-            
-            # Досвід роботи
+
             exp = job.get('experience_years')
             exp_key = f"{exp} years" if exp else "Not specified"
             experience_data[exp_key] += 1
-            
-            # Рівень англійської
+
             english = job.get('english_level', 'Not specified')
             english_levels_data[english] += 1
-            
-            # Локація
+
             location = job.get('location', 'Not specified')
             location_data[location] += 1
-            
-            # Тип зайнятості
+
             employment = job.get('employment_type', 'Not specified')
             employment_types_data[employment] += 1
-            
-            # Категорія
+
             category = job.get('category', 'Not specified')
             categories_data[category] += 1
-            
-            # Діапазони зарплат
+
             salary_min = job.get('salary_min', 0)
             if salary_min:
                 if salary_min < 1000:
@@ -670,12 +588,10 @@ def init_routes(app, db, scraper):
                     salary_ranges['4000-5000'] += 1
                 else:
                     salary_ranges['5000+'] += 1
-        
-        # Сортування для отримання топ-10
+
         sorted_locations = sorted(location_data.items(), key=lambda x: x[1], reverse=True)
         sorted_categories = sorted(categories_data.items(), key=lambda x: x[1], reverse=True)
-        
-        # Перетворення даних для Chart.js
+
         chart_data = {
             'job_types': {
                 'labels': list(job_types_data.keys()),
@@ -716,19 +632,15 @@ def init_routes(app, db, scraper):
     @web_bp.route('/requirements')
     def requirements_analysis():
         """Render the requirements analysis page"""
-        # Get filter type
         filter_type = request.args.get('type', 'all')
         
-        # Get analyses based on filter
         if filter_type == 'educational':
             analyses = db.get_educational_analyses()
         elif filter_type == 'regular':
             analyses = db.get_regular_analyses()
         else:
-            # Default to all analyses
             analyses = db.get_all_requirements_analyses()
         
-        # Get unique domains for the dropdown
         all_jobs = db.get_all_jobs()
         domains = set()
         for job in all_jobs:
@@ -746,7 +658,6 @@ def init_routes(app, db, scraper):
     def api_analyze_requirements():
         """API endpoint for analyzing job requirements"""
         try:
-            # Get basic parameters
             selected_domains = request.form.getlist('domains[]')
             is_educational_analysis = 'education_analysis' in request.form
             
@@ -756,14 +667,11 @@ def init_routes(app, db, scraper):
                     'error': 'No domains selected'
                 }), 400
             
-            # Convert to list if it's a string
             if isinstance(selected_domains, str):
                 selected_domains = [selected_domains]
-            
-            # Create a comma-separated string of domains for DB storage
+
             domains_str = ','.join(selected_domains)
-            
-            # Get educational program file if provided
+
             education_program_file = None
             education_program_filename = None
             education_program_filetype = None
@@ -783,24 +691,20 @@ def init_routes(app, db, scraper):
                         'success': False,
                         'error': 'No selected file'
                     }), 400
-                    
-                # Process the file
+
                 file_info = file_processor.save_file(program_file)
                 education_program_file = file_info['path']
                 education_program_filename = file_info['filename']
                 education_program_filetype = file_info['file_type']
-                
-                # Extract text from file
+
                 education_program_text = file_processor.extract_text(
                     file_info['path'], 
                     file_info['file_type']
                 )
-            
-            # Check if we already have an analysis for these domains
+
             existing_analyses = db.get_all_requirements_analyses()
             for analysis in existing_analyses:
                 if analysis['domains'] == domains_str and analysis['is_educational_analysis'] == is_educational_analysis:
-                    # For educational analysis, we don't consider it a duplicate unless filenames match
                     if is_educational_analysis and analysis['education_program_filename'] != education_program_filename:
                         continue
                     return jsonify({
@@ -808,8 +712,7 @@ def init_routes(app, db, scraper):
                         'analysis': analysis,
                         'message': 'Found existing analysis'
                     })
-            
-            # Create a new analysis record
+
             analysis_id = db.add_requirements_analysis(
                 domains=domains_str,
                 is_educational_analysis=is_educational_analysis,
@@ -819,7 +722,7 @@ def init_routes(app, db, scraper):
                 education_program_text=education_program_text
             )
             
-            # Get jobs for the selected domains
+            
             jobs = db.get_jobs_by_domains(selected_domains, limit=100)
             
             if not jobs:
@@ -828,24 +731,24 @@ def init_routes(app, db, scraper):
                     'error': 'No jobs found for the selected domains'
                 }), 404
             
-            # Initialize text processor and analyze job requirements
+            
             text_processor = TextProcessor()
             frequency_data = text_processor.analyze_frequency(jobs, top_n=50)
             
-            # Save the frequency analysis
+            
             db.update_requirements_analysis(analysis_id, top_words=json.dumps(frequency_data))
             
-            # Initialize ChatGPT API and generate summary
+            
             chatgpt = ChatGPTAPI()
             summary = chatgpt.generate_job_requirements_summary(
                 selected_domains, 
                 frequency_data['top_words']
             )
             
-            # Save the summary
+            
             db.update_requirements_analysis(analysis_id, summary=summary)
             
-            # If this is an educational program analysis, compare with the program
+            
             if is_educational_analysis and education_program_text:
                 education_analysis = chatgpt.analyze_educational_program(
                     selected_domains,
@@ -853,10 +756,10 @@ def init_routes(app, db, scraper):
                     education_program_text
                 )
                 
-                # Save the educational program analysis
+                
                 db.update_requirements_analysis(analysis_id, education_program_analysis=education_analysis)
             
-            # Get the updated analysis
+            
             analysis = db.get_requirements_analysis(analysis_id)
             
             return jsonify({
@@ -872,20 +775,20 @@ def init_routes(app, db, scraper):
                 'error': str(e)
             }), 500
 
-    # Add route to serve the uploaded files
+    
     @web_bp.route('/uploads/<path:filename>')
     def serve_upload(filename):
         """Serve uploaded files"""
         try:
-            # Ensure the uploads directory exists
+            
             uploads_dir = os.path.join(os.getcwd(), 'uploads')
             if not os.path.exists(uploads_dir):
                 os.makedirs(uploads_dir)
             
-            # Get file extension
+            
             _, ext = os.path.splitext(filename)
             
-            # Set the correct MIME type based on extension
+            
             mimetype = None
             if ext.lower() == '.pdf':
                 mimetype = 'application/pdf'
@@ -894,10 +797,10 @@ def init_routes(app, db, scraper):
             elif ext.lower() == '.txt':
                 mimetype = 'text/plain'
             
-            # Log for debugging
+            
             logging.info(f"Serving file: {filename} with mimetype: {mimetype}")
             
-            # Force download by setting as_attachment=True for non-text files
+            
             as_attachment = ext.lower() != '.txt'
             
             return send_from_directory(
@@ -960,21 +863,21 @@ def init_routes(app, db, scraper):
     def api_filter_requirements_analyses():
         """Filter requirements analyses by domain"""
         try:
-            # Get filter parameter
+            
             filter_domain = request.args.get('domain', '').strip()
             
             if not filter_domain:
-                # If no filter is provided, return all analyses
+                
                 analyses = db.get_all_requirements_analyses()
                 return jsonify({
                     'success': True,
                     'analyses': analyses
                 })
             
-            # Get all analyses and filter them
+            
             all_analyses = db.get_all_requirements_analyses()
             
-            # Filter analyses that contain the specified domain
+            
             filtered_analyses = []
             for analysis in all_analyses:
                 domains = analysis['domains'].split(',')
@@ -999,7 +902,7 @@ def init_routes(app, db, scraper):
     def preview_file(filename):
         """Preview text-based files"""
         try:
-            # Ensure the uploads directory exists
+            
             uploads_dir = os.path.join(os.getcwd(), 'uploads')
             file_path = os.path.join(uploads_dir, filename)
             
@@ -1009,10 +912,10 @@ def init_routes(app, db, scraper):
                     'error': 'File not found'
                 }), 404
             
-            # Get file extension
+            
             _, ext = os.path.splitext(filename)
             
-            # For text files, return the content directly
+            
             if ext.lower() == '.txt':
                 with open(file_path, 'r', encoding='utf-8', errors='replace') as f:
                     content = f.read()
@@ -1022,7 +925,7 @@ def init_routes(app, db, scraper):
                     'format': 'text'
                 })
             
-            # For other files, extract text using file processor
+            
             from file_processor import FileProcessor
             processor = FileProcessor()
             
@@ -1053,7 +956,7 @@ def init_routes(app, db, scraper):
                 'error': f"Could not preview file: {str(e)}"
             }), 500
     
-    # Add this route to web/routes.py
+    
 
     @web_bp.route('/api/test/openai', methods=['GET'])
     def test_openai_api():
@@ -1063,10 +966,10 @@ def init_routes(app, db, scraper):
             import os
             from dotenv import load_dotenv
             
-            # Reload environment variables
+            
             load_dotenv()
             
-            # Get API key
+            
             api_key = os.getenv('OPENAI_API_KEY', '')
             
             if not api_key:
@@ -1075,14 +978,14 @@ def init_routes(app, db, scraper):
                     'error': 'API key is not configured in .env file'
                 })
             
-            # Test with a simple prompt
+            
             api = ChatGPTAPI()
             test_response = api.generate_job_requirements_summary(
                 ['Test'], 
                 {'python': 100, 'javascript': 90, 'sql': 80, 'html': 70, 'css': 60}
             )
             
-            # Check if we got an error response
+            
             if test_response.startswith('Error:'):
                 return jsonify({
                     'success': False,

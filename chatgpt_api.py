@@ -1,12 +1,9 @@
-# Create a new file chatgpt_api.py in the root directory
-
 import os
 import json
 import logging
 import requests
 from dotenv import load_dotenv
 
-# Load environment variables
 load_dotenv()
 
 class ChatGPTAPI:
@@ -27,7 +24,6 @@ class ChatGPTAPI:
             # Format the top words for prompt
             formatted_words = ", ".join([f"{word} ({count})" for word, count in top_words.items()])
             
-            # Create the prompt
             prompt = f"""
             I need you to create a comprehensive summary of typical job requirements for {", ".join(domain_names)} positions.
             
@@ -48,7 +44,6 @@ class ChatGPTAPI:
             what employers generally look for in these positions.
             """
             
-            # Prepare the API request with proper authentication header
             headers = {
                 "Authorization": f"Bearer {self.api_key.strip()}",
                 "Content-Type": "application/json"
@@ -58,7 +53,7 @@ class ChatGPTAPI:
             self.logger.info(f"Authorization header: Bearer {self.api_key.strip()[:5]}...{self.api_key.strip()[-4:] if len(self.api_key.strip()) > 8 else ''}")
             
             data = {
-                "model": "gpt-4o",  # You can use gpt-4 for better results if available
+                "model": "gpt-4o",
                 "messages": [
                     {"role": "system", "content": "You are a professional job market analyst specializing in creating accurate summaries of job requirements."},
                     {"role": "user", "content": prompt}
@@ -92,15 +87,12 @@ class ChatGPTAPI:
             return f"Error generating summary: {str(e)}"
 
 
-    # Add this method to the ChatGPTAPI class in chatgpt_api.py
-
     def analyze_educational_program(self, domain_names, job_requirements_summary, educational_program_text):
         """Compare job requirements with educational program and provide recommendations"""
         try:
             if not self.api_key:
                 return "Error: OpenAI API key not configured. Please add OPENAI_API_KEY to your .env file."
             
-            # Create the prompt
             prompt = f"""
             I need you to analyze a university educational program against job market requirements.
             
@@ -127,14 +119,14 @@ class ChatGPTAPI:
             Format your response with clear headings, bullet points for recommendations, and highlight the most critical gaps and improvement opportunities.
             """
             
-            # Prepare the API request with proper authentication header
+
             headers = {
                 "Authorization": f"Bearer {self.api_key.strip()}",
                 "Content-Type": "application/json"
             }
             
             data = {
-                "model": "gpt-3.5-turbo-16k",  # Using 16k model for longer context
+                "model": "gpt-3.5-turbo-16k",
                 "messages": [
                     {"role": "system", "content": "You are an expert in curriculum development and industry requirements analysis."},
                     {"role": "user", "content": prompt}
@@ -173,14 +165,11 @@ class ChatGPTAPI:
         if not text:
             return text
             
-        # Replace multiple consecutive empty lines with a single empty line
         import re
         cleaned_text = re.sub(r'\n\s*\n', '\n\n', text)
         
-        # Remove empty lines at the beginning
         cleaned_text = cleaned_text.lstrip('\n')
         
-        # Remove empty lines at the end
         cleaned_text = cleaned_text.rstrip('\n') + '\n'
         
         return cleaned_text
