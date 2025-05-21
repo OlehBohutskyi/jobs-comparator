@@ -16400,3 +16400,776 @@
 2025-04-29 01:52:14,695 - werkzeug - INFO -  * Debugger PIN: 323-547-418
 2025-04-29 01:52:16,299 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller\\web\\routes.py', reloading
 2025-04-29 01:52:16,384 - werkzeug - INFO -  * Restarting with stat
+2025-05-06 21:02:18,736 - __main__ - INFO - Application initialized
+2025-05-06 21:02:18,736 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:02:18,750 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://10.100.129.121:5000
+2025-05-06 21:02:18,750 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-06 21:02:18,765 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:02:19,018 - __main__ - INFO - Application initialized
+2025-05-06 21:02:19,018 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:02:19,020 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:02:19,026 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:02:22,307 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-06 21:02:22,454 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "GET /jobs HTTP/1.1" 200 -
+2025-05-06 21:02:22,502 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-05-06 21:02:22,502 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-06 21:02:22,627 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-06 21:02:22,631 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:22] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-06 21:02:24,540 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:24] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:02:24,627 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:02:24,629 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:02:36,026 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:02:36,026 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:02:57,665 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:02:57,666 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:02:57 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '3168', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29362', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.276s', 'x-request-id': 'req_fca269b3c644ebacf7f7ff2601ab2ba0', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=CyI85Zb1fYNH8ACDCLTttVYvtlQSvWyrJ6qXUKZGI4Y-1746554577-1.0.1.1-var6eMR52Xf.9Xnd0NeSHCy2_s_PZCLmnKuvS1M90JeIgjSX0nyvMxnPTqYHokZhOP4XEeyWbcpBeBkgO5Fzz1UGbUAoLj4F.RmPnr16s7c; path=/; expires=Tue, 06-May-25 18:32:57 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=Pmne8lZfPvlaZsUpBS1knDum8q_oaD6PVVF2t6xwTDs-1746554577769-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba6419b864027d-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:02:57,674 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:57] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:02:59,332 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:59] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:02:59,385 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:02:59,386 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:02:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:03:00,299 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:03:00] "GET /api/requirements/3 HTTP/1.1" 200 -
+2025-05-06 21:04:31,579 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:04:31,933 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:04:32,328 - __main__ - INFO - Application initialized
+2025-05-06 21:04:32,328 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:04:32,332 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:04:32,336 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:04:40,884 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:40] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:04:42,532 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:42] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:04:42,580 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:04:42,580 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:04:49,387 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:04:49,387 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:04:58,060 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:04:58,060 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:04:58 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '7814', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29206', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.588s', 'x-request-id': 'req_661890a28d2f8263735c5e860b54589b', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=9tvt2uFkAk5hYndlP7V7J7HlU13crMJRgAAZ3.shpbg-1746554698-1.0.1.1-cbTiGPNhOQi8JnyhTpBISxyXY0Z30fPS.gePsEtvs8jgIO6n0I7Y6KLyFd43.KWzgZ5dTwYsB15JzVcOYlnrLA1eydyUG1tCmTs2umb6yw0; path=/; expires=Tue, 06-May-25 18:34:58 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=IuyaD9xuQrbzWgefWyLl8gatedmfmA3a_fx01udVQVw-1746554698175-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba66fcff65bf62-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:04:58,068 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:58] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:04:59,712 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:59] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:04:59,763 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:04:59,765 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:04:59] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:05:00,690 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:00] "GET /api/requirements/4 HTTP/1.1" 200 -
+2025-05-06 21:05:18,764 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:05:18,764 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:05:31,749 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:05:31,750 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:05:31 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12420', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29206', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.588s', 'x-request-id': 'req_0ef60ef38d816298d94bb9460a7cacaa', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=pCvur_Sr8sZ.Ra2KXNlGHaLuxBzedsQT3ZVA.pZcZ.I-1746554731-1.0.1.1-rDJxY8I_jQQ9GC9L0Rj__Xp4OntfihujbNwnxfmDmYBl24MnVbc6cXV3jf98JTZBbCPLsYU4Ml9JLFn7izvRb1LvUMY64ke5ZgakjZoK58A; path=/; expires=Tue, 06-May-25 18:35:31 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=zsKeJonJVqdx8VxB.X6xmeNh_SCS5vpJAUBerbAGP4A-1746554731872-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba67b34e02ee40-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:05:31,758 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:31] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:05:33,418 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:33] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:05:33,489 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:05:33,490 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:05:34,121 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:05:34] "GET /api/requirements/5 HTTP/1.1" 200 -
+2025-05-06 21:07:16,450 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:07:17,468 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:07:17,816 - __main__ - INFO - Application initialized
+2025-05-06 21:07:17,817 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:07:17,819 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:07:17,823 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:07:27,204 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:27] "DELETE /api/requirements/3 HTTP/1.1" 200 -
+2025-05-06 21:07:32,447 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:07:32,447 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:07:44,587 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:07:44,587 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:07:44 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11616', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29146', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.708s', 'x-request-id': 'req_ce5d45124a18f3030e799c98835ede34', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=qpIKp3Pet2644xsUKHYBvOCY6Elb1Vsefxm6oZXY2.8-1746554864-1.0.1.1-1WUTRLxhRm.3GdYalG8lkDrbW8ob5gwnJ__eUxfh2D8iUiQuC3.OF5yUlEM0OTCUx3wHLCrSYY3WNEytOwE6j.P4rBNmOcd7iqeXwCuyI9c; path=/; expires=Tue, 06-May-25 18:37:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=.TbHIDAQtnDGeugY6Jy5WnbkO61bVKnbEUdfuFKMJE4-1746554864692-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba6af688e9bbbd-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:07:44,596 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:44] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:07:46,271 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:46] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:07:46,334 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:46] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:07:46,336 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:46] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:07:58,790 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:07:58] "GET /api/requirements/6 HTTP/1.1" 200 -
+2025-05-06 21:08:04,672 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:08:04] "DELETE /api/requirements/5 HTTP/1.1" 200 -
+2025-05-06 21:08:05,606 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:08:05] "GET /api/requirements/6 HTTP/1.1" 200 -
+2025-05-06 21:16:54,912 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:16:55,533 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:16:55,975 - __main__ - INFO - Application initialized
+2025-05-06 21:16:55,975 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:16:55,979 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:16:55,983 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:26:14,315 - file_processor - INFO - File saved at: uploads/Безіменний 2_a27c550111f5cf29.docx
+2025-05-06 21:26:14,316 - file_processor - INFO - Extracting text from: uploads/Безіменний 2_a27c550111f5cf29.docx
+2025-05-06 21:26:14,345 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:26:14,484 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:26:14,484 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:26:28,326 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:26:28,326 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:26:28 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '9994', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29104', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.792s', 'x-request-id': 'req_3b8abc0e9b371797510b9a7d01efcb68', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=BCt94Yn7C..4nNsfrVJSyDFgQZyuXdyvGD8Z9dOVb4A-1746555988-1.0.1.1-_ZYmFxvFhkTvfwDPRQ9FEuS7fLBE_wsKTAnf5ksK.gzv1lBYI86LmpJapxFPLXxdy3TyM7P4EnlE12I7Thz8_g9XjBY9tTJQs3jw8Va8LCw; path=/; expires=Tue, 06-May-25 18:56:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=feMkq9zUcLLrrPyNVd6sA_MRj0KOwwsR0Am73yCEVe8-1746555988458-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba8665ed80ecbf-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:26:38,761 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:26:38,770 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:26:38] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:26:40,414 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:26:40] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:26:40,451 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:26:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:26:40,452 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:26:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:26:41,677 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:26:41] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:28:31,535 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:28:31] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:29:49,951 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:29:51,011 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:29:51,474 - __main__ - INFO - Application initialized
+2025-05-06 21:29:51,474 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:29:51,478 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:29:51,483 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:29:59,329 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:29:59] "DELETE /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:30:38,853 - file_processor - INFO - File saved at: uploads/Безіменний 2_5a10ac43d1c5ef7e.docx
+2025-05-06 21:30:38,854 - file_processor - INFO - Extracting text from: uploads/Безіменний 2_5a10ac43d1c5ef7e.docx
+2025-05-06 21:30:38,879 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:30:39,058 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:30:39,058 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:30:52,361 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:30:52,362 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:30:52 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12667', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29098', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.804s', 'x-request-id': 'req_0b465b8f64b80d8e4c3fcc28420b5abd', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=UFtvPTEanIungI0pDWQACRHgD6YPK36DVqHXx_PH_WU-1746556252-1.0.1.1-lW0C5j0D.zA9fJQG.Z8mFqIWH0N0nTC3UhiR.19hRP2RlK0V89FjtP1Qcvx7bssoEeYTuvx53WPRo40SqE0sC8xMuux5VHHslB04WCl_6LQ; path=/; expires=Tue, 06-May-25 19:00:52 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=EqMaW3eb8iKXGvN18_DYTZXuDFjZSL3_sz95L7gn6tA-1746556252451-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba8cd13f94a128-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:31:33,289 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:31:33,300 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:33] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:31:34,964 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:34] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:31:35,015 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:31:35,015 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:31:37,713 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:37] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:31:52,344 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:31:52] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:33:36,100 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:33:37,031 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:33:37,438 - __main__ - INFO - Application initialized
+2025-05-06 21:33:37,438 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:33:37,446 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:33:37,450 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:33:42,013 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:33:42] "DELETE /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:34:15,050 - file_processor - INFO - File saved at: uploads/Безіменний 2_7372c68d4216b2fe.docx
+2025-05-06 21:34:15,050 - file_processor - INFO - Extracting text from: uploads/Безіменний 2_7372c68d4216b2fe.docx
+2025-05-06 21:34:15,077 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:34:15,278 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:34:15,278 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:34:28,961 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:34:28,961 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:34:28 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12458', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29095', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.81s', 'x-request-id': 'req_e06fcb32b9b19c9f108117a555a9ad8b', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=RoYtk6E1MaLCD_jqAN0Lbk6lbATl6QxUIlsApu1hDHY-1746556468-1.0.1.1-wzzvlO46saXgwNMxrSxyiuJuMF7SZ1F_3ako6aesGM0aq.XWgh7wLszYMVhXoWWsGwLRRxgjj_mGfJU5qVtiCZbPG6iJDxQ7yUz2LEFWY00; path=/; expires=Tue, 06-May-25 19:04:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=R1M3t0J.qwKsc_4FTBdO00S_a080bonqBQZ8SOieALc-1746556468916-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba921b9ca6b614-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:34:45,361 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:34:45,371 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:34:45] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:34:47,031 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:34:47] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:34:47,087 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:34:47] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:34:47,087 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:34:47] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:34:49,148 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:34:49] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:36:55,434 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:36:55,787 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:36:56,051 - __main__ - INFO - Application initialized
+2025-05-06 21:36:56,051 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:36:56,053 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:36:56,056 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:37:06,846 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:37:07,226 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:37:07,502 - __main__ - INFO - Application initialized
+2025-05-06 21:37:07,502 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:37:07,504 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:37:07,508 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:37:16,448 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:37:16] "DELETE /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:37:49,769 - file_processor - INFO - File saved at: uploads/Безіменний 2_636d3d03286da486.docx
+2025-05-06 21:37:49,769 - file_processor - INFO - Extracting text from: uploads/Безіменний 2_636d3d03286da486.docx
+2025-05-06 21:37:49,798 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:37:49,994 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:37:49,994 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:38:01,289 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:38:01,289 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:38:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '9801', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29095', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.81s', 'x-request-id': 'req_559b42fbcc2b7c13979050d0962a5153', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=3ZE1D698Hu8JdrTFTZa7c.kXp4acjUneGkVGjKiP8AM-1746556681-1.0.1.1-ydR5GNucrp_0TlPxlkJu8rGOmSh3hyaB_cEudInlYCqO3Q8tROdJLhjnfuIx.JKH3VamyjLknnDl7ijOsyiBsXavAUOmvQbJ3hU5b58BoKQ; path=/; expires=Tue, 06-May-25 19:08:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=KyRIHNJlX.nz2obJve5wJFXbm2OE2R9pU5u.8itS8iM-1746556681385-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba975c2d93ecc6-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:38:29,252 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:38:29,261 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:29] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:38:30,920 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:30] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:38:30,977 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:38:30,978 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:38:32,076 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:32] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:38:42,563 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:42] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:38:42,574 - file_processor - INFO - Extracting text from: /Users/oleg/Downloads/controller 2/uploads/Безіменний 2_636d3d03286da486.docx
+2025-05-06 21:38:42,601 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:38:42,602 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:38:42] "GET /api/preview/Безіменний%202_636d3d03286da486.docx HTTP/1.1" 200 -
+2025-05-06 21:39:12,559 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:39:13,361 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:39:13,715 - __main__ - INFO - Application initialized
+2025-05-06 21:39:13,715 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:39:13,719 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:39:13,725 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:39:24,183 - file_processor - INFO - File saved at: uploads/Безіменний 2_3549af1de7c300fb.docx
+2025-05-06 21:39:24,183 - file_processor - INFO - Extracting text from: uploads/Безіменний 2_3549af1de7c300fb.docx
+2025-05-06 21:39:24,210 - file_processor - INFO - Successfully extracted 5874 characters of text
+2025-05-06 21:39:24,331 - chatgpt_api - INFO - API Key length: 164
+2025-05-06 21:39:24,332 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-06 21:39:51,586 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:39:51,586 - chatgpt_api - INFO - API response headers: {'Date': 'Tue, 06 May 2025 18:39:51 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '13958', 'openai-version': '2020-10-01', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29124', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.752s', 'x-request-id': 'req_4aece180dba8c0f4af7cd5f283ea3861', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=8r.2w0t1qpWPsfjwHjvH0Bbhu5I.kiiNpvS_.fajNWk-1746556791-1.0.1.1-pBACdiDePOAstsS1jEZsoE.OBoqOWdz7HqZUccdicHlhRJi24LOZbx8R.hmgKTfKuSCMzO0I20OBT0MWcGeD1FVqyrARst6sUQTugc8rlpw; path=/; expires=Tue, 06-May-25 19:09:51 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=KA.QmnDu39ShmAFgRlJD4NzoaSfGJXIR57TgfeaYS_M-1746556791222-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '93ba99c3c949772e-WAW', 'Content-Encoding': 'br', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-06 21:40:08,707 - chatgpt_api - INFO - API response status code: 200
+2025-05-06 21:40:08,712 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:08] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-06 21:40:10,751 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:10] "GET /requirements HTTP/1.1" 200 -
+2025-05-06 21:40:10,811 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:10] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-06 21:40:10,812 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:10] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-06 21:40:21,059 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:40:21,244 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:40:21,597 - __main__ - INFO - Application initialized
+2025-05-06 21:40:21,597 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:40:21,600 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:40:21,604 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:40:26,544 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:26] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-06 21:40:27,479 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:40:27] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:41:05,299 - werkzeug - INFO - 127.0.0.1 - - [06/May/2025 21:41:05] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-06 21:41:53,016 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/chatgpt_api.py', reloading
+2025-05-06 21:41:53,289 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:41:53,550 - __main__ - INFO - Application initialized
+2025-05-06 21:41:53,550 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:41:53,552 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:41:53,555 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:45:07,723 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/cos.py', reloading
+2025-05-06 21:45:07,838 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:45:08,243 - __main__ - INFO - Application initialized
+2025-05-06 21:45:08,243 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:45:08,246 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:45:08,250 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-06 21:45:10,449 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/cos.py', reloading
+2025-05-06 21:45:10,450 - werkzeug - INFO -  * Detected change in '/Users/oleg/Downloads/controller 2/cos.py', reloading
+2025-05-06 21:45:11,347 - werkzeug - INFO -  * Restarting with watchdog (fsevents)
+2025-05-06 21:45:11,599 - __main__ - INFO - Application initialized
+2025-05-06 21:45:11,599 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-06 21:45:11,601 - werkzeug - WARNING -  * Debugger is active!
+2025-05-06 21:45:11,605 - werkzeug - INFO -  * Debugger PIN: 755-275-961
+2025-05-11 23:06:33,446 - __main__ - INFO - Application initialized
+2025-05-11 23:06:33,446 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-11 23:06:33,514 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-11 23:06:33,514 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-11 23:06:33,519 - werkzeug - INFO -  * Restarting with stat
+2025-05-11 23:06:34,477 - __main__ - INFO - Application initialized
+2025-05-11 23:06:34,477 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-11 23:06:34,498 - werkzeug - WARNING -  * Debugger is active!
+2025-05-11 23:06:34,500 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-11 23:06:40,026 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:40] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-11 23:06:40,396 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:40] "GET /jobs HTTP/1.1" 200 -
+2025-05-11 23:06:40,559 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:40] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-11 23:06:40,820 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:40] "GET /static/js/main.js HTTP/1.1" 200 -
+2025-05-11 23:06:41,131 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:41] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-11 23:06:41,132 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:41] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-11 23:06:42,947 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:42] "GET /analytics HTTP/1.1" 200 -
+2025-05-11 23:06:43,056 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:43] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-11 23:06:43,341 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:43] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-11 23:06:44,597 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:44] "GET /requirements HTTP/1.1" 200 -
+2025-05-11 23:06:44,694 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-11 23:06:44,708 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-11 23:06:47,678 - werkzeug - INFO - 127.0.0.1 - - [11/May/2025 23:06:47] "GET /api/requirements/6 HTTP/1.1" 200 -
+2025-05-13 00:34:55,610 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:34:55] "GET /api/requirements/6 HTTP/1.1" 200 -
+2025-05-13 00:34:59,705 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:34:59] "GET /jobs HTTP/1.1" 200 -
+2025-05-13 00:34:59,843 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:34:59] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:35:00,138 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:35:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-13 00:35:00,454 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:35:00] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-13 00:35:02,547 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:35:02] "GET /api/jobs/93481 HTTP/1.1" 200 -
+2025-05-13 00:48:57,453 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:48:57] "GET /requirements HTTP/1.1" 200 -
+2025-05-13 00:48:57,555 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:48:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-13 00:48:57,556 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:48:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-13 00:48:59,045 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:48:59] "GET /api/requirements/6 HTTP/1.1" 200 -
+2025-05-13 00:54:46,568 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 00:54:46] "GET /api/requirements/1 HTTP/1.1" 200 -
+2025-05-13 19:58:42,176 - werkzeug - INFO - 127.0.0.1 - - [13/May/2025 19:58:42] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-14 00:38:58,054 - werkzeug - INFO - 127.0.0.1 - - [14/May/2025 00:38:58] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-15 23:26:36,375 - __main__ - INFO - Application initialized
+2025-05-15 23:26:36,375 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:26:36,449 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-15 23:26:36,450 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-15 23:26:36,456 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:26:37,357 - __main__ - INFO - Application initialized
+2025-05-15 23:26:37,357 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:26:37,369 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:26:37,381 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:26:41,645 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:41] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-15 23:26:42,375 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:42] "GET /jobs HTTP/1.1" 200 -
+2025-05-15 23:26:42,434 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:26:42,941 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:26:43,177 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:43] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-15 23:26:43,289 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:43] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-15 23:26:44,628 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:44] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:26:44,721 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:26:45,038 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:26:45] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:26:55,436 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:26:55,437 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:27:06,471 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:27:06,471 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:27:06 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '10294', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '10297', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29493', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.014s', 'x-request-id': 'req_9149c5517ed36e3a102d5f1df042687c', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=OeKvYUfbBzadBk2VFWTNmf8Dxk5UcpzXiH12xtBop6c-1747340826-1.0.1.1-PArsDM9s.XOA9Z05UwqFigDMdUvD1VU4flFImy8ekWEfCCrrYcWSrIFTqXx4KlTNKTrkeH9eFA83maFaFqmIM96PBGrCRUfy5Aj51v23Q6M; path=/; expires=Thu, 15-May-25 20:57:06 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=Pc_jRmbXIMIdBkKb7sbAfUrzEsMqI4rgGXnTx.gtdfw-1747340826742-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94055f82fd6d2301-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:27:06,482 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:27:06] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:27:08,458 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:27:08] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:27:08,623 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:27:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:27:08,793 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:27:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:27:50,905 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:27:50] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:28:08,979 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:28:08] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:30:06,140 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:06,219 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:07,175 - __main__ - INFO - Application initialized
+2025-05-15 23:30:07,175 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:07,186 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:07,188 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:12,559 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:12,625 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:13,514 - __main__ - INFO - Application initialized
+2025-05-15 23:30:13,515 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:13,525 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:13,528 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:17,645 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:17,713 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:18,611 - __main__ - INFO - Application initialized
+2025-05-15 23:30:18,611 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:18,622 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:18,625 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:20,234 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:20,302 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:21,188 - __main__ - INFO - Application initialized
+2025-05-15 23:30:21,188 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:21,199 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:21,202 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:31,436 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:31,507 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:32,403 - __main__ - INFO - Application initialized
+2025-05-15 23:30:32,403 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:32,414 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:32,416 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:38,950 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:30:39,015 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:30:39,913 - __main__ - INFO - Application initialized
+2025-05-15 23:30:39,914 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:30:39,925 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:30:39,927 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:30:44,524 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:30:44] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:30:44,622 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:30:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:30:44,624 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:30:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:30:47,802 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:30:47] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:30:58,780 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:30:58,780 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:31:07,719 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:31:07,720 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:31:08 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '8606', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '8614', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29228', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.544s', 'x-request-id': 'req_9c50e096edd48249d1f15317747f66c9', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=HUbKlCHJ9TSD2G7_GQ3qRLPP92i.OZtjHBBXVrbLBpM-1747341068-1.0.1.1-XGov0x0Q8XLgzAwuaSB3Km54p3UNLk3dvdCSFxwFH2EUgMM3rii0jVGx_ear6NeXkpUguIr0BcZ_cLLRMGpK1Prw_HOjItXujau.3tFBZPE; path=/; expires=Thu, 15-May-25 21:01:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=VnlYITOb32Zur_oy7dLnOgq.UqyhULYYbJ8uX3xjjQc-1747341068001-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94056573d8c024a4-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:31:07,739 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:31:07] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:31:09,434 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:31:09] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:31:09,566 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:31:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:31:09,782 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:31:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:31:10,482 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:31:10] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:34:26,840 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:34:26,912 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:34:27,836 - __main__ - INFO - Application initialized
+2025-05-15 23:34:27,836 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:34:27,848 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:34:27,850 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:34:31,978 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:34:32,063 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:34:33,012 - __main__ - INFO - Application initialized
+2025-05-15 23:34:33,012 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:34:33,024 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:34:33,026 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:34:35,982 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:34:36,068 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:34:37,016 - __main__ - INFO - Application initialized
+2025-05-15 23:34:37,016 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:34:37,027 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:34:37,030 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:04,798 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:04,873 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:05,811 - __main__ - INFO - Application initialized
+2025-05-15 23:35:05,811 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:05,822 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:05,825 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:07,425 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:07,491 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:08,390 - __main__ - INFO - Application initialized
+2025-05-15 23:35:08,390 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:08,402 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:08,404 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:11,234 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:11,303 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:12,212 - __main__ - INFO - Application initialized
+2025-05-15 23:35:12,212 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:12,223 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:12,225 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:12,668 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:12,734 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:13,624 - __main__ - INFO - Application initialized
+2025-05-15 23:35:13,624 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:13,635 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:13,638 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:15,307 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:15,375 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:16,279 - __main__ - INFO - Application initialized
+2025-05-15 23:35:16,279 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:16,290 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:16,292 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:17,919 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:17,986 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:18,885 - __main__ - INFO - Application initialized
+2025-05-15 23:35:18,885 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:18,897 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:18,899 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:25,430 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:25,500 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:26,403 - __main__ - INFO - Application initialized
+2025-05-15 23:35:26,403 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:26,414 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:26,417 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:29,298 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:29,374 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:30,357 - __main__ - INFO - Application initialized
+2025-05-15 23:35:30,357 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:30,369 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:30,371 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:39,489 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:39,559 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:40,459 - __main__ - INFO - Application initialized
+2025-05-15 23:35:40,459 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:40,470 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:40,473 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:35:45,776 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:35:45,841 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:35:46,738 - __main__ - INFO - Application initialized
+2025-05-15 23:35:46,738 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:35:46,749 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:35:46,751 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:37:17,571 - file_processor - INFO - File saved at: uploads\���1_3c02c6ee210d0c2c.docx
+2025-05-15 23:37:17,572 - file_processor - INFO - Extracting text from: uploads\���1_3c02c6ee210d0c2c.docx
+2025-05-15 23:37:17,588 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:37:17,729 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:37:17,729 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:37:29,573 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:37:29,573 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:37:29 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11520', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '11526', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29228', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.544s', 'x-request-id': 'req_14004a8db070ca99398fb54554fec4a4', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=2QGSTH62XTw8avXDiWwhRIsps7_Kr2hwMeiKuO6j8x4-1747341449-1.0.1.1-jD.20rAUXMQnZA.nLsQSM70TUrVQAYEwQhC99uRlBcsyJdpChdffckNWIzbsrdAwYGVX1_hATX3qnkRKOHZ4JY95kDnufQaGfCmagp08p38; path=/; expires=Thu, 15-May-25 21:07:29 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=T8NsWMlxzr.TnnBU1R3HgnhdCz9OQsq.LqZm_P8F6Qg-1747341449852-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94056eb44e3d24aa-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:37:39,523 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:37:39,607 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:37:40,576 - __main__ - INFO - Application initialized
+2025-05-15 23:37:40,577 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:37:40,589 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:37:40,592 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:37:48,838 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:48] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:37:53,662 - file_processor - INFO - File saved at: uploads\���1_9e27dd3ed35400dd.docx
+2025-05-15 23:37:53,662 - file_processor - INFO - Extracting text from: uploads\���1_9e27dd3ed35400dd.docx
+2025-05-15 23:37:53,676 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:37:53,678 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:53] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:37:55,345 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:55] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:37:55,536 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:37:55,733 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:55] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:37:56,910 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:37:56] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-15 23:38:00,819 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:00] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-15 23:38:12,757 - file_processor - INFO - File saved at: uploads\���1_57001b21b50e4333.docx
+2025-05-15 23:38:12,757 - file_processor - INFO - Extracting text from: uploads\���1_57001b21b50e4333.docx
+2025-05-15 23:38:12,768 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:38:12,909 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:38:12,909 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:38:24,465 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:38:24,465 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:38:24 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11310', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '11313', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29228', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.544s', 'x-request-id': 'req_fa73bb1ba056301ef67a31fd36af2226', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=4cOa71dYg736OM6FS5mUV.tkpw2RF9mfFPaKFAClVuY-1747341504-1.0.1.1-Lj7ZXZVZ7K0sbBY_8gfundVthSKHZbUZ4bk1jZPSVo8oVoEgYCh0Yjd0Mj3fvNs8OOLoamT3o4KzPVxk.zO.He__EzSBlKUxfUuC9v1lIIs; path=/; expires=Thu, 15-May-25 21:08:24 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=qG7C1n9XuDbtoPY9.2JldZHBnXMbVKpLxnWIZNr9DXQ-1747341504746-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '9405700cbb56ca38-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:38:50,663 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:38:50,685 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:50] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:38:52,374 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:52] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:38:52,508 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:52] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:38:52,758 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:52] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:38:53,614 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:38:53] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:39:56,758 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:39:56,830 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:39:57,765 - __main__ - INFO - Application initialized
+2025-05-15 23:39:57,765 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:39:57,776 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:39:57,779 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:39:58,185 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:39:58,251 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:39:59,154 - __main__ - INFO - Application initialized
+2025-05-15 23:39:59,154 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:39:59,165 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:39:59,167 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:00,823 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:00,901 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:01,802 - __main__ - INFO - Application initialized
+2025-05-15 23:40:01,802 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:01,813 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:01,815 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:04,675 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:04,745 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:05,631 - __main__ - INFO - Application initialized
+2025-05-15 23:40:05,631 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:05,642 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:05,644 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:12,191 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:12,255 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:13,151 - __main__ - INFO - Application initialized
+2025-05-15 23:40:13,151 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:13,162 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:13,164 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:16,032 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:16,099 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:16,994 - __main__ - INFO - Application initialized
+2025-05-15 23:40:16,995 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:17,006 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:17,008 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:23,525 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:23,594 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:24,478 - __main__ - INFO - Application initialized
+2025-05-15 23:40:24,478 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:24,489 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:24,491 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:45,819 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:45,885 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:46,768 - __main__ - INFO - Application initialized
+2025-05-15 23:40:46,768 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:46,779 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:46,782 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:40:58,228 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:40:58,297 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:40:59,199 - __main__ - INFO - Application initialized
+2025-05-15 23:40:59,199 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:40:59,210 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:40:59,212 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:41:05,550 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:41:05] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:41:15,749 - file_processor - INFO - File saved at: uploads\���1_cba582f831ccbd9a.docx
+2025-05-15 23:41:15,749 - file_processor - INFO - Extracting text from: uploads\���1_cba582f831ccbd9a.docx
+2025-05-15 23:41:15,762 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:41:15,899 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:41:15,899 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:41:28,786 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:41:28,786 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:41:29 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12427', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '12430', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29228', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.544s', 'x-request-id': 'req_0e882d34f0181fa2bf29d8a16a650f5e', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=AR7xOy8S5gl6xz8zcwNaaq8tYQQMZbGtJ.CuP2iBoas-1747341689-1.0.1.1-.grriT0dPvXn..t.bRNGHmtQxJngN8YViTmQ2eJcZcb3uXWXclAUDF0jT8Lq_ZZVNNgJMbvWYExbRXKi62J_xiruHH6oABtaXMHaPc.W3Kc; path=/; expires=Thu, 15-May-25 21:11:29 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=_zE0NIGk6DXYaBBRaPZX_RnJ.AOnHWbf0VPBC8IQGLM-1747341689067-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '940574855f2bc91a-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:41:51,774 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:41:51,784 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:41:51] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:41:53,509 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:41:53] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:41:53,661 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:41:53] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:41:53,897 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:41:53] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:42:01,523 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:42:01] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:44:39,854 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:44:39,932 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:44:40,889 - __main__ - INFO - Application initialized
+2025-05-15 23:44:40,889 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:44:40,901 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:44:40,903 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:44:46,281 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:44:46,348 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:44:47,263 - __main__ - INFO - Application initialized
+2025-05-15 23:44:47,263 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:44:47,274 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:44:47,276 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:44:53,641 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:44:53] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:45:02,745 - file_processor - INFO - File saved at: uploads\���1_1dc9e1344c856aaf.docx
+2025-05-15 23:45:02,745 - file_processor - INFO - Extracting text from: uploads\���1_1dc9e1344c856aaf.docx
+2025-05-15 23:45:02,758 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:45:02,902 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:45:02,902 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:45:18,762 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:45:18,763 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:45:19 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '15474', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '15479', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29228', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.544s', 'x-request-id': 'req_f5fe37ed5c90aa849fca11334d086107', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=1rsRp8SA8mWLNNUWjwEjAbwQOW_1CUbvmWoBqHxLG64-1747341919-1.0.1.1-DSuKAFo01VDDUuaQccpeG48J9Gdo.eJDyFI9eHUwTp_AsGOMGa7evbhs6afVVt18lUIkShh82cFbTRomXonOPwfCvKZenCdD0BVDs6A1mm8; path=/; expires=Thu, 15-May-25 21:15:19 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=bNhp_gvZ.iESRrTDShVuGkRno4u_P6PD2Ba08MwmGw4-1747341919046-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94057a0fc9d7ca39-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:45:45,857 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:45:45,875 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:45:45] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:45:48,477 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:45:48] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:45:48,658 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:45:48] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:45:48,823 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:45:48] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:46:14,320 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:46:14] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:47:16,845 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:47:16,924 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:47:17,853 - __main__ - INFO - Application initialized
+2025-05-15 23:47:17,853 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:47:17,864 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:47:17,867 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:47:19,530 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:47:19,597 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:47:20,497 - __main__ - INFO - Application initialized
+2025-05-15 23:47:20,497 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:47:20,508 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:47:20,510 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:47:25,825 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:47:25,895 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:47:26,779 - __main__ - INFO - Application initialized
+2025-05-15 23:47:26,780 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:47:26,790 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:47:26,793 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:48:10,253 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:48:10,316 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:48:11,228 - __main__ - INFO - Application initialized
+2025-05-15 23:48:11,228 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:48:11,240 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:48:11,242 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:48:51,090 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:48:51,158 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:48:52,064 - __main__ - INFO - Application initialized
+2025-05-15 23:48:52,065 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:48:52,075 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:48:52,078 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:48:56,136 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:48:56,204 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:48:57,099 - __main__ - INFO - Application initialized
+2025-05-15 23:48:57,100 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:48:57,111 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:48:57,113 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:49:02,486 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:49:02,552 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:49:03,434 - __main__ - INFO - Application initialized
+2025-05-15 23:49:03,435 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:49:03,446 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:49:03,448 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:49:05,104 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:49:05,171 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:49:06,066 - __main__ - INFO - Application initialized
+2025-05-15 23:49:06,066 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:49:06,077 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:49:06,080 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:49:10,168 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:49:10,233 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:49:11,144 - __main__ - INFO - Application initialized
+2025-05-15 23:49:11,145 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:49:11,156 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:49:11,158 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:50:05,981 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:05] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:50:14,363 - file_processor - INFO - File saved at: uploads\���1_01a7ba96d2cc2dee.docx
+2025-05-15 23:50:14,363 - file_processor - INFO - Extracting text from: uploads\���1_01a7ba96d2cc2dee.docx
+2025-05-15 23:50:14,376 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:50:14,512 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:50:14,512 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:50:27,436 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:50:27,436 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:50:27 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12583', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '12586', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_6f692b534bf0879448e4463db9c512e2', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=n9Hn.chwa1l8I_4QvZ8kSZf8LQpXJo2zTgm4zIJOlvY-1747342227-1.0.1.1-u4gD7gmLgcK2lQ7IjVfDbeYkw_7Oxga5W2yyCX67w.BABYLy1vpuS.f58gpseQzNTMWXMEl1iAiSfcriqeiOG.n9czpCc5Izls8hzAWix4Y; path=/; expires=Thu, 15-May-25 21:20:27 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=W2Lokl0_Pj7Ai4gUTvPdwEgskx4TLglB05v2YgUi3Cs-1747342227705-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '940581ab58f1ca35-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:50:48,243 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:50:48,253 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:48] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:50:49,940 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:49] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:50:50,115 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:50] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:50:50,337 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:50] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:50:52,842 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:50:52] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:51:35,665 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:51:35,735 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:51:36,651 - __main__ - INFO - Application initialized
+2025-05-15 23:51:36,651 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:51:36,663 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:51:36,665 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:51:39,543 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:51:39,615 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:51:40,499 - __main__ - INFO - Application initialized
+2025-05-15 23:51:40,499 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:51:40,510 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:51:40,513 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:51:43,336 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:51:43,418 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:51:44,310 - __main__ - INFO - Application initialized
+2025-05-15 23:51:44,310 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:51:44,321 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:51:44,323 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:51:48,432 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:51:48,501 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:51:49,381 - __main__ - INFO - Application initialized
+2025-05-15 23:51:49,381 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:51:49,392 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:51:49,394 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:51:58,390 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:51:58,459 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:51:59,355 - __main__ - INFO - Application initialized
+2025-05-15 23:51:59,355 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:51:59,366 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:51:59,368 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:52:15,800 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:52:15,868 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:52:16,752 - __main__ - INFO - Application initialized
+2025-05-15 23:52:16,752 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:52:16,763 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:52:16,765 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:52:18,458 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:52:18,524 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:52:19,410 - __main__ - INFO - Application initialized
+2025-05-15 23:52:19,410 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:52:19,421 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:52:19,423 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:52:21,008 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:52:21,079 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:52:21,975 - __main__ - INFO - Application initialized
+2025-05-15 23:52:21,975 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:52:21,986 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:52:21,989 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:52:33,430 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:52:33,493 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:52:34,395 - __main__ - INFO - Application initialized
+2025-05-15 23:52:34,395 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:52:34,407 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:52:34,410 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:52:54,473 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:52:54,537 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:52:55,417 - __main__ - INFO - Application initialized
+2025-05-15 23:52:55,417 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:52:55,428 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:52:55,431 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:53:03,191 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:53:03,256 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:53:04,143 - __main__ - INFO - Application initialized
+2025-05-15 23:53:04,143 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:53:04,154 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:53:04,157 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:53:07,040 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:53:07,104 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:53:08,009 - __main__ - INFO - Application initialized
+2025-05-15 23:53:08,009 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:53:08,020 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:53:08,022 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:53:11,631 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:11] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:53:22,961 - file_processor - INFO - File saved at: uploads\���1_0dc08da0e4133bac.docx
+2025-05-15 23:53:22,961 - file_processor - INFO - Extracting text from: uploads\���1_0dc08da0e4133bac.docx
+2025-05-15 23:53:22,983 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:53:23,116 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:53:23,117 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:53:36,902 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:53:36,902 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:53:37 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '13496', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '13500', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_53f0316c5070111e6e8a2276b0d67197', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=rIgs_GYru5xAp7S0VDKNSO1L5cgKEKK0L..5yMEEXyo-1747342417-1.0.1.1-VcSCOgv_IWWrlWxYLyxPgqpmRZqp8.7QVIduaxOFMrZ4OB6ZoipEx4JM5eMCH6fFjh3gNWQyDaPorZAilDlvQlxtg_euz6JYVZeerSOapiw; path=/; expires=Thu, 15-May-25 21:23:37 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=mhzKh3pSRZnafntkpBnoEKrapd97enpZLPMVCdq9IC0-1747342417187-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94058645db7a77b3-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:53:49,581 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:53:49,590 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:49] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:53:51,273 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:51] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:53:51,445 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:53:51,660 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:53:54,290 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:53:54] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:54:24,875 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:54:24,947 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:54:25,858 - __main__ - INFO - Application initialized
+2025-05-15 23:54:25,859 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:54:25,870 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:54:25,872 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:54:32,432 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:54:32,496 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:54:33,397 - __main__ - INFO - Application initialized
+2025-05-15 23:54:33,397 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:54:33,408 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:54:33,410 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:54:36,311 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:54:36,379 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:54:37,273 - __main__ - INFO - Application initialized
+2025-05-15 23:54:37,274 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:54:37,284 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:54:37,287 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:55:02,255 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:55:02,319 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:55:03,205 - __main__ - INFO - Application initialized
+2025-05-15 23:55:03,205 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:55:03,216 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:55:03,219 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:55:06,052 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-15 23:55:06,127 - werkzeug - INFO -  * Restarting with stat
+2025-05-15 23:55:07,036 - __main__ - INFO - Application initialized
+2025-05-15 23:55:07,036 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-15 23:55:07,048 - werkzeug - WARNING -  * Debugger is active!
+2025-05-15 23:55:07,050 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-15 23:55:09,096 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:09] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:55:12,066 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:12] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:55:21,043 - file_processor - INFO - File saved at: uploads\���1_90622b5264e70add.docx
+2025-05-15 23:55:21,043 - file_processor - INFO - Extracting text from: uploads\���1_90622b5264e70add.docx
+2025-05-15 23:55:21,062 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-15 23:55:21,204 - chatgpt_api - INFO - API Key length: 164
+2025-05-15 23:55:21,205 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-15 23:55:33,996 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:55:33,997 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 20:55:34 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12529', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '12532', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_ed99a7a89f0ff161ab6dd0477cda5e06', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=0NFlWGBbGnuh5ADCN6fQT8DeW4RE7hMN0JjNnPIJPTE-1747342534-1.0.1.1-j8aKQTjjontV3eBCGw.ndwT3XkFYknqtOo8LheSILPajxvUU163CL.LQP3OpMK.7akb0ieWlDvADnBApr0m5wZ2rMmkOqJCSr2yjuzpqrVY; path=/; expires=Thu, 15-May-25 21:25:34 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=ad_hW8EH9A3tmkLjticHTZzZqB47gF3TD5AZYbzFpQw-1747342534278-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '940589279d2677af-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-15 23:55:34,729 - chatgpt_api - INFO - API response status code: 200
+2025-05-15 23:55:34,747 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:34] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-15 23:55:36,474 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:36] "GET /requirements HTTP/1.1" 200 -
+2025-05-15 23:55:36,653 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:36] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-15 23:55:36,865 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:55:36] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-15 23:56:43,477 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:56:43] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-15 23:57:44,859 - werkzeug - INFO - 127.0.0.1 - - [15/May/2025 23:57:44] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-16 00:00:17,571 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:17] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-16 00:00:26,845 - file_processor - INFO - File saved at: uploads\���1_9b5e9985d20d159c.docx
+2025-05-16 00:00:26,845 - file_processor - INFO - Extracting text from: uploads\���1_9b5e9985d20d159c.docx
+2025-05-16 00:00:26,857 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-16 00:00:26,996 - chatgpt_api - INFO - API Key length: 164
+2025-05-16 00:00:26,997 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-16 00:00:35,253 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-16 00:00:35,324 - werkzeug - INFO -  * Restarting with stat
+2025-05-16 00:00:36,288 - __main__ - INFO - Application initialized
+2025-05-16 00:00:36,289 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-16 00:00:36,300 - werkzeug - WARNING -  * Debugger is active!
+2025-05-16 00:00:36,303 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-16 00:00:40,306 - file_processor - INFO - File saved at: uploads\���1_58c1a69b93b605dc.docx
+2025-05-16 00:00:40,306 - file_processor - INFO - Extracting text from: uploads\���1_58c1a69b93b605dc.docx
+2025-05-16 00:00:40,319 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-16 00:00:40,324 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:40] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-16 00:00:41,996 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:41] "GET /requirements HTTP/1.1" 200 -
+2025-05-16 00:00:42,184 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:42] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-16 00:00:42,379 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:42] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-16 00:00:43,021 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:43] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-16 00:00:48,102 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:00:48] "DELETE /api/requirements/8 HTTP/1.1" 200 -
+2025-05-16 00:00:56,570 - file_processor - INFO - File saved at: uploads\���1_cc52de80719d8729.docx
+2025-05-16 00:00:56,571 - file_processor - INFO - Extracting text from: uploads\���1_cc52de80719d8729.docx
+2025-05-16 00:00:56,584 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-16 00:00:56,726 - chatgpt_api - INFO - API Key length: 164
+2025-05-16 00:00:56,726 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-16 00:01:08,087 - chatgpt_api - INFO - API response status code: 200
+2025-05-16 00:01:08,087 - chatgpt_api - INFO - API response headers: {'Date': 'Thu, 15 May 2025 21:01:08 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11123', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '11126', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_8a7b3cc8b9c79af5a52d8e92605e0e45', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=ubmhIGo6vEBWQ2pqlXqsNysxxk_EzFja2yVvnWWJ6o4-1747342868-1.0.1.1-P.Rm9lfKnmmhzNE2kgRdKubEFruvzwN839eSmK_4WxwfVyOxSRBy740zqfrKw7NN9cSzloeJ78qCgNmkIhoXOy57.YzA9iSQIK1sHIHJT8s; path=/; expires=Thu, 15-May-25 21:31:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=FSj4gV1FTSsvKnmpkVm8hrV.tijWYQb0dfbXKNeOvZY-1747342868376-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '940591589e8d2d43-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-16 00:01:38,070 - chatgpt_api - INFO - API response status code: 200
+2025-05-16 00:01:38,088 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:38] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-16 00:01:40,498 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:40] "GET /requirements HTTP/1.1" 200 -
+2025-05-16 00:01:40,626 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-16 00:01:40,878 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-16 00:01:42,588 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:42] "GET /api/requirements/8 HTTP/1.1" 200 -
