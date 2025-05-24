@@ -17173,3 +17173,1036 @@
 2025-05-16 00:01:40,626 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:40] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
 2025-05-16 00:01:40,878 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:40] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
 2025-05-16 00:01:42,588 - werkzeug - INFO - 127.0.0.1 - - [16/May/2025 00:01:42] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:43:19,714 - __main__ - INFO - Application initialized
+2025-05-21 20:43:19,715 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:43:19,787 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-21 20:43:19,787 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 20:43:19,793 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 20:43:20,720 - __main__ - INFO - Application initialized
+2025-05-21 20:43:20,720 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:43:20,732 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 20:43:20,735 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 20:43:22,849 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:22] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-21 20:43:23,317 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:23] "GET /jobs HTTP/1.1" 200 -
+2025-05-21 20:43:23,447 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 20:43:23,720 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 20:43:24,044 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:24] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-21 20:43:24,044 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:24] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-21 20:43:24,715 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:24] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 20:43:24,820 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 20:43:25,124 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 20:43:26,684 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:43:26] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:56:41,852 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:56:41] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:56:42,100 - file_processor - INFO - Extracting text from: C:\Diploma\controller 2\uploads\œ–Õ1_cc52de80719d8729.docx
+2025-05-21 20:56:42,117 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-21 20:56:42,118 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:56:42] "GET /api/preview/œ–Õ1_cc52de80719d8729.docx HTTP/1.1" 200 -
+2025-05-21 20:56:46,591 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:56:46] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:56:50,751 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:56:50] "GET /api/requirements/7 HTTP/1.1" 200 -
+2025-05-21 20:57:08,777 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:57:08] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:59:26,176 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 20:59:26] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 20:59:46,787 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 20:59:46,867 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 20:59:47,835 - __main__ - INFO - Application initialized
+2025-05-21 20:59:47,836 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:59:47,848 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 20:59:47,850 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 20:59:49,485 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 20:59:49,556 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 20:59:50,475 - __main__ - INFO - Application initialized
+2025-05-21 20:59:50,475 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:59:50,486 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 20:59:50,489 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 20:59:52,153 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 20:59:52,230 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 20:59:53,163 - __main__ - INFO - Application initialized
+2025-05-21 20:59:53,163 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:59:53,174 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 20:59:53,177 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 20:59:57,275 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 20:59:57,343 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 20:59:58,276 - __main__ - INFO - Application initialized
+2025-05-21 20:59:58,276 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 20:59:58,287 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 20:59:58,290 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 20:59:59,999 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:00:00,074 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:00:00,998 - __main__ - INFO - Application initialized
+2025-05-21 21:00:00,998 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:00:01,009 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:00:01,012 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:04:01,742 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:01] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-21 21:04:01,778 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:01] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:04:01,949 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:01] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:04:51,423 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:51] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:04:51,554 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:04:51,831 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:51] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-21 21:04:51,832 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:04:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:05:39,018 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:05:39] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 21:05:42,033 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:05:42] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-21 21:05:42,359 - file_processor - INFO - Extracting text from: C:\Diploma\controller 2\uploads\œ–Õ1_cc52de80719d8729.docx
+2025-05-21 21:05:42,366 - file_processor - INFO - Successfully extracted 3299 characters of text
+2025-05-21 21:05:42,366 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:05:42] "GET /api/preview/œ–Õ1_cc52de80719d8729.docx HTTP/1.1" 200 -
+2025-05-21 21:15:17,474 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_e62cfd1928e89302.docx
+2025-05-21 21:15:17,474 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_e62cfd1928e89302.docx
+2025-05-21 21:15:17,486 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:15:17,587 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:15:17,587 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:15:34,970 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:15:34,970 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:15:34 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '16694', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '16696', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_f368625c76c3de37e54165983e38929f', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=U8xEk.uv92VJG4u..pl308jmIXIW35bKlUYWKBI6Tl4-1747851334-1.0.1.1-Vz89o6VPzCilL9mH14l75XcCzDnIyTU_G5FHUB7CceD7kWapF.D81v477xkzNmJC4QNfaVLhTGhyV3S_eQVwsqz45OfuJ_vixlvT0CSUUfw; path=/; expires=Wed, 21-May-25 18:45:34 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=uZg_Jpy2xxUlD.v.HQUwyk.BAlWHeuAUo3B4YAc3s4k-1747851334968-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94360eefe9d8ca59-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:16:13,491 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:16:13,513 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:13] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:16:15,219 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:15] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:16:15,358 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:15] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:16:15,605 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:15] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:16:17,806 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:17] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:16:27,634 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:27] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:16:27,956 - file_processor - INFO - Extracting text from: C:\Diploma\controller 2\uploads\œ– ¿Ìƒ_e62cfd1928e89302.docx
+2025-05-21 21:16:27,962 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:16:27,963 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:27] "GET /api/preview/œ–%20¿Ìƒ_e62cfd1928e89302.docx HTTP/1.1" 200 -
+2025-05-21 21:16:44,008 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:16:44] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:16:57,239 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_c10abd5f3e67acf9.docx
+2025-05-21 21:16:57,239 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_c10abd5f3e67acf9.docx
+2025-05-21 21:16:57,253 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:16:57,338 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:16:57,338 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:17:16,530 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:17:16,531 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:17:16 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '18881', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '18884', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_44b1cad219948a3e39dee047f75ede51', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=tuPRfAT9sK07fHb5gCmGvtRtDlMzhFPyiMpa4UawTNY-1747851436-1.0.1.1-gWynLaoW_twzW.12sR.EZwzsbg0rLxN.LqS_1RVKdZXzga6csPITIfi9k9A5tHkEUjiEQHlNG8pYHsYnFhpLsVIP55AaHk8O1xMegBYPKAw; path=/; expires=Wed, 21-May-25 18:47:16 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=pxttK2I4PzFBNeqA763pAz6mQmBsYVqdyPZSBuCzZY4-1747851436532-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '9436115f2c24ca3c-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:17:17,403 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:17:17,413 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:17] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:17:19,078 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:19] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:17:19,231 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:17:19,420 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:17:21,933 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:21] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:17:27,808 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:27] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:17:28,118 - file_processor - INFO - Extracting text from: C:\Diploma\controller 2\uploads\œ– ¿Ìƒ_c10abd5f3e67acf9.docx
+2025-05-21 21:17:28,125 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:17:28,125 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:17:28] "GET /api/preview/œ–%20¿Ìƒ_c10abd5f3e67acf9.docx HTTP/1.1" 200 -
+2025-05-21 21:17:51,986 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:17:52,058 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:17:54,821 - __main__ - INFO - Application initialized
+2025-05-21 21:17:54,822 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:17:54,865 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:17:54,868 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:17:57,765 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:17:57,839 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:17:58,774 - __main__ - INFO - Application initialized
+2025-05-21 21:17:58,775 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:17:58,786 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:17:58,789 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:18:22,983 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_f5a3c784486cbbaf.docx
+2025-05-21 21:18:22,983 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_f5a3c784486cbbaf.docx
+2025-05-21 21:18:22,998 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:18:23,003 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:23] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:18:24,703 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:24] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:18:24,865 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:18:25,107 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:25] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:18:28,010 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:28] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:18:32,754 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:32] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:18:34,404 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:34] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:18:34,439 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:18:34,507 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:18:34] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:18:46,489 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_346d0fd3b9c130e8.docx
+2025-05-21 21:18:46,489 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_346d0fd3b9c130e8.docx
+2025-05-21 21:18:46,502 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:18:46,580 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:18:46,580 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:19:05,207 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:19:05,207 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:19:05 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '18305', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '18307', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_57a3344ed9e33827bdcfe2f0e6fc61c7', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=xQ2bGDMSYj7Apb.gH69buERLnUnabE2V65goBzZPwIA-1747851545-1.0.1.1-utjUjpK705pIGYlGTaSFof_.cDW_JBVUoAQ05EDDamHalo8Vy0cRP1mFst9NMV_TOOAHnszaSTbCGFmmHgdiC60ITBbhvDgI8is_MPwLNq4; path=/; expires=Wed, 21-May-25 18:49:05 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=X5z3CvSAz9VM7i78OAu2Pglgmp0XsCJ6d3M2_TVUt_Q-1747851545203-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94361409edbf24b0-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:19:06,304 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:19:06,313 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:06] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:19:07,979 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:07] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:19:08,139 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:19:08,353 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:19:11,551 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:11] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:19:14,823 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:14] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:19:15,131 - file_processor - INFO - Extracting text from: C:\Diploma\controller 2\uploads\œ– ¿Ìƒ_346d0fd3b9c130e8.docx
+2025-05-21 21:19:15,137 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:19:15,138 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:15] "GET /api/preview/œ–%20¿Ìƒ_346d0fd3b9c130e8.docx HTTP/1.1" 200 -
+2025-05-21 21:19:27,906 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:19:27,978 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:19:28,913 - __main__ - INFO - Application initialized
+2025-05-21 21:19:28,913 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:19:28,925 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:19:28,927 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:19:31,383 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:31] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:19:33,168 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:33] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:19:33,254 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:33] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:19:33,256 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:19:33] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:19:44,736 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_9f5c407103a7ce2f.docx
+2025-05-21 21:19:44,736 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_9f5c407103a7ce2f.docx
+2025-05-21 21:19:44,750 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:19:44,841 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:19:44,841 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:20:01,499 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:20:01,499 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:20:01 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '16382', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '16385', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_18c2c1c3513944b08a6442c522a5ae37', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=4AjwlF2Dbg5rQYMRSshhxpf90zPWpokMrtsjX9NHrbg-1747851601-1.0.1.1-AXvbLex.KUdZw6z35oauWluspldzC_7ZbocyEU0ehqgF7KR4gDpB6.Pzp5Ni74YroPhx9MGkgtBQfIS_rrEjR7iy3KrOfMyqm38EtHsKLOQ; path=/; expires=Wed, 21-May-25 18:50:01 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=4_QXxYm_T.76op9ZcNwwv12RFMrlWeeRWeXhiepKTV0-1747851601485-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94361575a903c91b-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:20:02,553 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:20:02,572 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:20:02] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:20:04,257 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:20:04] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:20:04,403 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:20:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:20:04,650 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:20:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:20:12,936 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:20:12] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:21:27,594 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:21:27,668 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:21:28,601 - __main__ - INFO - Application initialized
+2025-05-21 21:21:28,601 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:21:28,613 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:21:28,615 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:21:40,026 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:21:40,091 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:21:40,994 - __main__ - INFO - Application initialized
+2025-05-21 21:21:40,994 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:21:41,005 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:21:41,008 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:21:51,235 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:21:51] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:21:56,099 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:21:56] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:21:56,219 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:21:56] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:21:56,238 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:21:56] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:22:01,298 - __main__ - INFO - Application initialized
+2025-05-21 21:22:01,298 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:22:01,327 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-21 21:22:01,328 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 21:22:01,328 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:22:02,209 - __main__ - INFO - Application initialized
+2025-05-21 21:22:02,210 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:22:02,220 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:22:02,223 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:22:26,317 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_1f28a306e7bc8781.docx
+2025-05-21 21:22:26,318 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_1f28a306e7bc8781.docx
+2025-05-21 21:22:26,332 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:22:26,415 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:22:26,415 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:22:44,381 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:22:44,381 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:22:44 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '17634', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '17637', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_1338f1995f2e1f99e4651a0042733147', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=KNuJk5An4pIH6IR748wr9_vVz6bmpa8rumdbsC6MwjM-1747851764-1.0.1.1-sFmQPYFcnW0RFGRI8XVrw7zE3Gyu7E.8xoYpsuITMxcIJEeR6pB0nixrOWiv5JKAfFnk20mljphKK2m4xJ_qXZ_AiQJjyKmjTgJEe0kR4wU; path=/; expires=Wed, 21-May-25 18:52:44 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=.p.gTMb0kxCUghCegFjpaGJdV1pndyYexqdNYsUxn00-1747851764390-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '943619681edd77bb-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:23:21,581 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:23:21,590 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:23:21] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:23:23,355 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:23:23] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:23:23,536 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:23:23] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:23:23,738 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:23:23] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:23:57,328 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:23:57] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:24:39,909 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:24:39,982 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:24:40,904 - __main__ - INFO - Application initialized
+2025-05-21 21:24:40,904 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:24:40,916 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:24:40,918 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:24:54,858 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:24:54,937 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:24:55,838 - __main__ - INFO - Application initialized
+2025-05-21 21:24:55,838 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:24:55,849 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:24:55,851 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:25:30,592 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:25:30,659 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:25:31,577 - __main__ - INFO - Application initialized
+2025-05-21 21:25:31,577 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:25:31,588 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:25:31,590 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:25:34,243 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:25:34] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:25:35,193 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:25:35] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:25:35,287 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:25:35] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:25:35,322 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:25:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:25:52,096 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_d09487424afa0f72.docx
+2025-05-21 21:25:52,096 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_d09487424afa0f72.docx
+2025-05-21 21:25:52,110 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:25:52,197 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:25:52,197 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:26:06,670 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:26:06,670 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:26:06 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '14176', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '14179', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_cf6c20ffffefea3487b7f7867634fe75', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=BoFLSxMaXYXCf69cRjRviTW85MMnVxkcNHH.5C8XZFU-1747851966-1.0.1.1-P5vxG8SKqj0tzrMnONGJKRT7phwtFub3cbQwYC0kuW6QsL857tGT5eO1KXJm8Kj62ArTFKQuhwEvC44ab6FMr_l03ZafukhpwdXz9vQHjZI; path=/; expires=Wed, 21-May-25 18:56:06 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=oIr9vtP6BUpWgNFnDzRMfpwDv_A5XMptAHlydkZ1nNQ-1747851966671-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94361e6dfedb2d43-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:26:07,510 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:26:07,529 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:07] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:26:09,229 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:09] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:26:09,352 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:09] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:26:09,584 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:09] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:26:11,401 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:11] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:26:16,088 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:16] "DELETE /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:26:19,420 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:19] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:26:19,474 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:19] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:26:19,511 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:26:19] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:26:23,214 - __main__ - INFO - Application initialized
+2025-05-21 21:26:23,214 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:26:23,234 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-21 21:26:23,234 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 21:26:23,235 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:26:24,146 - __main__ - INFO - Application initialized
+2025-05-21 21:26:24,147 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:26:24,158 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:26:24,160 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:26:40,104 - file_processor - INFO - File saved at: uploads\œ– ¿Ìƒ_d99132386b4072d4.docx
+2025-05-21 21:26:40,104 - file_processor - INFO - Extracting text from: uploads\œ– ¿Ìƒ_d99132386b4072d4.docx
+2025-05-21 21:26:40,118 - file_processor - INFO - Successfully extracted 5896 characters of text
+2025-05-21 21:26:40,206 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:26:40,206 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:26:52,438 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:26:52,439 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:26:52 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11983', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '11986', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29181', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.638s', 'x-request-id': 'req_60b257718601e5e8fda231a7418f975e', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=T_eUZ07XK.n_7k9oIEpex_Ok7Wi6TTQpihpCPaTfkw8-1747852012-1.0.1.1-Oye8kTYiWgBu4Nj.2L8pIOIGgaXdmquPixaBG__wvlJNwICmifoHnGDzNO2zNJeg0vLnKcD9ndsbSDRT0RNg5aZlJV.FCV6Q4LgG0tD8ob0; path=/; expires=Wed, 21-May-25 18:56:52 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=PqIdKZ7DBrwrSHgxfbbw4AhgYZ2e0r4ZFxE4oy7YnlA-1747852012441-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94361f99b90cca4e-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:27:47,092 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:27:47,110 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:27:47] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:27:49,109 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:27:49] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:27:49,222 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:27:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:27:49,248 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:27:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:27:52,064 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:27:52] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:28:55,816 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_7e74b1ec4dd2e986.docx
+2025-05-21 21:28:55,816 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_7e74b1ec4dd2e986.docx
+2025-05-21 21:28:55,829 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:28:55,943 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:28:55,943 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:29:08,860 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:29:08,860 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:29:08 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '12593', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '12596', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29180', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.64s', 'x-request-id': 'req_2709e3b7e695a16b6fcfcbd8f3cfe866', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=6iehrkCvr44bqHZuRzUk.ImKkbqa3EE_CHZxKT880g8-1747852148-1.0.1.1-Jh3n9Rklwefj7WJVVM_bXFZpp_RjIHSVgmSXOePa2zlNIkizivH1MZKMig9i6sOIX2oRXIhaTo5qLxdm5c4nfR8xPew1mYnjaDWKvNXETwo; path=/; expires=Wed, 21-May-25 18:59:08 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=UtYE0jhq8WHWlo8sIAjN6S868eVJTeUGN0ISVeLIjpg-1747852148865-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '943622ea78db2dea-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:29:09,796 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:29:09,815 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:09] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:29:11,525 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:11] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:29:11,638 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:29:11,857 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:29:13,432 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:13] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:29:16,646 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:29:16] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:29:31,394 - __main__ - INFO - Application initialized
+2025-05-21 21:29:31,394 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:29:31,415 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-21 21:29:31,415 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 21:29:31,416 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:29:32,329 - __main__ - INFO - Application initialized
+2025-05-21 21:29:32,329 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:29:32,340 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:29:32,343 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:29:46,739 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_a3589e7113b96e41.docx
+2025-05-21 21:29:46,740 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_a3589e7113b96e41.docx
+2025-05-21 21:29:46,755 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:29:46,874 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:29:46,875 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:29:58,739 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:29:58,739 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:29:58 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '11632', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '11635', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29180', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.64s', 'x-request-id': 'req_29443af7961ab258a535294dc29de048', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=fQoPHVlW6oK1jfYL59jUwHxpeWruoiAXyesI_TDGXSU-1747852198-1.0.1.1-OcSgbgWiKXZx9j0aZkQ1eIUveCoQ04dtfzY77ZokZsKVL_fJq1niMDU6dK2bZbIi1XyWyZwgBY5o4Y.JXJtdEnQ89jEG9c1WjAacsr3y1b4; path=/; expires=Wed, 21-May-25 18:59:58 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=H4xRKF_mHhXdz0PDTeKfPgIxXy1hBv7MMnefgM24O7E-1747852198749-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94362428397c77af-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:30:28,939 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:30:28,959 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:30:28] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:30:30,643 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:30:30] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:30:30,814 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:30:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:30:31,021 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:30:31] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:30:33,085 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:30:33] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:31:20,250 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:31:20] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:31:24,820 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:31:24] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:31:41,709 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:31:41] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:32:09,262 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_34f488b717c2c441.docx
+2025-05-21 21:32:09,262 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_34f488b717c2c441.docx
+2025-05-21 21:32:09,276 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:32:09,410 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:32:09,410 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:32:25,197 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:32:25,197 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:32:25 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '15364', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '15367', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_ac67d871392f7cc17db935e9ac2c9acc', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=65930y5TweAHH_pw8aRiqrbquHQN5nvz9ZpRFEQwBSY-1747852345-1.0.1.1-j6Ijje5L92mJ0DVhTyyBxmq_5gE07ACjdeXDw9hOuj6PtVwe9iKuTYeQnnSzZNcQJu2Lkxd_1Y.2MJQCcNn7Jf3C3NbxBTmOKPWtGip3Xw0; path=/; expires=Wed, 21-May-25 19:02:25 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=FIcMBkG2jOJM0aaxW1MZCc2uf2d8vQXt3eQgQnHYGZU-1747852345145-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '943627a3aa6b77b6-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:33:02,219 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:33:02,238 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:02] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:33:03,931 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:03] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:33:04,058 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:04] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:33:04,322 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:04] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:33:05,511 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:33:05] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:34:24,916 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:34:24] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:35:10,789 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:35:10] "GET /api/requirements/9 HTTP/1.1" 200 -
+2025-05-21 21:37:03,925 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:37:03,997 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:37:04,920 - __main__ - INFO - Application initialized
+2025-05-21 21:37:04,921 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:37:04,932 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:37:04,935 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:37:11,187 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:11] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:37:20,461 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_94ab9e325a317d90.docx
+2025-05-21 21:37:20,461 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_94ab9e325a317d90.docx
+2025-05-21 21:37:20,475 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:37:20,614 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:37:20,614 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:37:35,193 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:37:35,194 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:37:35 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '14229', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '14232', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_6157135374fb8ee893c2b816b16d3c7b', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=cNf2N0elkyJJy_oXNQNYKMBJpc0QNtYzcEr8LAG2nBI-1747852655-1.0.1.1-FVCinwZdgN2SjhkRRE.mw9l3sxYMpAkoLXyc2UYwgzn4Bl8YM2NPvMFAdQ_oUzZFIe7tpJM8c.f2baTU7fSeeSBZkZZHS5KAbtUqLn1gvHo; path=/; expires=Wed, 21-May-25 19:07:35 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=EUysiSKilkIi6UVF.05zOgqkeYD7zd.MOZTXuw.Zey4-1747852655196-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94362f3cc9162d8b-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:37:35,566 - chatgpt_api - INFO - API response status code: 400
+2025-05-21 21:37:35,566 - chatgpt_api - ERROR - API Error: {
+  "error": {
+    "message": "max_tokens is too large: 20000. This model supports at most 16384 completion tokens, whereas you provided 20000.",
+    "type": "invalid_request_error",
+    "param": "max_tokens",
+    "code": "invalid_value"
+  }
+}
+2025-05-21 21:37:35,584 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:35] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:37:37,263 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:37] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:37:37,448 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:37] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:37:37,628 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:37] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:37:40,392 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:37:40] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:37:54,700 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:37:54,781 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:37:55,697 - __main__ - INFO - Application initialized
+2025-05-21 21:37:55,698 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:37:55,709 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:37:55,711 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:37:58,620 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:37:58,693 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:37:59,613 - __main__ - INFO - Application initialized
+2025-05-21 21:37:59,613 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:37:59,624 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:37:59,627 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:38:01,207 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:01] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:38:18,128 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_2575467aaedbdc26.docx
+2025-05-21 21:38:18,128 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_2575467aaedbdc26.docx
+2025-05-21 21:38:18,142 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:38:18,277 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:38:18,277 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:38:28,905 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:38:28,905 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:38:28 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '10381', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '10384', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_922909dd71c02dac37a22978f7dc0081', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=flbfaShpvVlx9tWFzWE7tINMAsw5YV7r.rYOruBAc5U-1747852708-1.0.1.1-gn_UIe8pffnLW0Ig_vpeXcGHegW4WKLdMQ1pEHaQaalpV_gEM9iChwtloB_82FNoHzf2LNMPv_tkmt7mc1k.vKYAgadqeo9dYBBso0Ab39M; path=/; expires=Wed, 21-May-25 19:08:28 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=r6itxPRDBgWlV3Ded.OT.1125wGECpQAdFGJiEGmjmI-1747852708915-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '943630a4981f24a1-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:38:30,079 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:38:30,097 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:30] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:38:31,837 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:31] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:38:31,998 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:31] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:38:32,240 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:38:33,926 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:33] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:38:38,235 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:38:38] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:38:42,066 - __main__ - INFO - Application initialized
+2025-05-21 21:38:42,066 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:38:42,085 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-21 21:38:42,086 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-21 21:38:42,087 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:38:42,987 - __main__ - INFO - Application initialized
+2025-05-21 21:38:42,988 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:38:42,999 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:38:43,001 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:38:56,247 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_d65447ac77e59d59.docx
+2025-05-21 21:38:56,247 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_d65447ac77e59d59.docx
+2025-05-21 21:38:56,262 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:38:56,400 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:38:56,401 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:39:11,876 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:39:11,876 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:39:11 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '15203', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '15205', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_a15dd21812e429dec3b6d651484bd0b8', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=AC64W.QXDRECLP3cCRZcVJoKLSll34j3QqzuHjVHtoE-1747852751-1.0.1.1-pz71RVxSHv0Wqyd2GebBsQIrbNPydSqyfoNuauE3dv8RQtEE2UpbXbJjilm3PmBeuYuYABUgZdADkBIbWII1Oxv4G_sH.SQRMaaswZSr87Y; path=/; expires=Wed, 21-May-25 19:09:11 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=zpaVio_xIbWZvbIGfk6PVJhTLeS3j66YZRipRC1Y0Ps-1747852751871-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '94363192ebd12481-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:39:12,786 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:39:12,795 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:12] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:39:14,482 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:14] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:39:14,660 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:39:14,842 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:39:16,370 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:16] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:39:19,726 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:39:19] "DELETE /api/requirements/10 HTTP/1.1" 200 -
+2025-05-21 21:39:27,695 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:39:27,765 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:39:28,691 - __main__ - INFO - Application initialized
+2025-05-21 21:39:28,691 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:39:28,702 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:39:28,705 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:39:30,394 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\chatgpt_api.py', reloading
+2025-05-21 21:39:30,460 - werkzeug - INFO -  * Restarting with stat
+2025-05-21 21:39:31,359 - __main__ - INFO - Application initialized
+2025-05-21 21:39:31,359 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-21 21:39:31,370 - werkzeug - WARNING -  * Debugger is active!
+2025-05-21 21:39:31,372 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-21 21:39:48,835 - file_processor - INFO - File saved at: uploads\œ–Õ  Õ_8e0f20cda97b665b.docx
+2025-05-21 21:39:48,836 - file_processor - INFO - Extracting text from: uploads\œ–Õ  Õ_8e0f20cda97b665b.docx
+2025-05-21 21:39:48,852 - file_processor - INFO - Successfully extracted 6811 characters of text
+2025-05-21 21:39:48,999 - chatgpt_api - INFO - API Key length: 164
+2025-05-21 21:39:48,999 - chatgpt_api - INFO - Authorization header: Bearer sk-pr...5mYA
+2025-05-21 21:40:03,844 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:40:03,844 - chatgpt_api - INFO - API response headers: {'Date': 'Wed, 21 May 2025 18:40:03 GMT', 'Content-Type': 'application/json', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'access-control-expose-headers': 'X-Request-ID', 'openai-organization': 'user-xvobj8gmrjyacfzplciagb0p', 'openai-processing-ms': '14513', 'openai-version': '2020-10-01', 'x-envoy-upstream-service-time': '14515', 'x-ratelimit-limit-requests': '500', 'x-ratelimit-limit-tokens': '30000', 'x-ratelimit-remaining-requests': '499', 'x-ratelimit-remaining-tokens': '29175', 'x-ratelimit-reset-requests': '120ms', 'x-ratelimit-reset-tokens': '1.65s', 'x-request-id': 'req_79243fdb7497615eb7b226172f5b4d41', 'strict-transport-security': 'max-age=31536000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'Set-Cookie': '__cf_bm=Fk7fjQJEZVPbOdsrYawX4MuQesBfwq9VU0jQWTUnDug-1747852803-1.0.1.1-R5P6slexBQO2vkLC7U3ZqkFYUi8QeP0ius73oowngqWu24.7MroZyqhHyendV4ftz_Q.0zXvYSWd7U6QK9teSlb83eJnZ4bmDnwepl5d0_0; path=/; expires=Wed, 21-May-25 19:10:03 GMT; domain=.api.openai.com; HttpOnly; Secure; SameSite=None, _cfuvid=B1qkkB1loz3UCwd2lIxifaQlEu.ptsA16SvwklZ2CVg-1747852803855-0.0.1.1-604800000; path=/; domain=.api.openai.com; HttpOnly; Secure; SameSite=None', 'X-Content-Type-Options': 'nosniff', 'Server': 'cloudflare', 'CF-RAY': '943632dc09a1ca4d-KBP', 'Content-Encoding': 'gzip', 'alt-svc': 'h3=":443"; ma=86400'}
+2025-05-21 21:40:42,622 - chatgpt_api - INFO - API response status code: 200
+2025-05-21 21:40:42,641 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:40:42] "POST /api/requirements/analyze HTTP/1.1" 200 -
+2025-05-21 21:40:44,319 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:40:44] "GET /requirements HTTP/1.1" 200 -
+2025-05-21 21:40:44,505 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:40:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-21 21:40:44,718 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:40:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-21 21:40:47,602 - werkzeug - INFO - 127.0.0.1 - - [21/May/2025 21:40:47] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-22 19:47:59,024 - __main__ - INFO - Application initialized
+2025-05-22 19:47:59,025 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-22 19:47:59,099 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-22 19:47:59,099 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-22 19:47:59,106 - werkzeug - INFO -  * Restarting with stat
+2025-05-22 19:48:00,048 - __main__ - INFO - Application initialized
+2025-05-22 19:48:00,048 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-22 19:48:00,059 - werkzeug - WARNING -  * Debugger is active!
+2025-05-22 19:48:00,062 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-22 19:48:02,998 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:02] "GET /requirements HTTP/1.1" 200 -
+2025-05-22 19:48:03,165 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:03] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-22 19:48:03,180 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:03] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-22 19:48:03,610 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:03] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-22 19:48:04,487 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:04] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-22 19:48:10,212 - werkzeug - INFO - 127.0.0.1 - - [22/May/2025 19:48:10] "GET /api/requirements/10 HTTP/1.1" 200 -
+2025-05-24 18:20:07,613 - __main__ - INFO - Application initialized
+2025-05-24 18:20:07,613 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:20:07,677 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:20:07,677 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:20:07,682 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:20:08,551 - __main__ - INFO - Application initialized
+2025-05-24 18:20:08,551 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:20:08,562 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:20:08,574 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:24:19,546 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\web\\routes.py', reloading
+2025-05-24 18:24:19,626 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:26:25,006 - __main__ - INFO - Application initialized
+2025-05-24 18:26:25,006 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:26:25,027 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:26:25,028 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:26:25,029 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:26:25,902 - __main__ - INFO - Application initialized
+2025-05-24 18:26:25,902 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:26:25,914 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:26:25,916 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:26:34,403 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:34] "[32mGET / HTTP/1.1[0m" 302 -
+2025-05-24 18:26:34,843 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:34] "GET /jobs HTTP/1.1" 200 -
+2025-05-24 18:26:34,887 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:34] "GET /static/css/styles.css HTTP/1.1" 200 -
+2025-05-24 18:26:35,386 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:26:35,639 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:35] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:26:35,702 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:35] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+2025-05-24 18:26:49,275 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:49] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:26:49,390 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:49] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:26:49,683 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:49] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:26:55,192 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:55] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-24 18:26:55,192 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:26:55] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:29:36,358 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\web\\routes.py', reloading
+2025-05-24 18:29:36,430 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:29:37,365 - __main__ - INFO - Application initialized
+2025-05-24 18:29:37,365 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:29:37,378 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:29:37,380 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:30:05,997 - __main__ - INFO - Application initialized
+2025-05-24 18:30:05,997 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:30:06,018 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:30:06,018 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:30:06,019 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:30:06,909 - __main__ - INFO - Application initialized
+2025-05-24 18:30:06,909 - __main__ - INFO - Starting web server on 0.0.0.0:5000
+2025-05-24 18:30:06,922 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:30:06,924 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:30:11,743 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:11] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:30:11,765 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:11] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-24 18:30:11,878 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:30:12,144 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:12] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:30:12,482 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:12] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:13,019 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:13] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:30:17,478 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:17] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:22,169 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:22] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:27,478 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:27] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:32,165 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:32] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:37,531 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:37] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:42,224 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:42] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:47,477 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:47] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:52,221 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:52] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:30:57,539 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:30:57] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:02,232 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:02] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:07,531 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:07] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:12,225 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:12] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:17,537 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:17] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:22,222 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:22] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:27,470 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:27] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:27,741 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:27] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:31:30,241 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:30] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:32,473 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:32] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:37,175 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:37] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:42,472 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:42] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:47,223 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:47] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:52,529 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:52] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:31:57,231 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:31:57] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:02,531 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:02] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:07,232 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:07] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:12,533 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:12] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:17,228 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:17] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:22,528 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:22] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:27,179 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:27] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:29,908 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:29] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:32:30,008 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:30] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:32:30,010 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:30] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:32:30,413 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:30] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:31,386 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:31] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:32:35,423 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:35] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:40,219 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:40] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:45,534 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:45] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:50,225 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:50] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:32:55,527 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:32:55] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:00,228 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:00] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:05,533 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:05] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:10,220 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:10] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:15,535 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:15] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:20,226 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:20] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:25,546 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:25] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:30,232 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:30] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:35,534 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:35] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:39,938 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:39] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:33:40,431 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:40] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:41,997 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:41] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:33:42,321 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:42] "[33mGET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1[0m" 404 -
+2025-05-24 18:33:45,111 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:45] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:50,425 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:50] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:33:55,219 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:33:55] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:00,530 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:00] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:05,228 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:05] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:10,535 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:10] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:15,226 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:15] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:20,534 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:20] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:25,223 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:25] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:30,533 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:30] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:35,223 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:35] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:40,540 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:40] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:45,231 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:45] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:34:50,531 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:34:50] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:35:19,239 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:35:19] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:36:19,537 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:36:19] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:39:11,727 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:39:11,741 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:39:11,741 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:39:11,747 - __main__ - INFO - Application initialized
+2025-05-24 18:39:11,761 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:39:11,761 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:39:11,762 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:39:12,727 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:39:12,734 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:39:12,734 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:39:12,741 - __main__ - INFO - Application initialized
+2025-05-24 18:39:12,748 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:39:12,751 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:39:12,991 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:39:12] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:39:15,116 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:39:15] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:39:17,316 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:39:17] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:39:19,036 - root - ERROR - Error saving settings: 'Flask' object has no attribute 'scheduler'
+2025-05-24 18:39:19,036 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:39:19] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:39:42,872 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\web\\routes.py', reloading
+2025-05-24 18:39:42,872 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:39:42,948 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:39:43,893 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:39:43,899 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:39:43,899 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:39:43,975 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:39:52,662 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:39:52,668 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:39:52,668 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:06,072 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:06,078 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:06,078 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:06,084 - __main__ - INFO - Application initialized
+2025-05-24 18:40:06,097 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:40:06,097 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:40:06,098 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:40:07,033 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:07,039 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:07,039 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:07,044 - __main__ - INFO - Application initialized
+2025-05-24 18:40:07,051 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:40:07,054 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:40:16,137 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\scheduler.py', reloading
+2025-05-24 18:40:16,137 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:40:16,215 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:40:17,163 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:17,169 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:17,169 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:17,175 - __main__ - INFO - Application initialized
+2025-05-24 18:40:17,182 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:40:17,184 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:40:23,752 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\scheduler.py', reloading
+2025-05-24 18:40:23,752 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:40:23,822 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:40:24,773 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:24,779 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:24,779 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:24,785 - __main__ - INFO - Application initialized
+2025-05-24 18:40:24,792 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:40:24,794 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:40:30,443 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:40:30,510 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:40:31,997 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:32,003 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:32,003 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:32,009 - __main__ - INFO - Application initialized
+2025-05-24 18:40:32,022 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:40:32,022 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:40:32,023 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:40:33,051 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:40:33,057 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:33,057 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:33,063 - __main__ - INFO - Application initialized
+2025-05-24 18:40:33,070 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:40:33,072 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:40:33,846 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:33] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:34,840 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:34] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:40:34,998 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:34] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:40:35,225 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:35] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:40:35,552 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:35] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:36,155 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:36] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:40:37,447 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:40:37,447 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:40:37,448 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:40:37,448 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:37] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:40:38,388 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:38] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:40,560 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:40] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:41,052 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:41] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:40:46,529 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:46] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:51,230 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:51] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:40:56,531 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:40:56] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:00,015 - apscheduler.executors.default - INFO - Running job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:42:00 EEST)" (scheduled at 2025-05-24 18:41:00+03:00)
+2025-05-24 18:41:00,015 - apscheduler.executors.default - INFO - Running job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:42:00 EEST)" (scheduled at 2025-05-24 18:41:00+03:00)
+2025-05-24 18:41:00,015 - scheduler - INFO - Running scheduled scraper job
+2025-05-24 18:41:00,015 - scheduler - INFO - Running scheduled scraper job
+2025-05-24 18:41:01,231 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:01] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:02,065 - scraper.scraper - ERROR - Error getting job details: Timeout context manager should be used inside a task
+2025-05-24 18:41:02,080 - scraper.dou_scraper - INFO - Fetching DOU job: https://jobs.dou.ua/companies/pitaya-group/vacancies/303197/
+2025-05-24 18:41:02,107 - scheduler - ERROR - Error running scraper: ('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))
+2025-05-24 18:41:02,107 - apscheduler.executors.default - INFO - Job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:42:00 EEST)" executed successfully
+2025-05-24 18:41:03,417 - scraper.dou_scraper - INFO - Successfully parsed DOU job: Data Analyst / Data Integration (‚‡Í‡ÌÒ≥ˇ ÌÂ‡ÍÚË‚Ì‡)
+2025-05-24 18:41:05,392 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:05] "GET /api/scrape/next HTTP/1.1" 200 -
+2025-05-24 18:41:05,393 - scheduler - INFO - Scraping completed. Results: {'processed': 2, 'remaining': {'djinni': 8164, 'dou': 2201, 'total': 10365}, 'results': [{'message': 'Failed to get job details', 'source': 'djinni', 'status': 'error', 'url': 'https://djinni.co/jobs/730202-recruiter/'}, {'job_id': '303197', 'source': 'dou', 'status': 'success', 'url': 'https://jobs.dou.ua/companies/pitaya-group/vacancies/303197/'}], 'success': True}
+2025-05-24 18:41:05,394 - apscheduler.executors.default - INFO - Job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:42:00 EEST)" executed successfully
+2025-05-24 18:41:06,528 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:06] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:11,230 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:11] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:12,900 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:41:12,980 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:41:20,899 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:41:20,905 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:41:20,906 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:41:20,911 - __main__ - INFO - Application initialized
+2025-05-24 18:41:20,924 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:41:20,924 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:41:20,925 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:41:21,944 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:41:21,950 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:41:21,950 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:41:21,956 - __main__ - INFO - Application initialized
+2025-05-24 18:41:21,963 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:41:21,966 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:41:22,221 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:22] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:24,168 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:24] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:41:24,343 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:24] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:41:24,573 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:24] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:41:24,899 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:24] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:41:25,724 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:41:25] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:41:29,124 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:41:29,194 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:43:47,362 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:43:47,368 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:43:47,368 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:43:47,374 - __main__ - INFO - Application initialized
+2025-05-24 18:43:47,386 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:43:47,387 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:43:47,388 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:43:48,307 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:43:48,313 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:43:48,313 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:43:48,319 - __main__ - INFO - Application initialized
+2025-05-24 18:43:48,326 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:43:48,329 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:43:49,258 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:49] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:43:49,595 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:49] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:43:51,718 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:51] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:43:54,339 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:43:54,340 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:43:54,340 - scheduler - INFO - Scheduled scraper with custom cron: * * * * *
+2025-05-24 18:43:54,340 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:54] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:43:55,490 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:55] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:43:55,753 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:43:55] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:00,006 - apscheduler.executors.default - INFO - Running job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:45:00 EEST)" (scheduled at 2025-05-24 18:44:00+03:00)
+2025-05-24 18:44:00,007 - scheduler - INFO - Running scheduled scraper job
+ "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:45:00 EEST)" (scheduled at 2025-05-24 18:44:00+03:00)
+2025-05-24 18:44:00,007 - scheduler - INFO - Running scheduled scraper job
+2025-05-24 18:44:00,223 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:00] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:02,064 - scraper.scraper - ERROR - Error getting job details: Timeout context manager should be used inside a task
+2025-05-24 18:44:02,081 - root - ERROR - General error processing DOU URL https://jobs.dou.ua/companies/billtech/vacancies/294261/: 'NoneType' object has no attribute 'run_until_complete'
+2025-05-24 18:44:02,093 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:02] "GET /api/scrape/next HTTP/1.1" 200 -
+2025-05-24 18:44:02,094 - scheduler - INFO - Scraping completed. Results: {'processed': 2, 'remaining': {'djinni': 8163, 'dou': 2200, 'total': 10363}, 'results': [{'message': 'Failed to get job details', 'source': 'djinni', 'status': 'error', 'url': 'https://djinni.co/jobs/730201-devops/'}, {'message': "'NoneType' object has no attribute 'run_until_complete'", 'source': 'dou', 'status': 'error', 'url': 'https://jobs.dou.ua/companies/billtech/vacancies/294261/'}], 'success': True}
+2025-05-24 18:44:02,094 - apscheduler.executors.default - INFO - Job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:45:00 EEST)" executed successfully
+2025-05-24 18:44:02,149 - scraper.scraper - ERROR - Error getting job details: Connector is closed.
+2025-05-24 18:44:02,158 - root - ERROR - General error processing DOU URL https://jobs.dou.ua/companies/billtech/vacancies/294261/: 'NoneType' object has no attribute 'run_until_complete'
+2025-05-24 18:44:02,170 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:02] "GET /api/scrape/next HTTP/1.1" 200 -
+2025-05-24 18:44:02,170 - scheduler - INFO - Scraping completed. Results: {'processed': 2, 'remaining': {'djinni': 8163, 'dou': 2200, 'total': 10363}, 'results': [{'message': 'Failed to get job details', 'source': 'djinni', 'status': 'error', 'url': 'https://djinni.co/jobs/730201-devops/'}, {'message': "'NoneType' object has no attribute 'run_until_complete'", 'source': 'dou', 'status': 'error', 'url': 'https://jobs.dou.ua/companies/billtech/vacancies/294261/'}], 'success': True}
+2025-05-24 18:44:02,171 - apscheduler.executors.default - INFO - Job "ScraperScheduler._run_scraper (trigger: cron[month='*', day='*', day_of_week='*', hour='*', minute='*'], next run at: 2025-05-24 18:45:00 EEST)" executed successfully
+2025-05-24 18:44:05,527 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:05] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:10,220 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:10] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:13,938 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:13] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:44:14,053 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:14] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:44:14,083 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:14] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:44:14,399 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:14] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:15,166 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:15] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:44:19,405 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:19] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:19,963 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:19] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:44:20,092 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:20] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:44:20,352 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:20] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:44:20,660 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:20] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:21,046 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:21] "GET /api/get-settings HTTP/1.1" 200 -
+2025-05-24 18:44:26,534 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:44:26] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:44:27,308 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:44:27,380 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:47:43,348 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:50:57,897 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:50:57,907 - __main__ - INFO - Application initialized
+2025-05-24 18:50:57,920 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:50:57,920 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:50:57,921 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:50:58,841 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:50:58,852 - __main__ - INFO - Application initialized
+2025-05-24 18:50:58,860 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:50:58,862 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:50:59,915 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:50:59] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:51:00,367 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:00] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:51:05,662 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:05] "GET /api/scraping-status HTTP/1.1" 200 -
+2025-05-24 18:51:05,877 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:05] "[33mGET /api/get-settings HTTP/1.1[0m" 404 -
+2025-05-24 18:51:08,330 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:08] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:51:08,513 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:08] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:51:08,740 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:08] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:51:09,061 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:13,749 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:13] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:15,598 - scheduler - INFO - Scraping resumed
+2025-05-24 18:51:15,598 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:15] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:51:15,860 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:15] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:18,755 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:18] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:24,070 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:24] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:24,336 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:51:24,336 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:51:24,336 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:24] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:51:25,484 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:25,484 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:25] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:26,691 - scheduler - INFO - Scraping resumed
+2025-05-24 18:51:26,692 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:26] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:51:26,954 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:26,955 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:26] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:28,759 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:28,759 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:28] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:34,533 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:34,533 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:34] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:39,231 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:39,231 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:39] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:44,521 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:44,521 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:44] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:49,228 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:49,228 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:54,530 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:54,530 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:54] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:51:59,223 - root - ERROR - Error getting scraping status: 'Job' object has no attribute 'paused'
+2025-05-24 18:51:59,223 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:51:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:03,303 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\scheduler.py', reloading
+2025-05-24 18:52:03,304 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:52:03,398 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:52:04,340 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:52:04,345 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:52:04,346 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:52:04,351 - __main__ - INFO - Application initialized
+2025-05-24 18:52:04,358 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:52:04,361 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:52:04,602 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:04] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:09,220 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:12,202 - werkzeug - INFO -  * Detected change in 'C:\\Diploma\\controller 2\\scheduler.py', reloading
+2025-05-24 18:52:12,203 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:52:12,280 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:52:13,220 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:52:13,225 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:52:13,225 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:52:13,232 - __main__ - INFO - Application initialized
+2025-05-24 18:52:13,239 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:52:13,241 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:52:14,533 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:14] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:16,012 - scheduler - INFO - Scraping resumed
+2025-05-24 18:52:16,012 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:16] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:52:16,338 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:16] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:17,754 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:17] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:52:17,930 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:17] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:52:18,162 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:18] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:52:18,479 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:18] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:19,511 - scheduler - INFO - Scraping resumed
+2025-05-24 18:52:19,511 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:19] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:52:19,828 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:19] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:23,225 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:23] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:28,488 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:28] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:33,228 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:33] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:38,539 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:38] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:43,225 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:43] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:48,494 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:48] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:52,099 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:52:52,100 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:52:52,100 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:52:52,100 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:52] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:52:53,261 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:53] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:53,522 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:53] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:52:58,230 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:52:58] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:03,475 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:08,173 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:08] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:08,563 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:53:08,563 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:08,564 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:08,564 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:08] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:53:09,472 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:09] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:11,252 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:11] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:53:11,342 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:11] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:53:11,343 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:11] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:53:11,676 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:11] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:16,365 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:16] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:19,525 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:53:19,526 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:19,526 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:19,526 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:19] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:53:20,414 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:20] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:21,498 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:21] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:21,660 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:21] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:53:21,762 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:21] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:53:22,023 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:22] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:53:22,049 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:22] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:24,951 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:53:24,952 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:24,952 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:24,952 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:24] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:53:26,160 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:26] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:27,031 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:27] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:29,935 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:53:29,935 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:29,935 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:29,936 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:29] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:53:30,781 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:30] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:32,408 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:32,497 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:32] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:53:32,594 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:32] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:53:32,839 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:32] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:53:32,855 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:32] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:33,178 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:33] "GET /api/requirements/8 HTTP/1.1" 200 -
+2025-05-24 18:53:37,429 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:53:37,498 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:53:39,723 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:53:39,729 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:39,729 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:39,735 - __main__ - INFO - Application initialized
+2025-05-24 18:53:39,747 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:53:39,748 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:53:39,749 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:53:40,664 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:53:40,669 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:53:40,669 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:53:40,675 - __main__ - INFO - Application initialized
+2025-05-24 18:53:40,682 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:53:40,684 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:53:40,922 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:40] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:42,845 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:42] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:44,496 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:44] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:53:44,553 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:44] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:53:44,593 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:44] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:53:44,910 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:44] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:49,604 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:49] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:54,908 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:54] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:55,316 - scheduler - INFO - Scraping resumed
+2025-05-24 18:53:55,316 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:55] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:53:55,632 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:55] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:53:57,307 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:57] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:53:57,429 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:57] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:53:57,661 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:57] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:53:57,970 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:53:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:54:01,710 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:54:01,784 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:55:51,443 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:55:51,449 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:55:51,449 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:55:51,456 - __main__ - INFO - Application initialized
+2025-05-24 18:55:51,469 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:55:51,469 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:55:51,470 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:55:52,483 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:55:52,489 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:55:52,489 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:55:52,495 - __main__ - INFO - Application initialized
+2025-05-24 18:55:52,502 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:55:52,505 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:55:52,969 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:55:52] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:55:57,681 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:55:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:00,369 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:00] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:56:00,467 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:00] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:56:00,507 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:00] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:56:00,829 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:00] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:02,518 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:02] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:03,184 - scheduler - INFO - Scraping resumed
+2025-05-24 18:56:03,184 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:03] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:56:03,444 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:03] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:04,530 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:04] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:05,239 - scheduler - INFO - Scraping resumed
+2025-05-24 18:56:05,239 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:05] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:56:05,492 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:05] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:06,193 - scheduler - INFO - Scraping resumed
+2025-05-24 18:56:06,193 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:06] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:56:06,515 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:06,771 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:06] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:06,967 - scheduler - INFO - Scraping resumed
+2025-05-24 18:56:06,968 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:06] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:56:07,280 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:07] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:07,684 - scheduler - INFO - Scraping resumed
+2025-05-24 18:56:07,684 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:07] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:56:07,988 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:07] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:08,523 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:56:08] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:56:10,885 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:56:10,968 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:57:48,940 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:57:48,946 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:57:48,946 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:57:48,952 - __main__ - INFO - Application initialized
+2025-05-24 18:57:48,964 - werkzeug - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.31.45:5000
+2025-05-24 18:57:48,965 - werkzeug - INFO - [33mPress CTRL+C to quit[0m
+2025-05-24 18:57:48,966 - werkzeug - INFO -  * Restarting with stat
+2025-05-24 18:57:49,949 - apscheduler.scheduler - INFO - Scheduler started
+2025-05-24 18:57:49,956 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:57:49,956 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:57:49,962 - __main__ - INFO - Application initialized
+2025-05-24 18:57:49,970 - werkzeug - WARNING -  * Debugger is active!
+2025-05-24 18:57:49,972 - werkzeug - INFO -  * Debugger PIN: 323-547-418
+2025-05-24 18:57:51,118 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:51] "GET /requirements HTTP/1.1" 200 -
+2025-05-24 18:57:51,248 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:51] "[36mGET /static/css/styles.css HTTP/1.1[0m" 304 -
+2025-05-24 18:57:51,261 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:51] "[36mGET /static/js/main.js HTTP/1.1[0m" 304 -
+2025-05-24 18:57:51,664 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:51] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:53,354 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:53] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:53,792 - scheduler - INFO - Scraping resumed
+2025-05-24 18:57:53,793 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:53] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:57:54,054 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:54] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:55,350 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:55] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:56,070 - scheduler - INFO - Scraping resumed
+2025-05-24 18:57:56,070 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:56] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:57:56,331 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:56] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:57,354 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:57] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:57,973 - apscheduler.scheduler - INFO - Removed job scraper_job
+2025-05-24 18:57:57,974 - apscheduler.scheduler - INFO - Added job "ScraperScheduler._run_scraper" to job store "default"
+2025-05-24 18:57:57,974 - scheduler - INFO - Scheduled scraper with 300 seconds interval
+2025-05-24 18:57:57,974 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:57] "POST /api/save-settings HTTP/1.1" 200 -
+2025-05-24 18:57:58,992 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:58] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:59,670 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:59] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:57:59,916 - scheduler - INFO - Scraping resumed
+2025-05-24 18:57:59,916 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:57:59] "POST /api/scraping/control HTTP/1.1" 200 -
+2025-05-24 18:58:00,055 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:58:00] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:58:02,221 - werkzeug - INFO - 127.0.0.1 - - [24/May/2025 18:58:02] "GET /api/scraping/status HTTP/1.1" 200 -
+2025-05-24 18:58:03,567 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2025-05-24 18:58:03,636 - apscheduler.scheduler - INFO - Scheduler has been shut down

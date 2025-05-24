@@ -1,7 +1,7 @@
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from sqlalchemy.ext.declarative import declarative_base
-from .models import Base, Job, ScrapingProgress, ScrapingStatus, JobUrl, RequirementsAnalysis
+from .models import Base, Job, ScrapingProgress, ScrapingStatus, JobUrl, RequirementsAnalysis, ScraperSettings
 import datetime, re
 
 class Database:
@@ -156,20 +156,27 @@ class Database:
             session.close()
             
     def get_scraping_status(self):
+        """Get current scraping status with additional information"""
         session = self.get_session()
         try:
             status = session.query(ScrapingStatus).first()
-            if status:
-                return {
-                    'is_scraping': status.is_scraping,
-                    'total_jobs': status.total_jobs,
-                    'completed_jobs': status.completed_jobs
-                }
-            return {
-                'is_scraping': False,
-                'total_jobs': 0,
-                'completed_jobs': 0
+            settings = session.query(ScraperSettings).first()
+            
+            result = {
+                'status': 'Running' if status and status.is_scraping else 'Idle',
+                'progress': int((status.completed_jobs / status.total_jobs * 100) if status and status.total_jobs > 0 else 0),
+                'last_run': None,
+                'next_run': None
             }
+            
+            if settings:
+                result['next_run'] = settings.next_run.timestamp() if settings.next_run else None
+                
+            # Get the most recent completed scraping from the status history
+            if status and not status.is_scraping and status.updated_at:
+                result['last_run'] = status.updated_at.timestamp()
+            
+            return result
         finally:
             session.close()
 
@@ -380,5 +387,39 @@ class Database:
         except Exception as e:
             session.rollback()
             raise e
+        finally:
+            session.close()
+
+    def save_scraper_settings(self, settings_data):
+        """Save or update scraper settings"""
+        session = self.get_session()
+        try:
+            settings = session.query(ScraperSettings).first()
+            
+            if settings:
+                for key, value in settings_data.items():
+                    if key == 'next_run' and isinstance(value, (int, float)):
+                        value = datetime.datetime.fromtimestamp(value)
+                    setattr(settings, key, value)
+            else:
+                if 'next_run' in settings_data and isinstance(settings_data['next_run'], (int, float)):
+                    settings_data['next_run'] = datetime.datetime.fromtimestamp(settings_data['next_run'])
+                settings = ScraperSettings(**settings_data)
+                session.add(settings)
+            
+            session.commit()
+            return settings.to_dict()
+        except Exception as e:
+            session.rollback()
+            raise e
+        finally:
+            session.close()
+
+    def get_scraper_settings(self):
+        """Get current scraper settings"""
+        session = self.get_session()
+        try:
+            settings = session.query(ScraperSettings).first()
+            return settings.to_dict() if settings else None
         finally:
             session.close()

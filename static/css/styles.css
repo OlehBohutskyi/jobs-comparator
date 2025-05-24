@@ -96,3 +96,62 @@ body {
 footer {
     margin-top: auto;
 }
+
+/* Settings styles */
+.settings-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.settings-container .card {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.settings-container .card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.settings-container .progress {
+    background-color: #e9ecef;
+}
+
+.settings-container .progress-bar {
+    background-color: #007bff;
+    transition: width 0.3s ease;
+}
+
+#currentStatus {
+    font-weight: 500;
+}
+
+#currentStatus.running {
+    color: #28a745;
+}
+
+#currentStatus.idle {
+    color: #6c757d;
+}
+
+#statusDetails {
+    margin-top: 1rem;
+    line-height: 1.5;
+}
+
+/* Gear icon styles */
+.navbar .btn-link {
+    padding: 0.25rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.2s ease;
+}
+
+.navbar .btn-link:hover {
+    color: #ffffff;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+.navbar .btn-link .bi-gear-fill {
+    vertical-align: middle;
+}

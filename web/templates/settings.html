@@ -1,0 +1,119 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="settings-container">
+    <div class="card mb-4">
+        <div class="card-header">
+            <h5 class="mb-0">Scraper Configuration</h5>
+        </div>
+        <div class="card-body">
+            <form id="scraperSettingsForm" method="POST">
+                <div class="mb-3">
+                    <label for="schedule" class="form-label">Schedule Type</label>
+                    <select class="form-select" id="schedule" name="schedule">
+                        <option value="daily">Daily</option>
+                        <option value="weekly">Weekly</option>
+                        <option value="custom">Custom Schedule</option>
+                    </select>
+                </div>
+                
+                <div class="mb-3" id="timeSection">
+                    <label for="time" class="form-label">Time</label>
+                    <input type="time" class="form-control" id="time" name="time">
+                </div>
+
+                <div class="mb-3" id="customCronSection" style="display: none;">
+                    <label for="cronExpression" class="form-label">Cron Expression</label>
+                    <input type="text" class="form-control" id="cronExpression" name="cronExpression" 
+                           placeholder="*/30 * * * *">
+                    <div class="form-text">Enter a valid cron expression (e.g., */30 * * * * for every 30 minutes)</div>
+                </div>
+
+                <button type="submit" class="btn btn-primary">Save Settings</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-header">
+            <h5 class="mb-0">Scraping Status</h5>
+        </div>
+        <div class="card-body">
+            <div id="scrapingStatus">
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Status:</span>
+                    <span id="currentStatus">Idle</span>
+                </div>
+                <div class="progress mb-3" style="height: 20px;">
+                    <div id="scrapingProgress" class="progress-bar" role="progressbar" style="width: 0%"></div>
+                </div>
+                <div id="statusDetails" class="small text-muted">
+                    Last run: <span id="lastRun">Never</span><br>
+                    Next scheduled run: <span id="nextRun">Not scheduled</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const scheduleSelect = document.getElementById('schedule');
+    const customCronSection = document.getElementById('customCronSection');
+    const timeSection = document.getElementById('timeSection');
+
+    scheduleSelect.addEventListener('change', function() {
+        if (this.value === 'custom') {
+            customCronSection.style.display = 'block';
+            timeSection.style.display = 'none';
+        } else {
+            customCronSection.style.display = 'none';
+            timeSection.style.display = 'block';
+        }
+    });
+
+    // Function to update scraping status
+    function updateScrapingStatus() {
+        fetch('/api/scraping-status')
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('currentStatus').textContent = data.status;
+                document.getElementById('scrapingProgress').style.width = data.progress + '%';
+                document.getElementById('lastRun').textContent = data.last_run || 'Never';
+                document.getElementById('nextRun').textContent = data.next_run || 'Not scheduled';
+            })
+            .catch(error => console.error('Error fetching status:', error));
+    }
+
+    // Update status every 5 seconds
+    setInterval(updateScrapingStatus, 5000);
+    updateScrapingStatus(); // Initial update
+
+    // Handle form submission
+    document.getElementById('scraperSettingsForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const formData = new FormData(this);
+        
+        fetch('/api/save-settings', {
+            method: 'POST',
+            body: formData
+        })
+        .then(response => response.json())
+        .then(data => {
+            if (data.success) {
+                alert('Settings saved successfully!');
+                updateScrapingStatus();
+            } else {
+                alert('Error saving settings: ' + data.error);
+            }
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('Error saving settings');
+        });
+    });
+});
+</script>
+{% endblock %} 

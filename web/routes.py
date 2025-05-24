@@ -15,6 +15,8 @@ from file_processor import FileProcessor
 from werkzeug.utils import secure_filename
 import os
 from flask import send_from_directory, send_file
+import croniter
+from datetime import datetime, timezone, timedelta
 
 
 
@@ -22,7 +24,7 @@ web_bp = Blueprint('web', __name__)
 executor = ThreadPoolExecutor(max_workers=5)
 file_processor = FileProcessor(upload_folder='uploads')
 
-def init_routes(app, db, scraper):
+def init_routes(app, db, scraper, scheduler):
 
     @app.context_processor
     def inject_db():
@@ -170,11 +172,6 @@ def init_routes(app, db, scraper):
         
         return jsonify({'job': job})
     
-    @web_bp.route('/api/scraping/status', methods=['GET'])
-    def api_scraping_status():
-        status = db.get_scraping_status()
-        return jsonify(status)
-    
     @web_bp.route('/api/scrape/refresh', methods=['POST'])
     def api_refresh_job_urls():
         """Эндпоинт для принудительного обновления списка вакансий из карт сайтов"""
@@ -197,6 +194,7 @@ def init_routes(app, db, scraper):
 
     @web_bp.route('/api/scrape/next', methods=['GET'])
     def api_scrape_next():
+        """API endpoint for scraping next batch of jobs"""
         try:
             unprocessed_count = db.count_unprocessed_job_urls()
             
@@ -220,16 +218,12 @@ def init_routes(app, db, scraper):
 
                             async def process_djinni_job():
                                 try:
-
                                     await scraper.init_session()
-                                    
                                     job_detail = await scraper.get_job_detail(url)
                                     
                                     if job_detail:
                                         job_detail['job_id'] = job_id
-                                        
                                         job_detail = await scraper.translator.translate_job_data(job_detail)
-
                                         db.add_job(job_detail)
                                         db.mark_job_url_processed(url, True)
                                         return {
@@ -246,6 +240,14 @@ def init_routes(app, db, scraper):
                                             'status': 'error',
                                             'message': 'Failed to get job details'
                                         }
+                                except asyncio.CancelledError:
+                                    logging.warning(f"Scraping operation cancelled for job {job_id}")
+                                    return {
+                                        'source': 'djinni',
+                                        'url': url,
+                                        'status': 'cancelled',
+                                        'message': 'Operation was cancelled'
+                                    }
                                 except Exception as e:
                                     logging.error(f"Error processing Djinni job {job_id}: {e}")
                                     db.mark_job_url_processed(url, False)
@@ -259,14 +261,20 @@ def init_routes(app, db, scraper):
                                     await scraper.close_session()
                             
                             try:
-                                result = app.loop.run_until_complete(process_djinni_job())
-                            except RuntimeError:
+                                # Create a new event loop for each request
                                 loop = asyncio.new_event_loop()
                                 asyncio.set_event_loop(loop)
                                 result = loop.run_until_complete(process_djinni_job())
                                 loop.close()
-                            
-                            results.append(result)
+                                results.append(result)
+                            except Exception as e:
+                                logging.error(f"Error in event loop for job {job_id}: {e}")
+                                results.append({
+                                    'source': 'djinni',
+                                    'url': url,
+                                    'status': 'error',
+                                    'message': f"Event loop error: {str(e)}"
+                                })
                         else:
                             db.mark_job_url_processed(url, False)
                             results.append({
@@ -1006,4 +1014,108 @@ def init_routes(app, db, scraper):
                 'error': str(e)
             }), 500
     
+    @web_bp.route('/settings')
+    def settings():
+        return render_template('settings.html')
+
+    @web_bp.route('/api/scraping-status')
+    def get_scraping_status():
+        # Get the current scraping status from the database
+        status = db.get_scraping_status()
+        if not status:
+            status = {
+                'status': 'Idle',
+                'progress': 0,
+                'last_run': None,
+                'next_run': None
+            }
+        
+        # Format timestamps for display
+        if status.get('last_run'):
+            status['last_run'] = datetime.fromtimestamp(status['last_run']).strftime('%Y-%m-%d %H:%M:%S')
+        if status.get('next_run'):
+            status['next_run'] = datetime.fromtimestamp(status['next_run']).strftime('%Y-%m-%d %H:%M:%S')
+        
+        return jsonify(status)
+
+    @web_bp.route('/api/scraping/status', methods=['GET'])
+    def get_scheduler_status():
+        """Get current scraping status"""
+        try:
+            status = scheduler.get_status()
+            return jsonify({
+                'success': True,
+                'status': status
+            })
+        except Exception as e:
+            logging.error(f"Error getting scraping status: {e}")
+            return jsonify({'success': False, 'error': str(e)})
+
+    @web_bp.route('/api/save-settings', methods=['POST'])
+    def save_settings():
+        try:
+            schedule_type = request.form.get('schedule')
+            
+            if schedule_type == 'interval':
+                interval = request.form.get('interval', '300')  # Default 5 minutes
+                try:
+                    interval_seconds = int(interval)
+                    if interval_seconds < 1:
+                        return jsonify({'success': False, 'error': 'Interval must be at least 1 second'})
+                    
+                    settings = db.save_scraper_settings({
+                        'schedule_type': 'interval',
+                        'interval_seconds': interval_seconds
+                    })
+                except ValueError:
+                    return jsonify({'success': False, 'error': 'Invalid interval value'})
+            
+            elif schedule_type in ['daily', 'weekly']:
+                time = request.form.get('time')
+                if not time:
+                    return jsonify({'success': False, 'error': 'Time is required'})
+                
+                # Parse time and create next run timestamp
+                hour, minute = map(int, time.split(':'))
+                now = datetime.now(timezone.utc)
+                next_run = now.replace(hour=hour, minute=minute)
+                
+                if next_run < now:
+                    if schedule_type == 'daily':
+                        next_run = next_run + timedelta(days=1)
+                    else:  # weekly
+                        days_ahead = 7 - now.weekday()
+                        next_run = next_run + timedelta(days=days_ahead)
+                
+                settings = db.save_scraper_settings({
+                    'schedule_type': schedule_type,
+                    'run_time': time,
+                    'next_run': next_run.timestamp()
+                })
+            
+            # Update the scheduler
+            scheduler.update_schedule(settings)
+            
+            return jsonify({'success': True})
+        except Exception as e:
+            logging.error(f"Error saving settings: {str(e)}")
+            return jsonify({'success': False, 'error': str(e)})
+
+    @web_bp.route('/api/scraping/control', methods=['POST'])
+    def control_scraping():
+        """Control the scraping process"""
+        try:
+            action = request.json.get('action')
+            if action == 'stop':
+                scheduler.stop_scraping()
+                return jsonify({'success': True, 'message': 'Scraping stopped'})
+            elif action == 'resume':
+                scheduler.resume_scraping()
+                return jsonify({'success': True, 'message': 'Scraping resumed'})
+            else:
+                return jsonify({'success': False, 'error': 'Invalid action'})
+        except Exception as e:
+            logging.error(f"Error controlling scraping: {e}")
+            return jsonify({'success': False, 'error': str(e)})
+
     app.register_blueprint(web_bp)

@@ -17,7 +17,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
+                <ul class="navbar-nav me-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="{{ url_for('web.jobs') }}">Jobs</a>
                     </li>
@@ -28,9 +28,82 @@
                         <a class="nav-link" href="{{ url_for('web.requirements_analysis') }}">Requirements</a>
                     </li>
                 </ul>
+                <button class="btn btn-link text-white" data-bs-toggle="modal" data-bs-target="#settingsModal">
+                    <i class="bi bi-gear-fill fs-5"></i>
+                </button>
             </div>
         </div>
     </nav>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Scraper Settings</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="settingsForm">
+                        <div class="mb-3">
+                            <label class="form-label">Schedule Type</label>
+                            <select class="form-select" name="schedule" id="scheduleType">
+                                <option value="interval">Interval</option>
+                                <option value="daily">Daily</option>
+                                <option value="weekly">Weekly</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3" id="intervalSettings">
+                            <label class="form-label">Interval (seconds)</label>
+                            <input type="number" class="form-control" name="interval" min="1" value="300">
+                            <small class="text-muted">Minimum 1 second</small>
+                        </div>
+
+                        <div class="mb-3" id="timeSettings" style="display: none;">
+                            <label class="form-label">Time</label>
+                            <input type="time" class="form-control" name="time">
+                        </div>
+
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <label class="form-label">Scraping Status</label>
+                                <div class="spinner-border spinner-border-sm text-primary d-none" id="scrapingSpinner" role="status">
+                                    <span class="visually-hidden">Loading...</span>
+                                </div>
+                            </div>
+                            <div class="alert alert-info mb-3" id="statusMessage">
+                                Checking status...
+                            </div>
+                            <div class="progress mb-3" style="height: 20px;">
+                                <div class="progress-bar progress-bar-striped progress-bar-animated" 
+                                     role="progressbar" 
+                                     id="scrapingProgress"
+                                     style="width: 0%">
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-3">
+                                <button type="button" class="btn btn-warning" id="stopButton" style="display: none;">
+                                    <i class="bi bi-pause-circle"></i> Stop Scraping
+                                </button>
+                                <button type="button" class="btn btn-success" id="resumeButton" style="display: none;">
+                                    <i class="bi bi-play-circle"></i> Resume Scraping
+                                </button>
+                            </div>
+                            <div class="small text-muted" id="statusDetails">
+                                Last run: <span id="lastRun">Never</span><br>
+                                Next run: <span id="nextRun">Not scheduled</span>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" id="saveSettings">Save Settings</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="container mb-4">
         {% with messages = get_flashed_messages(with_categories=true) %}
@@ -56,6 +129,164 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const scheduleType = document.getElementById('scheduleType');
+        const intervalSettings = document.getElementById('intervalSettings');
+        const timeSettings = document.getElementById('timeSettings');
+        const statusMessage = document.getElementById('statusMessage');
+        const scrapingSpinner = document.getElementById('scrapingSpinner');
+        const stopButton = document.getElementById('stopButton');
+        const resumeButton = document.getElementById('resumeButton');
+        const scrapingProgress = document.getElementById('scrapingProgress');
+        const lastRun = document.getElementById('lastRun');
+        const nextRun = document.getElementById('nextRun');
+        const statusDetails = document.getElementById('statusDetails');
+
+        function updateScheduleFields() {
+            if (scheduleType.value === 'interval') {
+                intervalSettings.style.display = 'block';
+                timeSettings.style.display = 'none';
+            } else {
+                intervalSettings.style.display = 'none';
+                timeSettings.style.display = 'block';
+            }
+        }
+
+        function updateButtonsAndSpinner(isRunning, isPaused) {
+            if (isRunning) {
+                stopButton.style.display = 'block';
+                resumeButton.style.display = 'none';
+                scrapingSpinner.classList.remove('d-none');
+                scrapingProgress.style.width = '100%';
+                scrapingProgress.classList.add('progress-bar-animated');
+                statusMessage.textContent = 'Scraping is running';
+                statusMessage.className = 'alert alert-success';
+            } else if (isPaused) {
+                stopButton.style.display = 'none';
+                resumeButton.style.display = 'block';
+                scrapingSpinner.classList.add('d-none');
+                scrapingProgress.style.width = '0%';
+                scrapingProgress.classList.remove('progress-bar-animated');
+                statusMessage.textContent = 'Scraping is paused';
+                statusMessage.className = 'alert alert-warning';
+            } else {
+                stopButton.style.display = 'none';
+                resumeButton.style.display = 'block';
+                scrapingSpinner.classList.add('d-none');
+                scrapingProgress.style.width = '0%';
+                scrapingProgress.classList.remove('progress-bar-animated');
+                statusMessage.textContent = 'Scraping is idle';
+                statusMessage.className = 'alert alert-info';
+            }
+        }
+
+        function updateScrapingStatus() {
+            fetch('/api/scraping/status')
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        const status = data.status;
+                        updateButtonsAndSpinner(status.is_running, status.is_paused);
+
+                        // Update timestamps if available
+                        if (status.last_run) {
+                            lastRun.textContent = new Date(status.last_run * 1000).toLocaleString();
+                        }
+                        if (status.next_run) {
+                            nextRun.textContent = new Date(status.next_run * 1000).toLocaleString();
+                        }
+                    }
+                })
+                .catch(error => {
+                    statusMessage.textContent = 'Error checking status';
+                    statusMessage.className = 'alert alert-danger';
+                    updateButtonsAndSpinner(false, false);
+                });
+        }
+
+        scheduleType.addEventListener('change', updateScheduleFields);
+
+        stopButton.addEventListener('click', () => {
+            // Disable buttons while request is in progress
+            stopButton.disabled = true;
+            resumeButton.disabled = true;
+
+            fetch('/api/scraping/control', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ action: 'stop' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateScrapingStatus();
+                }
+            })
+            .finally(() => {
+                // Re-enable buttons
+                stopButton.disabled = false;
+                resumeButton.disabled = false;
+            });
+        });
+
+        resumeButton.addEventListener('click', () => {
+            // Disable buttons while request is in progress
+            stopButton.disabled = true;
+            resumeButton.disabled = true;
+
+            fetch('/api/scraping/control', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ action: 'resume' })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    updateScrapingStatus();
+                }
+            })
+            .finally(() => {
+                // Re-enable buttons
+                stopButton.disabled = false;
+                resumeButton.disabled = false;
+            });
+        });
+
+        document.getElementById('saveSettings').addEventListener('click', function() {
+            const form = document.getElementById('settingsForm');
+            const formData = new FormData(form);
+
+            fetch('/api/save-settings', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Settings saved successfully');
+                    updateScrapingStatus();
+                } else {
+                    alert('Error: ' + data.error);
+                }
+            })
+            .catch(error => {
+                alert('Error saving settings');
+            });
+        });
+
+        // Update status frequently
+        updateScrapingStatus();
+        setInterval(updateScrapingStatus, 2000);
+
+        // Initial setup
+        updateScheduleFields();
+    });
+    </script>
     {% block extra_js %}{% endblock %}
 </body>
 </html>

@@ -136,3 +136,26 @@ class RequirementsAnalysis(Base):
             'education_program_analysis': self.education_program_analysis
         }
 
+
+class ScraperSettings(Base):
+    __tablename__ = 'scraper_settings'
+    
+    id = Column(Integer, primary_key=True)
+    schedule_type = Column(String(50), nullable=False)  # 'daily', 'weekly', 'custom'
+    run_time = Column(String(8), nullable=True)  # HH:MM format
+    cron_expression = Column(String(100), nullable=True)
+    next_run = Column(DateTime, nullable=True)
+    created_at = Column(DateTime, server_default=func.now())
+    updated_at = Column(DateTime, server_default=func.now(), onupdate=func.now())
+    
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'schedule_type': self.schedule_type,
+            'run_time': self.run_time,
+            'cron_expression': self.cron_expression,
+            'next_run': self.next_run.isoformat() if self.next_run else None,
+            'created_at': self.created_at.isoformat() if self.created_at else None,
+            'updated_at': self.updated_at.isoformat() if self.updated_at else None
+        }
+

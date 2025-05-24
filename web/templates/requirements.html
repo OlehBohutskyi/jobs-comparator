@@ -116,6 +116,32 @@
         border-radius: 5px;
         background-color: #f8f9fa;
     }
+    .summary-content table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 1.5rem;
+    }
+
+    .summary-content table th,
+    .summary-content table td {
+        border: 1px solid #dee2e6;
+        padding: 8px 12px;
+        text-align: left;
+    }
+
+    .summary-content table thead th {
+        background-color: #f8f9fa;
+        border-bottom: 2px solid #dee2e6;
+        font-weight: bold;
+    }
+
+    .summary-content table tbody tr:nth-of-type(odd) {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    .summary-content table tbody tr:hover {
+        background-color: rgba(0, 123, 255, 0.08);
+    }
 </style>
 {% endblock %}
 

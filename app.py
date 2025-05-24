@@ -7,6 +7,7 @@ from database.db import Database
 from scraper.scraper import DjinniScraper
 from web.routes import init_routes
 import os
+from scheduler import ScraperScheduler
 
 logging.basicConfig(
     level=logging.INFO,
@@ -19,9 +20,6 @@ logging.basicConfig(
 
 logger = logging.getLogger(__name__)
 
-global_loop = asyncio.new_event_loop()
-asyncio.set_event_loop(global_loop)
-
 class DjinniApp:
     def __init__(self, config=None):
         self.config = config or Config()
@@ -31,18 +29,28 @@ class DjinniApp:
         self.app.config['SECRET_KEY'] = self.config.SECRET_KEY
         self.app.config['DEBUG'] = self.config.DEBUG
 
-        self.app.loop = global_loop
+        # Remove global loop reference
+        self.app.loop = None
 
         self.db = Database(self.config.DATABASE_URL)
         self.db.init_db()
 
         self.scraper = DjinniScraper(self.db, self.config.MAX_CONCURRENT_REQUESTS)
+        
+        # Initialize scheduler
+        self.scheduler = ScraperScheduler(self.app)
+        
+        # Load existing settings and update scheduler
+        settings = self.db.get_scraper_settings()
+        if settings:
+            self.scheduler.update_schedule(settings)
 
         @self.app.context_processor
         def inject_now():
             return {'now': datetime.datetime.now()}
 
-        init_routes(self.app, self.db, self.scraper)
+        # Pass the scheduler instance to init_routes
+        init_routes(self.app, self.db, self.scraper, self.scheduler)
         
         logger.info("Application initialized")
 
@@ -50,22 +58,16 @@ class DjinniApp:
         if not os.path.exists(uploads_dir):
             os.makedirs(uploads_dir)
             logger.info(f"Created uploads directory: {uploads_dir}")
-    
-    def run(self):
-        """Run the Flask web application"""
+            
+    def run(self, host=None, port=None):
+        """Run the application"""
         try:
-            logger.info(f"Starting web server on {self.config.HOST}:{self.config.PORT}")
             self.app.run(
-                host=self.config.HOST,
-                port=self.config.PORT,
-                debug=self.config.DEBUG
+                host=host or self.config.HOST,
+                port=port or self.config.PORT
             )
-        except Exception as e:
-            logger.error(f"Error running application: {e}")
         finally:
-            # Clean up
-            if global_loop and global_loop.is_running():
-                global_loop.close()
+            self.scheduler.shutdown()
 
 if __name__ == '__main__':
     app = DjinniApp()
